@@ -40,8 +40,6 @@
             this.current.leave();
         }
 
-        console.log("Leave: " + this);
-
         if (this.exit) {
             for (i = 0, len = this.exit.length; i < len; ++i) {
                 this.exit[i]();
@@ -51,8 +49,6 @@
 
     State.prototype.beginEntry = function () {
         var i, len;
-
-        console.log("Enter: " + this);
 
         if (this.entry) {
             for (i = 0, len = this.entry.length; i < len; ++i) {

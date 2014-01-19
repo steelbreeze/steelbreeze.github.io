@@ -8,7 +8,7 @@
 		<title>Steelbreeze</title>
 		<link rel="stylesheet" href="/style/orange.css" type="text/css" />
     </head>
-	<body onload="tabs.initialise(tabs)">
+	<body onload="tabs.initialise()">
 		<div id="header">
 			<div class="content">
 				<a href="/"><img id="logo" src="/images/logos/steelbreeze_logo.png" alt="Steelbreeze"/></a>
@@ -20,10 +20,10 @@
 				<h1>state.cs provides unparalleled robustness and reliability for event&#8209;based programming in .NET</h1>
 			</div>
 			<div class="buttonbar">
-				<a href="#" class="oneoffour white" id="overviewTab" onclick="tabs.process(tabs, 'overview')">Overview</a>
-				<a href="#" class="oneoffour white" id="featuresTab" onclick="tabs.process(tabs, 'features')">Features</a>
-				<a href="#" class="oneoffour white" id="examplesTab" onclick="tabs.process(tabs, 'examples')">Examples</a>
-				<a href="#" class="oneoffour white" id="licensingTab" onclick="tabs.process(tabs, 'licensing')">Licensing</a>
+				<a href="#" class="oneoffour white" id="overviewTab" onclick="tabs.process('overview')">Overview</a>
+				<a href="#" class="oneoffour white" id="featuresTab" onclick="tabs.process('features')">Features</a>
+				<a href="#" class="oneoffour white" id="examplesTab" onclick="tabs.process('examples')">Examples</a>
+				<a href="#" class="oneoffour white" id="licensingTab" onclick="tabs.process('licensing')">Licensing</a>
 			</div>
 			<div id="overview">
 				<div class="info left">
@@ -120,7 +120,7 @@
 				<p id="copyright">Copyright &copy; 2014 Steelbreeze Limited, all rights reserved.</p>
 			</div>
 		</div>
-		<script type="text/javascript" src="/scripts/state_min.js"></script>
+		<script type="text/javascript" src="/scripts/state_lite.js"></script>
 		<script type="text/javascript">
             function showTab(tab) {
                 document.getElementById(tab + "Tab").className = "oneoffour orange";
@@ -132,12 +132,11 @@
                 document.getElementById(tab).style.display = "none";
             }
             
-            var tabs = new Region("tabs");
-            var initial = new PseudoState("initial", PseudoStateKind.Initial, tabs);
-            var overview = new SimpleState("overview", tabs);
-            var features = new SimpleState("features", tabs);
-            var examples = new SimpleState("examples", tabs);
-            var licensing = new SimpleState("licensing", tabs);
+            var tabs = new State("tabs");
+            var overview = new State("overview", tabs);
+            var features = new State("features", tabs);
+            var examples = new State("examples", tabs);
+            var licensing = new State("licensing", tabs);
             
             overview.entry = [function () { showTab("overview"); }];
             features.entry = [function () { showTab("features"); }];
@@ -149,7 +148,6 @@
             examples.exit = [function () { hideTab("examples"); }];
             licensing.exit = [function () { hideTab("licensing"); }];
             
-            new Transition(initial, overview);
             new Transition(overview, features, function (c) { return c === "features"; }); 
             new Transition(overview, examples, function (c) { return c === "examples"; }); 
             new Transition(overview, licensing, function (c) { return c === "licensing"; }); 
