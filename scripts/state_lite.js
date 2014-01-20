@@ -111,8 +111,6 @@
             this.source = sourceAncestors[i] || source;
             this.target = targetAncestors.slice(i);
         }
-
-        source.transitions.push(this);
     }
 
     Transition.prototype.traverse = function (message, history) {
@@ -137,6 +135,6 @@
 
     exports.History = History;
     exports.State = State;
-    exports.Transition = Transition;
+    exports.transition = function (source, target, guard, effect) { source.transitions.push(new Transition(source, target, guard, effect)); };
 
 }(this.exports || this));
