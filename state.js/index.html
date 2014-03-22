@@ -101,7 +101,7 @@
 				<div class="info left">
 					<h2>Open source licensing</h2>
 					<img src="/images/logos/osi_standard_logo.png" alt="OSI Logo"/>
-					<p> Steelbreeze is a strong supporter of open source software; the open source licence is an appropriate option if you are creating an open source application under a licence compatible with <a href ="https://github.com/steelbreeze/state.js/blob/master/LICENCE_GPL.md">GPL&nbsp;v3</a> or <a href ="https://github.com/steelbreeze/state.js/blob/master/LICENCE_MIT.md">MIT</a>. Steelbreeze uses both the <a href ="https://github.com/steelbreeze/state.js/blob/master/LICENCE_GPL.md">GPL&nbsp;v3</a> and <a href ="https://github.com/steelbreeze/state.js/blob/master/LICENCE_MIT.md">MIT</a> licences as they provide flexibility and protection for both the authors and users of open source software.</p>
+					<p> Steelbreeze is a strong supporter of open source software; the open source licence is an appropriate option if you are creating an open source application under a licence compatible with <a href ="https://github.com/steelbreeze/state.js/blob/master/LICENCE_MIT.md">MIT</a>. Steelbreeze uses the <a href ="https://github.com/steelbreeze/state.js/blob/master/LICENCE_MIT.md">MIT</a> licence as it provides flexibility and protection for both the author and users of open source software.</p>
 				</div>
 				<div class="info right">
 					<h2>Commercial licensing</h2>
@@ -109,7 +109,7 @@
 				</div>
 			</div>
 			<div class="buttonbar">
-				<a class="oneoftwo green" href="https://github.com/steelbreeze/state.js/archive/v3.1.9.zip">Get state.js v3.1.9</a>
+				<a class="oneoftwo green" href="https://github.com/steelbreeze/state.js/archive/v4.0.2.zip">Get state.js v4.0.2</a>
 				<a class="oneoftwo orange" href="mailto:sales@steelbreeze.net?&amp;subject=state.js%20quote">Get a commercial quote</a>
 			</div>			
 		</div>
@@ -184,10 +184,10 @@
 		</script>
 		<script type="text/javascript">
             // the behaviour that the state machine orchestrates
-            function EngageHead()    { document.getElementById( "head" ).innerHTML  = "Head: engaged"; }
-            function DisengageHead() { document.getElementById( "head" ).innerHTML  = "Head: disengaged"; }
-            function StartMotor()    { document.getElementById( "motor" ).innerHTML = "Motor: running"; }		
-            function StopMotor()     { document.getElementById( "motor" ).innerHTML = "Motor: stopped"; }
+            function EngageHead(state)    { document.getElementById( "head" ).innerHTML  = "Head: engaged"; }
+            function DisengageHead(state) { document.getElementById( "head" ).innerHTML  = "Head: disengaged"; }
+            function StartMotor(state)    { document.getElementById( "motor" ).innerHTML = "Motor: running"; }		
+            function StopMotor(state)     { document.getElementById( "motor" ).innerHTML = "Motor: stopped"; }
     
             // create the state machine
             var player = new Region("player");
