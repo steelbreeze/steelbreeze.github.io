@@ -120,7 +120,7 @@
 				<p id="copyright">Copyright &copy; 2014 Steelbreeze Limited, all rights reserved.</p>
 			</div>
 		</div>
-		<script type="text/javascript" src="/scripts/state_min.js"></script>
+		<script type="text/javascript" src="/scripts/state.js"></script>
 		<script type="text/javascript">
             function showTab(tab) {
                 document.getElementById(tab + "Tab").className = "oneoffour orange";
@@ -139,15 +139,15 @@
             var examples = new SimpleState("examples", tabs);
             var licensing = new SimpleState("licensing", tabs);
             
-            overview.entry = [function () { showTab("overview"); }];
-            features.entry = [function () { showTab("features"); }];
-            examples.entry = [function () { showTab("examples"); }];
-            licensing.entry = [function () { showTab("licensing"); }];
+            overview.entry = [function (state) { showTab("overview"); }];
+            features.entry = [function (state) { showTab("features"); }];
+            examples.entry = [function (state) { showTab("examples"); }];
+            licensing.entry = [function (state) { showTab("licensing"); }];
             
-            overview.exit = [function () { hideTab("overview"); }];
-            features.exit = [function () { hideTab("features"); }];
-            examples.exit = [function () { hideTab("examples"); }];
-            licensing.exit = [function () { hideTab("licensing"); }];
+            overview.exit = [function (state) { hideTab("overview"); }];
+            features.exit = [function (state) { hideTab("features"); }];
+            examples.exit = [function (state) { hideTab("examples"); }];
+            licensing.exit = [function (state) { hideTab("licensing"); }];
             
             new Transition(initial, overview);
             new Transition(overview, features, function (c) { return c === "features"; }); 

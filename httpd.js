@@ -2,8 +2,10 @@
 "use strict";
 
 var http = require("http"),
+    fs = require("fs"),
     fsm = require("state_lite.js"),
     headers = { '.html': { ct: "text/html", cc: "no-cache" },
+                '.appcache': { ct: "text", cc: "no-cache" },
                 '.css': { ct: "text/css", cc: "public, max-age=604800" },
                 '.js': { ct: "text/javascript", cc: "public, max-age=86400" },
                 '.xml': { ct: "application/xml", cc: "no-cache" },
@@ -16,7 +18,7 @@ var http = require("http"),
     timestamp;
 
 function loadCache(directory, fs, path) {
-    var i, files = fs.readdirSync(directory), len = files.length, file, url, data, stats;
+    var i, files = fs.readdirSync(directory), len = files.length, file, url, data, stats, machine;
     
     for (i = 0; i < len; i = i + 1) {
         if (files[i][0] !== "." && files[i] !== "CNAME") {
@@ -25,13 +27,13 @@ function loadCache(directory, fs, path) {
             stats = fs.statSync(file);
             
             if (stats.isDirectory()) {
-		if (files[i] !== "node_modules") {
+                if (files[i] !== "node_modules") {
                     loadCache(file, fs, path);
-		}
+                }
             } else {
                 console.warn("Caching: " + url);
 
-		var machine = new fsm.State("content");
+                machine = new fsm.State("content");
             
                 cache[url] = { data: fs.readFileSync(file, "binary"), headers: { 'Content-Type': headers[path.extname(file)].ct, 'Cache-Control': headers[path.extname(file)].cc, 'Last-Modified': stats.mtime } };
                 index[url] = url;
@@ -45,7 +47,7 @@ function loadCache(directory, fs, path) {
     }
 }
 
-loadCache(".", require("fs"), require("path"));
+loadCache(".", fs, require("path"));
 
 http.createServer(function (request, response) {
     if (request.method === "GET" || request.method === "HEAD") {
