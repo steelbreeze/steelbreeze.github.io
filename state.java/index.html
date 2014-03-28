@@ -150,18 +150,18 @@
             licensing.exit = [function (state) { hideTab("licensing"); }];
             
             new Transition(initial, overview);
-            new Transition(overview, features, function (c) { return c === "features"; }); 
-            new Transition(overview, examples, function (c) { return c === "examples"; }); 
-            new Transition(overview, licensing, function (c) { return c === "licensing"; }); 
-            new Transition(features, overview, function (c) { return c === "overview"; }); 
-            new Transition(features, examples, function (c) { return c === "examples"; }); 
-            new Transition(features, licensing, function (c) { return c === "licensing"; });         
-            new Transition(examples, overview, function (c) { return c === "overview"; }); 
-            new Transition(examples, features, function (c) { return c === "features"; }); 
-            new Transition(examples, licensing, function (c) { return c === "licensing"; });          
-            new Transition(licensing, overview, function (c) { return c === "overview"; }); 
-            new Transition(licensing, features, function (c) { return c === "features"; }); 
-            new Transition(licensing, examples, function (c) { return c === "examples"; }); 
+            new Transition(overview, features, function (s, c) { return c === "features"; }); 
+            new Transition(overview, examples, function (s, c) { return c === "examples"; }); 
+            new Transition(overview, licensing, function (s, c) { return c === "licensing"; }); 
+            new Transition(features, overview, function (s, c) { return c === "overview"; }); 
+            new Transition(features, examples, function (s, c) { return c === "examples"; }); 
+            new Transition(features, licensing, function (s, c) { return c === "licensing"; });         
+            new Transition(examples, overview, function (s, c) { return c === "overview"; }); 
+            new Transition(examples, features, function (s, c) { return c === "features"; }); 
+            new Transition(examples, licensing, function (s, c) { return c === "licensing"; });          
+            new Transition(licensing, overview, function (s, c) { return c === "overview"; }); 
+            new Transition(licensing, features, function (s, c) { return c === "features"; }); 
+            new Transition(licensing, examples, function (s, c) { return c === "examples"; }); 
 		</script>
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

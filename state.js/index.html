@@ -109,7 +109,7 @@
 				</div>
 			</div>
 			<div class="buttonbar">
-				<a class="oneoftwo green" href="https://github.com/steelbreeze/state.js/archive/v4.0.2.zip">Get state.js v4.0.2</a>
+				<a class="oneoftwo green" href="https://github.com/steelbreeze/state.js/archive/v4.1.0.zip">Get state.js v4.1.0</a>
 				<a class="oneoftwo orange" href="mailto:sales@steelbreeze.net?&amp;subject=state.js%20quote">Get a commercial quote</a>
 			</div>			
 		</div>
@@ -151,12 +151,13 @@
                 document.getElementById(tab).style.display = "none";
             }
             
-            var tabs = new Region("tabs");
-            var initial = new PseudoState("initial", PseudoStateKind.Initial, tabs);
-            var overview = new SimpleState("overview", tabs);
-            var features = new SimpleState("features", tabs);
-            var examples = new SimpleState("examples", tabs);
-            var licensing = new SimpleState("licensing", tabs);
+            var tabs = new StateMachine("machine");
+            var defr = new Region("default", tabs);
+            var initial = new PseudoState("initial", PseudoStateKind.Initial, defr);
+            var overview = new SimpleState("overview", defr);
+            var features = new SimpleState("features", defr);
+            var examples = new SimpleState("examples", defr);
+            var licensing = new SimpleState("licensing", defr);
             
             overview.entry = [function (state) { showTab("overview"); }];
             features.entry = [function (state) { showTab("features"); }];
@@ -169,18 +170,18 @@
             licensing.exit = [function (state) { hideTab("licensing"); }];
             
             new Transition(initial, overview);
-            new Transition(overview, features, function (c) { return c === "features"; }); 
-            new Transition(overview, examples, function (c) { return c === "examples"; }); 
-            new Transition(overview, licensing, function (c) { return c === "licensing"; }); 
-            new Transition(features, overview, function (c) { return c === "overview"; }); 
-            new Transition(features, examples, function (c) { return c === "examples"; }); 
-            new Transition(features, licensing, function (c) { return c === "licensing"; });         
-            new Transition(examples, overview, function (c) { return c === "overview"; }); 
-            new Transition(examples, features, function (c) { return c === "features"; }); 
-            new Transition(examples, licensing, function (c) { return c === "licensing"; });          
-            new Transition(licensing, overview, function (c) { return c === "overview"; }); 
-            new Transition(licensing, features, function (c) { return c === "features"; }); 
-            new Transition(licensing, examples, function (c) { return c === "examples"; });             
+            new Transition(overview, features, function (s, c) { return c === "features"; }); 
+            new Transition(overview, examples, function (s, c) { return c === "examples"; }); 
+            new Transition(overview, licensing, function (s, c) { return c === "licensing"; }); 
+            new Transition(features, overview, function (s, c) { return c === "overview"; }); 
+            new Transition(features, examples, function (s, c) { return c === "examples"; }); 
+            new Transition(features, licensing, function (s, c) { return c === "licensing"; });         
+            new Transition(examples, overview, function (s, c) { return c === "overview"; }); 
+            new Transition(examples, features, function (s, c) { return c === "features"; }); 
+            new Transition(examples, licensing, function (s, c) { return c === "licensing"; });          
+            new Transition(licensing, overview, function (s, c) { return c === "overview"; }); 
+            new Transition(licensing, features, function (s, c) { return c === "features"; }); 
+            new Transition(licensing, examples, function (s, c) { return c === "examples"; });             
 		</script>
 		<script type="text/javascript">
             // the behaviour that the state machine orchestrates
@@ -191,7 +192,8 @@
     
             // create the state machine
             var player = new Region("player");
-    
+//            var region = new Region("region", player);
+                                    
             // create some states
             var initial = new PseudoState("initial", PseudoStateKind.Initial, player);
             var operational = new CompositeState("operational", player);
@@ -206,13 +208,13 @@
             // create transitions between states (one with transition behaviour)
             var t0 = new Transition(initial, operational);
             var t1 = new Transition(deepHistory, stopped);
-            var t2 = new Transition(stopped, running, function (s) { return s === "play"; });
-            var t3 = new Transition(active, stopped, function (s) { return s === "stop"; });
-            var t4 = new Transition(running, paused, function (s) { return s === "pause"; });
-            var t5 = new Transition(paused, running, function (s) { return s === "play"; });
-            var t6 = new Transition(operational, flipped, function (s) { return s === "flip"; });
-            var t7 = new Transition(flipped, operational, function (s) { return s === "flip"; });
-            var t8 = new Transition(operational, final, function (s) { return s === "off"; });
+            var t2 = new Transition(stopped, running, function (s, c) { return c === "play"; });
+            var t3 = new Transition(active, stopped, function (s, c) { return c === "stop"; });
+            var t4 = new Transition(running, paused, function (s, c) { return c === "pause"; });
+            var t5 = new Transition(paused, running, function (s, c) { return c === "play"; });
+            var t6 = new Transition(operational, flipped, function (s, c) { return c === "flip"; });
+            var t7 = new Transition(flipped, operational, function (s, c) { return c === "flip"; });
+            var t8 = new Transition(operational, final, function (s, c) { return c === "off"; });
     
             // add some behaviour
             active.entry = [EngageHead];
