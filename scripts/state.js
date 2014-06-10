@@ -251,11 +251,7 @@ function initStateJS(exports) {
     Element.prototype.beginExit = function (state) {
     };
 
-    Element.prototype.endExit = function (state) {
-        if (console) {
-            console.log("Leave: " + this.toString());
-        }
-        
+    Element.prototype.endExit = function (state) {        
         setActive(state, this, false);
     };
 
@@ -265,10 +261,6 @@ function initStateJS(exports) {
             this.endExit(state);
         }
 	
-        if (console) {
-            console.log("Enter: " + this.toString());
-        }
-        
         setActive(state, this, true);
     };
 
