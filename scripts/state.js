@@ -21,7 +21,6 @@
  * THE SOFTWARE.
  */
 
-/*global console */
 function initStateJS(exports) {
     "use strict";
     
@@ -146,6 +145,7 @@ function initStateJS(exports) {
      */
     Transition.Else = function (source, target) {
         Transition.call(this, source, target, function (state) { return false; });
+        this.isElse = true;
     };
     
     Transition.Else.prototype = Transition.prototype;
@@ -173,7 +173,7 @@ function initStateJS(exports) {
             return results[(results.length - 1) * Math.random()];
         }
 
-        return single(completions, function (c) { return c instanceof Transition.Else; });
+        return single(completions, function (c) { return c.isElse; });
     }
     
     function getJunctionCompletion(state, completions) {
@@ -183,7 +183,7 @@ function initStateJS(exports) {
             return result;
         }
         
-        result = single(completions, function (c) { return c instanceof Transition.Else; });
+        result = single(completions, function (c) { return c.isElse; });
         
         if (result) {
             return result;
@@ -238,11 +238,8 @@ function initStateJS(exports) {
     function Element(name, owner) {
         this.name = name;
         this.owner = owner;
+        this.qualifiedName = this.owner ? this.owner + "." + this.name : this.name;
     }
-    
-    Element.prototype.qualifiedName = function () {
-        return this.owner ? this.owner + "." + this.name : this.name;
-    };
 
     Element.prototype.ancestors = function () {
         return (this.owner ? this.owner.ancestors() : []).concat(this);
@@ -251,7 +248,7 @@ function initStateJS(exports) {
     Element.prototype.beginExit = function (state) {
     };
 
-    Element.prototype.endExit = function (state) {        
+    Element.prototype.endExit = function (state) {
         setActive(state, this, false);
     };
 
@@ -260,15 +257,19 @@ function initStateJS(exports) {
             this.beginExit(state);
             this.endExit(state);
         }
-	
+	     
         setActive(state, this, true);
     };
 
     Element.prototype.endEntry = function (state, deepHistory) {
     };
     
+    Element.prototype.getCurrent = function (state) {
+        return { name: this.name };
+    };
+    
     Element.prototype.toString = function () {
-        return this.qualifiedName();
+        return this.qualifiedName;
     };
     
     /**
@@ -362,6 +363,10 @@ function initStateJS(exports) {
     };
 
     SimpleState.prototype.endEntry = function (state, deepHistory) {
+        this.evaluateCompletions(state, deepHistory);
+    };
+
+    SimpleState.prototype.evaluateCompletions = function (state, deepHistory) {
         if (this.isComplete(state)) {
             var result = single(this.completions, function (c) { return c.guard(state); });
             
@@ -370,7 +375,7 @@ function initStateJS(exports) {
             }
         }
     };
-
+    
     SimpleState.prototype.process = function (state, message) {
         var result = single(this.transitions, function (t) { return t.guard(state, message); });
                 
@@ -423,7 +428,24 @@ function initStateJS(exports) {
     };
     
     CompositeState.prototype.process = function (state, message) {
-        return SimpleState.prototype.process.call(this, state, message) || getCurrent(state, this).process(state, message);
+        var result = SimpleState.prototype.process.call(this, state, message) || getCurrent(state, this).process(state, message);
+        
+        // NOTE: the following code is the fix to bug #5; while this is now correct, it may introduce unexpected behaviour in old models
+        if (result === true) {
+            this.evaluateCompletions(state, false);
+        }
+        
+        return result;
+    };
+
+    CompositeState.prototype.getCurrent = function (state) {
+        var result = Element.prototype.getCurrent.call(this, state), current = getCurrent(state, this);
+        
+        if (current) {
+            result.current = current.getCurrent(state);
+        }
+        
+        return result;
     };
     
     /**
@@ -476,7 +498,7 @@ function initStateJS(exports) {
             this.regions[i].endEntry(state);
         }
 
-        SimpleState.prototype.endEntry.call(state, deepHistory);
+        SimpleState.prototype.endEntry.call(this, state, deepHistory);
     };
 
     OrthogonalState.prototype.process = function (state, message) {
@@ -490,9 +512,28 @@ function initStateJS(exports) {
             }
         }
         
+        // NOTE: the following code is the fix to bug #5; while this is now correct, it may introduce unexpected behaviour in old models
+        if (result === true) {
+            this.evaluateCompletions(state, false);
+        }
+        
         return result;
     };
     
+    OrthogonalState.prototype.getCurrent = function (state) {
+        var result = Element.prototype.getCurrent.call(this, state), i, len;
+        result.regions = [];
+        
+        for (i = 0, len = this.regions.length; i < len; i = i + 1) {
+            if (getActive(state, this.regions[i])) {
+                result.regions[i] = this.regions[i].getCurrent(state);
+            }
+        }
+        
+        return result;
+    };
+    
+
     /**
      * Creates an instance of a final state.
      * @constructor
@@ -589,6 +630,16 @@ function initStateJS(exports) {
         return getActive(state, this) && getCurrent(state, this).process(state, message);
     };
 
+    Region.prototype.getCurrent = function (state) {
+        var result = Element.prototype.getCurrent.call(this, state), current = getCurrent(state, this);
+        
+        if (current) {
+            result.current = current.getCurrent(state);
+        }
+        
+        return result;
+    };
+    
     /**
      * Creates an instance of a state machine.
      * @constructor
@@ -653,7 +704,7 @@ function initStateJS(exports) {
             this.regions[i].endEntry(state, deepHistory);
         }
         
-        Element.prototype.endEntry.call(state, deepHistory);
+        Element.prototype.endEntry.call(this, state, deepHistory);
     };
 
     /**
@@ -676,6 +727,19 @@ function initStateJS(exports) {
         return result;
     };
 
+    StateMachine.prototype.getCurrent = function (state) {
+        var result = Element.prototype.getCurrent.call(this, state), i, len;
+        result.regions = [];
+        
+        for (i = 0, len = this.regions.length; i < len; i = i + 1) {
+            if (getActive(state, this.regions[i])) {
+                result.regions[i] = this.regions[i].getCurrent(state);
+            }
+        }
+        
+        return result;
+    };
+    
     // export the public API
     exports.PseudoStateKind = PseudoStateKind;
     exports.PseudoState = PseudoState;

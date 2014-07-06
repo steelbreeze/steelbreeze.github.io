@@ -1,5 +1,4 @@
 /*jslint plusplus: true */
-/*global console */
 (function (exports) {
     "use strict";
 
