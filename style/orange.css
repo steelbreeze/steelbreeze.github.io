@@ -15,6 +15,10 @@ th, td { text-align: left; padding-right: 1em; vertical-align: top; padding-bott
 a:link, a:visited, a:active { text-decoration: none; }
 a:hover { text-decoration: underline; }
 
+i {
+    color: #e8f0de;
+}
+
 .orange {
 	color: #fef4e9;
 	border-color: #da7c0c;
