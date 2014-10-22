@@ -16,7 +16,7 @@ a:link, a:visited, a:active { text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 i {
-    color: #e8f0de; float: left; vertical-align: middle;
+    color: #e8f0de; float: left; vertical-align: middle; padding-left: 0.5em;
 }
 
 .orange {
