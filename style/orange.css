@@ -12,13 +12,14 @@ p + p { padding-top: 6pt; }
 
 th, td { text-align: left; padding-right: 1em; vertical-align: top; padding-bottom: .5em; }
 
+a:link, a:visited, a:active { text-decoration: none; }
+
 i {
     color: #e8f0de; float: left; vertical-align: middle; padding-left: 1em;
 }
 
 .orange {
-    text-decoration: none;
-    color: #fef4e9;
+	color: #fef4e9;
 	border-color: #da7c0c;
 	background: #f78d1d;
 	background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
@@ -36,9 +37,11 @@ i {
 	background: -ms-linear-gradient(top,  #f88e11,  #f06015);
 	background: -o-linear-gradient(top,  #f88e11,  #f06015);
 }
+.orange:link, .orange:visited, .orange:active { text-decoration: none; }
+
 
 .green {
-    text-decoration: none;
+    vertical-align:baseline;
     color: #e8f0de;
 	border-color: #538312;
 	background: #64991e;
@@ -57,9 +60,9 @@ i {
 	background: -ms-linear-gradient(top,  #6b9d28,  #436b0c);
 	background: -o-linear-gradient(top,  #6b9d28,  #436b0c);
 }
+.green:link, .green:visited, .green:active { text-decoration: none; }
 
 .white {
-    text-decoration: none;
 	color: #606060;
 	border-color: #b7b7b7;
 	background: #fff;
@@ -71,14 +74,14 @@ i {
 }
 .white:hover {
     text-decoration: none;
-	background: #ededed;
+    background: #ededed;
 	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dcdcdc));
 	background: -webkit-linear-gradient(top,  #fff,  #dcdcdc);
 	background: -moz-linear-gradient(top,  #fff,  #dcdcdc);
 	background: -ms-linear-gradient(top,  #fff,  #dcdcdc);
 	background: -o-linear-gradient(top,  #fff,  #dcdcdc);
 }
-
+.white:link, .white:visited, .white:active { text-decoration: none; }
 
 #header { height: 100pt;
 					background: #F68D1D; 
