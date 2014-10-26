@@ -12,8 +12,6 @@ p + p { padding-top: 6pt; }
 
 th, td { text-align: left; padding-right: 1em; vertical-align: top; padding-bottom: .5em; }
 
-a:link, a:visited, a:active { text-decoration: none; }
-
 i {
     color: #e8f0de; float: left; vertical-align: middle; padding-left: 1em;
 }
