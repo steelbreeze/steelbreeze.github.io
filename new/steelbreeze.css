@@ -3,16 +3,25 @@ h1, h2, h3, p {
     font-weight: 300;
 }
 
+header {
+    background: orange;
+}
+
 header h1 {
-    font-weight: 400;
+    font-weight: 600;
+    margin: 0 auto; max-width: 1000px;
+    color: white;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    text-shadow: 0 0 .5em white; 
 }
 
 footer {
     text-align: center;
 }
 
-body {
-margin: 0 auto; max-width: 1000px; 
+main {
+    margin: 0 auto; max-width: 1000px; 
 }
 
 header h1 {
