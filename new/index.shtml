@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <!--#include virtual="metadata.html"-->
+        <title>Steelbreeze</title>
+    </head>
+    <body>
+        <!--#include virtual="header.html"-->
+        <main role="main">
+            <h1>state.js</h1>
+            <p>state.js is an open source finite state machine for Javascript supporting many of the UML 2 state machine semantics.</p>
+        </main>
+        <!--#include virtual="footer.html"-->
+    </body>
+</html>
