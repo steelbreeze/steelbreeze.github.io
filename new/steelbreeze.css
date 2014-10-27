@@ -11,6 +11,11 @@ footer {
     text-align: center;
 }
 
-main {
-margin: 0 auto; width: 900px; 
+body {
+margin: 0 auto; max-width: 1000px; 
+}
+
+header h1 {
+    position: relative;
+    left: -1.5em;
 }
