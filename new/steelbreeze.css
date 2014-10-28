@@ -1,12 +1,13 @@
 h1, h2, h3, p {
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
     font-weight: 300;
+    color: #333333;
 }
 
 header h1 {
     font-weight: 400;
-    margin: 0 auto; max-width: 1000px;
-    color: #666666;
+    color: #000000;
+    padding-left: 60px;
     padding-top: .5em;
     padding-bottom: .5em;
 }
@@ -16,10 +17,14 @@ footer {
 }
 
 main {
-    margin: 0 auto; max-width: 1000px; 
+    margin: 0 auto; max-width: 900px;
 }
 
-header h1 {
-    position: relative;
-    left: -1.5em;
+header {
+    margin: 0 auto; max-width: 1020px;
+    background-position: left auto center;
+    background-image: url('ma.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    
 }
