@@ -1,19 +1,15 @@
 h1, h2, h3, p {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans';
     font-weight: 300;
-}
-
-header {
-    background: orange;
 }
 
 header h1 {
     font-weight: 400;
     margin: 0 auto; max-width: 1000px;
-    color: white;
+    color: gray;
     padding-top: .5em;
     padding-bottom: .5em;
-    text-shadow: 0 0 .5em white; 
+    text-shadow: 0 0 .5em gray; 
 }
 
 footer {
