@@ -7,7 +7,7 @@ h1, h2, h3, p {
 header h1 {
     font-weight: 400;
     color: #000000;
-    padding-left: 60px;
+    padding-left: 50px;
     padding-top: .5em;
     padding-bottom: .5em;
 }
@@ -21,10 +21,7 @@ main {
 }
 
 header {
-    margin: 0 auto; max-width: 1020px;
-    background-position: left auto center;
-    background-image: url('ma.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    
+    margin: 0 auto; max-width: 1000px;
+    background: url('ma.png') no-repeat left;
+    background-size: 60px 60px;
 }
