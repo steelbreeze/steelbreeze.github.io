@@ -5,12 +5,11 @@ h1, h2, h3, p {
 }
 
 header h1 {
-    font-weight: 400;
-    color: #000000;
-    padding-left: 50px;
-    padding-right: 50px;
+    margin: 0 auto; max-width: 900px;
     padding-top: .5em;
     padding-bottom: .5em;
+    font-weight: 400;
+    color: #FFFFFF;
 }
 
 footer {
@@ -18,11 +17,12 @@ footer {
 }
 
 main {
+    padding-top: 4em;
     margin: 0 auto; max-width: 900px;
 }
 
 header {
-    margin: 0 auto; max-width: 1000px;
-    background: url('ma.png') no-repeat left;
-    background-size: 60px 60px;
+    background: rgba(255, 153, 0, 0.9);
+    position: fixed;
+    width: 100%;
 }
