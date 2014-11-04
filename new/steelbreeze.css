@@ -1,7 +1,17 @@
-h1, h2, h3, p {
+h1, h2, h3, p, button {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
     color: #333333;
+    font-weight: 300;
+}
+
+h1, h2, h3 {
+    text-transform: lowercase;
+}
+
+header {
+    background: rgba(255, 153, 0, 0.9);
+    position: fixed;
+    width: 100%;
 }
 
 header h1 {
@@ -12,17 +22,24 @@ header h1 {
     color: #FFFFFF;
 }
 
-footer {
-    text-align: center;
-}
-
 main {
     padding-top: 4em;
     margin: 0 auto; max-width: 900px;
 }
 
-header {
-    background: rgba(255, 153, 0, 0.9);
-    position: fixed;
-    width: 100%;
+aside {
+    padding-top: 2.4em;
+    float: right;
+    width: 33%;
+}
+
+section {
+    float: left;
+    width: 66%;
+}
+
+footer {
+    clear: both;
+    margin: 0 auto; max-width: 900px;
+    text-align: center;
 }

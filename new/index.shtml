@@ -9,7 +9,10 @@
         <main role="main">
             <section role="row">
                 <h1>state.js</h1>
-                <p>state.js is an open source finite state machine for Javascript supporting many of the UML 2 state machine semantics. The latest iteration is being developed using Microsoft TypeScript in an attempt at increasing code quality and stability.</p>
+            </section>
+            <!--#include virtual="sidebar.html"-->
+            <section role="row">
+                <p>state.js is an open source finite state machine for Javascript supporting many of the UML 2 state machine semantics. The latest iteration is being developed using <a href="http://www.typescriptlang.org">Microsoft TypeScript</a> in an attempt at increasing code quality and stability.</p>
                 <p>state.js is an open source finite state machine for Javascript supporting many of the UML 2 state machine semantics. The latest iteration is being developed using Microsoft TypeScript in an attempt at increasing code quality and stability.</p>
                 <p>state.js is an open source finite state machine for Javascript supporting many of the UML 2 state machine semantics. The latest iteration is being developed using Microsoft TypeScript in an attempt at increasing code quality and stability.</p>
                 <p>state.js is an open source finite state machine for Javascript supporting many of the UML 2 state machine semantics. The latest iteration is being developed using Microsoft TypeScript in an attempt at increasing code quality and stability.</p>
