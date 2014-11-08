@@ -2,78 +2,36 @@
 "use strict";
 
 var http = require("http"),
+    url = require("url"),
+    path = require("path"),
     fs = require("fs"),
-    fsm = require("state_lite.js"),
-    headers = { '.html': { ct: "text/html", cc: "no-cache" },
-                '.appcache': { ct: "text", cc: "no-cache" },
-                '.css': { ct: "text/css", cc: "public, max-age=604800" },
-                '.js': { ct: "text/javascript", cc: "public, max-age=86400" },
-                '.xml': { ct: "application/xml", cc: "no-cache" },
-                '.txt': { ct: "text", cc: "no-cache" },
-                '.pdf': { ct: "application/pdf", cc: "public, max-age=86400" },
-                '.ico': { ct: "image/x-icon", cc: "public, max-age=604800" },
-                '.png': { ct: "image/png", cc: "public, max-age=604800" } },
-    index = { '/': "/index.html" },
-    cache = {},
-    timestamp;
+    contentTypesByExtension = {'.html': "text/html", '.css':  "text/css", '.js':   "text/javascript" };
 
-function loadCache(directory, fs, path) {
-    var i, files = fs.readdirSync(directory), len = files.length, file, url, data, stats, machine;
-    
-    for (i = 0; i < len; i = i + 1) {
-        if (files[i][0] !== "." && files[i] !== "CNAME") {
-            file = directory + "/" + files[i];
-            url = file.slice(1);
-            stats = fs.statSync(file);
-            
-            if (stats.isDirectory()) {
-                if (files[i] !== "node_modules") {
-                    loadCache(file, fs, path);
-                }
-            } else {
-                console.warn("Caching: " + url);
-
-                machine = new fsm.State("content");
-            
-                cache[url] = { data: fs.readFileSync(file, "binary"), headers: { 'Content-Type': headers[path.extname(file)].ct, 'Cache-Control': headers[path.extname(file)].cc, 'Last-Modified': stats.mtime } };
-                index[url] = url;
-    
-                if (files[i] === "index.html") {
-                    index[directory.slice(1)] = url;
-                    index[directory.slice(1) + "/"] = url;
-                }
-            }
-        }
-    }
-}
-
-loadCache(".", fs, require("path"));
 
 http.createServer(function (request, response) {
-    if (request.method === "GET" || request.method === "HEAD") {
-        var page = cache[index[request.url]];
-        
-        if (page) {
-            response.writeHead(200, page.headers);
-            if (request.method === "GET") {
-                response.write(page.data, "binary");
-            }
-        } else {
-            response.writeHead(404, { "Content-Type": "text/plain" });
-            if (request.method === "GET") {
-                response.write("404 Not Found\n");
-            }
-        }
-
-    } else {
-        response.writeHead(405, { "Content-Type": "text/plain" });
-        if (request.method === "GET") {
-            response.write("405 Method Not Allowed\n");
-        }
+    console.log("request for " + request.url);
+    
+    var uri = url.parse(request.url).pathname,
+        filename = "." + uri,
+        contentType = contentTypesByExtension[path.extname(filename)];
+    
+    if (fs.statSync(filename).isDirectory()) {
+        filename += "/index.html";
     }
+
+    console.log("serving with: " + filename);
     
-    response.end();
-    
-    timestamp = new Date();
-    console.log(timestamp.toString() + " " + request.connection.remoteAddress + " " + request.method + ": " + request.url);
+    fs.readFile(filename, "binary", function (err, file) {
+        if (err) {
+            response.writeHead(500, {"Content-Type": "text/plain"});
+            response.write(err + "\n");
+        } else {
+            response.writeHead(200, contentType);
+            response.write(file, "binary");
+        }
+        
+        response.end();
+    });
 }).listen(80);
+
+console.log("CTRL + C to shutdown");

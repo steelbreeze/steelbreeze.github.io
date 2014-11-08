@@ -12,14 +12,20 @@ header {
     background: rgba(255, 153, 0, 0.9);
     position: fixed;
     width: 100%;
+    padding-top: .5em;
+    padding-bottom: .5em;
+
 }
 
 header h1 {
     margin: 0 auto; max-width: 900px;
-    padding-top: .5em;
-    padding-bottom: .5em;
+    padding: .5em 65px;
     font-weight: 400;
-    color: #FFFFFF;
+    color: #FFFFFF;    
+
+    background-image: url("ma_white.png");
+    background-repeat: no-repeat;
+    background-position: left center;
 }
 
 main {
