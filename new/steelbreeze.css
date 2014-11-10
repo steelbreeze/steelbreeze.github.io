@@ -1,4 +1,4 @@
-h1, h2, h3, p, button {
+h1, h2, h3, p, button, li, i {
     font-family: 'Open Sans', sans-serif;
     color: #333333;
     font-weight: 300;
@@ -20,7 +20,6 @@ header {
 header h1 {
     margin: 0 auto; max-width: 900px;
     padding: .25em 68px;
-    font-weight: 400;
     color: #FFFFFF;    
 
     background-image: url("ma_white.png");
@@ -48,4 +47,8 @@ footer {
     clear: both;
     margin: 0 auto; max-width: 900px;
     text-align: center;
+}
+
+footer ul {
+    text-align: left;
 }
