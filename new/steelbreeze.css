@@ -1,4 +1,4 @@
-h1, h2, h3, p, button, li, i {
+h1, h2, h3, p, button, li, i, a, a:visited {
     font-family: 'Open Sans', sans-serif;
     color: #333333;
     font-weight: 300;
@@ -47,6 +47,10 @@ footer {
     clear: both;
     margin: 0 auto; max-width: 900px;
     text-align: center;
+}
+
+footer a {
+    text-decoration: none;
 }
 
 footer ul {
