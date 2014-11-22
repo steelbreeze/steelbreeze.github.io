@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
         <!--#include virtual="metadata.html"-->
-        <title>Steelbreeze</title>
+        <title>Steelbreeze open source</title>
     </head>
     <body>
         <!--#include virtual="header.html"-->

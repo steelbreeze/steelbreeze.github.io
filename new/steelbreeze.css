@@ -46,13 +46,22 @@ section {
 footer {
     clear: both;
     margin: 0 auto; max-width: 900px;
-    text-align: center;
-}
-
-footer a {
-    text-decoration: none;
+    height: 10em;
+    background-color: #444444;
 }
 
 footer ul {
-    text-align: left;
+    display: inline;
+    float: left;
+    width: 26%;
+}
+
+footer li, footer a, footer a:visited, footer i { 
+    text-decoration: none;
+    color: #DDDDDD;
+}
+
+#copyright {
+    clear: both;
+    text-align: center;
 }
