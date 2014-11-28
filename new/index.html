@@ -12,18 +12,22 @@
 <link rel="stylesheet" type="text/css" href="steelbreeze.css">
         <title>Steelbreeze open source</title>
     </head>
-    <body>
+    <body onload="showHideAlert('cookieAlert')">
         <header>
     <h1>steelbreeze open source</h1>
 </header>
-        <main role="main">
+<main role="main">
+    <div role="alert" class="alert" id="cookieAlert">
+        <p>www.steelbreeze.net uses cookies; please see here for our policy. <i class="fa fa-close" onclick="closeAlert('cookieAlert', true)"></i></p>
+    </div>
+
             <section role="row">
                 <h1>state.js</h1>
             </section>
             <aside>
     <h3>Download</h3>
     <p>Get the latest release of state.js here:</p>
-    <button><i class="fa fa-download fa-lg"></i>Download</button>
+    <button><i class="fa fa-download"></i>Download</button>
     <h3>Contribute</h3>
     <p>You can contribute to state.js by raising issues or pull requests. Please do this via the <a href="https://github.com/steelbreeze/state.js">Github repository</a>.</p>
 </aside>
@@ -42,7 +46,7 @@
                 <p>state.js is an open source finite state machine for Javascript supporting many of the UML 2 state machine semantics. The latest iteration is being developed using Microsoft TypeScript in an attempt at increasing code quality and stability.</p>
             </section>
         </main>
-        <footer>
+<footer>
     <ul>
         <li><a href="/opensource/state.cs"state.cs</li>
         <li><a href="/opensource/state.js"state.js</li>
@@ -62,15 +66,28 @@
     <p>&copy; 2014 Steelbreeze Limited, all rights reserved.</p>
 </div>
 
-<!-- Cookie assisstant -->
-<script src="http://app.cookieassistant.com/widget.js?token=pYOSU5OPsRNoPRVGJDxEbg" type="text/javascript" async></script>
-<div id="cookie_assistant_container"></div>
-
 <!-- Google analytics -->
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');        
     ga('create', 'UA-41494748-1', 'steelbreeze.net');
     ga('send', 'pageview');      
+</script>
+
+<!-- alerts -->
+<script>
+    function showHideAlert(alertName) {
+        if (1 === 2) {
+            document.getElementById(alertName).style.display = "none";
+        }
+    }
+    
+    function closeAlert(alertName, saveInCookie) {
+        document.getElementById(alertName).style.display = "none";
+        
+        if (saveInCookie) {
+            
+        }
+    }
 </script>
 
     </body>
