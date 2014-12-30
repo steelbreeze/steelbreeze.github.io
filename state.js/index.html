@@ -112,9 +112,9 @@
 				</div>
 			</div>
 			<div class="buttonbar">
-				<a class="oneoftwo green" href="https://github.com/steelbreeze/state.js/archive/v4.1.6.zip"><i class="fa fa-download"></i>Get state.js v4.1.6</a>
+				<a class="oneoftwo green" href="https://github.com/steelbreeze/state.js/archive/v4.1.7.zip"><i class="fa fa-download"></i>Get state.js v4.1.7</a>
 				<a class="oneoftwo orange" href="mailto:sales@steelbreeze.net?&amp;subject=state.js%20quote">Get a commercial quote</a>
-			</div>			
+			</div>
 		</div>
 		<div id="footer">
 			<div class="content">
@@ -148,12 +148,12 @@
                 document.getElementById(tab + "Tab").className = "oneoffour orange";
                 document.getElementById(tab).style.display = "block";
             }
-            
+
             function hideTab(tab) {
                 document.getElementById(tab + "Tab").className = "oneoffour white";
                 document.getElementById(tab).style.display = "none";
             }
-            
+
             var tabs = new StateMachine("machine");
             var defr = new Region("default", tabs);
             var initial = new PseudoState("initial", PseudoStateKind.Initial, defr);
@@ -161,42 +161,42 @@
             var features = new SimpleState("features", defr);
             var examples = new SimpleState("examples", defr);
             var licensing = new SimpleState("licensing", defr);
-            
+
             overview.entry = [function (state) { showTab("overview"); }];
             features.entry = [function (state) { showTab("features"); }];
             examples.entry = [function (state) { showTab("examples"); }];
             licensing.entry = [function (state) { showTab("licensing"); }];
-            
+
             overview.exit = [function (state) { hideTab("overview"); }];
             features.exit = [function (state) { hideTab("features"); }];
             examples.exit = [function (state) { hideTab("examples"); }];
             licensing.exit = [function (state) { hideTab("licensing"); }];
-            
+
             new Transition(initial, overview);
-            new Transition(overview, features, function (s, c) { return c === "features"; }); 
-            new Transition(overview, examples, function (s, c) { return c === "examples"; }); 
-            new Transition(overview, licensing, function (s, c) { return c === "licensing"; }); 
-            new Transition(features, overview, function (s, c) { return c === "overview"; }); 
-            new Transition(features, examples, function (s, c) { return c === "examples"; }); 
-            new Transition(features, licensing, function (s, c) { return c === "licensing"; });         
-            new Transition(examples, overview, function (s, c) { return c === "overview"; }); 
-            new Transition(examples, features, function (s, c) { return c === "features"; }); 
-            new Transition(examples, licensing, function (s, c) { return c === "licensing"; });          
-            new Transition(licensing, overview, function (s, c) { return c === "overview"; }); 
-            new Transition(licensing, features, function (s, c) { return c === "features"; }); 
-            new Transition(licensing, examples, function (s, c) { return c === "examples"; });             
+            new Transition(overview, features, function (s, c) { return c === "features"; });
+            new Transition(overview, examples, function (s, c) { return c === "examples"; });
+            new Transition(overview, licensing, function (s, c) { return c === "licensing"; });
+            new Transition(features, overview, function (s, c) { return c === "overview"; });
+            new Transition(features, examples, function (s, c) { return c === "examples"; });
+            new Transition(features, licensing, function (s, c) { return c === "licensing"; });
+            new Transition(examples, overview, function (s, c) { return c === "overview"; });
+            new Transition(examples, features, function (s, c) { return c === "features"; });
+            new Transition(examples, licensing, function (s, c) { return c === "licensing"; });
+            new Transition(licensing, overview, function (s, c) { return c === "overview"; });
+            new Transition(licensing, features, function (s, c) { return c === "features"; });
+            new Transition(licensing, examples, function (s, c) { return c === "examples"; });
 		</script>
 		<script type="text/javascript">
             // the behaviour that the state machine orchestrates
             function EngageHead(state)    { document.getElementById( "head" ).innerHTML  = "Head: engaged"; }
             function DisengageHead(state) { document.getElementById( "head" ).innerHTML  = "Head: disengaged"; }
-            function StartMotor(state)    { document.getElementById( "motor" ).innerHTML = "Motor: running"; }		
+            function StartMotor(state)    { document.getElementById( "motor" ).innerHTML = "Motor: running"; }
             function StopMotor(state)     { document.getElementById( "motor" ).innerHTML = "Motor: stopped"; }
-    
+
             // create the state machine
             var player = new Region("player");
 //            var region = new Region("region", player);
-                                    
+
             // create some states
             var initial = new PseudoState("initial", PseudoStateKind.Initial, player);
             var operational = new CompositeState("operational", player);
@@ -207,7 +207,7 @@
             var active = new CompositeState("active", operational);
             var running = new SimpleState("running", active);
             var paused = new SimpleState("paused", active);
-            
+
             // create transitions between states (one with transition behaviour)
             var t0 = new Transition(initial, operational);
             var t1 = new Transition(deepHistory, stopped);
@@ -218,14 +218,14 @@
             var t6 = new Transition(operational, flipped, function (s, c) { return c === "flip"; });
             var t7 = new Transition(flipped, operational, function (s, c) { return c === "flip"; });
             var t8 = new Transition(operational, final, function (s, c) { return c === "off"; });
-    
+
             // add some behaviour
             active.entry = [EngageHead];
             active.exit = [DisengageHead];
             running.entry = [StartMotor];
             running.exit = [StopMotor];
-            t0.effect = [DisengageHead, StopMotor];    
-            
+            t0.effect = [DisengageHead, StopMotor];
+
             // add a little more behavior to adjust the buttons and graphic
             function UpdatePage( playClass, pauseClass, stopClass, flipClass, offClass ) {
                 document.getElementById( "play" ).className = playClass;
@@ -233,14 +233,14 @@
                 document.getElementById( "stop" ).className = stopClass;
                 document.getElementById( "flip" ).className = flipClass;
                 document.getElementById( "off" ).className = offClass;
-            }            
+            }
 
             stopped.entry = [function (state) { UpdatePage("oneoffour orange", "oneoffour white", "oneoffour white", "oneoffour orange", "oneoffour orange"); }];
             running.entry.push(function (state) { UpdatePage("oneoffour white", "oneoffour orange", "oneoffour orange", "oneoffour orange", "oneoffour orange"); });
             paused.entry = [function (state) { UpdatePage("oneoffour orange", "oneoffour white", "oneoffour orange", "oneoffour orange", "oneoffour orange"); }];
             flipped.entry = [function (state) { UpdatePage("oneoffour white", "oneoffour white","oneoffour white", "oneoffour orange", "oneoffour white"); }];
             operational.exit = [function (state) { UpdatePage("oneoffour white", "oneoffour white", "oneoffour white", "oneoffour white",  "oneoffour white"); }];
-                
+
             stopped.entry.push( function (state) { document.getElementById( "imgStopped" ).style.display = "block"; });
             stopped.exit = [ function (state) { document.getElementById( "imgStopped" ).style.display = "none"; }];
             running.entry.push( function (state) { document.getElementById( "imgRunning" ).style.display = "block"; });
@@ -256,9 +256,9 @@
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        
+
           ga('create', 'UA-41494748-1', 'steelbreeze.net');
-          ga('send', 'pageview');        
+          ga('send', 'pageview');
         </script>
 	</body>
 </html>
