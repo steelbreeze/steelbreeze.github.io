@@ -10,6 +10,7 @@
                 <h1>state.js</h1>
             </section>
             <!--#include virtual="sidebar.html"-->
+        <div class="github-widget" data-repo="steelbreeze/state.js"></div>
             <section role="row">
                 <p>state.js is an open source finite state machine for Javascript supporting many of the UML 2 state machine semantics. The latest iteration is being developed using <a href="http://www.typescriptlang.org">Microsoft TypeScript</a> in an attempt at increasing code quality and stability.</p>
                 <p>state.js is an open source finite state machine for Javascript supporting many of the UML 2 state machine semantics. The latest iteration is being developed using Microsoft TypeScript in an attempt at increasing code quality and stability.</p>
@@ -24,5 +25,6 @@
                 <p>state.js is an open source finite state machine for Javascript supporting many of the UML 2 state machine semantics. The latest iteration is being developed using Microsoft TypeScript in an attempt at increasing code quality and stability.</p>
             </section>
         <!--#include virtual="footer.html"-->
+        <script type="text/javascript" src="jquery.githubRepoWidget.min.js"></script>
     </body>
 </html>
