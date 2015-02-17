@@ -9,6 +9,14 @@ var http = require("http"),
 
 
 http.createServer(function (request, response) {
+    if ((request.url === "/apple-touch-icon-precomposed.png") || (request.url === "/apple-touch-icon.png")) {
+        response.writeHead(400, "text/plain");
+        response.end();
+        
+        return;
+    }
+    
+    
     console.log("request for " + request.url);
     
     var uri = url.parse(request.url).pathname,

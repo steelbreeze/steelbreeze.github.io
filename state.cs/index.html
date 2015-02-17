@@ -8,7 +8,7 @@
 		<title>Steelbreeze</title>
 		<link rel="stylesheet" href="/style/orange.css" type="text/css" />
     </head>
-	<body onload="tabs.initialise()">
+	<body onload="tabs.initialise(tabsState)">
 		<div id="header">
 			<div class="content">
 				<a href="/"><img id="logo" src="/images/logos/steelbreeze_logo.png" alt="Steelbreeze"/></a>
@@ -20,10 +20,10 @@
 				<h1>state.cs provides unparalleled robustness and reliability for event&#8209;based programming in .NET</h1>
 			</div>
 			<div class="buttonbar">
-				<a href="#" class="oneoffour white" id="overviewTab" onclick="tabs.process('overview')">Overview</a>
-				<a href="#" class="oneoffour white" id="featuresTab" onclick="tabs.process('features')">Features</a>
-				<a href="#" class="oneoffour white" id="examplesTab" onclick="tabs.process('examples')">Examples</a>
-				<a href="#" class="oneoffour white" id="licensingTab" onclick="tabs.process('licensing')">Licensing</a>
+				<a href="#" class="oneoffour white" id="overviewTab" onclick="tabs.evaluate('overview', tabsState)">Overview</a>
+				<a href="#" class="oneoffour white" id="featuresTab" onclick="tabs.evaluate('features', tabsState)">Features</a>
+				<a href="#" class="oneoffour white" id="examplesTab" onclick="tabs.evaluate('examples', tabsState)">Examples</a>
+				<a href="#" class="oneoffour white" id="licensingTab" onclick="tabs.evaluate('licensing', tabsState)">Licensing</a>
 			</div>
 			<div id="overview">
 				<div class="info left">
@@ -119,7 +119,7 @@
 				<p id="copyright">Copyright &copy; 2015 Steelbreeze Limited, all rights reserved.</p>
 			</div>
 		</div>
-		<script type="text/javascript" src="/scripts/state_lite.js"></script>
+		<script type="text/javascript" src="/scripts/state-5.0.0.min.js"></script>
 		<script type="text/javascript">
             function showTab(tab) {
                 document.getElementById(tab + "Tab").className = "oneoffour orange";
@@ -131,34 +131,28 @@
                 document.getElementById(tab).style.display = "none";
             }
             
-            var tabs = new State("tabs");
-            var overview = new State("overview", tabs);
-            var features = new State("features", tabs);
-            var examples = new State("examples", tabs);
-            var licensing = new State("licensing", tabs);
+            var tabs = new fsm.StateMachine("tabs");
+            var initial = new fsm.PseudoState("initial", tabs, fsm.PseudoStateKind.Initial);
+            var overview = new fsm.State("overview", tabs).entry(function () { showTab("overview"); }).exit(function () { hideTab("overview"); });
+            var features = new fsm.State("features", tabs).entry(function () { showTab("features"); }).exit(function () { hideTab("features"); });
+            var examples = new fsm.State("examples", tabs).entry(function () { showTab("examples"); }).exit(function () { hideTab("examples"); });
+            var licensing = new fsm.State("licensing", tabs).entry(function () { showTab("licensing"); }).exit(function () { hideTab("licensing"); });
             
-            overview.entry = [function () { showTab("overview"); }];
-            features.entry = [function () { showTab("features"); }];
-            examples.entry = [function () { showTab("examples"); }];
-            licensing.entry = [function () { showTab("licensing"); }];
-            
-            overview.exit = [function () { hideTab("overview"); }];
-            features.exit = [function () { hideTab("features"); }];
-            examples.exit = [function () { hideTab("examples"); }];
-            licensing.exit = [function () { hideTab("licensing"); }];
-            
-            transition(overview, features, function (c) { return c === "features"; }); 
-            transition(overview, examples, function (c) { return c === "examples"; }); 
-            transition(overview, licensing, function (c) { return c === "licensing"; }); 
-            transition(features, overview, function (c) { return c === "overview"; }); 
-            transition(features, examples, function (c) { return c === "examples"; }); 
-            transition(features, licensing, function (c) { return c === "licensing"; });         
-            transition(examples, overview, function (c) { return c === "overview"; }); 
-            transition(examples, features, function (c) { return c === "features"; }); 
-            transition(examples, licensing, function (c) { return c === "licensing"; });          
-            transition(licensing, overview, function (c) { return c === "overview"; }); 
-            transition(licensing, features, function (c) { return c === "features"; }); 
-            transition(licensing, examples, function (c) { return c === "examples"; }); 
+            initial.to(overview);
+            overview.to(features).when(function (c) { return c === "features"; });
+            overview.to(examples).when(function (c) { return c === "examples"; });
+            overview.to(licensing).when(function (c) { return c === "licensing"; });
+            features.to(overview).when(function (c) { return c === "overview"; });
+            features.to(examples).when(function (c) { return c === "examples"; });
+            features.to(licensing).when(function (c) { return c === "licensing"; });
+            examples.to(overview).when(function (c) { return c === "overview"; });
+            examples.to(features).when(function (c) { return c === "features"; });
+            examples.to(licensing).when(function (c) { return c === "licensing"; });
+            licensing.to(overview).when(function (c) { return c === "overview"; });
+            licensing.to(features).when(function (c) { return c === "features"; });
+            licensing.to(examples).when(function (c) { return c === "examples"; });
+                    
+            var tabsState = new fsm.Context();
 		</script>
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
