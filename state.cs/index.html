@@ -8,7 +8,7 @@
 		<title>Steelbreeze</title>
 		<link rel="stylesheet" href="/style/orange.css" type="text/css" />
     </head>
-	<body onload="tabs.initialise(tabsState)">
+	<body onload="tabsModel.initialise(tabsContext)">
 		<div id="header">
 			<div class="content">
 				<a href="/"><img id="logo" src="/images/logos/steelbreeze_logo.png" alt="Steelbreeze"/></a>
@@ -20,10 +20,10 @@
 				<h1>state.cs provides unparalleled robustness and reliability for event&#8209;based programming in .NET</h1>
 			</div>
 			<div class="buttonbar">
-				<a href="#" class="oneoffour white" id="overviewTab" onclick="tabs.evaluate('overview', tabsState)">Overview</a>
-				<a href="#" class="oneoffour white" id="featuresTab" onclick="tabs.evaluate('features', tabsState)">Features</a>
-				<a href="#" class="oneoffour white" id="examplesTab" onclick="tabs.evaluate('examples', tabsState)">Examples</a>
-				<a href="#" class="oneoffour white" id="licensingTab" onclick="tabs.evaluate('licensing', tabsState)">Licensing</a>
+				<a href="#" class="oneoffour white" id="overviewTab" onclick="tabsModel.evaluate('overview', tabsContext)">Overview</a>
+				<a href="#" class="oneoffour white" id="featuresTab" onclick="tabsModel.evaluate('features', tabsContext)">Features</a>
+				<a href="#" class="oneoffour white" id="examplesTab" onclick="tabsModel.evaluate('examples', tabsContext)">Examples</a>
+				<a href="#" class="oneoffour white" id="licensingTab" onclick="tabsModel.evaluate('licensing', tabsContext)">Licensing</a>
 			</div>
 			<div id="overview">
 				<div class="info left">
@@ -119,41 +119,9 @@
 				<p id="copyright">Copyright &copy; 2015 Steelbreeze Limited, all rights reserved.</p>
 			</div>
 		</div>
+		<script type="text/javascript" src="/scripts/jquery-1.11.2.min.js"></script>
 		<script type="text/javascript" src="/scripts/state-5.0.0.min.js"></script>
-		<script type="text/javascript">
-            function showTab(tab) {
-                document.getElementById(tab + "Tab").className = "oneoffour orange";
-                document.getElementById(tab).style.display = "block";
-            }
-            
-            function hideTab(tab) {
-                document.getElementById(tab + "Tab").className = "oneoffour white";
-                document.getElementById(tab).style.display = "none";
-            }
-            
-            var tabs = new fsm.StateMachine("tabs");
-            var initial = new fsm.PseudoState("initial", tabs, fsm.PseudoStateKind.Initial);
-            var overview = new fsm.State("overview", tabs).entry(function () { showTab("overview"); }).exit(function () { hideTab("overview"); });
-            var features = new fsm.State("features", tabs).entry(function () { showTab("features"); }).exit(function () { hideTab("features"); });
-            var examples = new fsm.State("examples", tabs).entry(function () { showTab("examples"); }).exit(function () { hideTab("examples"); });
-            var licensing = new fsm.State("licensing", tabs).entry(function () { showTab("licensing"); }).exit(function () { hideTab("licensing"); });
-            
-            initial.to(overview);
-            overview.to(features).when(function (c) { return c === "features"; });
-            overview.to(examples).when(function (c) { return c === "examples"; });
-            overview.to(licensing).when(function (c) { return c === "licensing"; });
-            features.to(overview).when(function (c) { return c === "overview"; });
-            features.to(examples).when(function (c) { return c === "examples"; });
-            features.to(licensing).when(function (c) { return c === "licensing"; });
-            examples.to(overview).when(function (c) { return c === "overview"; });
-            examples.to(features).when(function (c) { return c === "features"; });
-            examples.to(licensing).when(function (c) { return c === "licensing"; });
-            licensing.to(overview).when(function (c) { return c === "overview"; });
-            licensing.to(features).when(function (c) { return c === "features"; });
-            licensing.to(examples).when(function (c) { return c === "examples"; });
-                    
-            var tabsState = new fsm.Context();
-		</script>
+		<script type="text/javascript" src="/scripts/tabs.js"></script>
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

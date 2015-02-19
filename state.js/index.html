@@ -9,7 +9,7 @@
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="/style/orange.css" type="text/css" />
 	</head>
-	<body onload="tabs.initialise(tabsState); player.initialise(playerState)">
+	<body onload="tabsModel.initialise(tabsContext); player.initialise(playerState)">
 		<div id="header">
 			<div class="content">
 				<a href="/"><img id="logo" src="/images/logos/steelbreeze_logo.png" alt="Steelbreeze"/></a>
@@ -21,10 +21,10 @@
 				<h1>JavaScript state machine; provides unparalleled reliability for reactive programming in JavaScript</h1>
 			</div>
 			<div class="buttonbar">
-				<a href="#" class="oneoffour white" id="overviewTab" onclick="tabs.evaluate('overview', tabsState)">Overview</a>
-				<a href="#" class="oneoffour white" id="featuresTab" onclick="tabs.evaluate('features', tabsState)">Features</a>
-				<a href="#" class="oneoffour white" id="examplesTab" onclick="tabs.evaluate('examples', tabsState)">Examples</a>
-				<a href="#" class="oneoffour white" id="licensingTab" onclick="tabs.evaluate('licensing', tabsState)">Licensing</a>
+				<a href="#" class="oneoffour white" id="overviewTab" onclick="tabsModel.evaluate('overview', tabsContext)">Overview</a>
+				<a href="#" class="oneoffour white" id="featuresTab" onclick="tabsModel.evaluate('features', tabsContext)">Features</a>
+				<a href="#" class="oneoffour white" id="examplesTab" onclick="tabsModel.evaluate('examples', tabsContext)">Examples</a>
+				<a href="#" class="oneoffour white" id="licensingTab" onclick="tabsModel.evaluate('licensing', tabsContext)">Licensing</a>
 			</div>
 			<div id="overview">
 				<div class="info left">
@@ -142,39 +142,7 @@
 			</div>
 		</div>
 		<script type="text/javascript" src="/scripts/state-5.0.0.min.js"></script>
-		<script type="text/javascript">
-            function showTab(tab) {
-                document.getElementById(tab + "Tab").className = "oneoffour orange";
-                document.getElementById(tab).style.display = "block";
-            }
-
-            function hideTab(tab) {
-                document.getElementById(tab + "Tab").className = "oneoffour white";
-                document.getElementById(tab).style.display = "none";
-            }
-
-            var tabsState = new fsm.Context();
-            var tabs = new fsm.StateMachine("machine");
-            var initial1 = new fsm.PseudoState("initial", tabs, fsm.PseudoStateKind.Initial);
-            var overview = new fsm.State("overview", tabs).entry(function () { showTab("overview"); }).exit(function () { hideTab("overview"); });
-            var features = new fsm.State("features", tabs).entry(function () { showTab("features"); }).exit(function () { hideTab("features"); });
-            var examples = new fsm.State("examples", tabs).entry(function () { showTab("examples"); }).exit(function () { hideTab("examples"); });
-            var licensing = new fsm.State("licensing", tabs).entry(function () { showTab("licensing"); }).exit(function () { hideTab("licensing"); });
-
-            initial1.to(overview);
-            overview.to(features).when(function (c) { return c === "features"; });
-            overview.to(examples).when(function (c) { return c === "examples"; });
-            overview.to(licensing).when(function (c) { return c === "licensing"; });
-            features.to(overview).when(function (c) { return c === "overview"; });
-            features.to(examples).when(function (c) { return c === "examples"; });
-            features.to(licensing).when(function (c) { return c === "licensing"; });
-            examples.to(overview).when(function (c) { return c === "overview"; });
-            examples.to(features).when(function (c) { return c === "features"; });
-            examples.to(licensing).when(function (c) { return c === "licensing"; });
-            licensing.to(overview).when(function (c) { return c === "overview"; });
-            licensing.to(features).when(function (c) { return c === "features"; });
-            licensing.to(examples).when(function (c) { return c === "examples"; });
-		</script>
+		<script type="text/javascript" src="/scripts/tabs.js"></script>
 		<script type="text/javascript">
             // the behaviour that the state machine orchestrates
             function EngageHead()    { document.getElementById( "head" ).innerHTML  = "Head: engaged"; }
