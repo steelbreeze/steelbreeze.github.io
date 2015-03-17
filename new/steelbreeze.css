@@ -1,11 +1,7 @@
-h1, h2, h3, p, button, li, i, a, a:visited {
-    font-family: 'Open Sans', sans-serif;
-    color: #333333;
-    font-weight: 300;
-}
-
-h1, h2, h3 {
-    text-transform: lowercase;
+h1, h2, h3, p, th, td, button, li, i, a, a:visited {
+  font-family: 'Open Sans', sans-serif;
+  color: #333333;
+  font-weight: 300;
 }
 
 header {
@@ -40,7 +36,15 @@ aside {
 
 section {
     float: left;
-    width: 66%;
+    width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tbody tr {
+  border-top: 1pt solid #7d7d7d;
 }
 
 footer {
