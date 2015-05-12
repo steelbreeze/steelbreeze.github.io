@@ -9,6 +9,7 @@
 			<body>
 				<header>
 					<h1><xsl:value-of select="@title"/></h1>
+					<p><xsl:value-of select="summary"/></p>					
 				</header>
 
 				Main
