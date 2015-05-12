@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:output method="html" encoding="utf-8"/>
-	<xsl:template match="/">
+	<xsl:template match="/page">
 		<html>
 			<head>
-				<title>Get the page title attribute</title>
+				<title><xsl:value-of select="@title"/></title>
 			</head>
 			<body>
-				Header
+				<header>
+					<h1><xsl:value-of select="@title"/></h1>
+				</header>
+
 				Main
-				Footer
+				<footer>
+					Footer
+				</footer>
 			</body>
 		</html>
 	</xsl:template>
