@@ -2,18 +2,18 @@
 
 h1 {
 	font-family: 'Roboto', 'Noto', sans-serif;
-	font-weight: 700;
-	font-size: 34px;
-	line-height: 40px;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 32px;
 	color: rgba(0, 0, 0, .87);
 	-webkit-font-smoothing: antialiased;
 }
 
 p {
 	font-family: 'Roboto', 'Noto', sans-serif;
-	font-weight: 300;
-	font-size: 15px;
-	line-height: 24px;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 20px;
 	color: rgba(0, 0, 0, .87);
 	-webkit-font-smoothing: antialiased;
 }
