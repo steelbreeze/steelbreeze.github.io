@@ -34,7 +34,7 @@
 	-webkit-font-smoothing: antialiased;
 }
 
-.headline {
+h1, .headline {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
 	font-size: 24px;
@@ -68,9 +68,9 @@
 	-webkit-font-smoothing: antialiased;
 }
 
-.body1 {
+p, .body1 {
 	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
+	font-weight: 400;
 	font-size: 14px;
 	line-height: 20px;
 	color: rgba(0, 0, 0, .87);
