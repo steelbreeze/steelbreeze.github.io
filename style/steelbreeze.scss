@@ -448,16 +448,17 @@
 }
 
 // common colour definitions
-$primary-background: rgb(253, 192, 48);
-$secondary-background: rgb(252, 87, 47);
-$footer-background: rgb(33, 33, 33);
+$primary-background: rgb(19, 137, 123);
+$secondary-background: rgb(35, 171, 246);
 
 $black-text54: rgba(0, 0, 0, .54);
 $black-text87: rgba(0, 0, 0, .87);
 $white-text54: rgba(255, 255, 255, .54);
 $white-text87: rgba(255, 255, 255, .87);
-$secondary-text54: rgba(252, 87, 47, .54);
-$secondary-text87: rgba(252, 87, 47, .87);
+$primary-text54: rgba(19, 137, 123, .54);
+$primary-text87: rgba(19, 137, 123, .87);
+$secondary-text54: rgba(35, 171, 246, .54);
+$secondary-text87: rgba(35, 171, 246, .87);
 
 body {
     font-family: 'RobotoDraft', sans-serif;
@@ -545,6 +546,12 @@ body {
     padding: 48px 8%;
 }
 
+.footer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px 8%;
+}
+
 h1, h2, h3, h4 {
     margin: 0;
 }
@@ -555,7 +562,7 @@ p {
 }
 
 a:link, a:visited, a:hover, a:active {
-    color: $secondary-text87;
+    color: $primary-text87;
     text-decoration: none;
 }
 
@@ -570,7 +577,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .dark-section {
-    background: $footer-background;
+    background: $primary-background;
     color: $white-text87;
 }
 

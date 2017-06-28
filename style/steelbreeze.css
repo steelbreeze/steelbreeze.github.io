@@ -461,6 +461,11 @@ body {
   margin: 0 auto;
   padding: 48px 8%; }
 
+.footer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px 8%; }
+
 h1, h2, h3, h4 {
   margin: 0; }
 
@@ -469,11 +474,11 @@ p {
   margin: 8px 0; }
 
 a:link, a:visited, a:hover, a:active {
-  color: rgba(252, 87, 47, 0.87);
+  color: rgba(19, 137, 123, 0.87);
   text-decoration: none; }
 
 .header-section {
-  background-color: #fdc030;
+  background-color: #13897b;
   color: rgba(255, 255, 255, 0.87); }
 
 .light-section {
@@ -481,7 +486,7 @@ a:link, a:visited, a:hover, a:active {
   color: rgba(0, 0, 0, 0.87); }
 
 .dark-section {
-  background: #212121;
+  background: #13897b;
   color: rgba(255, 255, 255, 0.87); }
 
 @media all and (min-width: 520px) {
