@@ -451,7 +451,6 @@ body {
   font-weight: 600;
   line-height: 32px; }
 
-/* demo page styles */
 body {
   margin: 0 auto;
   background: #e8eaf6;
@@ -470,23 +469,20 @@ p {
   margin: 8px 0; }
 
 a:link, a:visited, a:hover, a:active {
-  color: #dedede;
+  color: rgba(252, 87, 47, 0.87);
   text-decoration: none; }
 
 .header-section {
-  background-color: #5677fc;
-  color: #dedede; }
-
-.header-section .text-display-2 {
-  color: #fafafa; }
+  background-color: #fdc030;
+  color: rgba(255, 255, 255, 0.87); }
 
 .light-section {
   background: #f9f9f9;
-  color: #1b1b1b; }
+  color: rgba(0, 0, 0, 0.87); }
 
 .dark-section {
   background: #212121;
-  color: #dedede; }
+  color: rgba(255, 255, 255, 0.87); }
 
 @media all and (min-width: 520px) {
   .header-section,
