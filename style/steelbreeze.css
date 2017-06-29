@@ -58,7 +58,7 @@ body {
 
 body {
   margin: 0 auto;
-  background: #e8eaf6;
+  background: #fafafa;
   max-width: 1024px; }
 
 .container {
@@ -90,7 +90,7 @@ a:link, a:visited, a:hover, a:active {
   color: rgba(255, 255, 255, 0.87); }
 
 .light-section {
-  background: #f9f9f9;
+  background: #fafafa;
   color: rgba(0, 0, 0, 0.87); }
 
 .dark-section {
