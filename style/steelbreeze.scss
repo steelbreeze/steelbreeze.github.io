@@ -1,100 +1,5 @@
-// import web fonts
-@import url('fonts.css');
+@import 'material';
 
-// common colour definitions
-$primary-background: rgb(19, 137, 123);
-$secondary-background: rgb(35, 171, 246);
-$light-background: rgb(250, 250, 250);
-$dark-background: rgb(33, 33, 33);
-
-$black-text54: rgba(0, 0, 0, .54);
-$black-text87: rgba(0, 0, 0, .87);
-$white-text54: rgba(255, 255, 255, .54);
-$white-text87: rgba(255, 255, 255, .87);
-$primary-text54: rgba(19, 137, 123, .54);
-$primary-text87: rgba(19, 137, 123, .87);
-$secondary-text54: rgba(35, 171, 246, .54);
-$secondary-text87: rgba(35, 171, 246, .87);
-
-body {
-    font-family: 'RobotoDraft', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%;
-}
-
-.text-display-4 {
-    font-size: 112px;
-    font-weight: 300;
-    line-height: 128px;
-    letter-spacing: -5px;
-}
-
-.text-display-3 {
-    font-size: 56px;
-    font-weight: 400;
-    line-height: 64px;
-}
-
-.text-display-2 {
-    font-size: 45px;
-    font-weight: 400;
-    line-height: 64px;
-}
-
-.text-display-1 {
-    font-size: 34px;
-    font-weight: 400;
-    line-height: 52px;
-}
-
-.text-headline {
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 44px;
-}
-
-.text-title {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 44px;
-}
-
-.text-subhead {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 32px;
-}
-
-@mixin text-body {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 25px;
-}
-
-.text-caption {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 32px;
-}
-
-.text-menu {
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 32px;
-}
-
-.text-button {
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 600;
-    line-height: 32px;
-}
-
-body {
-    margin: 0 auto;
-    background: $light-background;
-    max-width: 1024px;
-}
 
 .container {
     max-width: 800px;
@@ -108,8 +13,23 @@ body {
     padding: 10px 8%;
 }
 
+body {
+    font-family: 'RobotoDraft', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+
+    margin: 0 auto;
+    background: $light-background;
+    max-width: 1024px;
+}
+
 h1, h2, h3, h4 {
     margin: 0;
+}
+
+h1 {
+	@include text-title;
+	color: $primary-text87;
 }
 
 p {
