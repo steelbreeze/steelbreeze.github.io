@@ -30,12 +30,12 @@ header {
 
 main {
 	h1 {
-		@include text-display-1;
+		@include text-headline;
 		color: $black54;
 	}
 	
 	h2 {
-		@include text-title;
+		@include text-menu;
 		color: $black54;
 	}
 }
@@ -45,7 +45,7 @@ footer {
     color: $white87;
 }
 
-.container {
+section {
     max-width: 800px;
     margin: 0 auto;
     padding: 48px 8%;
