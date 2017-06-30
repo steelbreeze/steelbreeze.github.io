@@ -55,11 +55,16 @@ h1, h2, h3, h4 {
     margin: 0;
 }
 
-p {
+p, ul {
 	@include text-body;
 
     max-width: 40em;
     margin: 8px 0;
+}
+
+ul {
+	list-style-position: inside;
+	padding-left: 0;
 }
 
 a:link, a:visited, a:hover, a:active {
