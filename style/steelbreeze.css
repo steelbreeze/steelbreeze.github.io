@@ -389,53 +389,6 @@
   font-weight: 700;
   src: local("RobotoDraft Bold Italic"), local("RobotoDraft-BoldItalic"), url(http://fonts.gstatic.com/s/robotodraft/v4/5SAvdU0uYYlH8OURAykt58yRwA4nzNmLFN68bwzDkMk.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215; }
-.text-display-4 {
-  font-size: 112px;
-  font-weight: 300;
-  line-height: 128px;
-  letter-spacing: -5px; }
-
-.text-display-3 {
-  font-size: 56px;
-  font-weight: 400;
-  line-height: 64px; }
-
-.text-display-2 {
-  font-size: 45px;
-  font-weight: 400;
-  line-height: 64px; }
-
-.text-display-1 {
-  font-size: 34px;
-  font-weight: 400;
-  line-height: 52px; }
-
-.text-headline {
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 44px; }
-
-.text-subhead {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 32px; }
-
-.text-caption {
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 32px; }
-
-.text-menu {
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 32px; }
-
-.text-button {
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: 600;
-  line-height: 32px; }
-
 @media all and (min-width: 520px) {
   header,
   main,
@@ -451,7 +404,28 @@ body {
 
 header {
   background-color: #009688;
-  color: white; }
+  color: rgba(255, 255, 255, 0.87); }
+  header h1 {
+    font-size: 45px;
+    font-weight: 400;
+    line-height: 64px; }
+  header h2 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 44px; }
+    header h2 a:link, header h2 a:visited, header h2 a:hover, header h2 a:active {
+      color: rgba(255, 255, 255, 0.87); }
+
+main h1 {
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 52px;
+  color: rgba(0, 0, 0, 0.54); }
+main h2 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 44px;
+  color: rgba(0, 150, 136, 0.87); }
 
 footer {
   background: #212121;
@@ -465,12 +439,6 @@ footer {
 h1, h2, h3, h4 {
   margin: 0; }
 
-h1 {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 44px;
-  color: rgba(0, 150, 136, 0.87); }
-
 p {
   font-size: 14px;
   font-weight: 400;
@@ -479,7 +447,7 @@ p {
   margin: 8px 0; }
 
 a:link, a:visited, a:hover, a:active {
-  color: rgba(255, 193, 7, 0.87);
+  color: rgba(0, 150, 136, 0.87);
   text-decoration: none; }
 
 /*# sourceMappingURL=steelbreeze.css.map */

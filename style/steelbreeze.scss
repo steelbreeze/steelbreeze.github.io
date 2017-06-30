@@ -14,7 +14,30 @@ body {
 
 header {
     background-color: $primary;
-    color: white;
+    color: $white87;
+
+	h1 {
+		@include text-display-2;
+	}
+
+	h2 {
+		@include text-headline;
+		a:link, a:visited, a:hover, a:active {
+		    color: $white87;
+		}
+	}
+}
+
+main {
+	h1 {
+		@include text-display-1;
+		color: $black54;
+	}
+	
+	h2 {
+		@include text-title;
+		color: $primary87;
+	}
 }
 
 footer {
@@ -32,11 +55,6 @@ h1, h2, h3, h4 {
     margin: 0;
 }
 
-h1 {
-	@include text-title;
-	color: $primary87;
-}
-
 p {
 	@include text-body;
 
@@ -45,6 +63,6 @@ p {
 }
 
 a:link, a:visited, a:hover, a:active {
-    color: $secondary87;
+    color: $primary87;
     text-decoration: none;
 }
