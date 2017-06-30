@@ -5,7 +5,7 @@ body {
     margin: 0 auto;
 	
     background: $light-background;
-    color: $dark-text87;
+    color: $black87;
 
     font-family: 'RobotoDraft', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -14,12 +14,12 @@ body {
 
 header {
     background-color: $primary;
-    color: $light-text;
+    color: white;
 }
 
 footer {
     background: $dark-background;
-    color: $light-text87;
+    color: $white87;
 }
 
 .container {
