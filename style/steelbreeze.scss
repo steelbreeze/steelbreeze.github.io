@@ -1,26 +1,31 @@
 @import 'material';
+@import 'responsive';
 
+body {
+    margin: 0 auto;
+	
+    background: $light-background;
+    color: $dark-text87;
+
+    font-family: 'RobotoDraft', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+}
+
+header {
+    background-color: $primary;
+    color: $light-text;
+}
+
+footer {
+    background: $dark-background;
+    color: $light-text87;
+}
 
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 48px 8%;
-}
-
-.footer {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 10px 8%;
-}
-
-body {
-    font-family: 'RobotoDraft', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%;
-
-    margin: 0 auto;
-    background: $light-background;
-    max-width: 1024px;
 }
 
 h1, h2, h3, h4 {
@@ -29,7 +34,7 @@ h1, h2, h3, h4 {
 
 h1 {
 	@include text-title;
-	color: $primary-text87;
+	color: $primary87;
 }
 
 p {
@@ -40,29 +45,6 @@ p {
 }
 
 a:link, a:visited, a:hover, a:active {
-    color: $primary-text87;
+    color: $secondary87;
     text-decoration: none;
-}
-
-.header-section {
-    background-color: $primary-background;
-    color: $white-text87;
-}
-
-.light-section {
-    background: $light-background;
-    color: $black-text87;
-}
-
-.dark-section {
-    background: $dark-background;
-    color: $white-text87;
-}
-
-@media all and (min-width: 520px) {
-    .header-section,
-    .light-section,
-    .dark-section {
-        padding-left: 128px;
-    }
 }

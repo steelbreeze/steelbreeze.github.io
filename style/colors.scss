@@ -1,14 +1,19 @@
-$primary-background: #009688;
-$secondary-background: rgb(35, 171, 246);
+// set the color scheme
+$primary: #009688;
+$secondary: #ffc107;
 
 $light-background: rgb(250, 250, 250);
 $dark-background: rgb(33, 33, 33);
 
-$black-text54: rgba(0, 0, 0, .54);
-$black-text87: rgba(0, 0, 0, .87);
-$white-text54: rgba(255, 255, 255, .54);
-$white-text87: rgba(255, 255, 255, .87);
-$primary-text54: rgba(19, 137, 123, .54);
-$primary-text87: rgba(19, 137, 123, .87);
-$secondary-text54: rgba(35, 171, 246, .54);
-$secondary-text87: rgba(35, 171, 246, .87);
+$light-text: #ffffff;
+$light-text54: rgba($light-text, .54);
+$light-text87: rgba($light-text, .87);
+
+$dark-text54: rgba(0, 0, 0, .54);
+$dark-text87: rgba(0, 0, 0, .87);
+
+// derived colors
+$primary54: rgba($primary, .54);
+$primary87: rgba($primary, .87);
+$secondary54: rgba($secondary, .54);
+$secondary87: rgba($secondary, .87);

@@ -436,23 +436,31 @@
   font-weight: 600;
   line-height: 32px; }
 
+@media all and (min-width: 520px) {
+  header,
+  main,
+  footer {
+    padding-left: 128px; } }
+body {
+  margin: 0 auto;
+  background: #fafafa;
+  color: rgba(0, 0, 0, 0.87);
+  font-family: 'RobotoDraft', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%; }
+
+header {
+  background-color: #009688;
+  color: #ffffff; }
+
+footer {
+  background: #212121;
+  color: rgba(255, 255, 255, 0.87); }
+
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 48px 8%; }
-
-.footer {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 10px 8%; }
-
-body {
-  font-family: 'RobotoDraft', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%;
-  margin: 0 auto;
-  background: #fafafa;
-  max-width: 1024px; }
 
 h1, h2, h3, h4 {
   margin: 0; }
@@ -461,7 +469,7 @@ h1 {
   font-size: 20px;
   font-weight: 600;
   line-height: 44px;
-  color: rgba(19, 137, 123, 0.87); }
+  color: rgba(0, 150, 136, 0.87); }
 
 p {
   font-size: 14px;
@@ -471,25 +479,7 @@ p {
   margin: 8px 0; }
 
 a:link, a:visited, a:hover, a:active {
-  color: rgba(19, 137, 123, 0.87);
+  color: rgba(255, 193, 7, 0.87);
   text-decoration: none; }
-
-.header-section {
-  background-color: #009688;
-  color: rgba(255, 255, 255, 0.87); }
-
-.light-section {
-  background: #fafafa;
-  color: rgba(0, 0, 0, 0.87); }
-
-.dark-section {
-  background: #212121;
-  color: rgba(255, 255, 255, 0.87); }
-
-@media all and (min-width: 520px) {
-  .header-section,
-  .light-section,
-  .dark-section {
-    padding-left: 128px; } }
 
 /*# sourceMappingURL=steelbreeze.css.map */
