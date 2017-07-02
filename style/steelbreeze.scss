@@ -1,9 +1,7 @@
 @import 'material';
 @import 'responsive';
 
-body {
-    margin: 0 auto;
-	
+body {	
     background: $light-background;
     color: $black87;
 
@@ -45,20 +43,12 @@ footer {
     color: $white87;
 }
 
-section {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 48px 8%;
-}
-
 h1, h2, h3, h4 {
     margin: 0;
 }
 
 p, ul {
 	@include text-body;
-
-    max-width: 40em;
     margin: 8px 0;
 }
 
@@ -70,4 +60,8 @@ ul {
 a:link, a:visited, a:hover, a:active {
     color: $primary87;
     text-decoration: none;
+}
+
+em {
+	
 }
