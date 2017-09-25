@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;delegate&quot; | state.js</title>
+	<title>&quot;log&quot; | @steelbreeze/state</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">state.js</a>
+					<a href="../index.html" class="title">@steelbreeze/state</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,30 +56,16 @@
 					<a href="../index.html">Globals</a>
 				</li>
 				<li>
-					<a href="_delegate_.html">&quot;delegate&quot;</a>
+					<a href="_log_.html">&quot;log&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;delegate&quot;</h1>
+			<h1>External module &quot;log&quot;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<dl class="tsd-comment-tags">
-						<dt>module</dt>
-						<dd><p>delegate</p>
-							<p>Multicast delegate for TypeScript</p>
-						</dd>
-						<dt>copyright</dt>
-						<dd><p>(c) 2017 David Mesquita-Morris</p>
-							<p>Licensed under the MIT and GPL v3 licences</p>
-						</dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -87,14 +73,13 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-external-module tsd-is-external"><a href="../interfaces/_delegate_.delegate.html" class="tsd-kind-icon">Delegate</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-external-module tsd-is-external"><a href="../interfaces/_log_.ilogger.html" class="tsd-kind-icon">ILogger</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-external"><a href="_delegate_.html#create" class="tsd-kind-icon">create</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-external"><a href="_delegate_.html#iscallable" class="tsd-kind-icon">is<wbr>Callable</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-external"><a href="_log_.html#setlogger" class="tsd-kind-icon">set<wbr>Logger</a></li>
 							</ul>
 						</section>
 					</div>
@@ -103,66 +88,34 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-external">
-					<a name="create" class="tsd-anchor"></a>
-					<h3>create</h3>
+					<a name="setlogger" class="tsd-anchor"></a>
+					<h3>set<wbr>Logger</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>delegates<span class="tsd-signature-symbol">: </span><a href="../interfaces/_delegate_.delegate.html" class="tsd-signature-type">Delegate</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_delegate_.delegate.html" class="tsd-signature-type">Delegate</a></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Logger<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><a href="../interfaces/_log_.ilogger.html" class="tsd-signature-type">ILogger</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_log_.ilogger.html" class="tsd-signature-type">ILogger</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/steelbreeze/state.js/blob/30ce23a/src/delegate.ts#L43">delegate.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/steelbreeze/state/blob/aa60c46/src/log.ts#L30">log.ts:30</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Creates a <a href="../interfaces/_delegate_.delegate.html">delegate</a> for one or more <a href="../interfaces/_delegate_.delegate.html">delegates</a> (functions) that can be called as one.</p>
+									<p>Overrides the current logging object.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>delegates: <a href="../interfaces/_delegate_.delegate.html" class="tsd-signature-type">Delegate</a><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>value: <a href="../interfaces/_log_.ilogger.html" class="tsd-signature-type">ILogger</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The set of <a href="../interfaces/_delegate_.delegate.html">delegates</a> (functions) to aggregate into a single <a href="../interfaces/_delegate_.delegate.html">delegate</a>.</p>
+										<p>An object to pass log and error messages to.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_delegate_.delegate.html" class="tsd-signature-type">Delegate</a></h4>
-							<p>Returns a <a href="../interfaces/_delegate_.delegate.html">delegate</a> that when called calls the other <a href="../interfaces/_delegate_.delegate.html">delegates</a> provided.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-external">
-					<a name="iscallable" class="tsd-anchor"></a>
-					<h3>is<wbr>Callable</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Callable<span class="tsd-signature-symbol">(</span>delegate<span class="tsd-signature-symbol">: </span><a href="../interfaces/_delegate_.delegate.html" class="tsd-signature-type">Delegate</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/steelbreeze/state.js/blob/30ce23a/src/delegate.ts#L34">delegate.ts:34</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Tests a <a href="../interfaces/_delegate_.delegate.html">delegate</a> to see if is contains callable behavior.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>delegate: <a href="../interfaces/_delegate_.delegate.html" class="tsd-signature-type">Delegate</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The <a href="../interfaces/_delegate_.delegate.html">delegate</a> to test.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>Returns true if the <a href="../interfaces/_delegate_.delegate.html">delegate</a> contains callable behavior.</p>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_log_.ilogger.html" class="tsd-signature-type">ILogger</a></h4>
+							<p>Returns the previous logging object in use.</p>
 						</li>
 					</ul>
 				</section>
@@ -184,23 +137,20 @@
 						<span>Externals</span>
 					</li>
 					<li class="current tsd-kind-external-module tsd-is-external">
-						<a href="_delegate_.html">"delegate"</a>
+						<a href="_log_.html">"log"</a>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="_tree_.html">"tree"</a>
+						<a href="_random_.html">"random"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-external">
-						<a href="../interfaces/_delegate_.delegate.html" class="tsd-kind-icon">Delegate</a>
+						<a href="../interfaces/_log_.ilogger.html" class="tsd-kind-icon">ILogger</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-external">
-						<a href="_delegate_.html#create" class="tsd-kind-icon">create</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-external">
-						<a href="_delegate_.html#iscallable" class="tsd-kind-icon">is<wbr>Callable</a>
+						<a href="_log_.html#setlogger" class="tsd-kind-icon">set<wbr>Logger</a>
 					</li>
 				</ul>
 			</nav>

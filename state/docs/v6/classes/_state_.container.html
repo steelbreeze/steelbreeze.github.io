@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ILogger | state.js</title>
+	<title>Container | @steelbreeze/state</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">state.js</a>
+					<a href="../index.html" class="title">@steelbreeze/state</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -59,10 +59,10 @@
 					<a href="../modules/_state_.html">&quot;state&quot;</a>
 				</li>
 				<li>
-					<a href="_state_.ilogger.html">ILogger</a>
+					<a href="_state_.container.html">Container</a>
 				</li>
 			</ul>
-			<h1>Interface ILogger</h1>
+			<h1>Class Container</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +72,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface used by state.js for managing log and error messages.</p>
+						<p>A container of <a href="_state_.region.html">Regions</a>; used as a mixin for the <a href="_state_.state.html">State</a> and <a href="_state_.statemachine.html">StateMachine</a> classes.</p>
 					</div>
 				</div>
 			</section>
@@ -80,8 +80,15 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ILogger</span>
+						<span class="target">Container</span>
 					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implemented by</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="_state_.state.html" class="tsd-signature-type">State</a></li>
+					<li><a href="_state_.statemachine.html" class="tsd-signature-type">StateMachine</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -89,82 +96,96 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_state_.container.html#children" class="tsd-kind-icon">children</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_state_.ilogger.html#error" class="tsd-kind-icon">error</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_state_.ilogger.html#log" class="tsd-kind-icon">log</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_state_.container.html#defaultregion" class="tsd-kind-icon">default<wbr>Region</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_state_.container.html#iscomplete" class="tsd-kind-icon">is<wbr>Complete</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="children" class="tsd-anchor"></a>
+					<h3>children</h3>
+					<div class="tsd-signature tsd-kind-icon">children<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_state_.region.html" class="tsd-signature-type">Region</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/steelbreeze/state/blob/aa60c46/src/state.ts#L202">state.ts:202</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The child <a href="_state_.region.html">region(s)</a> if this <a href="_state_.state.html">state</a> is a <a href="_state_.state.html#iscomposite">composite</a> or <a href="_state_.state.html#isorthogonal">orthogonal</a> state.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="error" class="tsd-anchor"></a>
-					<h3>error</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span>, <span class="tsd-signature-symbol">...</span>optionalParams<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="defaultregion" class="tsd-anchor"></a>
+					<h3>default<wbr>Region</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">default<wbr>Region<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_state_.region.html" class="tsd-signature-type">Region</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/steelbreeze/state.js/blob/30ce23a/src/state.ts#L27">state.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/steelbreeze/state/blob/aa60c46/src/state.ts#L207">state.ts:207</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Passes an erorr message.</p>
+									<p>The default <a href="_state_.region.html">region</a> used by state.js when it implicitly creates them. <a href="_state_.region.html">Regions</a> are implicitly created if a <a href="_state_.vertex.html">vertex</a> specifies the <a href="_state_.state.html">state</a> as its parent.</p>
 								</div>
 							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> message: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Any number of objects constituting the error message.</p>
-									</div>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>optionalParams: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_state_.region.html" class="tsd-signature-type">Region</a>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">undefined</span>
+							</h4>
+							<p>Returns the default <a href="_state_.region.html">region</a> if present or undefined.</p>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="log" class="tsd-anchor"></a>
-					<h3>log</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span>, <span class="tsd-signature-symbol">...</span>optionalParams<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="iscomplete" class="tsd-anchor"></a>
+					<h3>is<wbr>Complete</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Complete<span class="tsd-signature-symbol">(</span>instance<span class="tsd-signature-symbol">: </span><a href="../interfaces/_state_.iinstance.html" class="tsd-signature-type">IInstance</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/steelbreeze/state.js/blob/30ce23a/src/state.ts#L21">state.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/steelbreeze/state/blob/aa60c46/src/state.ts#L215">state.ts:215</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Passes a log (informational) message.</p>
+									<p>Tests a given <a href="../interfaces/_state_.iinstance.html">state machine instance</a> to see if this <a href="_state_.state.html">state</a> is complete. A <a href="_state_.state.html">state</a> is complete when all its <a href="_state_.state.html#children">child</a> <a href="_state_.region.html">regions</a> are <a href="_state_.region.html#iscomplete">complete</a>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> message: <span class="tsd-signature-type">any</span></h5>
+									<h5>instance: <a href="../interfaces/_state_.iinstance.html" class="tsd-signature-type">IInstance</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Any number of objects constituting the log message.</p>
+										<p>The <a href="../interfaces/_state_.iinstance.html">state machine instance</a> to test if this <a href="_state_.state.html">state</a> is complete within.</p>
 									</div>
 								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>optionalParams: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>Returns true if the <a href="_state_.region.html">region</a> is complete.</p>
 						</li>
 					</ul>
 				</section>
@@ -186,10 +207,10 @@
 						<span>Externals</span>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="../modules/_delegate_.html">"delegate"</a>
+						<a href="../modules/_log_.html">"log"</a>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="../modules/_tree_.html">"tree"</a>
+						<a href="../modules/_random_.html">"random"</a>
 					</li>
 				</ul>
 			</nav>
@@ -201,63 +222,69 @@
 					<li class=" tsd-kind-enum tsd-parent-kind-external-module">
 						<a href="../enums/_state_.transitionkind.html" class="tsd-kind-icon">Transition<wbr>Kind</a>
 					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_state_.dictionaryinstance.html" class="tsd-kind-icon">Dictionary<wbr>Instance</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_state_.jsoninstance.html" class="tsd-kind-icon">JSONInstance</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="../classes/_state_.namedelement.html" class="tsd-kind-icon">Named<wbr>Element</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_state_.pseudostate.html" class="tsd-kind-icon">Pseudo<wbr>State</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_state_.region.html" class="tsd-kind-icon">Region</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../classes/_state_.regionconfiguration.html" class="tsd-kind-icon">Region<wbr>Configuration</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_state_.state.html" class="tsd-kind-icon">State</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../classes/_state_.stateconfiguration.html" class="tsd-kind-icon">State<wbr>Configuration</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_state_.statemachine.html" class="tsd-kind-icon">State<wbr>Machine</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_state_.transition.html" class="tsd-kind-icon">Transition</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_state_.vertex.html" class="tsd-kind-icon">Vertex</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_state_.visitor.html" class="tsd-kind-icon">Visitor</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_state_.ielement.html" class="tsd-kind-icon">IElement</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_state_.iinstance.html" class="tsd-kind-icon">IInstance</a>
-					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_state_.ilogger.html" class="tsd-kind-icon">ILogger</a>
+					<li class="current tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_state_.container.html" class="tsd-kind-icon">Container</a>
 						<ul>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="_state_.ilogger.html#error" class="tsd-kind-icon">error</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_state_.container.html#children" class="tsd-kind-icon">children</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="_state_.ilogger.html#log" class="tsd-kind-icon">log</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_state_.container.html#defaultregion" class="tsd-kind-icon">default<wbr>Region</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_state_.container.html#iscomplete" class="tsd-kind-icon">is<wbr>Complete</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_state_.dictionaryinstance.html" class="tsd-kind-icon">Dictionary<wbr>Instance</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_state_.jsoninstance.html" class="tsd-kind-icon">JSONInstance</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="_state_.namedelement.html" class="tsd-kind-icon">Named<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_state_.pseudostate.html" class="tsd-kind-icon">Pseudo<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_state_.region.html" class="tsd-kind-icon">Region</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_state_.regionconfiguration.html" class="tsd-kind-icon">Region<wbr>Configuration</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_state_.state.html" class="tsd-kind-icon">State</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_state_.stateconfiguration.html" class="tsd-kind-icon">State<wbr>Configuration</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_state_.statemachine.html" class="tsd-kind-icon">State<wbr>Machine</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_state_.transition.html" class="tsd-kind-icon">Transition</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_state_.vertex.html" class="tsd-kind-icon">Vertex</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_state_.visitor.html" class="tsd-kind-icon">Visitor</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_state_.ielement.html" class="tsd-kind-icon">IElement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_state_.iinstance.html" class="tsd-kind-icon">IInstance</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_state_.html#applymixins" class="tsd-kind-icon">apply<wbr>Mixins</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="../modules/_state_.html#setdefaultregionname" class="tsd-kind-icon">set<wbr>Default<wbr>Region<wbr>Name</a>
 					</li>
@@ -265,13 +292,7 @@
 						<a href="../modules/_state_.html#setinternaltransitionstriggercompletion" class="tsd-kind-icon">set<wbr>Internal<wbr>Transitions<wbr>Trigger<wbr>Completion</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_state_.html#setlogger" class="tsd-kind-icon">set<wbr>Logger</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="../modules/_state_.html#setnamespaceseparator" class="tsd-kind-icon">set<wbr>Namespace<wbr>Separator</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_state_.html#setrandom" class="tsd-kind-icon">set<wbr>Random</a>
 					</li>
 				</ul>
 			</nav>
