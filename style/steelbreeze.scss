@@ -14,11 +14,11 @@ header {
     background-color: $primary;
     color: $white87;
 
-	h1 {
+	.title {
 		@include text-display-2;
 	}
 
-	h2 {
+	.subtitle {
 		@include text-headline;
 		a:link, a:visited, a:hover, a:active {
 		    color: $white87;

@@ -415,15 +415,15 @@ body {
 header {
   background-color: #FF9800;
   color: rgba(255, 255, 255, 0.87); }
-  header h1 {
+  header .title {
     font-size: 45px;
     font-weight: 400;
     line-height: 64px; }
-  header h2 {
+  header .subtitle {
     font-size: 24px;
     font-weight: 400;
     line-height: 44px; }
-    header h2 a:link, header h2 a:visited, header h2 a:hover, header h2 a:active {
+    header .subtitle a:link, header .subtitle a:visited, header .subtitle a:hover, header .subtitle a:active {
       color: rgba(255, 255, 255, 0.87); }
 
 main h1 {
@@ -457,5 +457,3 @@ ul {
 a:link, a:visited, a:hover, a:active {
   color: rgba(255, 152, 0, 0.87);
   text-decoration: none; }
-
-/*# sourceMappingURL=steelbreeze.css.map */
