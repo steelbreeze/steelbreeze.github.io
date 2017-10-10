@@ -15,11 +15,6 @@ main {
   padding-bottom: 1em;
 }
 
-footer {
-  border-top: 0.08em solid rgba(0, 0, 0, 0.54);
-  padding-top: 0.5em;
-}
-
 #title {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
@@ -58,4 +53,12 @@ p {
   font-weight: 300;
   font-size: 1em;
   color: rgba(0, 0, 0, 0.87);
+}
+
+footer {
+  border-top: 0.08em solid rgba(0, 0, 0, 0.54);
+  padding-top: 0.5em;
+}
+footer p {
+  color: rgba(0, 0, 0, 0.54);
 }

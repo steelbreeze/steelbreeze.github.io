@@ -22,10 +22,6 @@ main {
     padding-bottom: 1em;
 }
 
-footer {
-    border-top: 0.08em solid rgba($colour_normal, 0.54);
-    padding-top: 0.5em;
-}
 #title {
     font-family: $font-stack; 
     font-weight: $weight_bold;
@@ -63,5 +59,14 @@ p {
     font-family: $font-stack;  
     font-weight: $weight_normal;
     font-size: 1em;
-    color: rgba($colour_normal, 0.87) 
+    color: rgba($colour_normal, 0.87);
 } 
+
+footer {
+    border-top: 0.08em solid rgba($colour_normal, 0.54);
+    padding-top: 0.5em;
+
+    p {
+        color: rgba($colour_normal, 0.54); 
+    }
+}
