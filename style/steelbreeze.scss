@@ -33,7 +33,7 @@ main {
 	}
 	
 	h2 {
-		@include text-menu;
+		@include text-subhead;
 		color: $black54;
 	}
 }
