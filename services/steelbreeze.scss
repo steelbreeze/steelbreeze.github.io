@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,600');
 
-$font-stack: 'Open Sans', sans-serif;
 $colour_normal: rgb(0, 0, 0);
 $colour_accent: rgb(192, 80, 70);
 $weight_normal: 300;
 $weight_bold: 600;
 
 body {
-    font-size: 100%;
+    font-size: 110%;
+    font-family: 'Open Sans', sans-serif;
     padding: 1.5em;
     margin: 0;
 }
@@ -23,21 +23,18 @@ main {
 }
 
 #title {
-    font-family: $font-stack; 
     font-weight: $weight_bold;
     font-size: 1.5em;
     color: rgba($colour_normal, 0.54) 
 }
 
 #subtitle {
-    font-family: $font-stack;
     font-weight: $weight_bold;
     font-size: 1.5em;
     color: rgba($colour_accent, 0.87) 
 }
 
 h1 {
-    font-family: $font-stack;  
     font-weight: $weight_normal;
     font-size: 1.5em;
     color: rgba($colour_normal, 0.87);
@@ -47,7 +44,6 @@ h1 {
 h2 {
     padding: 0;
     margin: 1em 0 0 0;
-    font-family: $font-stack;
     font-weight: $weight_bold;
     font-size: 1em;
     color: rgba($colour_accent, 0.87) 
@@ -56,7 +52,6 @@ h2 {
 p {
     padding: 0;
     margin: 0;
-    font-family: $font-stack;  
     font-weight: $weight_normal;
     font-size: 1em;
     color: rgba($colour_normal, 0.87);
