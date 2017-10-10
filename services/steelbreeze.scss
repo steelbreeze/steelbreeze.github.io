@@ -6,6 +6,7 @@ $font_size_normal: 1em;
 $font_size_large: $font_size_normal * 1.5;
 $weight_normal: 300;
 $weight_bold: 600;
+$line_width: 0.08em;
 
 body {
     font-size: 100%;
@@ -15,7 +16,7 @@ body {
 }
 
 header {
-    border-bottom: 0.08em solid rgba($colour_normal, 0.54);
+    border-bottom: $line_width solid rgba($colour_normal, 0.54);
     padding-bottom: $font_size_normal / 2;
 }
 
@@ -60,7 +61,7 @@ p {
 } 
 
 footer {
-    border-top: 0.08em solid rgba($colour_normal, 0.54);
+    border-top: $line_width solid rgba($colour_normal, 0.54);
     padding-top: 0.5em;
 
     p {
