@@ -8,11 +8,15 @@ $weight_normal: 300;
 $weight_bold: 600;
 $line_width: 0.08em;
 
+* {
+    margin: 0;
+    padding: 0
+}
+
 body {
     font-size: 100%;
     font-family: 'Open Sans', sans-serif;
     padding: $font_size_large;
-    margin: 0;
 }
 
 header {
@@ -41,11 +45,9 @@ h1 {
     font-weight: $weight_normal;
     font-size: $font_size_large;
     color: rgba($colour_normal, 0.87);
-    margin: 0;
 }
 
 h2 {
-    padding: 0;
     margin: 1em 0 0 0;
     font-weight: $weight_bold;
     font-size: $font_size_normal;
@@ -53,14 +55,17 @@ h2 {
 }
 
 p {
-    padding: 0;
-    margin: 0;
     font-weight: $weight_normal;
     font-size: $font_size_normal;
     color: rgba($colour_normal, 0.87);
 } 
 
+p + p {
+    margin-top: $font_size_normal / 2;
+}
+
 footer {
+    clear: both;
     border-top: $line_width solid rgba($colour_normal, 0.54);
     padding-top: 0.5em;
 
