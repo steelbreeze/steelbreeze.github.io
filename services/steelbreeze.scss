@@ -4,8 +4,8 @@ $colour_normal: rgb(0, 0, 0);
 $colour_accent: rgb(192, 80, 70);
 $font_size_normal: 1em;
 $font_size_large: $font_size_normal * 1.5;
-$weight_normal: 300;
-$weight_bold: 600;
+$font_weight_normal: 300;
+$font_weight_bold: 600;
 $line_width: 0.08em;
 $alpha_normal: 87%;
 $alpha_light: 54%;
@@ -34,31 +34,31 @@ main {
 }
 
 #title {
-    font-weight: $weight_bold;
+    font-weight: $font_weight_bold;
     font-size: $font_size_large;
     color: rgba($colour_normal, $alpha_light) 
 }
 
 #subtitle {
-    font-weight: $weight_bold;
+    font-weight: $font_weight_bold;
     font-size: $font_size_large;
     color: rgba($colour_accent, $alpha_normal) 
 }
 
 h1 {
-    font-weight: $weight_normal;
+    font-weight: $font_weight_normal;
     font-size: $font_size_large;
 }
 
 h2 {
     padding: 1em 0 0 0;
-    font-weight: $weight_bold;
+    font-weight: $font_weight_bold;
     font-size: $font_size_normal;
     color: rgba($colour_accent, $alpha_normal) 
 }
 
-p {
-    font-weight: $weight_normal;
+p, li {
+    font-weight: $font_weight_normal;
     font-size: $font_size_normal;
 } 
 
@@ -73,6 +73,15 @@ p a {
 
 p a:hover {
     text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul > li::before {
+    content: "- ";
 }
 
 footer {
@@ -94,3 +103,8 @@ footer {
         text-align: right ;
     }
 }
+
+// TODO: responsive design
+//       - page margins for desktop/mobile
+//       - footer layout for desktop/mobile
+//       print style sheet

@@ -45,7 +45,7 @@ h2 {
   color: rgba(192, 80, 70, 0.87);
 }
 
-p {
+p, li {
   font-weight: 300;
   font-size: 1em;
 }
@@ -61,6 +61,15 @@ p a {
 
 p a:hover {
   text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul > li::before {
+  content: "- ";
 }
 
 footer {
