@@ -5,9 +5,10 @@
 }
 
 body {
+  margin: 1em;
   font-size: 100%;
   font-family: "Open Sans", sans-serif;
-  margin: 1em;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 header {
@@ -35,7 +36,6 @@ main {
 h1 {
   font-weight: 300;
   font-size: 1.5em;
-  color: rgba(0, 0, 0, 0.87);
 }
 
 h2 {
@@ -48,7 +48,6 @@ h2 {
 p {
   font-weight: 300;
   font-size: 1em;
-  color: rgba(0, 0, 0, 0.87);
 }
 
 p + p {
@@ -61,7 +60,7 @@ p a {
 }
 
 p a:hover {
-  background-color: rgba(192, 80, 70, 0.25);
+  text-decoration: underline;
 }
 
 footer {
@@ -72,4 +71,11 @@ footer {
 }
 footer p {
   color: rgba(0, 0, 0, 0.54);
+}
+footer div {
+  width: 50%;
+  float: left;
+}
+footer div:last-of-type {
+  text-align: right;
 }
