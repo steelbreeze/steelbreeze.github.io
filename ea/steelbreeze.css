@@ -21,7 +21,7 @@ main {
   margin: 0.75em;
 }
 
-#title {
+#title, #title a {
   font-weight: 600;
   font-size: 1.5em;
   color: rgba(0, 0, 0, 0.54);
@@ -54,13 +54,16 @@ p + p {
   margin-top: 0.5em;
 }
 
-p a {
-  color: rgba(192, 80, 70, 0.87);
+a {
   text-decoration: none;
 }
 
-p a:hover {
-  text-decoration: underline;
+a:hover {
+  background-color: rgba(192, 80, 70, 0.25);
+}
+
+p a {
+  color: rgba(192, 80, 70, 0.87);
 }
 
 ul {
@@ -82,9 +85,6 @@ footer p {
   color: rgba(0, 0, 0, 0.54);
 }
 footer div {
-  width: 50%;
+  width: 100%;
   float: left;
-}
-footer div:last-of-type {
-  text-align: right;
 }
