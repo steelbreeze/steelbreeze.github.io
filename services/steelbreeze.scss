@@ -16,7 +16,7 @@ $alpha_light: 54%;
 }
 
 body {
-    margin: $font_size_normal;
+    margin: $font_size_large / 2;
 
     font-size: 100%;
     font-family: 'Open Sans', sans-serif;
@@ -24,13 +24,13 @@ body {
 }
 
 header {
-    margin: $font_size_normal;
+    margin: $font_size_large / 2;
     border-bottom: $line_width solid rgba($colour_normal, $alpha_light);
-    padding: $font_size_normal 0;
+    padding: $font_size_large / 2 0;
 }
 
 main {
-    margin: $font_size_normal;
+    margin: $font_size_large / 2;
 }
 
 #title {
@@ -77,8 +77,8 @@ p a:hover {
 
 footer {
     clear: both;
-    margin: $font_size_normal;
-    padding: $font_size_normal 0;
+    margin: $font_size_large / 2;
+    padding: $font_size_large / 2 0;
     border-top: $line_width solid rgba($colour_normal, $alpha_light);
 
     p {
