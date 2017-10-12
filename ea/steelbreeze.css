@@ -68,11 +68,14 @@ p a {
 
 ul {
   list-style: none;
-  padding-left: 0;
+  padding-left: 0.75em;
+  position: relative;
 }
 
-ul > li::before {
-  content: "- ";
+li:before {
+  content: "-";
+  position: absolute;
+  left: 0;
 }
 
 footer {
