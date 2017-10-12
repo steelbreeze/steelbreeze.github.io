@@ -106,7 +106,17 @@ footer {
     }
 }
 
+@media only screen and (max-width: 768px) {
+    body {
+        margin: 0;
+    }
+
+    header {
+        margin-top: 0;
+    }
+}
+
+
 // TODO: responsive design
-//       - page margins for desktop/mobile
 //       - footer layout for desktop/mobile
 //       print style sheet
