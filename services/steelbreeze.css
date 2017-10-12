@@ -7,17 +7,17 @@
 body {
   font-size: 100%;
   font-family: "Open Sans", sans-serif;
-  padding: 1.5em;
+  margin: 1em;
 }
 
 header {
+  margin: 1em;
   border-bottom: 0.08em solid rgba(0, 0, 0, 0.54);
-  padding-bottom: 0.5em;
+  padding: 1em 0;
 }
 
 main {
-  padding-top: 1em;
-  padding-bottom: 1em;
+  margin: 1em;
 }
 
 #title {
@@ -39,7 +39,7 @@ h1 {
 }
 
 h2 {
-  margin: 1em 0 0 0;
+  padding: 1em 0 0 0;
   font-weight: 600;
   font-size: 1em;
   color: rgba(192, 80, 70, 0.87);
@@ -55,10 +55,20 @@ p + p {
   margin-top: 0.5em;
 }
 
+p a {
+  color: rgba(192, 80, 70, 0.87);
+  text-decoration: none;
+}
+
+p a:hover {
+  background-color: rgba(192, 80, 70, 0.25);
+}
+
 footer {
   clear: both;
+  margin: 1em;
+  padding: 1em 0;
   border-top: 0.08em solid rgba(0, 0, 0, 0.54);
-  padding-top: 0.5em;
 }
 footer p {
   color: rgba(0, 0, 0, 0.54);

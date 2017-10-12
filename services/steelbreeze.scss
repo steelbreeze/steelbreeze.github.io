@@ -16,17 +16,17 @@ $line_width: 0.08em;
 body {
     font-size: 100%;
     font-family: 'Open Sans', sans-serif;
-    padding: $font_size_large;
+    margin: $font_size_normal;
 }
 
 header {
+    margin: $font_size_normal;
     border-bottom: $line_width solid rgba($colour_normal, 0.54);
-    padding-bottom: $font_size_normal / 2;
+    padding: $font_size_normal 0;
 }
 
 main {
-    padding-top: $font_size_normal;
-    padding-bottom: $font_size_normal;
+    margin: $font_size_normal;
 }
 
 #title {
@@ -48,7 +48,7 @@ h1 {
 }
 
 h2 {
-    margin: 1em 0 0 0;
+    padding: 1em 0 0 0;
     font-weight: $weight_bold;
     font-size: $font_size_normal;
     color: rgba($colour_accent, 0.87) 
@@ -64,10 +64,21 @@ p + p {
     margin-top: $font_size_normal / 2;
 }
 
+p a {
+    color: rgba($colour_accent, 0.87);
+    text-decoration: none;
+}
+
+p a:hover {
+    background-color: rgba($colour_accent, 0.25) ;
+}
+
+
 footer {
     clear: both;
+    margin: $font_size_normal;
+    padding: $font_size_normal 0;
     border-top: $line_width solid rgba($colour_normal, 0.54);
-    padding-top: 0.5em;
 
     p {
         color: rgba($colour_normal, 0.54);
