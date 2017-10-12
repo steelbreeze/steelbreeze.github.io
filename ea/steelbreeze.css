@@ -21,7 +21,7 @@ main {
   margin: 0.75em;
 }
 
-#title, #title a {
+#title {
   font-weight: 600;
   font-size: 1.5em;
   color: rgba(0, 0, 0, 0.54);
@@ -58,8 +58,12 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+p a:hover {
   background-color: rgba(192, 80, 70, 0.25);
+}
+
+#title:hover {
+  background-color: rgba(0, 0, 0, 0.125);
 }
 
 p a {

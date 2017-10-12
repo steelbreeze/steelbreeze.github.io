@@ -33,7 +33,7 @@ main {
     margin: $font_size_large / 2;
 }
 
-#title, #title a {
+#title {
     font-weight: $font_weight_bold;
     font-size: $font_size_large;
     color: rgba($colour_normal, $alpha_light) 
@@ -70,8 +70,12 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+p a:hover {
     background-color: rgba($colour_accent, 25%);
+}
+
+#title:hover {
+    background-color: rgba($colour_normal, 12.5%);
 }
 
 p a {
