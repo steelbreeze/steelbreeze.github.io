@@ -62,7 +62,7 @@ p a:hover {
   background-color: rgba(192, 80, 70, 0.25);
 }
 
-#title:hover {
+#title a:hover {
   background-color: rgba(0, 0, 0, 0.125);
 }
 
