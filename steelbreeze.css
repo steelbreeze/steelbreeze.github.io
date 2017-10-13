@@ -58,12 +58,12 @@ a {
   text-decoration: none;
 }
 
-p a:hover {
-  background-color: rgba(192, 80, 70, 0.25);
+a:hover {
+  background-color: rgba(0, 0, 0, 0.125);
 }
 
-#title a:hover {
-  background-color: rgba(0, 0, 0, 0.125);
+p a:hover {
+  background-color: rgba(192, 80, 70, 0.25);
 }
 
 p a {

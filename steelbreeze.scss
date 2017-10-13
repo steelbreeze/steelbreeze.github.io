@@ -70,12 +70,12 @@ a {
     text-decoration: none;
 }
 
-p a:hover {
-    background-color: rgba($colour_accent, 25%);
+a:hover {
+    background-color: rgba($colour_normal, 12.5%);
 }
 
-#title a:hover {
-    background-color: rgba($colour_normal, 12.5%);
+p a:hover {
+    background-color: rgba($colour_accent, 25%);
 }
 
 p a {
