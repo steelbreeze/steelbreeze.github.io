@@ -39,9 +39,17 @@ main {
     color: rgba($colour_normal, $alpha_light) 
 }
 
+#title a {
+    color: rgba($colour_normal, $alpha_light) 
+}
+
 #subtitle {
     font-weight: $font_weight_bold;
     font-size: $font_size_large;
+    color: rgba($colour_accent, $alpha_normal) 
+}
+
+#subtitle a {
     color: rgba($colour_accent, $alpha_normal) 
 }
 
@@ -75,6 +83,10 @@ a:hover {
 }
 
 p a:hover {
+    background-color: rgba($colour_accent, 25%);
+}
+
+#subtitle a:hover {
     background-color: rgba($colour_accent, 25%);
 }
 

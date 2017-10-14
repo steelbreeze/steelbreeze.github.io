@@ -27,9 +27,17 @@ main {
   color: rgba(0, 0, 0, 0.54);
 }
 
+#title a {
+  color: rgba(0, 0, 0, 0.54);
+}
+
 #subtitle {
   font-weight: 600;
   font-size: 1.5em;
+  color: rgba(192, 80, 70, 0.87);
+}
+
+#subtitle a {
   color: rgba(192, 80, 70, 0.87);
 }
 
@@ -63,6 +71,10 @@ a:hover {
 }
 
 p a:hover {
+  background-color: rgba(192, 80, 70, 0.25);
+}
+
+#subtitle a:hover {
   background-color: rgba(192, 80, 70, 0.25);
 }
 
