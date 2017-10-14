@@ -68,6 +68,7 @@ a {
 
 a:hover {
   background-color: rgba(0, 0, 0, 0.125);
+  border-radius: 0.2em;
 }
 
 p a:hover {
