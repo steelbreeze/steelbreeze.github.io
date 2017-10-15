@@ -16,6 +16,9 @@ header {
 
 	.title {
 		@include text-display-2;
+		a:link, a:visited, a:hover, a:active {
+		    color: $white87;
+		}
 	}
 
 	.subtitle {

@@ -482,6 +482,9 @@ header .title {
   font-weight: 400;
   line-height: 64px;
 }
+header .title a:link, header .title a:visited, header .title a:hover, header .title a:active {
+  color: rgba(255, 255, 255, 0.87);
+}
 header .subtitle {
   font-size: 24px;
   font-weight: 400;
