@@ -49,13 +49,17 @@ main {
     color: rgba($colour_accent, $alpha_normal) 
 }
 
-#subtitle a {
+#subtitle a, li a {
     color: rgba($colour_accent, $alpha_normal) 
 }
 
 h1 {
     font-weight: $font_weight_normal;
     font-size: $font_size_large;
+}
+
+h1 a {
+    color: rgba($colour_normal, $alpha_normal);
 }
 
 h2 {
@@ -83,7 +87,7 @@ a:hover {
     border-radius: 0.2em;
 }
 
-p a:hover {
+p a:hover, li a:hover {
     background-color: rgba($colour_accent, 25%);
 }
 
@@ -93,6 +97,11 @@ p a:hover {
 
 p a {
     color: rgba($colour_accent, $alpha_normal);    
+}
+
+strong {
+    font-weight: $font_weight_bold;
+    color: rgba($colour_normal, $alpha_light);    
 }
 
 ul {

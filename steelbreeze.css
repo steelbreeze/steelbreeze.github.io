@@ -37,13 +37,17 @@ main {
   color: rgba(192, 80, 70, 0.87);
 }
 
-#subtitle a {
+#subtitle a, li a {
   color: rgba(192, 80, 70, 0.87);
 }
 
 h1 {
   font-weight: 300;
   font-size: 1.5em;
+}
+
+h1 a {
+  color: rgba(0, 0, 0, 0.87);
 }
 
 h2 {
@@ -71,7 +75,7 @@ a:hover {
   border-radius: 0.2em;
 }
 
-p a:hover {
+p a:hover, li a:hover {
   background-color: rgba(192, 80, 70, 0.25);
 }
 
@@ -81,6 +85,11 @@ p a:hover {
 
 p a {
   color: rgba(192, 80, 70, 0.87);
+}
+
+strong {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.54);
 }
 
 ul {
