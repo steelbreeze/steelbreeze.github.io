@@ -132,6 +132,17 @@ footer {
     }
 }
 
+article {
+    clear: both;
+
+}
+
+article img {
+    float: left;
+    height: $font_size_normal * 4;
+    padding: .5em .5em 0 0;
+}
+
 @media only screen and (max-width: 768px) {
     body {
         margin: 0;
