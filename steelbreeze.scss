@@ -138,10 +138,10 @@ footer {
 
 .columns {
     column-count: 3;
-}
+    column-gap: $font_size_normal;
+ }
 
-.together {
-    -webkit-column-break-inside: avoid;
+.columns article {
     page-break-inside: avoid;
     break-inside: avoid;
 }
