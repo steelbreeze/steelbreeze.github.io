@@ -57,6 +57,10 @@ h2 {
   color: rgba(192, 80, 70, 0.87);
 }
 
+h2 a {
+  color: rgba(192, 80, 70, 0.87);
+}
+
 p, li {
   font-weight: 300;
   font-size: 1em;
@@ -75,7 +79,7 @@ a:hover {
   border-radius: 0.2em;
 }
 
-p a:hover, li a:hover {
+p a:hover, li a:hover, h2 a:hover {
   background-color: rgba(192, 80, 70, 0.25);
 }
 
