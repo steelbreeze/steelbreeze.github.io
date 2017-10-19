@@ -136,15 +136,20 @@ footer {
     }
 }
 
-article {
-    clear: both;
-
+.columns {
+    column-count: 3;
 }
 
-article img {
-    float: left;
-    height: $font_size_normal * 4;
-    padding: .5em .5em 0 0;
+.together {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+@media only screen and (max-width: 1000px) {
+    .columns {
+        column-count: 2;
+    }    
 }
 
 @media only screen and (max-width: 768px) {
@@ -155,6 +160,10 @@ article img {
     header {
         margin-top: 0;
     }
+
+    .columns {
+        column-count: 1;
+    }    
 }
 
 
