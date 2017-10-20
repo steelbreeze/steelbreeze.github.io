@@ -122,18 +122,21 @@ footer div {
   float: left;
 }
 
-.columns {
+main {
   column-count: 3;
   column-gap: 1em;
 }
-
-.columns article {
+main article {
   page-break-inside: avoid;
   break-inside: avoid;
 }
 
+main > p {
+  column-span: all;
+}
+
 @media only screen and (max-width: 1000px) {
-  .columns {
+  main {
     column-count: 2;
   }
 }
@@ -146,7 +149,7 @@ footer div {
     margin-top: 0;
   }
 
-  .columns {
+  main {
     column-count: 1;
   }
 }

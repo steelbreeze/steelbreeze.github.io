@@ -136,18 +136,22 @@ footer {
     }
 }
 
-.columns {
+main {
     column-count: 3;
     column-gap: $font_size_normal;
- }
 
-.columns article {
-    page-break-inside: avoid;
-    break-inside: avoid;
+    article {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+}
+
+main > p {
+    column-span: all;
 }
 
 @media only screen and (max-width: 1000px) {
-    .columns {
+    main {
         column-count: 2;
     }    
 }
@@ -161,7 +165,7 @@ footer {
         margin-top: 0;
     }
 
-    .columns {
+    main {
         column-count: 1;
     }    
 }
