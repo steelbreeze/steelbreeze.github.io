@@ -20,6 +20,7 @@ body {
 
     font-size: 100%;
     font-family: 'Open Sans', sans-serif;
+    background-color: white;
     color: rgba($colour_normal, $alpha_normal);
 }
 
@@ -143,6 +144,11 @@ main {
     article {
         page-break-inside: avoid;
         break-inside: avoid;
+
+        background-color: rgba($colour_accent, 5%);
+        border-top: $font_size_normal solid white;
+        
+        padding: 0 $font_size_normal $font_size_normal $font_size_normal;
     }
 }
 

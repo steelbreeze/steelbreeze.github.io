@@ -8,6 +8,7 @@ body {
   margin: 0.75em;
   font-size: 100%;
   font-family: "Open Sans", sans-serif;
+  background-color: white;
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -129,6 +130,9 @@ main {
 main article {
   page-break-inside: avoid;
   break-inside: avoid;
+  background-color: rgba(192, 80, 70, 0.05);
+  border-top: 1em solid white;
+  padding: 0 1em 1em 1em;
 }
 
 main > p {
