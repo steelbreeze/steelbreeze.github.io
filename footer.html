@@ -11,8 +11,13 @@
         <p>Please get in touch by e-mailing us at:
             <a href="mailto:contact@steelbreeze.net">contact@steelbreeze.net</a></p>
         <p>Copyright &copy;
-            <span id="footer_year">2017</span> Steelbreeze Limited</p>
+            <span id="footer_year">yyyy</span> Steelbreeze Limited</p>
     </footer>
+    <script>
+        var d = new Date();
+
+        document.getElementById("footer_year").textContent=d.getFullYear();
+    </script>
 </body>
 
 </html>
