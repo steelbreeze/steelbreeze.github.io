@@ -136,6 +136,10 @@ main article {
   padding: 0 1em 1em 1em;
 }
 
+.maxTwoColumns {
+  column-count: 2;
+}
+
 main > p {
   column-span: all;
 }
@@ -154,7 +158,7 @@ main > p {
     margin-top: 0;
   }
 
-  main {
+  main, .maxTwoColumns {
     column-count: 1;
   }
 }
