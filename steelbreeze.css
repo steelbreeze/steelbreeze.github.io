@@ -12,6 +12,11 @@ body {
   color: rgba(0, 0, 0, 0.87);
 }
 
+iframe {
+  border: none;
+  width: 100%;
+}
+
 header {
   margin: 0.75em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.54);
@@ -112,7 +117,6 @@ li:before {
 
 footer {
   clear: both;
-  margin: 0.75em;
   padding: 0.75em 0;
   border-top: 1px solid rgba(0, 0, 0, 0.54);
 }
@@ -156,6 +160,10 @@ main > p {
 
   header {
     margin-top: 0;
+  }
+
+  footer {
+    margin: 0.75em;
   }
 
   main, .maxTwoColumns {

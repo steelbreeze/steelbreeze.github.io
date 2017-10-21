@@ -24,6 +24,11 @@ body {
     color: rgba($colour_normal, $alpha_normal);
 }
 
+iframe {
+    border: none;
+    width: 100%;
+}
+
 header {
     margin: $font_size_large / 2;
     border-bottom: $line_width solid rgba($colour_normal, $alpha_light);
@@ -124,7 +129,6 @@ li:before {
     
 footer {
     clear: both;
-    margin: $font_size_large / 2;
     padding: $font_size_large / 2 0;
     border-top: $line_width solid rgba($colour_normal, $alpha_light);
 
@@ -176,6 +180,10 @@ main > p {
         margin-top: 0;
     }
 
+    footer {
+        margin: $font_size_large / 2;
+    }
+    
     main, .maxTwoColumns {
         column-count: 1;
     }    
