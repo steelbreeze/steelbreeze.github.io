@@ -68,7 +68,7 @@ h2 {
     padding: 1em 0 0 0;
     font-weight: $font_weight_bold;
     font-size: $font_size_normal;
-    color: rgba($colour_accent, $alpha_normal) 
+    color: rgba($colour_normal, $alpha_light) 
 }
 
 h2 a {
@@ -86,6 +86,7 @@ p + p {
 
 a {
     text-decoration: none;
+    color: rgba($colour_accent, $alpha_normal);
 }
 
 a:hover {
@@ -164,6 +165,15 @@ main > p {
     main {
         column-count: 2;
     }    
+}
+
+img.avatar {
+    margin-top: $font_size_normal;
+    margin-left: $font_size_normal;
+    max-width: $font_size_large * 3;
+    max-height: $font_size_large * 3;
+    border-radius: 50%;
+    float: right;
 }
 
 @media only screen and (max-width: 768px) {
