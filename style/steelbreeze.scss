@@ -176,6 +176,11 @@ img.avatar {
     float: right;
 }
 
+img.social {
+    max-height: $font_size_large;
+    margin-right: 0.5em;
+}
+
 @media only screen and (max-width: 768px) {
     body {
         margin: 0;

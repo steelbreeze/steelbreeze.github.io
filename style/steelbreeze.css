@@ -166,6 +166,11 @@ img.avatar {
   float: right;
 }
 
+img.social {
+  max-height: 1.5em;
+  margin-right: 0.5em;
+}
+
 @media only screen and (max-width: 768px) {
   body {
     margin: 0;
