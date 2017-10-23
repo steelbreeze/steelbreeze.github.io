@@ -1,8 +1,8 @@
 @import "reset";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,600');
 
-$colour_normal: rgb(0, 0, 0);
-$colour_accent: rgb(192, 80, 70);
+$colour_normal: #000000;
+$colour_accent: #C05046;
 $font_size_normal: 1em;
 $font_size_large: $font_size_normal * 1.5;
 $font_weight_normal: 300;
@@ -12,6 +12,8 @@ $alpha_normal: 87%;
 $alpha_light: 54%;
 
 body {
+    max-width: 1400px;
+   
     margin: $font_size_large / 2;
 
     font-family: 'Open Sans', sans-serif;
@@ -161,12 +163,6 @@ main > p {
     column-span: all;
 }
 
-@media only screen and (max-width: 1000px) {
-    main {
-        column-count: 2;
-    }    
-}
-
 img.avatar {
     margin-top: $font_size_normal;
     margin-left: $font_size_normal;
@@ -179,6 +175,18 @@ img.avatar {
 img.social {
     max-height: $font_size_large;
     margin-right: 0.5em;
+}
+
+@media only screen and (max-width: 1400px) {
+    main {
+        column-count: 3;
+    }    
+}
+
+@media only screen and (max-width: 1024px) {
+    main {
+        column-count: 2;
+    }    
 }
 
 @media only screen and (max-width: 768px) {
