@@ -159,6 +159,7 @@ img.avatar {
   max-width: 4.5em;
   max-height: 4.5em;
   border-radius: 50%;
+  border: white solid 0.25em;
   float: right;
 }
 
