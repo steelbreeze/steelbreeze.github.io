@@ -5,37 +5,51 @@
 }
 
 html {
-  background-color: #EBEBEB;
+  background-color: #EEEEEE;
 }
-html body {
-  background-color: #FFFFFF;
+
+body {
+  background-color: white;
 }
-html body a {
+
+#title, #title a {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+#subtitle, #subtitle a {
   color: rgba(192, 80, 70, 0.87);
 }
-html body a:hover {
+
+h1 {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+h2 {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+p, ul {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+strong {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+a {
+  color: rgba(192, 80, 70, 0.87);
+}
+
+a:hover {
   background-color: rgba(192, 80, 70, 0.27);
   border-radius: 0.2em;
 }
-html body header #title, html body header #title a {
-  color: rgba(0, 0, 0, 0.54);
-}
-html body header #subtitle, html body header #subtitle a {
-  color: rgba(192, 80, 70, 0.87);
-}
-html body header h1 {
-  color: rgba(0, 0, 0, 0.54);
-}
-html body main article {
+
+article {
   background-color: rgba(192, 80, 70, 0.05);
 }
-html body main article h2 {
-  color: rgba(0, 0, 0, 0.54);
-}
-html body main article p {
-  color: rgba(0, 0, 0, 0.87);
-}
-html body footer p {
+
+footer p {
   color: rgba(0, 0, 0, 0.54);
 }
 
@@ -54,34 +68,36 @@ img.social {
 
 body {
   font-family: "Open Sans", sans-serif;
-}
-
-body {
   font-size: 100%;
 }
-body header #title {
+
+#title {
   font-size: 1.5em;
   font-weight: 600;
 }
-body header #subtitle {
+
+#subtitle {
   font-size: 1.5em;
   font-weight: 600;
 }
-body header h1 {
+
+h1 {
   font-size: 1.5em;
   font-weight: 300;
 }
-body main h2 {
+
+h2 {
   font-size: 1em;
   font-weight: 600;
 }
-body main p, body main ul {
+
+p, ul {
   font-size: 1em;
   font-weight: 300;
 }
-body footer p {
-  font-size: 1em;
-  font-weight: 300;
+
+strong {
+  font-weight: 600;
 }
 
 p + p, p + h2 {
@@ -102,11 +118,6 @@ li:before {
   content: "-";
   position: absolute;
   left: 0;
-}
-
-strong {
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.54);
 }
 
 body {

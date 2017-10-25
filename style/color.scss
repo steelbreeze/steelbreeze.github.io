@@ -1,57 +1,54 @@
-$colour_white: #FFFFFF;
-$colour_black: #000000;
 $colour_primary: #C05046;
-
 $alpha_normal: 87%;
 $alpha_light: 54%;
 
 html {
-	background-color: #EBEBEB;
-	
+	background-color: #EEEEEE;
+}
+
 body {
-	background-color: $colour_white;
-	
-		a {
-			color: rgba($color:$colour_primary, $alpha: $alpha_normal);
-		}
+	background-color: white;
+}
 
-		a:hover {
-			background-color: rgba($color:$colour_primary, $alpha: $alpha_light/2);
-			border-radius: 0.2em;
-		}
+#title, #title a {
+	color: rgba($color:black, $alpha: $alpha_light);
+}
 
-		header {
-			#title, #title a {
-				color: rgba($color:$colour_black, $alpha: $alpha_light);
-			}
+#subtitle, #subtitle a {
+	color: rgba($color:$colour_primary, $alpha: $alpha_normal);
+}
 
-			#subtitle, #subtitle a {
-				color: rgba($color:$colour_primary, $alpha: $alpha_normal);
-			}
+h1 {
+	color: rgba($color:black, $alpha: $alpha_light);
+}
 
-			h1 {
-				color: rgba($color:$colour_black, $alpha: $alpha_light);
-			}
-		}
+h2 {
+	color: rgba($color:black, $alpha: $alpha_light);
+}
 
-		main {
-			article {
-				background-color: rgba($colour_primary, 5%);
+p, ul {
+	color: rgba($color:black, $alpha: $alpha_normal);	
+}
 
-				h2 {
-					color: rgba($color:$colour_black, $alpha: $alpha_light);
-				}
+strong {
+	color: rgba(black, $alpha_light);    
+}
 
-				p {
-					color: rgba($color:$colour_black, $alpha: $alpha_normal);
-				}
-			}
-		}
+a {
+	color: rgba($color:$colour_primary, $alpha: $alpha_normal);
+}
 
-		footer {
-			p {
-				color: rgba($color:$colour_black, $alpha: $alpha_light);
-			}
-		}
+a:hover {
+	background-color: rgba($color:$colour_primary, $alpha: $alpha_light/2);
+	border-radius: 0.2em;
+}
+
+article {
+	background-color: rgba($colour_primary, 5%);
+}
+
+footer {
+	p {
+		color: rgba($color:black, $alpha: $alpha_light);
 	}
 }

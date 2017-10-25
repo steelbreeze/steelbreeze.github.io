@@ -2,46 +2,35 @@
 
 body {
 	font-family: 'Open Sans', sans-serif;
+	font-size: 100%;
+}
+#title {
+	font-size: 1.5em;
+	font-weight: 600;
 }
 
-body {
-	font-size: 100%;
+#subtitle {
+	font-size: 1.5em;
+	font-weight: 600;
+}
 
-	header {
-		#title {
-			font-size: 1.5em;
-			font-weight: 600;
-		}
+h1 {
+	font-size: 1.5em;
+	font-weight: 300;
+}
 
-		#subtitle {
-			font-size: 1.5em;
-			font-weight: 600;
-		}
+h2 {
+	font-size: 1em;
+	font-weight: 600;
+}
 
-		h1 {
-			font-size: 1.5em;
-			font-weight: 300;
-		}
-	}
+p, ul {
+	font-size: 1em;
+	font-weight: 300;
+}
 
-	main {
-		h2 {
-			font-size: 1em;
-			font-weight: 600;
-		}
-
-		p, ul {
-			font-size: 1em;
-			font-weight: 300;
-		}
-	}
-
-	footer {
-		p {
-			font-size: 1em;
-			font-weight: 300;
-		}
-	}
+strong {
+    font-weight: 600;
 }
 
 p + p, p + h2 {
@@ -62,9 +51,4 @@ li:before {
     content:"-";
     position: absolute;
     left: 0;
-}
-
-strong {
-    font-weight: 600;
-    color: rgba($colour_black, $alpha_light);    
 }
