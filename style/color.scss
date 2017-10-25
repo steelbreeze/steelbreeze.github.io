@@ -5,12 +5,12 @@ $colour_primary: #C05046;
 $alpha_normal: 87%;
 $alpha_light: 54%;
 
-body {
+html {
 	background-color: #EBEBEB;
-
-	#page {
-		background-color: $colour_white;
-
+	
+body {
+	background-color: $colour_white;
+	
 		a {
 			color: rgba($color:$colour_primary, $alpha: $alpha_normal);
 		}

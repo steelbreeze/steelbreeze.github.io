@@ -1,29 +1,25 @@
 @media only screen and (max-width: 1000px) {
 	body {
-		#page {
-			main {
-				column-count: 2;
-			}
+		main {
+			column-count: 2;
 		}
 	}
 }
+
 
 @media only screen and (max-width: 800px) {
 	body {
-		#page {
-			main {
-				column-count: 1;
-			}
+		main {
+			column-count: 1;
 		}
 	}
 }
 
+
 @media only screen and (max-width: 600px) {
 	body {
-		#page {
-			header, main, footer {
-				margin: 0 0.75em;
-			}
+		header, main, footer {
+			margin: 0 0.75em;
 		}
 	}
 }
