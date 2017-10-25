@@ -4,42 +4,39 @@
   padding: 0;
 }
 
-body header {
+body {
+  background-color: #EBEBEB;
+}
+body #page {
   background-color: #FFFFFF;
 }
-body header #title, body header #title a {
-  color: rgba(0, 0, 0, 0.54);
-}
-body header #subtitle, body header #subtitle a {
+body #page a {
   color: rgba(192, 80, 70, 0.87);
 }
-body header h1 {
-  color: rgba(0, 0, 0, 0.54);
-}
-body main {
-  background-color: #FFFFFF;
-}
-body main article {
-  background-color: rgba(192, 80, 70, 0.05);
-}
-body main h2 {
-  color: rgba(0, 0, 0, 0.54);
-}
-body main p {
-  color: rgba(0, 0, 0, 0.87);
-}
-body footer {
-  background-color: #FFFFFF;
-}
-body footer p {
-  color: rgba(0, 0, 0, 0.54);
-}
-body a {
-  color: rgba(192, 80, 70, 0.87);
-}
-body a:hover {
+body #page a:hover {
   background-color: rgba(192, 80, 70, 0.27);
   border-radius: 0.2em;
+}
+body #page header #title, body #page header #title a {
+  color: rgba(0, 0, 0, 0.54);
+}
+body #page header #subtitle, body #page header #subtitle a {
+  color: rgba(192, 80, 70, 0.87);
+}
+body #page header h1 {
+  color: rgba(0, 0, 0, 0.54);
+}
+body #page main article {
+  background-color: rgba(192, 80, 70, 0.05);
+}
+body #page main article h2 {
+  color: rgba(0, 0, 0, 0.54);
+}
+body #page main article p {
+  color: rgba(0, 0, 0, 0.87);
+}
+body #page footer p {
+  color: rgba(0, 0, 0, 0.54);
 }
 
 img.avatar {
@@ -116,46 +113,48 @@ body {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+}
+body #page {
   box-shadow: 0 0 1em #888888;
 }
-body header {
+body #page header {
   margin: 0 1.5em;
   padding: 0.75em 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.54);
 }
-body main {
+body #page main {
   margin: 0 1.5em;
   padding: 0.75em 0;
   column-count: 3;
   column-gap: 1em;
 }
-body main article {
+body #page main article {
   page-break-inside: avoid;
   break-inside: avoid;
   border-top: 1em solid white;
   padding: 1em;
 }
-body main > h2, body main > p, body main > ul {
+body #page main > h2, body #page main > p, body #page main > ul {
   column-span: all;
 }
-body footer {
+body #page footer {
   margin: 0 1.5em;
   padding: 0.75em 0;
   border-top: 1px solid rgba(0, 0, 0, 0.54);
 }
 
 @media only screen and (max-width: 1000px) {
-  body main {
+  body #page main {
     column-count: 2;
   }
 }
 @media only screen and (max-width: 800px) {
-  body main {
+  body #page main {
     column-count: 1;
   }
 }
 @media only screen and (max-width: 600px) {
-  body header, body main, body footer {
+  body #page header, body #page main, body #page footer {
     margin: 0 0.75em;
   }
 }

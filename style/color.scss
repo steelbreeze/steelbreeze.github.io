@@ -6,52 +6,52 @@ $alpha_normal: 87%;
 $alpha_light: 54%;
 
 body {
-	header {
+	background-color: #EBEBEB;
+
+	#page {
 		background-color: $colour_white;
 
-		#title, #title a {
-			color: rgba($color:$colour_black, $alpha: $alpha_light);
-		}
-
-		#subtitle, #subtitle a {
+		a {
 			color: rgba($color:$colour_primary, $alpha: $alpha_normal);
 		}
 
-		h1 {
-			color: rgba($color:$colour_black, $alpha: $alpha_light);
-		}
-	}
-
-	main {
-		background-color: $colour_white;
-
-		article {
-			background-color: rgba($colour_primary, 5%);
+		a:hover {
+			background-color: rgba($color:$colour_primary, $alpha: $alpha_light/2);
+			border-radius: 0.2em;
 		}
 
-		h2 {
-			color: rgba($color:$colour_black, $alpha: $alpha_light);
+		header {
+			#title, #title a {
+				color: rgba($color:$colour_black, $alpha: $alpha_light);
+			}
+
+			#subtitle, #subtitle a {
+				color: rgba($color:$colour_primary, $alpha: $alpha_normal);
+			}
+
+			h1 {
+				color: rgba($color:$colour_black, $alpha: $alpha_light);
+			}
 		}
 
-		p {
-			color: rgba($color:$colour_black, $alpha: $alpha_normal);
+		main {
+			article {
+				background-color: rgba($colour_primary, 5%);
+
+				h2 {
+					color: rgba($color:$colour_black, $alpha: $alpha_light);
+				}
+
+				p {
+					color: rgba($color:$colour_black, $alpha: $alpha_normal);
+				}
+			}
 		}
-	}
 
-	footer {
-		background-color: $colour_white;
-
-		p {
-			color: rgba($color:$colour_black, $alpha: $alpha_light);
+		footer {
+			p {
+				color: rgba($color:$colour_black, $alpha: $alpha_light);
+			}
 		}
-	}
-
-	a {
-		color: rgba($color:$colour_primary, $alpha: $alpha_normal);
-	}
-
-	a:hover {
-		background-color: rgba($color:$colour_primary, $alpha: $alpha_light/2);
-		border-radius: 0.2em;
 	}
 }
