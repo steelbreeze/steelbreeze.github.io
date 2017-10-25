@@ -56,7 +56,17 @@
             <p>The art of data governance is finding the fine line between mature governance processes and maintaining enduring engagement from core stakeholders. We can assist you in defining data governance processes and identifying appropriate stakeholders within your organisation to act as data governance role holders.</p>
         </article>
     </main>
-    <iframe src="../../footer.html"></iframe>
+    <footer>
+        <p>Please get in touch by e-mailing us at:
+            <a href="mailto:contact@steelbreeze.net">contact@steelbreeze.net</a>
+        </p>
+        <p>Copyright &copy;
+            <span id="footer_year">yyyy</span> Steelbreeze Limited</p>
+    </footer>
+    <script>
+        var d = new Date();
+        document.getElementById("footer_year").textContent = d.getFullYear();
+    </script>
 </body>
 
 </html>

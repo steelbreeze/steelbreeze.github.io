@@ -1,0 +1,26 @@
+@media only screen and (max-width: 1024px) {
+	body {
+		main {
+			column-count: 2;
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	body {
+		header {
+			margin: 0 0.75em;
+			padding: 0.75em 0 0.75em 0;
+		}
+
+		main {
+			margin: 0 0.75em;
+				
+			column-count: 1;
+		}
+
+		footer {
+			margin: 0 0.75em;
+		}
+    }    
+}	

@@ -22,10 +22,10 @@
 			<a href="https://github.com/steelbreeze">github/steelbreeze</a>
 		</h1>
 	</header>
-	<section>
+	<main>
 		<p>Steelbreeze is a strong advocate of open source software. We actively develop and publish software in the field of executable
 			finite state machines and a few libraries in support of them.</p>
-		<h2>Current projects</h2>
+			<h2>Current projects</h2>
 		<ul>
 			<li>
 				<strong>delegate</strong>: an immutable multicast delegate for
@@ -42,6 +42,16 @@
 				<a href="https://github.com/steelbreeze/state.js">JavaScript</a> and
 				<a href="https://github.com/steelbreeze/state.cs">C#</a>.</li>
 		</ul>
-	</section>
-    <iframe src="../footer.html"></iframe>
+	</main>
+    <footer>
+        <p>Please get in touch by e-mailing us at:
+            <a href="mailto:contact@steelbreeze.net">contact@steelbreeze.net</a>
+        </p>
+        <p>Copyright &copy;
+            <span id="footer_year">yyyy</span> Steelbreeze Limited</p>
+    </footer>
+    <script>
+        var d = new Date();
+        document.getElementById("footer_year").textContent = d.getFullYear();
+    </script>
 </html>

@@ -62,8 +62,8 @@
             <h2>About David</h2>
             <p>David Mesquita-Morris is the founder of Steelbreeze, he specialises in the engineering of robust transaction
                 processing software solutions and the pragmatic application of enterprise architecture principles and practices.</p>
-            <p>David has been working in the field of software engineering for over 25 years. In that time, he has held
-                a variety of development, architect and senior management positions at institutions including
+            <p>David has been working in the field of software engineering for over 25 years. In that time, he has held a variety
+                of development, architect and senior management positions at institutions including
                 <a href="https://www.fidelity.co.uk/">Fidelity&nbsp;International</a>,
                 <a href="https://www.jpmorgan.com/">JP&nbsp;Morgan</a>,
                 <a href="https://www.ubs.com/">UBS</a> and
@@ -81,7 +81,17 @@
             </p>
         </article>
     </main>
-    <iframe src="footer.html"></iframe>
+    <footer>
+        <p>Please get in touch by e-mailing us at:
+            <a href="mailto:contact@steelbreeze.net">contact@steelbreeze.net</a>
+        </p>
+        <p>Copyright &copy;
+            <span id="footer_year">yyyy</span> Steelbreeze Limited</p>
+    </footer>
+    <script>
+        var d = new Date();
+        document.getElementById("footer_year").textContent = d.getFullYear();
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,600');
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+body {
+	font-size: 100%;
+
+	header {
+		#title {
+			font-size: 1.5em;
+			font-weight: 600;
+		}
+
+		#subtitle {
+			font-size: 1.5em;
+			font-weight: 600;
+		}
+
+		h1 {
+			font-size: 1.5em;
+			font-weight: 300;
+		}
+	}
+
+	main {
+		h2 {
+			font-size: 1em;
+			font-weight: 600;
+		}
+
+		p, ul {
+			font-size: 1em;
+			font-weight: 300;
+		}
+	}
+
+	footer {
+		p {
+			font-size: 1em;
+			font-weight: 300;
+		}
+	}
+}
+
+p + p, p + h2 {
+	margin-top: 0.5em;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0.75em;
+    position: relative;
+}
+
+li:before {
+    content:"-";
+    position: absolute;
+    left: 0;
+}
+
+strong {
+    font-weight: 600;
+    color: rgba($colour_black, $alpha_light);    
+}
