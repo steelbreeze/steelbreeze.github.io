@@ -13,12 +13,16 @@ body {
 header {
 	margin: 0 1.5em;
 	padding: 0.75em 0;
-	border-bottom: 1px solid rgba(black, $alpha_light);		
+	position: relative;
 }
 
 main {
 	margin: 0 1.5em;
 	padding: 0.75em 0;
+
+	border-bottom: 1px solid rgba(black, $disabled_text);		
+	border-top: 1px solid rgba(black, $disabled_text);
+
 	column-count: 3;
 	column-gap: 1em;
 }	
@@ -37,5 +41,4 @@ main > h2, main > p, main > ul {
 footer {
 	margin: 0 1.5em;
 	padding: 0.75em 0;
-	border-top: 1px solid rgba(black, $alpha_light);
 }

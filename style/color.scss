@@ -1,9 +1,12 @@
 $colour_primary: #C05046;
-$alpha_normal: 87%;
-$alpha_light: 54%;
+$colour_background: #EEEEEE; // Material Grey 200
+$primary_text: 87%;
+$secondary_text: 54%;
+$disabled_text: 38%;
+$dividers: 12%;
 
 html {
-	background-color: #EEEEEE;
+	background-color: $colour_background;
 }
 
 body {
@@ -11,35 +14,35 @@ body {
 }
 
 #title, #title a {
-	color: rgba($color:black, $alpha: $alpha_light);
+	color: rgba($color:black, $alpha: $secondary_text);
 }
 
 #subtitle, #subtitle a {
-	color: rgba($color:$colour_primary, $alpha: $alpha_normal);
+	color: rgba($color:$colour_primary, $alpha: $primary_text);
 }
 
 h1, h1 a {
-	color: rgba($color:black, $alpha: $alpha_light);
+	color: rgba($color:black, $alpha: $secondary_text);
 }
 
 h2 {
-	color: rgba($color:black, $alpha: $alpha_light);
+	color: rgba($color:black, $alpha: $secondary_text);
 }
 
 p, ul {
-	color: rgba($color:black, $alpha: $alpha_normal);	
+	color: rgba($color:black, $alpha: $primary_text);	
 }
 
 strong {
-	color: rgba(black, $alpha_light);    
+	color: rgba(black, $secondary_text);    
 }
 
 a {
-	color: rgba($color:$colour_primary, $alpha: $alpha_normal);
+	color: rgba($color:$colour_primary, $alpha: $primary_text);
 }
 
 a:hover {
-	background-color: rgba($color:$colour_primary, $alpha: $alpha_light/2);
+	background-color: rgba($color:$colour_primary, $alpha: 10%);
 	border-radius: 0.2em;
 }
 
@@ -49,6 +52,6 @@ article {
 
 footer {
 	p {
-		color: rgba($color:black, $alpha: $alpha_light);
+		color: rgba($color:black, $alpha: $secondary_text);
 	}
 }
