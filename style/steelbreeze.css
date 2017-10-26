@@ -148,6 +148,9 @@ main {
   padding: 0.75em 0;
   border-style: solid;
   border-width: 0.125em 0;
+}
+
+.three {
   column-count: 3;
   column-gap: 1em;
 }
@@ -159,22 +162,18 @@ article {
   break-inside: avoid;
 }
 
-main > h2, main > p, main > ul {
-  column-span: all;
-}
-
 footer {
   margin: 0 1.5em;
   padding: 0.75em 0;
 }
 
 @media only screen and (max-width: 1000px) {
-  body main {
+  body .three {
     column-count: 2;
   }
 }
 @media only screen and (max-width: 800px) {
-  body main {
+  body .three {
     column-count: 1;
   }
 }
