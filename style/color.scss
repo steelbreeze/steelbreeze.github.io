@@ -13,6 +13,14 @@ body {
 	background-color: white;
 }
 
+main {
+	border-color: rgba($color: black, $alpha: $dividers);
+}
+
+article {
+	background-color: rgba($colour_primary, 5%);
+}
+
 #title, #title a {
 	color: rgba($color:black, $alpha: $secondary_text);
 }
@@ -44,10 +52,6 @@ a {
 a:hover {
 	background-color: rgba($color:$colour_primary, $alpha: 10%);
 	border-radius: 0.2em;
-}
-
-article {
-	background-color: rgba($colour_primary, 5%);
 }
 
 footer {
