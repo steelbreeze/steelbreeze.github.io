@@ -1,3 +1,4 @@
+@import url("https://use.fontawesome.com/f07da16824.css");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,600");
 * {
   margin: 0;
@@ -66,9 +67,8 @@ img.avatar {
   margin-left: 1em;
 }
 
-img.social {
-  max-height: 1.5em;
-  margin-right: 0.5em;
+i {
+  padding: 0.25em 0.125em 0 0;
 }
 
 body {
