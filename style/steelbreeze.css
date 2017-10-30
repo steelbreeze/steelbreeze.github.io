@@ -14,7 +14,7 @@ body {
   background-color: white;
 }
 
-main {
+header {
   border-color: rgba(0, 0, 0, 0.12);
 }
 
@@ -55,6 +55,9 @@ a:hover {
   border-radius: 0.2em;
 }
 
+footer {
+  border-color: rgba(0, 0, 0, 0.12);
+}
 footer p {
   color: rgba(0, 0, 0, 0.54);
 }
@@ -140,14 +143,17 @@ body {
 header {
   margin: 0 1.5em;
   padding: 0.75em 0;
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  border-style: solid;
+  border-bottom-width: 0.125em;
 }
 
 main {
   margin: 0 1.5em;
   padding: 0.75em 0;
-  border-style: solid;
-  border-width: 0.125em 0;
 }
 
 .three {
@@ -163,6 +169,8 @@ article {
 }
 
 footer {
+  border-style: solid;
+  border-top-width: 0.125em;
   margin: 0 1.5em;
   padding: 0.75em 0;
 }

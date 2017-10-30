@@ -13,7 +13,7 @@ body {
 	background-color: white;
 }
 
-main {
+header {
 	border-color: rgba($color: black, $alpha: $dividers);
 }
 
@@ -55,6 +55,8 @@ a:hover {
 }
 
 footer {
+	border-color: rgba($color: black, $alpha: $dividers);
+
 	p {
 		color: rgba($color:black, $alpha: $secondary_text);
 	}
