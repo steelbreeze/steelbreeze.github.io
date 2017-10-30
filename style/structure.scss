@@ -10,17 +10,21 @@ body {
 	min-height: 100%;
 }
 
-header {
+nav {
 	margin: 0 1.5em;
-	padding: 0.75em 0;
+	padding: 0 0 0.75em 0;
+
 	position: -webkit-sticky;
 	position: sticky;
 	top:0;
-	background-color: white;
-
+	
 	border-style: solid;
 	border-bottom-width: 0.125em;
+}
 
+header {
+	margin: 0 1.5em;
+	padding: 0.75em 0 0 0;	
 }
 
 main {
