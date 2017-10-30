@@ -163,6 +163,11 @@ nav {
   border-bottom-width: 0.125em;
 }
 
+#menu {
+  float: right;
+  color: rgba(192, 80, 70, 0.87);
+}
+
 header {
   margin: 0 1.5em;
 }

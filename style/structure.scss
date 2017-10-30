@@ -28,6 +28,12 @@ nav {
 	
 	border-style: solid;
 	border-bottom-width: 0.125em;
+
+}
+
+#menu {
+	float: right;
+	color: rgba($color: $colour_primary, $alpha: $primary_text);
 }
 
 header {
