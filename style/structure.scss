@@ -60,17 +60,20 @@ footer {
 	padding: 0.75em 0;
 }
 
-
 #menu {
+	float: right;
+}
+
+.dropbtn
+{
+	background-color: white;
 	font-size: 1.5em;
 	font-weight: 300;
-	float: right;
 	color: rgba($color: black, $alpha: $secondary_text);
     cursor: pointer;
 }
 
 .dropdown-content {
-	font-size: 0.667em;
 	font-weight: 300;
     display: none;
 	position: absolute;
