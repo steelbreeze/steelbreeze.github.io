@@ -218,7 +218,7 @@ footer {
   display: block;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content, .dropdown:focus .dropdown-content {
   display: block;
 }
 
