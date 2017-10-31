@@ -60,34 +60,39 @@ footer {
 	padding: 0.75em 0;
 }
 
-#menu {
+.icon {
 	float: right;
+	position: relative;
+	cursor: pointer;	
 }
 
-.dropbtn
-{
-	background-color: white;
-	font-size: 1.5em;
-	font-weight: 300;
-	color: rgba($color: black, $alpha: $secondary_text);
-    cursor: pointer;
-}
-
-.dropdown-content {
-	font-weight: 300;
-    display: none;
+menu {
 	position: absolute;
-    right: 0;
-    background-color: white;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+	top: 3em;
+	right:0;
+	background-color: white;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	padding: 0.75em;
+	display: block;
 }
 
-.dropdown-content a {
-    padding: 0.75em;
-    display: block;
+menuitem {
+	font-weight: 300;
+	padding: 0.75em;
+	display:  block;
 }
 
-.dropdown:hover .dropdown-content, .dropdown:focus .dropdown-content {
-    display: block;
+menuitem + menuitem {
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: rgba(black, $dividers);
+
+}
+
+.unselected {
+	display: none;
+}
+
+.disabled {
+	color: rgba(black, $disabled_text);
 }

@@ -23,14 +23,27 @@
         </span>
     </header>
     <nav>
-        <div tabindex="0" id="menu" class="dropdown">
-            <button class="dropbtn">☰</button>
-            <div class="dropdown-content">
-                <a href="../..">Home</a>
-                <a href="../../ea/">Enterprise architecture</a>
-                <a href=".">Data architecture</a>
-            </div>
-        </div>
+        <script>
+            function toggleMenu() {
+                var x = document.getElementById("menuMain");
+                x.className = x.className === "unselected" ? "selected" : "unselected";
+            }
+        </script>
+        <h1 class="icon" onclick="toggleMenu()">&#9776;</h1>
+        <menu id="menuMain" class="unselected">
+            <menuitem>
+            <a href="../..">Home</a>
+            </menuitem>
+            <menuitem>
+            <a href="../../ea/services/">Enterprise architecture</a>
+            </menuitem>
+            <menuitem>Data architecture</menuitem>
+            <menuitem class="disabled">Digital</menuitem>
+            <menuitem class="disabled">Leadership</menuitem>
+            <menuitem>
+            <a href="../../os/">Open source</a>
+            </menuitem>
+        </menu>
         <h1>Services</h1>
     </nav>
     <main>
