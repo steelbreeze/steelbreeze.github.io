@@ -30,20 +30,14 @@
             }
         </script>
         <h1 class="icon" onclick="toggleMenu()">&#9776;</h1>
-        <menu id="menuMain" class="unselected">
-            <menuitem>
-            <a href="../..">Home</a>
-            </menuitem>
-            <menuitem>
-            <a href="../../ea/services/">Enterprise architecture</a>
-            </menuitem>
-            <menuitem>Data architecture</menuitem>
-            <menuitem class="disabled">Digital</menuitem>
-            <menuitem class="disabled">Leadership</menuitem>
-            <menuitem>
-            <a href="../../os/">Open source</a>
-            </menuitem>
-        </menu>
+        <div id="menuMain" class="unselected">
+            <a class="menuItem" href="../..">Home</a>
+            <a class="menuItem" href="../../ea/services/">Enterprise architecture</a>
+            <p class="menuItem current">Data architecture</p>
+            <p class="menuItem disabled">Digital</p>
+            <p class="menuItem disabled">Leadership</p>
+            <a class="menuItem" href="../../os/">Open source</a>
+         </div>
         <h1>Services</h1>
     </nav>
     <main>
