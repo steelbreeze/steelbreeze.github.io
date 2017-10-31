@@ -67,6 +67,7 @@ footer {
 }
 
 menu {
+	z-index: 0;
 	position: absolute;
 	top: 3em;
 	right:0;
@@ -78,8 +79,14 @@ menu {
 
 menuitem {
 	font-weight: 300;
-	padding: 0.75em;
+	padding: 0.75em 0;
 	display:  block;
+	width: 100%;
+}
+
+menuitem a {
+padding: 0.75em 0;
+width: 100%;
 }
 
 menuitem + menuitem {
