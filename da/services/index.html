@@ -23,13 +23,8 @@
         </span>
     </header>
     <nav>
-        <script>
-            function toggleMenu() {
-                var x = document.getElementById("menuMain");
-                x.className = x.className === "unselected" ? "selected" : "unselected";
-            }
-        </script>
-        <h1 class="icon" onclick="toggleMenu()">&#9776;</h1>
+        <script src="../../script/menu.js"></script>
+        <i id="menuToggle" class="fa fa-chevron-down" aria-hidden="true" onclick="toggleMenu()"></i>
         <div id="menuMain" class="unselected">
             <a class="menuItem" href="../..">Home</a>
             <a class="menuItem" href="../../ea/services/">Enterprise architecture</a>
@@ -37,7 +32,7 @@
             <p class="menuItem disabled">Digital</p>
             <p class="menuItem disabled">Leadership</p>
             <a class="menuItem" href="../../os/">Open source</a>
-         </div>
+        </div>
         <h1>Services</h1>
     </nav>
     <main>
@@ -98,10 +93,7 @@
         <p>Copyright &copy;
             <span id="footer_year">yyyy</span> Steelbreeze Limited</p>
     </footer>
-    <script>
-        var d = new Date();
-        document.getElementById("footer_year").textContent = d.getFullYear();
-    </script>
+    <script src="../../script/year.js"></script>
 </body>
 
 </html>
