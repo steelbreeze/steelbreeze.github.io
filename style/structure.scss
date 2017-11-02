@@ -75,6 +75,7 @@ footer {
 	background-color: white;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	padding: 0 0.75em;
+	display: none;
 }
 
 .menuItem {
@@ -87,14 +88,6 @@ footer {
 	border-top-style: solid;
 	border-width: 1px;
 	border-color: rgba(black, $dividers);
-}
-
-.selected {
-	display: block;
-}
-
-.unselected {
-	display: none;
 }
 
 .disabled {

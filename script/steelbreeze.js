@@ -12,12 +12,12 @@ menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/os/">Open s
 
 // show/hide the main menu
 menuToggle.onclick = function () {
-	if (menuMain.className === "unselected") {
-		menuMain.className = "selected";
-		menuToggle.className = "fa fa-chevron-up";
+	if (menuMain.style.display !== "block") {
+		menuToggle.className = "fa fa-chevron-up"
+		menuMain.style.display = "block";
 	} else {
-		menuMain.className = "unselected";
-		menuToggle.className = "fa fa-chevron-down";
+		menuToggle.className = "fa fa-chevron-down"
+		menuMain.style.display = "none";
 	}
 };
 
