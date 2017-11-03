@@ -1,6 +1,7 @@
 var currentDate = new Date();
 var menuToggle = document.getElementById("menuToggle");
 var menuMain = document.getElementById("menuMain");
+var footer = document.getElementsByTagName("footer")[0];
 
 // add menu items
 menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/">Home</a>');
@@ -20,4 +21,5 @@ menuToggle.onclick = function () {
 };
 
 // add the footer text
-document.body.insertAdjacentHTML('beforeend', '<footer><p>Please get in touch by e-mailing us at: <a href="mailto:contact@steelbreeze.net">contact@steelbreeze.net</a></p><p>Copyright &copy; ' + currentDate.getFullYear() + ' Steelbreeze Limited</p></footer>');
+footer.insertAdjacentHTML('beforeend', '<p>Please get in touch by e-mailing us at: <a href="mailto:contact@steelbreeze.net">contact@steelbreeze.net</a></p>');
+footer.insertAdjacentHTML('beforeend', '<p>Copyright &copy; ' + currentDate.getFullYear() + ' Steelbreeze Limited</p>');
