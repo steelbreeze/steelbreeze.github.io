@@ -1,7 +1,9 @@
 var currentDate = new Date();
-var menuToggle = document.getElementById("menuToggle");
-var menuMain = document.getElementById("menuMain");
-var footer = document.getElementsByTagName("footer")[0];
+var menuToggle = document.getElementById('menuToggle');
+var searchToggle = document.getElementById('searchToggle');
+var menuMain = document.getElementById('menuMain');
+var searchMain = document.getElementById('searchMain');
+var footer = document.getElementsByTagName('footer')[0];
 
 // add menu items
 menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/">Home</a>');
@@ -13,10 +15,21 @@ menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/os/">Open&n
 
 // show/hide the main menu
 menuToggle.onclick = function () {
-	if (menuMain.style.display !== "block") {
-		menuMain.style.display = "block";
+	if (menuMain.style.display !== 'block') {
+		menuMain.style.display = 'block';
+		searchMain.style.display = 'none';
 	} else {
-		menuMain.style.display = "none";
+		menuMain.style.display = 'none';
+	}
+};
+
+// show/hide the search box
+searchToggle.onclick = function () {
+	if (searchMain.style.display !== 'block') {
+		searchMain.style.display = 'block';
+		menuMain.style.display = 'none';
+	} else {
+		searchMain.style.display = 'none';
 	}
 };
 

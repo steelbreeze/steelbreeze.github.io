@@ -66,3 +66,8 @@ footer {
 		color: rgba($color:black, $alpha: $secondary_text);
 	}
 }
+
+input {
+	color: rgba($color: black, $alpha: $secondary_text);
+	border-color: rgba($color: black, $alpha: $dividers);
+}
