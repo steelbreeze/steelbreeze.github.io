@@ -17,18 +17,22 @@ menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/dt/">Digita
 menuMain.insertAdjacentHTML('beforeend', '<p class="menuItem disabled">Technology&nbsp;leadership</p>');
 menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/os/">Open&nbsp;source</a>');
 
-// process clicks
-document.addEventListener('click', function (event) {
-	if (menuToggle.contains(event.target) && menuMain.style.display !== 'block') {
+// show/hide the main menu
+menuToggle.onclick = function () {
+	if (menuMain.style.display !== 'block') {
 		menuMain.style.display = 'block';
 		searchMain.style.display = 'none';
 	} else {
-		if (searchToggle.contains(event.target) && searchMain.style.display !== 'block') {
-			searchMain.style.display = 'block';
-			menuMain.style.display = 'none';
-		} else {
-			menuMain.style.display = 'none';
-			searchMain.style.display = 'none';
-		}
+		menuMain.style.display = 'none';
 	}
-});
+};
+
+// show/hide the search box
+searchToggle.onclick = function () {
+	if (searchMain.style.display !== 'block') {
+		searchMain.style.display = 'block';
+		menuMain.style.display = 'none';
+	} else {
+		searchMain.style.display = 'none';
+	}
+};
