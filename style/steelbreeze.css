@@ -91,6 +91,9 @@ body {
 
 #title {
   font-size: 1.5em;
+  font-weight: 300;
+}
+#title b {
   font-weight: 600;
 }
 
