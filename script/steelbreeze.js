@@ -17,22 +17,26 @@ menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/dt/">Digita
 menuMain.insertAdjacentHTML('beforeend', '<p class="menuItem disabled">Technology&nbsp;leadership</p>');
 menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/os/">Open&nbsp;source</a>');
 
-// show/hide the main menu
-menuToggle.onclick = function () {
-	if (menuMain.style.display !== 'block') {
-		menuMain.style.display = 'block';
-		searchMain.style.display = 'none';
-	} else {
-		menuMain.style.display = 'none';
-	}
-};
+document.addEventListener('click', function (event) {
+	if (menuMain.style.display === 'block') {
+		if (!menuMain.contains(event.target)) {
+			menuMain.style.display = 'none';
 
-// show/hide the search box
-searchToggle.onclick = function () {
-	if (searchMain.style.display !== 'block') {
+			if (searchToggle.contains(event.target)) {
+				searchMain.style.display = 'block';
+			}
+		}
+	} else if (searchMain.style.display === 'block') {
+		if (!searchMain.contains(event.target)) {
+			searchMain.style.display = 'none';
+
+			if (menuToggle.contains(event.target)) {
+				menuMain.style.display = 'block';
+			}
+		}
+	} else if (menuToggle.contains(event.target)) {
+		menuMain.style.display = 'block';
+	} else if (searchToggle.contains(event.target)) {
 		searchMain.style.display = 'block';
-		menuMain.style.display = 'none';
-	} else {
-		searchMain.style.display = 'none';
 	}
-};
+});
