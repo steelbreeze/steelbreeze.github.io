@@ -7,7 +7,7 @@ var footer = document.getElementsByTagName('footer')[0];
 
 // add the footer text
 footer.insertAdjacentHTML('beforeend', '<p>Please get in touch by e-mailing us at: <a href="mailto:contact@steelbreeze.net">contact@steelbreeze.net</a></p>');
-footer.insertAdjacentHTML('beforeend', '<p>Copyright &copy; ' + currentDate.getFullYear() + ' Steelbreeze Limited</p>');
+footer.insertAdjacentHTML('beforeend', '<p>Copyright &copy; ' + currentDate.getFullYear() + ' steelbreeze limited</p>');
 
 // add menu items
 menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/">Home</a>');

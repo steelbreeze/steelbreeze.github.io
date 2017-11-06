@@ -93,9 +93,6 @@ body {
   font-size: 1.5em;
   font-weight: 300;
 }
-#title b {
-  font-weight: 600;
-}
 
 #subtitle {
   font-size: 1.5em;
@@ -115,6 +112,10 @@ h2 {
 p, ul, li, input {
   font-size: 1em;
   font-weight: 300;
+}
+
+b {
+  font-weight: 600;
 }
 
 strong {
