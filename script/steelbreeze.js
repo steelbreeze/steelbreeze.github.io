@@ -41,4 +41,5 @@ function eventHandler (event) {
 	}
 }
 
-document.body.addEventListener('click', eventHandler );
+document.addEventListener('click', eventHandler );
+document.addEventListener('touchstart', eventHandler );
