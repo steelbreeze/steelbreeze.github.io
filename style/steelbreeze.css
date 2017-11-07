@@ -55,10 +55,6 @@ a {
   color: rgba(192, 80, 70, 0.87);
 }
 
-.icon:hover {
-  background-color: rgba(192, 80, 70, 0.1);
-}
-
 a:hover {
   background-color: rgba(192, 80, 70, 0.1);
 }
@@ -81,6 +77,10 @@ input {
   max-height: 4.5em;
   max-width: 4.5em;
   margin-left: 1em;
+}
+
+.social {
+  margin: 0 0 -0.5em -0.5em;
 }
 
 .icon {
