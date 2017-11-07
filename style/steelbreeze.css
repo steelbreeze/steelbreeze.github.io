@@ -55,9 +55,12 @@ a {
   color: rgba(192, 80, 70, 0.87);
 }
 
+.icon:hover {
+  background-color: rgba(192, 80, 70, 0.1);
+}
+
 a:hover {
   background-color: rgba(192, 80, 70, 0.1);
-  border-radius: 0.2em;
 }
 
 footer {
@@ -72,7 +75,7 @@ input {
   border-color: rgba(0, 0, 0, 0.12);
 }
 
-img.avatar {
+.avatar {
   float: right;
   border-radius: 50%;
   max-height: 4.5em;
@@ -80,8 +83,12 @@ img.avatar {
   margin-left: 1em;
 }
 
-i {
-  padding: 0.25em 0.5em 0 0;
+.icon {
+  padding: 0.25em;
+}
+
+.icon + .icon {
+  margin-right: -0.25em;
 }
 
 body {

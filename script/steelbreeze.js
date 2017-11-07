@@ -17,7 +17,7 @@ menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/dt/">Digita
 menuMain.insertAdjacentHTML('beforeend', '<p class="menuItem disabled">Technology&nbsp;leadership</p>');
 menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/os/">Open&nbsp;source</a>');
 
-document.addEventListener('click', function (event) {
+function eventHandler (event) {
 	if (menuMain.style.display === 'block') {
 		if (!menuMain.contains(event.target)) {
 			menuMain.style.display = 'none';
@@ -39,4 +39,6 @@ document.addEventListener('click', function (event) {
 	} else if (searchToggle.contains(event.target)) {
 		searchMain.style.display = 'block';
 	}
-});
+}
+
+document.body.addEventListener('click', eventHandler );
