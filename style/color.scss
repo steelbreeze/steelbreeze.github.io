@@ -50,11 +50,11 @@ strong {
 	color: rgba(black, $secondary_text);    
 }
 
-a {
+a, .icon {
 	color: rgba($color:$colour_primary, $alpha: $primary_text);
 }
 
-a:hover {
+a:hover, .icon:hover {
 	background-color: rgba($color:$colour_primary, $alpha: 10%);
 }
 

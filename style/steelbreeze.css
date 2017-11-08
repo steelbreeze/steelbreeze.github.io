@@ -51,11 +51,11 @@ strong {
   color: rgba(0, 0, 0, 0.54);
 }
 
-a {
+a, .icon {
   color: rgba(192, 80, 70, 0.87);
 }
 
-a:hover {
+a:hover, .icon:hover {
   background-color: rgba(192, 80, 70, 0.1);
 }
 
