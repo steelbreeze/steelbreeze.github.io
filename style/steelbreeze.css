@@ -228,13 +228,13 @@ nav {
 }
 
 #menuMain {
-  padding: 0 0.75em;
+  padding: 0.5em;
 }
 
 .menuItem {
   font-weight: 300;
   display: block;
-  padding: 0.75em 0;
+  padding: 0.5em;
 }
 
 .menuItem + .menuItem {

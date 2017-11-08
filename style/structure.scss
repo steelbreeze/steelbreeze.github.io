@@ -66,7 +66,7 @@ nav {
 
 #menuToggle, #searchToggle {
 	font-size: 1.5em;
-	cursor: pointer;
+	cursor: pointer; // NOTE: leave this in as it makes iOS click events work
 }
 
 .popup {
@@ -80,13 +80,13 @@ nav {
 }
 
 #menuMain {
-	padding: 0 0.75em;
+	padding: 0.5em;
 }
 
 .menuItem {
 	font-weight: 300;
 	display:  block;
-	padding: 0.75em 0;
+	padding: 0.5em;
 }
 
 .menuItem + .menuItem {
