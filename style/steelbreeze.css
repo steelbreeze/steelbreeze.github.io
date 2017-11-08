@@ -213,9 +213,7 @@ nav {
 }
 
 #menuToggle, #searchToggle {
-  cursor: pointer;
   font-size: 1.5em;
-  color: rgba(0, 0, 0, 0.54);
 }
 
 .popup {
