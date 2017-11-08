@@ -30,15 +30,15 @@ article {
 	color: rgba($color:black, $alpha: $secondary_text);
 }
 
-#subtitle, #subtitle a {
+h1, h1 a {
 	color: rgba($color:$colour_primary, $alpha: $primary_text);
 }
 
-h1, h1 a {
+h2, h2 a {
 	color: rgba($color:black, $alpha: $secondary_text);
 }
 
-h2 {
+h3 {
 	color: rgba($color:black, $alpha: $secondary_text);
 }
 
