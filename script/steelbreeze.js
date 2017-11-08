@@ -41,8 +41,4 @@ function eventHandler(event) {
 	}
 }
 
-if (document.body.ontouchstart) {
-	document.addEventListener('touchstart', eventHandler);
-} else {
-	document.addEventListener('click', eventHandler);
-}
+document.addEventListener('click', eventHandler);
