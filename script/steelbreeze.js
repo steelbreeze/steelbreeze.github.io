@@ -42,7 +42,7 @@ function eventHandler(event) {
 }
 
 if (document.body.ontouchstart) {
-	document.body.addEventListener('touchstart', eventHandler);
+	document.addEventListener('touchstart', eventHandler);
 } else {
-	document.body.addEventListener('click', eventHandler);
+	document.addEventListener('click', eventHandler);
 }
