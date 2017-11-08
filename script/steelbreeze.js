@@ -14,7 +14,7 @@ menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/">Home</a>'
 menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/ea/">Enterprise&nbsp;architecture</a>');
 menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/da/">Data&nbsp;architecture</a>');
 menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/dt/">Digital&nbsp;transformation</a>');
-menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/leadership">Technology&nbsp;leadership</a>');
+menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/leadership/">Technology&nbsp;leadership</a>');
 menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/os/">Open&nbsp;source</a>');
 
 function eventHandler (event) {
