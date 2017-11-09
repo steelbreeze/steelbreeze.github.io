@@ -14,6 +14,16 @@ body {
   background-color: white;
 }
 
+#cookieNotice {
+  background-color: rgba(0, 0, 0, 0.54);
+}
+#cookieNotice p, #cookieNotice a, #cookieNotice h3 {
+  color: rgba(255, 255, 255, 0.87);
+}
+#cookieNotice a:hover {
+  color: white;
+}
+
 #pad {
   background-color: white;
 }
@@ -161,6 +171,16 @@ body {
   min-height: 100%;
 }
 
+#cookieNotice {
+  padding: 0.75em 1.5em;
+  position: relative;
+}
+
+#cookieAccept {
+  float: right;
+  cursor: pointer;
+}
+
 #pad {
   margin: 0 1.5em;
   padding: 0.75em 0 0 0;
@@ -266,6 +286,11 @@ input {
 @media only screen and (max-width: 800px) {
   body .three {
     column-count: 1;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body #cookieNotice {
+    padding: 0.75em;
   }
 }
 @media only screen and (max-width: 600px) {

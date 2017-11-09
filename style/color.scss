@@ -13,6 +13,18 @@ body {
 	background-color: white;
 }
 
+#cookieNotice {
+	background-color: rgba(black, $secondary_text);
+
+	p, a, h3 {
+		color: rgba(white, $primary_text);
+	}
+
+	a:hover {
+		color: white;
+	}
+}
+
 #pad {
 	background-color: white;
 }
