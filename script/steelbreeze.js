@@ -27,7 +27,7 @@
 
 		if (!acceptCookies) {
 			// add the cookie notice
-			document.body.insertAdjacentHTML('afterbegin', '<div id="cookieNotice"><a id="cookieAccept" class="fa fa-check">&nbsp;Continue</a><h3>This website uses cookies</h3><p>We use cookies to ensure you receive the best experience on our website. If you continue, we will assume that you are happy to receive all cookies on the steelbreeze website.</p></div>');
+			document.body.insertAdjacentHTML('afterbegin', '<div id="cookieNotice"><button id="cookieAccept" class="fa fa-check">&nbsp;Continue</button><h3>This website uses cookies</h3><p>We use cookies to ensure you receive the best experience on our website. If you continue, we will assume that you are happy to receive all cookies on the steelbreeze website.</p></div>');
 
 			// manage cookie notice
 			var cookieNotice = document.getElementById('cookieNotice');

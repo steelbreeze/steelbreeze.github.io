@@ -16,11 +16,12 @@ body {
 #cookieNotice {
 	background-color: rgba(black, $secondary_text);
 
-	p, a, h3 {
+	p, button, h3 {
 		color: rgba(white, $primary_text);
+		background-color: transparent;
 	}
 
-	a:hover {
+	button:hover {
 		color: white;
 	}
 }

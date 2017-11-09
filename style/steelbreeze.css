@@ -17,10 +17,11 @@ body {
 #cookieNotice {
   background-color: rgba(0, 0, 0, 0.54);
 }
-#cookieNotice p, #cookieNotice a, #cookieNotice h3 {
+#cookieNotice p, #cookieNotice button, #cookieNotice h3 {
   color: rgba(255, 255, 255, 0.87);
+  background-color: transparent;
 }
-#cookieNotice a:hover {
+#cookieNotice button:hover {
   color: white;
 }
 
