@@ -31,7 +31,7 @@ var acceptCookies = getCookie('acceptCookies');
 
 if(!acceptCookies) {
 	// add the cookie notice
-	document.body.insertAdjacentHTML('afterbegin', '<div id="cookieNotice"><a id="cookieAccept" class="fa fa-lg fa-times"></a><h3>This website uses cookies</h3><p>Cookies on the steelbreeze website: we use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we will assume that you are happy to receive all cookies on the steelbreeze website.</p></div>');
+	document.body.insertAdjacentHTML('afterbegin', '<div id="cookieNotice"><a id="cookieAccept" class="fa fa-check">&nbsp;Continue</a><h3>This website uses cookies</h3><p>We use cookies to ensure you receive the best experience on our website. If you continue we will assume that you are happy to receive all cookies on the steelbreeze website.</p></div>');
 
 	// manage cookie notice
 	var cookieNotice = document.getElementById('cookieNotice');
