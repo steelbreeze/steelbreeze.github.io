@@ -174,12 +174,12 @@ body {
 
 #cookieNotice {
   padding: 0.75em 1.5em;
-  position: relative;
 }
 
 #cookieAccept {
   float: right;
   cursor: pointer;
+  padding-top: 0.125em;
 }
 
 #pad {
