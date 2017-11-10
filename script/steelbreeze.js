@@ -90,7 +90,7 @@
 	document.body.insertAdjacentHTML('beforeend', '\
 		<footer>\
 			<p>Please get in touch by e-mailing us at: <a href="mailto:contact@steelbreeze.net">contact@steelbreeze.net</a></p>\
-			<p>Copyright &copy; ' + (new Date()).getFullYear() + ' Steelbreeze limited</p>\
+			<p>Copyright &copy; ' + (new Date()).getFullYear() + ' Steelbreeze Limited</p>\
 		</footer>\
 	');
 
