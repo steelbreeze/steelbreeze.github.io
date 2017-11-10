@@ -27,9 +27,14 @@
 
 		if (!acceptCookies) {
 			// add the cookie notice
-			document.body.insertAdjacentHTML('afterbegin', '<div id="cookieNotice"><a id="cookieAccept" class="fa fa-times"></a><h3>This website uses cookies</h3><p>We use cookies to ensure you receive the best experience on our website. If you close this notice we will assume that you are happy to receive all cookies on the steelbreeze website.</p></div>');
-
-			// manage cookie notice
+			document.body.insertAdjacentHTML('afterbegin', '\
+				<div id="cookieNotice">\
+					<a id="cookieAccept" class="fa fa-times"></a>\
+					<h3>This website uses cookies</h3>\
+					<p>We use cookies to ensure you receive the best experience on our website. If you close this notice we will assume that you are happy to receive all cookies on the steelbreeze website.</p>\
+				</div>\
+			');
+			
 			var cookieNotice = document.getElementById('cookieNotice');
 			var cookieAccept = document.getElementById('cookieAccept');
 
@@ -65,12 +70,10 @@
 		}
 	}
 
-	var currentDate = new Date();
 	var menuToggle = document.getElementById('menuToggle');
 	var searchToggle = document.getElementById('searchToggle');
 	var menuMain = document.getElementById('menuMain');
 	var searchMain = document.getElementById('searchMain');
-	var footer = document.getElementsByTagName('footer')[0];
 
 	// add the cookie notice if need be
 	checkCookieNotice();
@@ -84,8 +87,12 @@
 	menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/os/">Open&nbsp;source</a>');
 
 	// add the footer text
-	footer.insertAdjacentHTML('beforeend', '<p>Please get in touch by e-mailing us at: <a href="mailto:contact@steelbreeze.net">contact@steelbreeze.net</a></p>');
-	footer.insertAdjacentHTML('beforeend', '<p>Copyright &copy; ' + currentDate.getFullYear() + ' Steelbreeze limited</p>');
+	document.body.insertAdjacentHTML('beforeend', '\
+		<footer>\
+			<p>Please get in touch by e-mailing us at: <a href="mailto:contact@steelbreeze.net">contact@steelbreeze.net</a></p>\
+			<p>Copyright &copy; ' + (new Date()).getFullYear() + ' Steelbreeze limited</p>\
+		</footer>\
+	');
 
 	// add the event listner to control menus
 	document.addEventListener('click', eventHandler);
