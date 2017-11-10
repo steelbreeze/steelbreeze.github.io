@@ -2,28 +2,17 @@
 <html lang="en">
 
 <head>
+	<!-- Usual web page headers -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Web Components test</title>
+
+	<!-- Web Components polyfill for Edge and Firefox -->
 	<script src="bower_components/webcomponentsjs/webcomponents-hi-ce.js"></script>
-	<script>
-		"use strict";
 
-		class SBLogo extends HTMLElement {
-			connectedCallback() {
-				this.innerHTML = '<b>steel</b>breeze';
-			}
-		}
-
-		window.customElements.define('sb-logo', SBLogo);
-
-		class SBHeader extends HTMLElement {
-			connectedCallback() {
-				this.innerHTML = '<sb-logo></sb-logo><h1>' + this.getAttribute('subject') + '</h1><h2>' + this.innerText + '</h2>';
-			}
-		}
-
-		window.customElements.define('sb-header', SBHeader);
-	</script>
-
+	<!-- Add custom components used within the page -->
+	<script src="web_components/SBLogo.js"></script>
+	<script src="web_components/SBHeader.js"></script>
 </head>
 
 <body>
