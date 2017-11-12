@@ -70,10 +70,10 @@ a:hover, .icon:hover {
   background-color: rgba(192, 80, 70, 0.1);
 }
 
-footer {
+sb-footer {
   border-color: rgba(0, 0, 0, 0.12);
 }
-footer p {
+sb-footer p {
   color: rgba(0, 0, 0, 0.54);
 }
 
@@ -221,7 +221,8 @@ article {
   break-inside: avoid;
 }
 
-footer {
+sb-footer {
+  display: block;
   border-style: solid;
   border-top-width: 0.125em;
   margin: 0 1.5em;
@@ -295,7 +296,7 @@ input {
   }
 }
 @media only screen and (max-width: 600px) {
-  body #pad, body #sticky, body header, body main, body footer {
+  body #pad, body #sticky, body header, body main, body sb-footer {
     margin: 0 0.75em;
   }
 }
