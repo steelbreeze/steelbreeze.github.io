@@ -1,10 +1,10 @@
 (function () {
     const menuItems = [
         { label: 'Home', link: '/' },
-        { label: 'Enterprise architecture', link: '/ea/' },
-        { label: 'Data architecture', link: '/da/' },
-		{ label: 'Digital transformation', link: '/dt/' },
-        { label: 'Technology leadership', link: '/leadership/' },
+        { label: 'Enterprise architecture', link: '/ea/services/' },
+        { label: 'Data architecture', link: '/da/services/' },
+		{ label: 'Digital transformation', link: '/dt/services/' },
+        { label: 'Technology leadership', link: '/leadership/services/' },
         { label: 'Open source', link: '/os/' }
 	];
 	
