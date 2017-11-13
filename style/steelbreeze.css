@@ -38,8 +38,11 @@ article {
   background-color: rgba(192, 80, 70, 0.05);
 }
 
-#title, #title a {
+sb-logo {
   color: rgba(0, 0, 0, 0.54);
+}
+sb-logo .start {
+  color: rgba(192, 80, 70, 0.87);
 }
 
 h1, h1 a {
@@ -107,9 +110,12 @@ body {
   font-size: 100%;
 }
 
-#title {
+sb-logo {
   font-size: 1.5em;
   font-weight: 300;
+}
+sb-logo .start {
+  font-weight: 600;
 }
 
 h1 {

@@ -4,9 +4,13 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 100%;
 }
-#title {
+sb-logo {
 	font-size: 1.5em;
 	font-weight: 300;
+
+	.start {
+		font-weight: 600;
+	}
 }
 
 h1 {

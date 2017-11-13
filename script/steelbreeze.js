@@ -86,14 +86,6 @@
 	menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/leadership/">Technology&nbsp;leadership</a>');
 	menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/os/">Open&nbsp;source</a>');
 
-	// add the footer text
-//	document.body.insertAdjacentHTML('beforeend', '\
-//		<footer>\
-//			<p>Please get in touch by e-mailing us at: <a href="mailto:contact@steelbreeze.net">contact@steelbreeze.net</a></p>\
-//			<p>Copyright &copy; ' + (new Date()).getFullYear() + ' Steelbreeze Limited</p>\
-//		</footer>\
-//	');
-
 	// add the event listner to control menus
 	document.addEventListener('click', eventHandler);
 })();
