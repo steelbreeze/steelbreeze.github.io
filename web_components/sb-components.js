@@ -1,7 +1,7 @@
 (function () {
 	class SBLogo extends HTMLElement {
 		connectedCallback() {
-			this.innerHTML = '<span class="start">steel</span><span class="end">breeze</span>';
+			this.innerHTML = '<style> .start { font-weight: 600; } .end { font-weight: 300; } </style><span class="start">steel</span><span class="end">breeze</span>';
 		}
 	};
 
