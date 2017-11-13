@@ -87,17 +87,16 @@ nav {
 	right: 0;
 	background-color: white;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	padding: 0;
-}
-
-#menuMain {
 	padding: 0.5em;
 }
 
-.menuItem {
-	font-weight: 300;
-	display:  block;
-	padding: 0.5em;
+sb-menu {
+	p, a {
+		white-space: nowrap;
+		font-weight: 300;
+		display:  block;
+		padding: 0.5em;
+	}
 }
 
 .menuItem + .menuItem {
@@ -116,7 +115,7 @@ input {
 	border-style: solid;
 	border-width: 0.125em;
 
-	margin: 0.75em;
+	margin: 0.25em;
 	padding: 0.25em 0.75em;
 
 	outline: none;

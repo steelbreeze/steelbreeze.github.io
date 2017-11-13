@@ -1,5 +1,10 @@
 // page initialisation
 (function () {
+	var menuToggle = document.getElementById('menuToggle');
+	var searchToggle = document.getElementById('searchToggle');
+	var menuMain = document.getElementsByTagName('sb-menu')[0];
+	var searchMain = document.getElementById('searchMain');
+
 	function setCookie(cname, cvalue, exdays) {
 		var d = new Date();
 		d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -34,7 +39,7 @@
 					<p>We use cookies to ensure you receive the best experience on our website. If you close this notice we will assume that you are happy to receive all cookies on the steelbreeze website.</p>\
 				</div>\
 			');
-			
+
 			var cookieNotice = document.getElementById('cookieNotice');
 			var cookieAccept = document.getElementById('cookieAccept');
 
@@ -70,21 +75,8 @@
 		}
 	}
 
-	var menuToggle = document.getElementById('menuToggle');
-	var searchToggle = document.getElementById('searchToggle');
-	var menuMain = document.getElementById('menuMain');
-	var searchMain = document.getElementById('searchMain');
-
 	// add the cookie notice if need be
 	checkCookieNotice();
-
-	// add menu items
-	menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/">Home</a>');
-	menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/ea/">Enterprise&nbsp;architecture</a>');
-	menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/da/">Data&nbsp;architecture</a>');
-	menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/dt/">Digital&nbsp;transformation</a>');
-	menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/leadership/">Technology&nbsp;leadership</a>');
-	menuMain.insertAdjacentHTML('beforeend', '<a class="menuItem" href="/os/">Open&nbsp;source</a>');
 
 	// add the event listner to control menus
 	document.addEventListener('click', eventHandler);

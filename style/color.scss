@@ -35,6 +35,10 @@ body {
 	border-color: rgba($color: black, $alpha: $dividers);
 }
 
+sb-menu p {
+	color: rgba($color:black, $alpha: $secondary_text);	
+}
+
 article {
 	background-color: rgba($colour_primary, 5%);
 }

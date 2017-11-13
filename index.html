@@ -13,8 +13,8 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" type="text/css" href="style/steelbreeze.css">
 
-	<script src="bower_components/webcomponentsjs/webcomponents-hi-ce.js"></script>
-	<script src="web_components/sb-components.js"></script>
+    <script src="bower_components/webcomponentsjs/webcomponents-hi-ce.js"></script>
+    <script src="web_components/sb-components.js"></script>
 </head>
 
 <body>
@@ -27,12 +27,12 @@
         <nav>
             <a id="searchToggle" class="icon fa fa-search" aria-hidden="true"></a>
             <a id="menuToggle" class="icon fa fa-bars" aria-hidden="true"></a>
-            <div id="menuMain" class="popup"></div>
             <form id="searchMain" class="popup" method="get" action="http://www.google.com/search">
                 <input id="search-input" type="text" name="q" placeholder="search" value="" autocomplete="off" spellcheck="false" tabindex="1"
                     autofocus />
                 <input type="hidden" name="sitesearch" value="steelbreeze.net" />
             </form>
+            <sb-menu class="popup" data-current="Home"></sb-menu>
         </nav>
         <h2>Home</h2>
     </div>
@@ -108,7 +108,9 @@
         </section>
     </main>
     <sb-footer>
-        <p>Please get in touch by e-mailing us at: <a href="mailto:contact@steelbreeze.net">contact@steelbreeze.net</a></p>        
+        <p>Please get in touch by e-mailing us at:
+            <a href="mailto:contact@steelbreeze.net">contact@steelbreeze.net</a>
+        </p>
     </sb-footer>
     <script src="script/steelbreeze.js"></script>
 </body>
