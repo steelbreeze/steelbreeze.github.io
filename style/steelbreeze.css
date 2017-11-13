@@ -116,6 +116,10 @@ sb-logo, h1 {
   font-weight: 600;
 }
 
+sb-logo .end {
+  font-weight: 300;
+}
+
 h2 {
   font-size: 1.5em;
   font-weight: 300;
@@ -248,14 +252,13 @@ nav {
   padding: 0.5em;
 }
 
-sb-menu p, sb-menu a {
+sb-menu * {
   white-space: nowrap;
   font-weight: 300;
   display: block;
   padding: 0.5em;
 }
-
-.menuItem + .menuItem {
+sb-menu * + * {
   border-top-style: solid;
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.12);

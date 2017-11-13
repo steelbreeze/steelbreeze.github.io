@@ -10,7 +10,7 @@
 	
     class SBLogo extends HTMLElement {
         connectedCallback() {
-            this.innerHTML = '<style> .start { font-weight: 600; } .end { font-weight: 300; } </style><span class="start">steel</span><span class="end">breeze</span>';
+            this.innerHTML = '<span class="start">steel</span><span class="end">breeze</span>';
         }
 	};
 	
@@ -18,7 +18,7 @@
         connectedCallback() {
 			const current = this.getAttribute('data-current');
 			
-            this.innerHTML = menuItems.map(item => item.label === current ? `<p class="menuItem">${item.label}</p>` : `<a class="menuItem" href="${item.link}">${item.label}</a>`).join('');
+            this.innerHTML = menuItems.map(item => item.label === current ? `<p>${item.label}</p>` : `<a href="${item.link}">${item.label}</a>`).join('');
         }
 	};
 	

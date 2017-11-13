@@ -91,18 +91,18 @@ nav {
 }
 
 sb-menu {
-	p, a {
+	* {
 		white-space: nowrap;
 		font-weight: 300;
 		display:  block;
 		padding: 0.5em;
 	}
-}
 
-.menuItem + .menuItem {
-	border-top-style: solid;
-	border-width: 1px;
-	border-color: rgba(black, $dividers);
+	* + * {
+		border-top-style: solid;
+		border-width: 1px;
+		border-color: rgba(black, $dividers);
+	}
 }
 
 .disabled {
