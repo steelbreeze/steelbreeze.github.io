@@ -20,7 +20,7 @@
 		}
 
 		connectedCallback() {
-			this.innerHTML = menuItems.map(menuItem => (menuItem.label === this.current ? makeP : makeA)(menuItem)).join('');
+			this.innerHTML = menuItems.map(menuItem => (menuItem.label === this.current ? this.makeA : this.makeP)(menuItem)).join('');
 		}
 
 		makeP(menuItem) {
