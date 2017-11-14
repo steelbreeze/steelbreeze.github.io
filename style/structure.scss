@@ -75,7 +75,7 @@ nav {
 	position: relative;
 }
 
-#menuToggle, #searchToggle {
+#searchToggle {
 	font-size: 1.5em;
 	cursor: pointer; // NOTE: leave this in as it makes iOS click events work
 }
@@ -83,13 +83,45 @@ nav {
 .popup {
 	display: none;
 	position: absolute;
-	top: 3em;
+	top: 2.5em;
 	right: 0;
 	background-color: white;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	padding: 0.5em;
+	white-space: nowrap;
 }
 
+sb-menu {
+	position: relative;
+
+	div {
+		position: absolute;
+		right: 0.25em;
+		top: 2em;
+
+		background-color: white;
+		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+		padding: 0.333em;
+
+		* {
+			white-space: nowrap;
+			display:  block;
+			padding: 0.75em;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 100%;
+			font-size: 0.6667em;
+			font-weight: 150;
+		}
+
+		* + * {
+			border-top-style: solid;
+			border-width: 1px;
+			border-color: rgba(black, $dividers);
+		}
+	}
+}
+
+/*
 sb-menu {
 	* {
 		white-space: nowrap;
@@ -98,13 +130,8 @@ sb-menu {
 		padding: 0.5em;
 	}
 
-	* + * {
-		border-top-style: solid;
-		border-width: 1px;
-		border-color: rgba(black, $dividers);
-	}
 }
-
+*/
 .disabled {
 	color: rgba(black, $disabled_text);
 }

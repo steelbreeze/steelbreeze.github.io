@@ -1,8 +1,6 @@
 // page initialisation
 (function () {
-	var menuToggle = document.getElementById('menuToggle');
 	var searchToggle = document.getElementById('searchToggle');
-	var menuMain = document.getElementsByTagName('sb-menu')[0];
 	var searchMain = document.getElementById('searchMain');
 
 	function setCookie(cname, cvalue, exdays) {
@@ -27,57 +25,31 @@
 		return "";
 	}
 
-	function checkCookieNotice() {
-		var acceptCookies = getCookie('acceptCookies');
-
-		if (!acceptCookies) {
-			// add the cookie notice
-			document.body.insertAdjacentHTML('afterbegin', '\
-				<div id="cookieNotice">\
-					<a id="cookieAccept" class="fa fa-times"></a>\
-					<h3>This website uses cookies</h3>\
-					<p>We use cookies to ensure you receive the best experience on our website. If you close this notice we will assume that you are happy to receive all cookies on the steelbreeze website.</p>\
-				</div>\
-			');
-
-			var cookieNotice = document.getElementById('cookieNotice');
-			var cookieAccept = document.getElementById('cookieAccept');
-
-			cookieAccept.onclick = function () {
-				cookieNotice.style.display = 'none';
-
-				setCookie('acceptCookies', true, 365);
-			};
-		}
-	}
-
-	function eventHandler(event) {
-		if (menuMain.style.display === 'block') {
-			if (!menuMain.contains(event.target)) {
-				menuMain.style.display = 'none';
-
-				if (searchToggle.contains(event.target)) {
-					searchMain.style.display = 'block';
-				}
-			}
-		} else if (searchMain.style.display === 'block') {
-			if (!searchMain.contains(event.target)) {
-				searchMain.style.display = 'none';
-
-				if (menuToggle.contains(event.target)) {
-					menuMain.style.display = 'block';
-				}
-			}
-		} else if (menuToggle.contains(event.target)) {
-			menuMain.style.display = 'block';
-		} else if (searchToggle.contains(event.target)) {
-			searchMain.style.display = 'block';
-		}
-	}
-
 	// add the cookie notice if need be
-	checkCookieNotice();
+	var acceptCookies = getCookie('acceptCookies');
+	
+	if (!acceptCookies) {
+		// add the cookie notice
+		document.body.insertAdjacentHTML('afterbegin', '\
+			<div id="cookieNotice">\
+				<a id="cookieAccept" class="fa fa-times"></a>\
+				<h3>This website uses cookies</h3>\
+				<p>We use cookies to ensure you receive the best experience on our website. If you close this notice we will assume that you are happy to receive all cookies on the steelbreeze website.</p>\
+			</div>\
+		');
 
+		var cookieNotice = document.getElementById('cookieNotice');
+		var cookieAccept = document.getElementById('cookieAccept');
+
+		cookieAccept.onclick = function () {
+			cookieNotice.style.display = 'none';
+
+			setCookie('acceptCookies', true, 365);
+		};
+	}
+	
 	// add the event listner to control menus
-	document.addEventListener('click', eventHandler);
+	searchToggle.addEventListener('click', function() {
+		searchMain.style.display = searchMain.style.display === 'block' ? 'none' : 'block';		
+	});
 })();

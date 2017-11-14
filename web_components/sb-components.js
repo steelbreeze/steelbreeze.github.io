@@ -20,7 +20,16 @@
 		}
 
 		connectedCallback() {
-			this.innerHTML = menuItems.map(menuItem => (menuItem.label === this.current ? this.makeA : this.makeP)(menuItem)).join('');
+			this.popup = document.createElement('div');
+			this.popup.style.display = 'none';
+			this.popup.innerHTML = menuItems.map(menuItem => (menuItem.label === this.current ? this.makeA : this.makeP)(menuItem)).join('');
+
+			this.appendChild(this.popup);
+			this.addEventListener('click', this.toggleMenu);
+		}
+
+		disconnectedCallback() {
+			this.removeEventListener('click', this.toggleMenu);
 		}
 
 		makeP(menuItem) {
@@ -30,11 +39,18 @@
 		makeA(menuItem) {
 			return `<p>${menuItem.label}</p>`;
 		}
+
+		toggleMenu(event) {
+			console.log(event);
+
+			this.popup.style.display = this.popup.style.display === 'block' ? 'none' : 'block';
+		}
 	};
 
 	class SBFooter extends HTMLElement {
 		connectedCallback() {
 			const date = new Date();
+
 			this.innerHTML = this.innerHTML + '<p>Copyright &copy; ' + date.getFullYear() + ' Steelbreeze Limited</p>';
 		}
 	};

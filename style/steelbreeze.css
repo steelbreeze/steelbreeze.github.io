@@ -92,14 +92,17 @@ input {
   max-height: 4.5em;
   max-width: 4.5em;
   margin-left: 1em;
+  border: white solid 0.125em;
 }
 
 .social {
   margin: 0 0 -0.5em -0.5em;
+  font-size: 1.5em;
 }
 
 .icon {
   padding: 0.25em;
+  font-size: 1.5em;
 }
 
 .icon + .icon {
@@ -237,7 +240,7 @@ nav {
   position: relative;
 }
 
-#menuToggle, #searchToggle {
+#searchToggle {
   font-size: 1.5em;
   cursor: pointer;
 }
@@ -245,25 +248,51 @@ nav {
 .popup {
   display: none;
   position: absolute;
-  top: 3em;
+  top: 2.5em;
   right: 0;
   background-color: white;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 0.5em;
+  white-space: nowrap;
 }
 
-sb-menu * {
-  white-space: nowrap;
-  font-weight: 300;
-  display: block;
-  padding: 0.5em;
+sb-menu {
+  position: relative;
 }
-sb-menu * + * {
+sb-menu div {
+  position: absolute;
+  right: 0.25em;
+  top: 2em;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 0.333em;
+}
+sb-menu div * {
+  white-space: nowrap;
+  display: block;
+  padding: 0.75em;
+  font-family: "Open Sans", sans-serif;
+  font-size: 100%;
+  font-size: 0.6667em;
+  font-weight: 150;
+}
+sb-menu div * + * {
   border-top-style: solid;
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.12);
 }
 
+/*
+sb-menu {
+	* {
+		white-space: nowrap;
+		font-weight: 300;
+		display:  block;
+		padding: 0.5em;
+	}
+
+}
+*/
 .disabled {
   color: rgba(0, 0, 0, 0.38);
 }
