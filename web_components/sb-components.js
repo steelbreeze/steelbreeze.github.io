@@ -4,8 +4,7 @@
 		{ label: 'Enterprise architecture', link: '/ea/services/' },
 		{ label: 'Data architecture', link: '/da/services/' },
 		{ label: 'Digital transformation', link: '/dt/services/' },
-		{ label: 'Technology leadership', link: '/leadership/services/' },
-		{ label: 'Open source', link: '/os/' }
+		{ label: 'Technology leadership', link: '/leadership/services/' }
 	];
 
 	class SBLogo extends HTMLElement {
