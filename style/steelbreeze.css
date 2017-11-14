@@ -258,6 +258,7 @@ nav {
 
 sb-menu {
   position: relative;
+  cursor: pointer;
 }
 sb-menu div {
   position: absolute;

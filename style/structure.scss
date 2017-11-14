@@ -93,7 +93,8 @@ nav {
 
 sb-menu {
 	position: relative;
-
+	cursor: pointer; // NOTE: leave this in as it makes iOS click events work
+	
 	div {
 		position: absolute;
 		right: 0.25em;
