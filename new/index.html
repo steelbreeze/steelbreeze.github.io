@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Enterprise Architecture | steelbreeze</title>
+	<style>
+		@import url("https://use.fontawesome.com/f07da16824.css");
+		@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,600");
+
+		* {
+			margin: 0;
+			border: none;
+			padding: 0;
+		}
+
+		html {
+			background-color: #EEEEEE;
+		}
+
+		body {
+			font-family: "Open Sans", sans-serif;
+			font-weight: 300;
+			font-size: 100%;
+
+			max-width: 1200px;
+
+			margin: 0 auto;
+
+			background-color: #FFFFFF;
+			box-shadow: 0 0 1em #888888;
+
+			color: rgba(0, 0, 0, 0.87);
+		}
+
+		header {
+			padding-top: 0.75em;
+			margin: 0 1.5em;
+		}
+
+		nav {
+			background-color: #FFFFFF;
+
+			padding-bottom: 0.75em;
+			margin: 0 1.5em;
+
+			border-bottom: 0.125em solid rgba(0, 0, 0, 0.12);
+
+			position: -webkit-sticky;
+			position: sticky;
+			top: 0;
+		}
+
+		main {
+			margin: 0 1.5em;
+			padding-top: 0.75em;
+		}
+
+		sb-search,
+		sb-menu {
+			float: right;
+			cursor: pointer;
+
+			padding: 0.5em;
+			margin-right: -0.5em;
+
+			position: relative;
+		}
+
+		sb-search:hover,
+		sb-menu:hover {
+			background-color: rgba(0, 0, 0, 0.12);
+		}
+
+		sb-menu div {
+			font-size: 0.75em;
+			position: absolute;
+			top: 2.25em;
+			right: 0.5em;
+
+			background-color: #FFFFFF;
+			box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+			padding: 0.5em;
+			white-space: nowrap;
+
+		}
+
+		sb-menu div * {
+			display: block;
+			padding: 0.5em;
+			font-weight: 300;
+		}
+
+		section {
+			float: left;
+			width: 65%;
+			padding-bottom: 1.5em;
+		}
+
+		article {
+			margin-right: 1.5em;
+		}
+
+
+
+		aside {
+			float: right;
+			width: 35%;
+			padding-bottom: 1em;
+		}
+
+		footer {
+			clear: both;
+
+			padding: 1em 1.5em;
+
+			background-color: rgba(0, 0, 0, 0.54);
+		}
+
+		footer p,
+		footer a {
+			color: rgba(255, 255, 255, 0.87);
+		}
+
+		sb-logo {
+			font-size: 1.5em;
+			font-weight: 300;
+			color: rgba(0, 0, 0, 0.54);
+		}
+
+		sb-menu,
+		sb-search {
+			color: rgba(0, 0, 0, 0.54);
+		}
+
+		h1 {
+			font-size: 1.5em;
+			font-weight: 600;
+			color: rgba(0, 0, 0, 0.54);
+		}
+
+		h2 {
+			font-size: 1.5em;
+			font-weight: 300;
+			color: rgba(0, 0, 0, 0.54);
+		}
+
+		h3 {
+			font-size: 1em;
+			font-weight: 600;
+			color: rgba(0, 0, 0, 0.54);
+		}
+
+		h4 {
+			font-size: 1em;
+			font-weight: 300;
+			color: rgba(0, 0, 0, 0.54);
+		}
+
+		p {
+			margin-bottom: 0.5em;
+		}
+
+		a {
+			color: rgba(192, 80, 70, 0.87);
+			text-decoration: none;
+		}
+
+		a:hover {
+			background-color: rgba(0, 0, 0, 0.12);
+		}
+
+		.avatar {
+			float: right;
+			border-radius: 50%;
+			max-height: 4.5em;
+			max-width: 4.5em;
+			margin-left: 1em;
+			border: white solid 0.125em;
+		}
+
+		@media only screen and (max-width: 600px) {
+			header,
+			nav,
+			main {
+				margin: 0 0.75em;
+			}
+
+			footer {
+				padding: 1em 0.75em;
+			}
+		}
+
+		@media only screen and (max-width: 800px) {
+			section,
+			aside {
+				width: 100%;
+			}
+
+			article {
+				margin-right: 0;
+			}
+		}
+	</style>
+	<script>
+		const menuItems = [
+			{ label: 'Home', link: '/' },
+			{ label: 'Services', link: '/services/' }/*,
+			{ label: 'Blog', link: '/blog/' },
+			{ label: 'About', link: '/about/' },
+			{ label: 'Contact', link: '/contact/' }*/
+		];
+
+		class SBMenu extends HTMLElement {
+			get current() {
+				return this.getAttribute('current');
+			}
+
+			connectedCallback() {
+				const current = this.getAttribute('current');
+
+				console.log(current);
+
+				this.popup = document.createElement('div');
+				this.popup.style.display = 'none';
+				this.popup.innerHTML = menuItems.map(menuItem => menuItem.label === current ? `<p>${menuItem.label}</p>` : `<a href="${menuItem.link}">${menuItem.label}</a>`).join('');
+				this.appendChild(this.popup);
+				this.addEventListener('click', this.toggleMenu);
+			}
+
+			disconnectedCallback() {
+				this.removeEventListener('click', this.toggleMenu);
+			}
+
+			toggleMenu(event) {
+				this.popup.style.display = this.popup.style.display === 'block' ? 'none' : 'block';
+			}
+		}
+
+		window.customElements.define('sb-menu', SBMenu);
+	</script>
+</head>
+
+<body>
+	<sb-messages></sb-messages>
+	<header>
+		<sb-logo>steelbreeze</sb-logo>
+		<h1>Enterprise architecture</h1>
+	</header>
+	<nav>
+		<sb-menu current="Home" class="fa fa-bars fa-lg" aria-hidden="true"></sb-menu>
+		<sb-search class="fa fa-search fa-lg" aria-hidden="true"></sb-search>
+		<h2>Home</h2>
+	</nav>
+	<main>
+		<section>
+			<h3> Welcome to steelbreeze </h3>
+			<p>Welcome to steelbreeze. We are an independent consultancy providing enterprise architecture professional services with
+				deep knowledge of the financial services sector.
+			</p>
+			<h3>Areas of expertise</h3>
+			<article>
+				<h4><a>Enterprise architecture</a></h4>
+				<p>We think of enterprise architecture as: <i>“knowing what you have, knowing what you need and having a transition plan”</i>. This
+					applies to your business, information systems and technology architecture.</p>
+				<p>Creating and operating a sustainable enterprise architecture capability within your organisation is a multi-faceted task,
+					requiring strong stakeholder management and defining and implementing governance processes.</p>
+				<p>A mature enterprise architecture practice is essential to a healthy information technology organisation and is an essential
+					component of other transformational activities such as exploiting digital channels.</p>
+				<p>We have extensive experience mobilising and running successful enterprise architecture teams within financial services.</p>
+			</article>
+			<article>
+				<h4><a>Data architecture</a></h4>
+				<p>We have in-depth knowledge of banking data, associated lifecycles and interactions. We can assist you in building enterprise
+					data models as a pre-cursor to many other design and analytical activities.</p>
+				<p>We offer a wide range of services in the field of data architecture and governance.</p>
+			</article>
+		</section>
+		<aside id="AboutDavid">
+			<h3>About David</h3>
+			<img class="avatar" src="images/david.jpg" alt="David's profile picture">
+			<p>David Mesquita-Morris is the founder of steelbreeze, he specialises in the engineering of robust transaction processing
+				software solutions and the pragmatic application of enterprise architecture principles and practices.</p>
+			<p>David has been working in the field of software engineering for over 25 years. In that time, he has held a variety of
+				development, architect and senior management positions at institutions including
+				<a href="https://www.fidelity.co.uk/home" target="_blank">Fidelity International</a>,
+				<a href="https://www.jpmorgan.com" target="_blank">JP Morgan</a>,
+				<a href="https://www.ubs.com" target="_blank">UBS</a>
+				and
+				<a href="https://www.standardbank.com" target="_blank">Standard Bank of South Africa</a>; recently holding the position of Head of IT Architecture at the
+				<a href="http://www.ebrd.com/" target="_blank">European Bank for Reconstruction and Development
+				</a>, where he mobilised their architecture capability.</p>
+			<p>Through these engagements, David has amassed a deep working knowledge of investment banking processes and associated data,
+				from market making through to risk management.</p>
+			<p>In addition, David is a strong advocate of Open Source software and actively maintains projects in the field of executable
+				finite state machines.</p>
+		</aside>
+	</main>
+	<footer>
+		<p>Please get in touch by e-mailing us at:
+			<a href="mailto:contact@steelbreeze.net">contact@steelbreeze.net</a>
+		</p>
+		<p>Copyright &copy; 2017 Steelbreeze Limited</p>
+	</footer>
+</body>
+
+</html>
