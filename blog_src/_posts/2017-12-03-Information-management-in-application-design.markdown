@@ -3,7 +3,7 @@ layout: post
 title:  "Information management in application design"
 author: "David Mesquita-Morris"
 date:   2017-12-03 10:23:39 +0000
-categories: blog
+categories: information
 ---
 When designing and building applications solution architects need to consider many different viewpoints [RW1]; once of which is the information viewpoint. This post discusses the different types of information managed within an application, what they all have in common and how they differ.
 
