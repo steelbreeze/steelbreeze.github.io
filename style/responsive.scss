@@ -1,23 +1,13 @@
-body {
-	.three {
-		@media only screen and (max-width: 1000px) {
-			column-count: 2;
-		}
-			
-		@media only screen and (max-width: 800px) {
-			column-count: 1;
-		}
+@media only screen and (max-width: 600px) {
+	#pad,
+	header,
+	#sticky,
+	nav,
+	main {
+		margin: 0 0.75em;
 	}
-	
-	#cookieNotice {
-		@media only screen and (max-width: 600px) {
-			padding: 0.75em;
-		}
-	}
-	
-	#pad, #sticky, header, main, sb-footer {
-		@media only screen and (max-width: 600px) {
-			margin: 0 0.75em;
-		}
+
+	sb-footer {
+		padding: 1em 0.75em;
 	}
 }

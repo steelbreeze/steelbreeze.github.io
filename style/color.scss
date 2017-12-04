@@ -1,9 +1,9 @@
 $colour_primary: #C05046;
 $colour_background: #EEEEEE; // Material Grey 200
-$primary_text: 87%;
-$secondary_text: 54%;
-$disabled_text: 38%;
-$dividers: 12%;
+$primary_text: 0.87;
+$secondary_text: 0.54;
+$disabled_text: 0.38;
+$dividers: 0.12;
 
 html {
 	background-color: $colour_background;
@@ -40,7 +40,7 @@ sb-menu p {
 }
 
 article {
-	background-color: rgba($colour_primary, 5%);
+	background-color: rgba($colour_primary, 0.05);
 }
 
 sb-logo {
@@ -72,15 +72,19 @@ a, .icon {
 }
 
 a:hover, .icon:hover {
-	background-color: rgba($color:$colour_primary, $alpha: 10%);
+	background-color: rgba($color:$colour_primary, $alpha: 0.10);
 }
 
 sb-footer {
-	border-color: rgba($color: black, $alpha: $dividers);
+	background-color: rgba(black, $secondary_text);
 
-	p {
-		color: rgba($color:black, $alpha: $secondary_text);
+	p, a {
+		color: rgba(white, $primary_text);
 	}
+
+	a:hover {
+		background-color: rgba(white, 0.10);
+	} 
 }
 
 input {
