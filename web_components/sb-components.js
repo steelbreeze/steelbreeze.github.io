@@ -2,8 +2,8 @@
 	const menuItems = [
 		{ label: 'Home', link: '/' },
 		{ label: 'Enterprise architecture', link: '/ea/services/' },
-		{ label: 'Data architecture', link: '/da/services/' }//,
-//		{ label: 'Blog', link: '/blog/' }
+		{ label: 'Data architecture', link: '/da/services/' },
+		{ label: 'Blog', link: '/blog/' }
 	];
 
 	class SBLogo extends HTMLElement {
