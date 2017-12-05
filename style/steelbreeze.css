@@ -92,7 +92,7 @@ body {
 
 sb-logo {
   font-size: 1.5em;
-  font-weight: 300; }
+  font-weight: 600; }
 
 h1 {
   font-size: 1.5em;
@@ -116,7 +116,7 @@ b {
 strong {
   font-weight: 600; }
 
-p + p, p + h2 {
+p + p, p + h3, p + ul, ul + p, ul + h3 {
   margin-top: 0.5em; }
 
 a {
