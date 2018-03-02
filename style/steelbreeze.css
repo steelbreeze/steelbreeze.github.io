@@ -29,9 +29,6 @@ body {
 sb-menu p {
   color: rgba(0, 0, 0, 0.38); }
 
-article {
-  background-color: rgba(192, 80, 70, 0.05); }
-
 sb-logo {
   color: rgba(0, 0, 0, 0.54); }
 
@@ -175,7 +172,6 @@ main {
 
 article {
   border-top: 1em solid white;
-  padding: 1em;
   page-break-inside: avoid;
   break-inside: avoid; }
 

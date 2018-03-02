@@ -45,14 +45,12 @@ main {
 }
 
 .three {
-//	column-count: 2;
 	column-width: 375px;
 	column-gap: 1em;
 }	
 
 article {
 	border-top: 1em solid white;
-	padding: 1em;
 	page-break-inside: avoid;
 	break-inside: avoid;
 }
