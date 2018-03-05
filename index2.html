@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
-		<title>steelbreeze</title>
+	<title>steelbreeze</title>
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,600');
 
@@ -47,26 +47,47 @@
 			background: #FFFFFF;
 
 			border-bottom: 0.125em solid rgba(0, 0, 0, .12);
+
+			overflow: visible;
+		}
+
+		.dropdown {
+			display: inline-block;
+			position: relative;
+		}
+
+		menu {
+			position: absolute;
+			display: none;
+			background: #FFFFFF;
+			border: 0.125em solid rgba(0, 0, 0, .12);
+			top: 2.375em;
+			left: 0; 
+		}
+
+		.dropdown:hover menu {
+			display: inline-block;
 		}
 
 		main {
 			margin: 0 1.5em;
 			padding: 0.75em 0;
 
-			column-width: 375px;
+			column-width: 450px;
 			column-gap: 1em;
 		}
 
+		article,
 		section {
 			page-break-inside: avoid;
 			break-inside: avoid;
 		}
 
 		footer {
-			column-width: 275px;
+			column-width: 220px;
 			column-gap: 1em;
 
-			font-size: 0.8em;
+			font-size: 0.9em;
 			padding: 1em 1.75em;
 			background: #757575;
 		}
@@ -92,6 +113,12 @@
 			font-size: 1.5em;
 		}
 
+		h3 {
+			color: rgba(0, 0, 0, .54);
+			font-weight: 600;
+			font-size: 1em;
+		}
+
 		h4 {
 			color: rgba(255, 255, 255, .54);
 			font-weight: 600;
@@ -99,6 +126,10 @@
 
 		i {
 			font-weight: 300;
+		}
+
+		p {
+			padding: 0 0 0.5em 0;
 		}
 
 		.single {
@@ -109,6 +140,8 @@
 			display: inline-block;
 			font-weight: 600;
 			padding: 0.5em;
+
+			white-space:nowrap;
 		}
 
 		nav a.active {
@@ -119,7 +152,15 @@
 			background: rgba(0, 0, 0, .12);
 		}
 
-		footer section, footer p {
+		main a:hover {
+			margin: -0.25em;
+			padding: 0.25em;
+
+			background: rgba(192, 80, 70, .12);
+		}
+
+		footer section,
+		footer p {
 			padding: 0.5em 0;
 		}
 
@@ -133,7 +174,17 @@
 		}
 
 		footer p {
+			padding: 0;
 			color: rgba(255, 255, 255, .54);
+		}
+
+		.avatar {
+			float: right;
+			border-radius: 50%;
+			max-height: 4.5em;
+			max-width: 4.5em;
+			margin-left: 1em;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 		}
 	</style>
 </head>
@@ -141,30 +192,59 @@
 <body>
 	<header>
 		<h1>steelbreeze</h1>
-		<h2>Architecture consulting</h2>
+		<h2>Architecture</h2>
 	</header>
 	<nav>
 		<a class="active" href="#">Home</a>
-		<a href="#">Services</a>
-		<a href="#">Blog</a>
+		<div class="dropdown">
+			<a href="/services">Services</a>
+			<menu>
+				<a href="/services/ea">Enterprise architecture</a>
+				<a href="/services/da">Data architecture</a>
+			</menu>
+		</div>
+		<a href="/blog">Blog</a>
 		<a style="float:right" href="mailto:contact@steelbreeze.net">Contact</a>
 	</nav>
 	<main>
 		<p class="single">Welcome to steelbreeze. We are an independent consultancy providing enterprise architecture professional services with
 			deep knowledge of the financial services sector. We have expertise in the following:</p>
-		<p>The quick brown fox jumps over the lazy old dog. The quick brown fox jumps over the lazy old dog. The quick brown fox jumps
-			over the lazy old dog. The quick brown fox jumps over the lazy old dog. The quick brown fox jumps over the lazy old dog.</p>
-		The quick brown fox jumps over the lazy old dog. The quick brown fox jumps over the lazy old dog. The quick brown fox jumps
-		over the lazy old dog. The quick brown fox jumps over the lazy old dog. The quick brown fox jumps over the lazy old dog.
-		The quick brown fox jumps over the lazy old dog. The quick brown fox jumps over the lazy old dog. The quick brown fox jumps
-		over the lazy old dog. The quick brown fox jumps over the lazy old dog. The quick brown fox jumps over the lazy old dog.
-		The quick brown fox jumps over the lazy old dog. The quick brown fox jumps over the lazy old dog. The quick brown fox jumps
-		over the lazy old dog. The quick brown fox jumps over the lazy old dog. The quick brown fox jumps over the lazy old dog.
-		The quick brown fox jumps over the lazy old dog. The quick brown fox jumps over the lazy old dog. The quick brown fox jumps
-		over the lazy old dog. The quick brown fox jumps over the lazy old dog. The quick brown fox jumps over the lazy old dog.
-		The quick brown fox jumps over the lazy old dog. The quick brown fox jumps over the lazy old dog. The quick brown fox jumps
-		over the lazy old dog. The quick brown fox jumps over the lazy old dog. The quick brown fox jumps over the lazy old dog.
-		The quick brown fox jumps over the lazy old dog. The quick brown fox jumps over the lazy old dog.
+		<article>
+			<h3>Enterprise Architecture</h3>
+			<p>We think of enterprise architecture as:
+				<i>knowing what you have; knowing what you need; having a transition plan</i>. This applies to your business, information
+				systems and technology architectures.</p>
+			<p>Creating and operating a sustainable enterprise architecture capability within your organisation is a multi-faceted task,
+				requiring strong stakeholder management and defining and implementing governance processes.</p>
+			<p>A mature enterprise architecture practice is essential to a healthy information technology organisation and is an essential
+				component of other transformational activities such as exploiting digital channels.</p>
+			<p>We have extensive experience mobilising and running successful enterprise architecture teams within financial services.</p>
+		</article>
+		<article>
+			<h3>Data architecture</h3>
+			<p>The value of an enterprise’s data assets is finally being understood thanks to advances in analytics technology. However,
+				analytics tools will always be constrained by the quality of data available and data scientists need a strong underlying
+				semantic model to fully exploit this rich data resource.</p>
+			<p>We have in-depth knowledge of banking data, associated lifecycles and interactions. We can assist you in building enterprise
+				data models as a pre-cursor to analytical activities and other development and reengineering projects.</p>
+		</article>
+		<article>
+			<h3>About David</h3>
+			<img class="avatar" src="images/david.jpg" alt="David's profile picture">
+			<p>David Mesquita-Morris is the founder of steelbreeze, he specialises in the engineering of robust transaction processing
+				software solutions and the pragmatic application of enterprise architecture principles and practices.</p>
+			<p>David has been working in the field of software engineering for over 25 years. In that time, he has held a variety of
+				development, architect and senior management positions at institutions including
+				<a href="https://www.fidelity.co.uk/">Fidelity&nbsp;International</a>,
+				<a href="https://www.jpmorgan.com/">JP&nbsp;Morgan</a>,
+				<a href="https://www.ubs.com/">UBS</a> and
+				<a href="https://www.standardbank.com">Standard Bank</a>; recently holding the position of Head of IT Architecture at the
+				<a href="https://www.ebrd.com">European Bank for Reconstruction and Development</a>, where he mobilised their architecture capability.</p>
+			<p>Through these engagements, David has amassed a deep working knowledge of investment banking processes and associated data,
+				from market making through to risk management.</p>
+			<p>In addition, David is a strong advocate of Open Source software and actively maintains projects in the field of executable
+				finite state machines.</p>
+		</article>
 	</main>
 	<footer>
 		<section>
@@ -179,7 +259,6 @@
 		<section>
 			<h4>Legal</h4>
 			<a href="#">Cookies</a>
-			<a href="#">Disclaimer</a>
 			<a href="#">Privacy</a>
 		</section>
 		<section>
