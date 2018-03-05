@@ -136,10 +136,13 @@
 			column-span: all;
 		}
 
-		nav a {
+		nav a, nav p {
 			display: inline-block;
 			font-weight: 600;
 			padding: 0.5em;
+			color: rgba(192, 80, 70, .87);
+
+			cursor: pointer;
 
 			white-space:nowrap;
 		}
@@ -148,7 +151,7 @@
 			color: rgba(0, 0, 0, .54);
 		}
 
-		nav a:hover {
+		nav a:hover, nav p:hover {
 			background: rgba(0, 0, 0, .12);
 		}
 
@@ -197,7 +200,7 @@
 	<nav>
 		<a class="active" href="#">Home</a>
 		<div class="dropdown">
-			<a href="/services">Services</a>
+			<p>Services</p>
 			<menu>
 				<a href="/services/ea">Enterprise architecture</a>
 				<a href="/services/da">Data architecture</a>
