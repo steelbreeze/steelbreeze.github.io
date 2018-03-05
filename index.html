@@ -2,90 +2,273 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Enterprise architects | steelbreeze</title>
-    <meta name="description" content="steelbreeze is an independent consultancy focusing on enterprise architecture, digital transformation
-    and technology leadership within financial services.">
-    <meta name="keywords" content="Consulting,Enterprise,Architecture,Digital,Transformation,Technology,Leadership">
-    <meta name="author" content="steelbreeze">
-    <link rel="canonical" href="https://steelbreeze.net/" />
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" type="text/css" href="style/steelbreeze.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<title>steelbreeze</title>
 
-    <script src="bower_components/webcomponentsjs/webcomponents-hi-ce.js"></script>
-    <script src="web_components/sb-components.js"></script>
+	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,600');
+
+		* {
+			margin: 0;
+			border: 0;
+			padding: 0;
+		}
+
+		html {
+			background: #EEEEEE;
+		}
+
+		body {
+			max-width: 1200px;
+			margin: 0 auto;
+			box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+
+			background: rgb(255, 255, 255);
+
+			font-family: 'Open Sans', sans-serif;
+			font-size: 100%;
+			font-weight: 300;
+			color: rgba(0, 0, 0, .87);
+		}
+
+		header {
+			margin: 0 1.5em;
+			padding: 0.75em 0em 0em 0em;
+		}
+
+		nav {
+			position: -webkit-sticky;
+			position: sticky;
+			top: 0;
+
+			margin: 0 1em;
+
+			overflow: scroll;
+			background: #FFFFFF;
+
+			border-bottom: 0.125em solid rgba(0, 0, 0, .12);
+
+			overflow: visible;
+		}
+
+		.dropdown {
+			display: inline-block;
+			position: relative;
+		}
+
+		menu {
+			position: absolute;
+			display: none;
+			background: #FFFFFF;
+			border: 0.125em solid rgba(0, 0, 0, .12);
+			top: 2.375em;
+			left: 0;
+		}
+
+		.dropdown:hover menu {
+			display: inline-block;
+		}
+
+		main {
+			margin: 0 1.5em;
+			padding: 0.75em 0;
+
+			column-width: 450px;
+			column-gap: 1em;
+		}
+
+		article,
+		section {
+			page-break-inside: avoid;
+			break-inside: avoid;
+		}
+
+		footer {
+			column-width: 220px;
+			column-gap: 1em;
+
+			font-size: 0.9em;
+			padding: 1em 1.75em;
+			background: #757575;
+		}
+
+		a {
+			text-decoration: none;
+			color: rgba(192, 80, 70, .87);
+		}
+
+		b {
+			font-weight: 600;
+		}
+
+		h1 {
+			color: rgba(0, 0, 0, .54);
+			font-weight: 600;
+			font-size: 1.5em;
+		}
+
+		h2 {
+			color: rgba(192, 80, 70, .87);
+			font-weight: 600;
+			font-size: 1.5em;
+		}
+
+		h3 {
+			color: rgba(0, 0, 0, .54);
+			font-weight: 600;
+			font-size: 1em;
+		}
+
+		h4 {
+			color: rgba(255, 255, 255, .54);
+			font-weight: 600;
+		}
+
+		i {
+			font-weight: 300;
+		}
+
+		p {
+			padding: 0 0 0.5em 0;
+		}
+
+		.single {
+			column-span: all;
+		}
+
+		nav a {
+			display: inline-block;
+			font-weight: 600;
+			padding: 0.5em;
+
+			white-space: nowrap;
+		}
+
+		nav a.active {
+			color: rgba(0, 0, 0, .54);
+		}
+
+		nav a:hover {
+			background: rgba(0, 0, 0, .12);
+		}
+
+		main a:hover {
+			background: rgba(192, 80, 70, .12);
+		}
+
+		footer section,
+		footer p {
+			padding: 0.5em 0;
+		}
+
+		footer a {
+			color: rgba(255, 255, 255, .87);
+			display: block;
+		}
+
+		footer a:hover {
+			background: rgba(255, 255, 255, .12);
+		}
+
+		footer p {
+			padding: 0;
+			color: rgba(255, 255, 255, .54);
+		}
+
+		.avatar {
+			float: right;
+			border-radius: 50%;
+			max-height: 4.5em;
+			max-width: 4.5em;
+			margin-left: 1em;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+		}
+	</style>
 </head>
 
 <body>
-    <div id="pad"></div>
-    <header>
-        <sb-logo></sb-logo>
-        <h1>Architecture consulting</h1>
-    </header>
-    <div id="sticky">
-        <nav>
-            <a id="searchToggle" class="icon fa fa-search" aria-hidden="true"></a>
-            <sb-menu class="icon fa fa-bars" current="Home"></sb-menu>
-            <form id="searchMain" class="popup" method="get" action="http://www.google.com/search">
-                <input id="search-input" type="text" name="q" placeholder="search" value="" autocomplete="off" spellcheck="false" tabindex="1"
-                    autofocus />
-                <input type="hidden" name="sitesearch" value="steelbreeze.net" />
-            </form>
-        </nav>
-        <h2>Home</h2>
-    </div>
-    <main>
-        <section>
-            <p>Welcome to steelbreeze. We are an independent consultancy providing enterprise architecture professional services with deep knowledge of the financial services sector. We have expertise in the following:</p>
-        </section>
-        <section class="three">
-            <article>
-                <h3>
-                    <a href="ea/">Enterprise architecture</a>
-                </h3>
-                <p>We think of enterprise architecture as: <i>“knowing what you have; knowing what you need; having a transition plan”</i>. This applies to your business, information systems and technology architectures.</p>
-                <p>Creating and operating a sustainable enterprise architecture capability within your organisation is a multi-faceted task, requiring strong stakeholder management and defining and implementing governance processes.</p>
-                <p>A mature enterprise architecture practice is essential to a healthy information technology organisation and is an essential component of other transformational activities such as exploiting digital channels.</p>
-                <p>We have extensive experience mobilising and running successful enterprise architecture teams within financial services.</p>
-            </article>
-            <article>
-                <h3>
-                    <a href="da/">Data architecture</a>
-                </h3>
-                <p>The value of an enterprise’s data assets is finally being understood thanks to advances in analytics technology. However, analytics tools will always be constrained by the quality of data available and data scientists need a strong underlying semantic model to fully exploit this rich data resource.</p>
-                <p>We have in-depth knowledge of banking data, associated lifecycles and interactions. We can assist you in building enterprise data models as a pre-cursor to analytical activities and other development and reengineering projects.</p>
-            </article>
-            <article id="AboutDavid">
-                <img class="avatar" src="images/david.jpg" alt="David's profile picture">
-                <h3>About David</h3>
-                <p>David Mesquita-Morris is the founder of steelbreeze, he specialises in the engineering of robust transaction
-                    processing software solutions and the pragmatic application of enterprise architecture principles and
-                    practices.
-                </p>
-                <p>David has been working in the field of software engineering for over 25 years. In that time, he has held
-                    a variety of development, architect and senior management positions at institutions including
-                    <a href="https://www.fidelity.co.uk/">Fidelity&nbsp;International</a>,
-                    <a href="https://www.jpmorgan.com/">JP&nbsp;Morgan</a>,
-                    <a href="https://www.ubs.com/">UBS</a> and
-                    <a href="https://www.standardbank.com">Standard Bank</a>; recently holding the position of Head of IT Architecture at the
-                    <a href="https://www.ebrd.com">European Bank for Reconstruction and Development</a>, where he mobilised their architecture capability.</p>
-                <p>Through these engagements, David has amassed a deep working knowledge of investment banking processes and
-                    associated data, from market making through to risk management.</p>
-                    <p>In addition, David is a strong advocate of Open Source software and actively maintains projects in the field of <a href="/os/">executable finite state machines</a>.</p>
-                <div class="social">
-                    <a class="icon fa fa-twitter fa-2x" aria-hidden="true" href="https://twitter.com/mesquimo"></a>
-                    <a class="icon fa fa-linkedin-square fa-2x" aria-hidden="true" href="https://www.linkedin.com/in/mesmo"></a>
-                </div>
-            </article>
-        </section>
-    </main>
-    <sb-footer>
-        <p>Please get in touch by e-mailing us at:
-            <a href="mailto:contact@steelbreeze.net">contact@steelbreeze.net</a>
-        </p>
-    </sb-footer>
-    <script src="script/steelbreeze.js"></script>
+	<header>
+		<h1>steelbreeze</h1>
+		<h2>Architecture</h2>
+	</header>
+	<nav>
+		<a class="active" href="#">Home</a>
+		<div class="dropdown">
+			<a href="#">Services</a>
+			<menu>
+				<a href="/ea">Enterprise architecture</a>
+				<a href="/da">Data architecture</a>
+			</menu>
+		</div>
+		<a href="/blog">Blog</a>
+		<a style="float:right" href="mailto:contact@steelbreeze.net">Contact</a>
+	</nav>
+	<main>
+		<p class="single">Welcome to steelbreeze. We are an independent consultancy providing enterprise architecture professional services with
+			deep knowledge of the financial services sector. We have expertise in the following:</p>
+		<article>
+			<h3><a href="/ea">Enterprise Architecture</a></h3>
+			<p>We think of enterprise architecture as:
+				<i>knowing what you have; knowing what you need; having a transition plan</i>. This applies to your business, information
+				systems and technology architectures.</p>
+			<p>Creating and operating a sustainable enterprise architecture capability within your organisation is a multi-faceted task,
+				requiring strong stakeholder management and defining and implementing governance processes.</p>
+			<p>A mature enterprise architecture practice is essential to a healthy information technology organisation and is an essential
+				component of other transformational activities such as exploiting digital channels.</p>
+			<p>We have extensive experience mobilising and running successful enterprise architecture teams within financial services.</p>
+		</article>
+		<article>
+			<h3><a href="/da">Data architecture</a></h3>
+			<p>The value of an enterprise’s data assets is finally being understood thanks to advances in analytics technology. However,
+				analytics tools will always be constrained by the quality of data available and data scientists need a strong underlying
+				semantic model to fully exploit this rich data resource.</p>
+			<p>We have in-depth knowledge of banking data, associated lifecycles and interactions. We can assist you in building enterprise
+				data models as a pre-cursor to analytical activities and other development and reengineering projects.</p>
+		</article>
+		<article>
+			<h3>About David</h3>
+			<img class="avatar" src="images/david.jpg" alt="David's profile picture">
+			<p>David Mesquita-Morris is the founder of steelbreeze, he specialises in the engineering of robust transaction processing
+				software solutions and the pragmatic application of enterprise architecture principles and practices.</p>
+			<p>David has been working in the field of software engineering for over 25 years. In that time, he has held a variety of
+				development, architect and senior management positions at institutions including
+				<a href="https://www.fidelity.co.uk/">Fidelity&nbsp;International</a>,
+				<a href="https://www.jpmorgan.com/">JP&nbsp;Morgan</a>,
+				<a href="https://www.ubs.com/">UBS</a> and
+				<a href="https://www.standardbank.com">Standard Bank</a>; recently holding the position of Head of IT Architecture at the
+				<a href="https://www.ebrd.com">European Bank for Reconstruction and Development</a>, where he mobilised their architecture capability.</p>
+			<p>Through these engagements, David has amassed a deep working knowledge of investment banking processes and associated data,
+				from market making through to risk management.</p>
+			<p>In addition, David is a strong advocate of Open Source software and actively maintains projects in the field of executable
+				finite state machines.</p>
+			<a class="fab fa-twitter fa-2x" aria-hidden="true" href="https://twitter.com/mesquimo"></a>
+			<a class="fab fa-linkedin fa-2x" aria-hidden="true" href="https://www.linkedin.com/in/mesmo"></a>
+	</article>
+	</main>
+	<footer>
+		<section>
+			<h4>Architecture resources</h4>
+			<a href="http://www.opengroup.org/subjectareas/enterprise/togaf">TOGAF</a>
+			<a href="https://www.enterprise-architecture.org">Essential Project</a>
+		</section>
+		<section>
+			<h4>Open source</h4>
+			<a href="https://github.com/steelbreeze/state.js">state.js</a>
+		</section>
+		<section>
+			<h4>Legal</h4>
+			<a href="#">Cookies</a>
+			<a href="#">Privacy</a>
+		</section>
+		<section>
+			<h4>Contact</h4>
+			<a href="mailto:contact@steelbreeze.net">contact@steelbreeze.net</a>
+		</section>
+		<p class="single">Copyright &copy; 2018 Steelbreeze Limited</p>
+	</footer>
 </body>
 
 </html>
