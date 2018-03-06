@@ -59,7 +59,7 @@
 			position: relative;
 		}
 
-		menu {
+		.menuContainer {
 			position: absolute;
 			display: none;
 			background: #FFFFFF;
@@ -68,7 +68,7 @@
 			left: 0;
 		}
 
-		.dropdown:hover menu {
+		.dropdown:hover .menuContainer {
 			display: inline-block;
 		}
 
@@ -198,10 +198,10 @@
 		<a class="active" href="#">Home</a>
 		<div class="dropdown">
 			<a href="#">Services</a>
-			<menu>
+			<div class="menuContainer">
 				<a href="/ea">Enterprise architecture</a>
 				<a href="/da">Data architecture</a>
-			</menu>
+			</div>
 		</div>
 		<a href="/blog">Blog</a>
 		<a style="float:right" href="mailto:contact@steelbreeze.net">Contact</a>
