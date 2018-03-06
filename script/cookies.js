@@ -30,8 +30,8 @@
 		document.body.insertAdjacentHTML('afterbegin', '\
 			<footer id="cookieNotice">\
 				<a id="cookieAccept" href="#" class="fa fa-times"></a>\
-				<h4>This website uses cookies</h4>\
-				<p>We use cookies to ensure you receive the best experience on our website. If you close this notice we will assume that you are happy to receive all cookies on the steelbreeze website.</p>\
+				<h4>Cookies on the steelbreee website</h4>\
+				<p>We use cookies to ensure you receive the best experience on our website. This includes cookies from Google Analytics. If you close this notice we will assume that you are happy to receive all cookies.</p>\
 			</footer>\
 		');
 
