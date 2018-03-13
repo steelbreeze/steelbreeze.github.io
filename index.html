@@ -2,33 +2,228 @@
 <html lang="en">
 
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41494748-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-
-		gtag('config', 'UA-41494748-1');
-	</script>
-
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
-	<title>steelbreeze</title>
-	<meta name="description" content="steelbreeze is an independent consultancy focusing on enterprise architecture, digital transformation
-    and technology leadership within financial services.">
-	<meta name="keywords" content="Consulting,Enterprise,Architecture,Digital,Transformation,Technology,Leadership">
-	<meta name="author" content="steelbreeze">
-	<link rel="canonical" href="https://steelbreeze.net/">
-	<link rel="icon" type="image/png" href="favicon.png">
-	<link rel="stylesheet" type="text/css" href="style/new.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Flex test</title>
 	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,600');
+
+		/* reset all elements */
+
+		* {
+			margin: 0;
+			border: none;
+			padding: 0;
+		}
+
+		/* page background */
+
+		html {
+			background: #EEEEEE;
+		}
+
+		/* configure the body element as the main canvas */
+
+		body {
+			margin: 0 auto;
+
+			max-width: 1200px;
+
+			position: relative;
+
+			box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+
+			background: #FFFFFF;
+
+			font-size: 100%;
+			font-family: 'Open Sans', sans-serif;
+		}
+
+		/* configure the content elements */
+
+		h1 {
+			font-weight: 600;
+			font-size: 1.5em;
+			color: rgba(0, 0, 0, .54);
+		}
+
+		h2 {
+			font-weight: 600;
+			font-size: 1.5em;
+
+			color: rgba(192, 80, 70, .87);
+		}
+
+		h3 {
+			font-weight: 600;
+			font-size: 1em;
+
+			color: rgba(0, 0, 0, .54);
+		}
+
+		h4 {
+			font-weight: 600;
+			font-size: 1em;
+		}
+
+		p {
+			font-weight: 300;
+			font-size: 1em;
+		}
+
+		a {
+			font-weight: 300;
+			font-size: 1em;
+
+			text-decoration: none;
+
+			color: rgba(192, 80, 70, .87);
+		}
+
+		/* configure the structural elements */
+
+		header {
+			padding: 0.5em 1.5em 0 1.5em;
+
+			background: #FFFFFF;
+		}
+
+		nav {
+			margin: 0 0.75em;
+
+			position: sticky;
+			position: -webkit-sticky;
+			top: 0;
+
+			background: #FFFFFF;
+
+			border-bottom: 0.125em solid rgba(0, 0, 0, .12);
+		}
+
+		nav a {
+			display: inline-block;
+			padding: 0.75em;
+
+			font-weight: 600;
+
+			white-space: nowrap;
+
+		}
+
+		nav a.active {
+			color: rgba(0, 0, 0, .54);
+
+		}
+
+		.dropdown {
+			display: inline-block;
+			position: relative;
+		}
+
+		.menuContainer {
+			position: absolute;
+			display: none;
+			background: #FFFFFF;
+			border: 0.125em solid rgba(0, 0, 0, .12);
+			left: 0;
+		}
+
+		.menuContainer a {
+			display: block;
+		}
+
+		.dropdown:hover .menuContainer {
+			display: block;
+		}
+
+
+		nav a:hover {
+			background: rgba(0, 0, 0, .12);
+		}
+
+		main {
+			padding: 0em 0.75em 0.75em 0.75em;
+
+			background: #FFFFFF;
+
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		main p {
+			padding: 0 0 0.5em 0;
+		}
+
+		main a:hover {
+			background: rgba(192, 80, 70, .12);
+		}
+
+		footer {
+			padding: 0.75em;
+
+			background: #757575;
+			color: rgba(255, 255, 255, 0.87);
+			font-size: 0.85em;
+
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		footer+footer {
+			padding-top: 0;
+		}
+
+		footer a {
+			display: block;
+			color: rgba(255, 255, 255, 0.87);
+		}
+
+		footer a:hover {
+			background: rgba(255, 255, 255, .12);
+		}
+
+
+		aside {
+			padding: 0.75em;
+
+			flex-basis: 250px;
+			flex-grow: 1;
+		}
+
+		section {
+			padding: 0.75em;
+
+			flex-basis: 250px;
+			flex-grow: 2;
+		}
+
+		.avatar {
+			float: right;
+			border-radius: 50%;
+			max-height: 4.5em;
+			max-width: 4.5em;
+			margin-left: 1em;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+		}
+
+		#cookieNotice {
+			padding: 1.5em;
+			display: block;
+		}
+
+		#cookieAccept {
+			float: right;
+		}
+	</style>
 </head>
 
 <body>
 	<header>
 		<h1>steelbreeze</h1>
-		<h2>Architecture consulting</h2>
+		<h2>Enterprise architecture</h2>
 	</header>
 	<nav>
 		<a class="active" href="#">Home</a>
@@ -42,33 +237,33 @@
 		<a href="/blog">Blog</a>
 		<a style="float:right" href="mailto:contact@steelbreeze.net">Contact</a>
 	</nav>
-	<main>
-		<p class="single">Welcome to steelbreeze. We are an independent consultancy providing enterprise architecture professional services with
+	<header>
+		<p>Welcome to steelbreeze. We are an independent consultancy providing enterprise architecture professional services with
 			deep knowledge of the financial services sector. We have expertise in the following:</p>
-		<article>
-			<h3>
-				<a href="/ea">Enterprise Architecture</a>
-			</h3>
-			<p>We think of enterprise architecture as:
-				<i>knowing what you have; knowing what you need; having a transition plan</i>. This applies to your business, information
-				systems and technology architectures.</p>
-			<p>Creating and operating a sustainable enterprise architecture capability within your organisation is a multi-faceted task,
-				requiring strong stakeholder management and defining and implementing governance processes.</p>
-			<p>A mature enterprise architecture practice is essential to a healthy information technology organisation and is an essential
-				component of other transformational activities such as exploiting digital channels.</p>
-			<p>We have extensive experience mobilising and running successful enterprise architecture teams within financial services.</p>
-		</article>
-		<article>
-			<h3>
-				<a href="/da">Data architecture</a>
-			</h3>
-			<p>The value of an enterprise’s data assets is finally being understood thanks to advances in analytics technology. However,
-				analytics tools will always be constrained by the quality of data available and data scientists need a strong underlying
-				semantic model to fully exploit this rich data resource.</p>
-			<p>We have in-depth knowledge of banking data, associated lifecycles and interactions. We can assist you in building enterprise
-				data models as a pre-cursor to analytical activities and other development and reengineering projects.</p>
-		</article>
-		<article>
+	</header>
+	<main>
+		<section>
+			<article>
+				<h3>Enterprise architecture</h3>
+				<p>We think of enterprise architecture as:
+					<i>knowing what you have; knowing what you need; having a transition plan</i>. This applies to your business, information
+					systems and technology architectures.</p>
+				<p>Creating and operating a sustainable enterprise architecture capability within your organisation is a multi-faceted task,
+					requiring strong stakeholder management and defining and implementing governance processes.</p>
+				<p>A mature enterprise architecture practice is essential to a healthy information technology organisation and is an essential
+					component of other transformational activities such as exploiting digital channels.</p>
+				<p>We have extensive experience mobilising and running successful enterprise architecture teams within financial services.</p>
+			</article>
+			<article>
+				<h3>Data architecture</h3>
+				<p>The value of an enterprise’s data assets is finally being understood thanks to advances in analytics technology. However,
+					analytics tools will always be constrained by the quality of data available and data scientists need a strong underlying
+					semantic model to fully exploit this rich data resource.</p>
+				<p>We have in-depth knowledge of banking data, associated lifecycles and interactions. We can assist you in building enterprise
+					data models as a pre-cursor to analytical activities and other development and reengineering projects.</p>
+			</article>
+		</section>
+		<aside>
 			<h3>About David</h3>
 			<img class="avatar" src="images/david.jpg" alt="David's profile picture">
 			<p>David Mesquita-Morris is the founder of steelbreeze, he specialises in the engineering of robust transaction processing
@@ -86,7 +281,7 @@
 				finite state machines.</p>
 			<a class="fab fa-twitter fa-2x" aria-hidden="true" href="https://twitter.com/mesquimo"></a>
 			<a class="fab fa-linkedin fa-2x" aria-hidden="true" href="https://www.linkedin.com/in/mesmo"></a>
-		</article>
+		</aside>
 	</main>
 	<footer>
 		<section>
@@ -104,10 +299,17 @@
 			<a href="#">Privacy</a>
 		</section>
 		<section>
-			<h4>Contact</h4>
-			<a href="mailto:contact@steelbreeze.net">contact@steelbreeze.net</a>
+			<h4>Thanks to:</h4>
+			<a href="https://pages.github.com">GitHub Pages</a>
+			<a href="https://www.cloudflare.com">Cloudflare</a>
 		</section>
-		<p class="single">Copyright &copy; 2018 Steelbreeze Limited</p>
+	</footer>
+	<footer>
+		<section>
+			<h4>Steelbreeze</h4>
+			<p>Steelbreeze Limited is [soon to be] a private limited company registered in England and Wales</p>
+			<p>Copyright &copy; 2018 Steelbreeze Limited</p>
+		</section>
 	</footer>
 	<script src="script/cookies.js"></script>
 </body>
