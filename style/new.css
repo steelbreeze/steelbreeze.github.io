@@ -82,7 +82,7 @@ header {
 }
 
 nav {
-	margin: 0 1em;
+	padding: 0 1em;
 
 	position: sticky;
 	position: -webkit-sticky;
