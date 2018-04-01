@@ -135,7 +135,7 @@ nav a.active:hover {
 
 
 nav a:hover {
-	background: rgba(0, 0, 0, .12);
+	background: rgba(192, 80, 70, .12);
 }
 
 main {
