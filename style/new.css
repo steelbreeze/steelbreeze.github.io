@@ -79,8 +79,7 @@ blockquote {
 	font-style: italic;
 	color: rgba(192, 80, 70, .87);
 	display: block;
-	padding: 1em 0;
-	margin: 0 auto;
+	margin: 2.5em auto;
 	text-align: center;
 	max-width: 24em;
 }
@@ -100,9 +99,7 @@ nav {
 	position: -webkit-sticky;
 	top: 0;
 
-	background: #FFFFFF;
-
-	border-bottom: 0.125em solid rgba(0, 0, 0, .12);
+	background: #EEEEEE;
 }
 
 nav a {
@@ -120,10 +117,6 @@ nav a.active {
 	cursor: default;
 }
 
-nav a.active:hover {
-	background: #FFFFFF;
-}
-
 .dropdown {
 	display: inline-block;
 	position: relative;
@@ -132,8 +125,7 @@ nav a.active:hover {
 .menuContainer {
 	position: absolute;
 	display: none;
-	background: #FFFFFF;
-	border: 0.125em solid rgba(0, 0, 0, .12);
+	background: #EEEEEE;
 	left: 0;
 }
 
@@ -147,7 +139,7 @@ nav a.active:hover {
 
 
 nav a:hover {
-	background: rgba(192, 80, 70, .12);
+	background: #FFFFFF;
 }
 
 main {
