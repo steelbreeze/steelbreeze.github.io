@@ -73,6 +73,18 @@ a {
 	color: rgba(192, 80, 70, .87);
 }
 
+q {
+	font-weight: 300;
+	font-size: 1.5em;
+	font-style: italic;
+	color: rgba(192, 80, 70, .87);
+	display: block;
+	padding: 1em 0;
+	margin: 0 auto;
+	text-align: center;
+	max-width: 24em;
+}
+
 /* configure the structural elements */
 
 header {
@@ -198,8 +210,8 @@ section {
 .avatar {
 	float: right;
 	border-radius: 50%;
-	max-height: 4.5em;
-	max-width: 4.5em;
+	max-height: 7.5em;
+	max-width: 7.5em;
 	margin-left: 1em;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
