@@ -93,7 +93,7 @@ header {
 }
 
 nav {
-	padding: 0 1em;
+	padding: 0.25em 1.25em;
 
 	position: sticky;
 	position: -webkit-sticky;
@@ -106,7 +106,7 @@ nav {
 
 nav a {
 	display: inline-block;
-	padding: 0.75em;
+	padding: 0.5em;
 
 	font-weight: 600;
 
@@ -116,7 +116,6 @@ nav a {
 
 nav a.active {
 	color: rgba(0, 0, 0, .54);
-	cursor: default;
 }
 
 .dropdown {
@@ -129,6 +128,7 @@ nav a.active {
 	display: none;
 	background: #EEEEEE;
 	left: 0;
+	padding: 0.25em;
 }
 
 .menuContainer a {
@@ -137,11 +137,6 @@ nav a.active {
 
 .dropdown:hover .menuContainer {
 	display: block;
-}
-
-
-nav a:hover {
-	background: #FFFFFF;
 }
 
 main {
