@@ -100,7 +100,7 @@ header blockquote {
 header p {
 	padding: 2em 1em;
 	margin: 0 auto;
-	max-width: 46em;
+	max-width: 39em;
 	font-size: 1.25em;
 	font-weight: 600;
 	color: rgba(255, 255, 255, .54);
@@ -157,7 +157,7 @@ nav a:hover
 main {
 	padding: 2em 0.75em 2em 0.75em;
 
-	background: #FFFFFF;
+	background: #FAFAFA;
 
 	display: flex;
 	flex-wrap: wrap;
