@@ -78,15 +78,6 @@ a:hover {
 
 }
 
-blockquote {
-	font-weight: 300;
-	font-size: 1.5em;
-	font-style: italic;
-	display: block;
-	max-width: 24em;
-	margin: 0 auto;
-}
-
 /* configure the structural elements */
 
 header {
@@ -96,12 +87,18 @@ header {
 }
 
 header blockquote {
+	font-weight: 300;
+	font-size: 1.5em;
+	font-style: italic;
+	display: block;
+	max-width: 24em;
+	margin: 0 auto;
 	padding: 2em 0 0 0;
 	color: rgba(255, 255, 255, .87);
 }
 
 header p {
-	padding: 2em;
+	padding: 2em 5em;
 	font-size: 1.25em;
 	font-weight: 600;
 	color: rgba(255, 255, 255, .54);
