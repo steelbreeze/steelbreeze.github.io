@@ -172,7 +172,7 @@ main a:hover {
 }
 
 footer {
-	padding: 0.75em;
+	padding: 0.75em 1em;
 
 	background: #757575;
 	color: rgba(255, 255, 255, 0.87);
