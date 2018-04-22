@@ -93,7 +93,7 @@ header blockquote {
 	display: block;
 	max-width: 24em;
 	margin: 0 auto;
-	padding: 2em 0 0 0;
+	padding: 2em 0.75em 0 0.75em;
 	color: rgba(255, 255, 255, .87);
 }
 
