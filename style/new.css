@@ -80,13 +80,12 @@ a:hover {
 
 /* configure the structural elements */
 
-header {
+header, #contact {
 	background: #424242;
-
 	text-align: center;
 }
 
-header blockquote {
+header blockquote, #contact blockquote {
 	font-weight: 300;
 	font-size: 1.5em;
 	font-style: italic;
@@ -97,13 +96,23 @@ header blockquote {
 	color: rgba(255, 255, 255, .87);
 }
 
-header p {
+header p, #contact p {
 	padding: 2em 1em;
 	margin: 0 auto;
 	max-width: 39em;
 	font-size: 1.25em;
 	font-weight: 600;
 	color: rgba(255, 255, 255, .54);
+}
+
+#contact p a {
+	font-weight: 600;
+	color: rgba(255, 255, 255, .87);
+}
+
+#contact h4 {
+	color: rgba(255, 255, 255, .54);
+	padding: 0.25em;
 }
 
 nav {
@@ -128,8 +137,7 @@ nav a {
 	color: rgba(255, 255, 255, 0.87);
 }
 
-nav a:hover 
-{
+nav a:hover, #contact p a:hover {
 	background: rgba(255, 255, 255, .12);
 }
 
