@@ -98,7 +98,9 @@ header blockquote {
 }
 
 header p {
-	padding: 2em 5em;
+	padding: 2em 1em;
+	margin: 0 auto;
+	max-width: 46em;
 	font-size: 1.25em;
 	font-weight: 600;
 	color: rgba(255, 255, 255, .54);
