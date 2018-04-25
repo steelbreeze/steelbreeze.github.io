@@ -65,7 +65,6 @@ p {
 }
 
 a {
-	font-weight: 300;
 	font-size: 1em;
 
 	text-decoration: none;
@@ -76,6 +75,15 @@ a {
 a:hover {
 	background: rgba(192, 80, 70, .12);
 
+}
+
+button {
+	font-size: 1.25em;
+	font-weight: 300;
+	background: rgba(255, 255, 255, .87);
+	color: rgba(0, 0, 0, .54);
+	padding: 0.5em 2em;
+	border-radius: 0.25em;
 }
 
 /* configure the structural elements */
@@ -108,6 +116,10 @@ header p, #contact p {
 	font-size: 1.25em;
 	font-weight: 600;
 	color: rgba(255, 255, 255, .54);
+}
+
+#contact p + p {
+	padding-top: 0;
 }
 
 #contact p a {
