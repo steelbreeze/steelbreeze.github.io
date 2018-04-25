@@ -78,7 +78,7 @@ a:hover {
 }
 
 button {
-	font-size: 1.25em;
+	font-size: 1.125em;
 	font-weight: 300;
 	background: rgba(255, 255, 255, .87);
 	color: rgba(0, 0, 0, .54);
@@ -89,12 +89,12 @@ button {
 /* configure the structural elements */
 
 header {
-	background: #424242;
+	background: #455A64;
 	text-align: center;
 }
  
 #contact {
-	background: #424242;
+	background: #455A64;
 	text-align: center;
 }
 
@@ -113,7 +113,7 @@ header p, #contact p {
 	padding: 2em 1em;
 	margin: 0 auto;
 	max-width: 39em;
-	font-size: 1.25em;
+	font-size: 1.125em;
 	font-weight: 600;
 	color: rgba(255, 255, 255, .54);
 }
@@ -141,7 +141,7 @@ nav {
 
 	font-size: 85%;
 
-	background: #757575;
+	background: #37474F;
 }
 
 nav a {
@@ -170,7 +170,7 @@ nav a:hover, #contact p a:hover {
 .menuContainer {
 	position: absolute;
 	display: none;
-	background: #757575;
+	background: #37474F;
 	left: 0;
 }
 
@@ -203,7 +203,7 @@ main a:hover {
 footer {
 	padding: 0.75em 1em;
 
-	background: #757575;
+	background: #37474F;
 	color: rgba(255, 255, 255, 0.87);
 	font-size: 0.85em;
 
