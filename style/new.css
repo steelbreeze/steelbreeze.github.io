@@ -80,7 +80,12 @@ a:hover {
 
 /* configure the structural elements */
 
-header, #contact {
+header {
+	background: #424242;
+	text-align: center;
+}
+ 
+#contact {
 	background: #424242;
 	text-align: center;
 }
@@ -135,6 +140,10 @@ nav a {
 
 	white-space: nowrap;
 	color: rgba(255, 255, 255, 0.87);
+}
+
+nav div + a {
+	margin-left: -0.75em;
 }
 
 nav a:hover, #contact p a:hover {
