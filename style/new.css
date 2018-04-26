@@ -162,6 +162,10 @@ nav a:hover, #contact p a:hover {
 	position: relative;
 }
 
+menuController {
+	pointer-events: none;
+}
+
 .menuContainer {
 	position: absolute;
 	display: none;
@@ -175,6 +179,10 @@ nav a:hover, #contact p a:hover {
 }
 
 .dropdown:hover .menuContainer {
+	display: block;
+}
+
+.dropdown:active .menuContainer {
 	display: block;
 }
 
