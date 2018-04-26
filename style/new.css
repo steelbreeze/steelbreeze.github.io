@@ -162,10 +162,6 @@ nav a:hover, #contact p a:hover {
 	position: relative;
 }
 
-#menuController {
-	pointer-events: none;
-}
-
 .menuContainer {
 	position: absolute;
 	display: none;
