@@ -43,20 +43,9 @@
 </head>
 
 <body id="top">
-	<nav>
-		<div id="menuMain">
-			<input type="checkbox" id="menuController">
-			<label class="menuItem" for="menuController">&#9776;</label>
-			<div id="menuContainer">
-					<a class="menuItem" href="#">Services</a>
-					<a class="menuItem" href="#">About</a>
-					<a class="menuItem" href="#">Contact</a>
-					</div>
-		</div>
-		<a class="menuItem" href="#top">Steelbreeze</a>
-	</nav>
+	<nav><div id="menuMain"><input type="checkbox" id="menuController"><label class="menuItem" for="menuController">&#9776;</label><div id="menuContainer"><a class="menuItem" href="#services">Services</a><a class="menuItem" href="#about">About</a><a class="menuItem" href="#blog">Blog</a><a class="menuItem" href="#contact">Contact</a></div></div><a class="menuItem" href="#top">Steelbreeze</a></nav>
 	<main>
-		<p>Adding a nav and links to form a responsive menu:</p>
+		<p>Adding a nav and links to form a responsive, Safari on iOS friendly, menu:</p>
 		<pre>
 <style style="display: block; tab-size: 4;">
 nav {
@@ -101,6 +90,21 @@ nav {
 
 .menuItem:hover {
 	background: rgba(255, 255, 255, 0.12);
+}
+
+@media screen and (min-width: 600px) {
+	label[for=menuController] {
+		display: none;
+	}
+
+	#menuMain {
+		float: right;
+	}
+
+	#menuContainer {
+		display: inline-block;
+		margin-right: -0.75em;
+	}
 }
 </style>
 </pre>
