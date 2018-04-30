@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Responsive menu</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,600');
+
+		* {
+			margin: 0;
+			border: 0;
+			padding: 0;
+		}
+
+		html {
+			background: rgb(238, 238, 238);
+		}
+
+		body {
+			max-width: 1200px;
+
+			margin: 0 auto;
+
+			box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+
+			background: rgb(255, 255, 255);
+			color: rgba(0, 0, 0, 0.87);
+
+			font-family: 'Open Sans', sans-serif;
+			font-size: 100%;
+			font-weight: 300;
+
+			-webkit-text-size-adjust: 100%;
+		}
+
+		main {
+			padding: 1.5em;
+		}
+	</style>
+</head>
+
+<body id="top">
+	<nav>
+		<div id="menuMain">
+			<input type="checkbox" id="menuController">
+			<label class="menuItem" for="menuController">&#9776;</label>
+			<div id="menuContainer">
+					<a class="menuItem" href="#">Services</a>
+					<a class="menuItem" href="#">About</a>
+					<a class="menuItem" href="#">Contact</a>
+					</div>
+		</div>
+		<a class="menuItem" href="#top">Steelbreeze</a>
+	</nav>
+	<main>
+		<p>Adding a nav and links to form a responsive menu:</p>
+		<pre>
+<style style="display: block; tab-size: 4;">
+nav {
+	padding: 0 1.5em;
+
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+
+	background: rgb(66, 66, 66);
+}
+
+#menuMain {
+	display: inline-block;
+	position: relative;
+}
+
+#menuController, #menuContainer {
+	display: none;
+}
+
+#menuController:checked ~ #menuContainer {
+	display: block;
+	position: absolute;
+	background: rgb(66, 66, 66);
+	padding: 0 0 0 0.75em;
+	left: -0.75em;
+}
+
+.menuItem {
+	display: inline-block;
+
+	margin-left: -0.75em;
+	padding: 0.75em;
+
+	font-weight: 600;
+
+	text-decoration: none;
+
+	color: rgba(255, 255, 255, 0.87);
+}
+
+.menuItem:hover {
+	background: rgba(255, 255, 255, 0.12);
+}
+</style>
+</pre>
+		<p>The style sheet you see above is styling the menu.</p>
+	</main>
+</body>
+
+</html>
