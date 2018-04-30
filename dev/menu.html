@@ -63,7 +63,7 @@ nav {
 	position: relative;
 }
 
-#menuController, #menuContainer {
+#menuController {
 	display: none;
 }
 
@@ -82,6 +82,10 @@ nav {
 }
 
 @media screen and (max-width: 599px) {
+	#menuContainer {
+		display: none;
+	}
+	
 	#menuContainer .menuItem {
 		width: 100%;
 	}
@@ -105,10 +109,6 @@ nav {
 
 	#menuMain {
 		float: right;
-	}
-
-	#menuContainer {
-		display: inline-block;
 	}
 }
 </style>
