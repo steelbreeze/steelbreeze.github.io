@@ -7,6 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Responsive menu</title>
 	<style>
+		/* reset */
 		@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,600');
 
 		* {
@@ -15,13 +16,21 @@
 			padding: 0;
 		}
 
+		body {
+			font-family: 'Open Sans', sans-serif;
+			font-size: 100%;
+			font-weight: 300;
+			-webkit-text-size-adjust: 100%;
+		}
+
+		/* main */
 		html {
 			background: rgb(238, 238, 238);
 		}
 
 		body {
 			max-width: 1200px;
- 
+
 			margin: 0 auto;
 
 			box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
@@ -29,11 +38,6 @@
 			background: rgb(255, 255, 255);
 			color: rgba(0, 0, 0, 0.87);
 
-			font-family: 'Open Sans', sans-serif;
-			font-size: 100%;
-			font-weight: 300;
-
-			-webkit-text-size-adjust: 100%;
 		}
 
 		main {
@@ -43,7 +47,19 @@
 </head>
 
 <body id="top">
-	<nav><div id="menuMain"><input type="checkbox" id="menuController"><label for="menuController">&#9776;</label><div id="menuContainer"><a class="menuItem" href="#services">Services</a><a class="menuItem" href="#about">About</a><a class="menuItem" href="#blog">Blog</a><a class="menuItem" href="#contact">Contact</a></div></div><a class="menuItem" href="#top">Steelbreeze</a></nav>
+	<nav>
+		<div id="menuMain">
+			<input type="checkbox" id="menuController">
+			<label for="menuController">&#9776;</label>
+			<div id="menuContainer">
+				<a class="menuItem" href="#services">Services</a>
+				<a class="menuItem" href="#about">About</a>
+				<a class="menuItem" href="#blog">Blog</a>
+				<a class="menuItem" href="#contact">Contact</a>
+			</div>
+		</div>
+		<a class="menuItem" href="#top">Steelbreeze</a>
+	</nav>
 	<main>
 		<p>Adding a nav and links to form a responsive, Safari on iOS friendly, menu:</p>
 		<pre style="white-space: pre-wrap;">
