@@ -5,10 +5,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Responsive footer</title>
+	<title>Large header</title>
 	<link rel="stylesheet" type="text/css" href="../style/reset.css">
 	<link rel="stylesheet" type="text/css" href="../style/canvas.css">
 	<link rel="stylesheet" type="text/css" href="../style/menu.css">
+	<link rel="stylesheet" type="text/css" href="../style/footer.css">
 </head>
 
 <body id="top">
@@ -25,60 +26,36 @@
 		</div>
 		<a class="menuItem" href="#top">Steelbreeze</a>
 	</nav>
+	<header>
+		<blockquote>"Good architecture is sympathetic to it's environment; great architecture enhances the environment."</blockquote>
+	</header>
 	<main>
-		<p>Adding a responsive footer:</p>
+		<p>Adding a large header:</p>
 		<pre style="white-space: pre-wrap;">
 <style style="display: block; tab-size: 4;">
-footer {
-	padding: 0 0.75em;
+header {
+	background: rgb(97, 97, 97);
+	padding: 1.5em;
+}
 
-	background: rgb(66, 66, 66);
+blockquote {
 	color: rgba(255, 255, 255, 0.87);
 
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-}
+	text-align: center;
 
-footer:first-of-type {
-	padding-top: 0.75em;
-}
+	font-style: italic;
+	font-size: 1.5em;
 
-footer:last-of-type {
-	padding-bottom: 0.75em;
-}
+	max-width: 24em;
 
-footer section {
-	padding: 0.75em;
-
-	flex-basis: 225px;
-	flex-grow: 2;
-}
-
-footer h1 {
-	font-size: 85%;
-	font-weight: 600;
-}
-
-footer p {
-	font-size: 85%;
-}
-
-footer a {
-	font-size: 85%;
-	text-decoration: none;
-	color: rgba(255, 255, 255, 0.87);
-
-	display: block;
-}
-
-footer a:hover {
-	background: rgba(255, 255, 255, 0.12);
+	margin: 0 auto;
+	padding: 1.5em 0;
 }
 </style>
 		</pre>
-		<p>The style sheet you see above is styling the footer below.</p>
-		<p>Back to <a href="menu.html">menu</a>; on to <a href="heading.html">heading</a>.</p>
+		<p>The style sheet you see above is styling the heading above.</p>
+		<p>Back to
+			<a href="footer.html">footer</a>.</p>
 	</main>
 	<footer>
 		<section>

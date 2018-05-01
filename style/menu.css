@@ -1,0 +1,63 @@
+nav {
+	padding: 0 0.75em;
+
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+
+	background: rgb(66, 66, 66);
+}
+
+#menuMain {
+	display: inline-block;
+	position: relative;
+}
+
+#menuController {
+	display: none;
+}
+
+.menuItem, label[for=menuController] {
+	display: inline-block;
+	padding: 0.75em;
+
+	font-weight: 600;
+	text-decoration: none;
+
+	color: rgba(255, 255, 255, 0.87);
+}
+
+.menuItem:hover  {
+	background: rgba(255, 255, 255, 0.12);
+}
+
+@media screen and (max-width: 599px) {
+	#menuContainer {
+		display: none;
+	}
+	
+	#menuContainer .menuItem {
+		width: 100%;
+	}
+
+	#menuController:checked ~ #menuContainer {
+		display: block;
+		position: absolute;
+
+		background: rgb(66, 66, 66);
+	}
+
+	#menuController:checked ~ label[for=menuController] {
+		background: rgba(255, 255, 255, 0.12);
+	}
+}
+
+@media screen and (min-width: 600px) {
+	label[for=menuController] {
+		display: none;
+	}
+
+	#menuMain {
+		float: right;
+	}
+}
