@@ -54,13 +54,13 @@ nav {
 	#menuContainer {
 		display: none;
 		flex-direction: column;
+		position: absolute;
 	}
 	
 	#menuController:checked ~ #menuContainer {
 		display: flex;
-		position: absolute;
 
-	background: rgb(55, 71, 79); /* Material design Slate Grey 800; #37484F */
+		background: rgb(55, 71, 79); /* Material design Slate Grey 800; #37484F */
 	}
 
 	#menuController:checked ~ label[for=menuController] {
