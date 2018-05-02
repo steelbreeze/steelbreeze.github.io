@@ -47,6 +47,10 @@ nav {
 	display: none;
 }
 
+#menuContainer {
+	display: flex;
+}
+
 .menuItem, label[for=menuController] {
 	display: inline-block;
 	padding: 0.75em;
@@ -54,11 +58,23 @@ nav {
 	font-weight: 600;
 	text-decoration: none;
 
+	white-space: nowrap;
+
 	color: rgba(255, 255, 255, 0.87);
 }
 
 .menuItem:hover  {
 	background: rgba(255, 255, 255, 0.12);
+}
+
+@media screen and (min-width: 600px) {
+	label[for=menuController] {
+		display: none;
+	}
+
+	#menuMain {
+		float: right;
+	}
 }
 
 @media screen and (max-width: 599px) {
@@ -74,27 +90,19 @@ nav {
 		display: block;
 		position: absolute;
 
-		background: rgb(66, 66, 66);
+	background: rgb(55, 71, 79); /* Material design Slate Grey 800; #37484F */
 	}
 
 	#menuController:checked ~ label[for=menuController] {
 		background: rgba(255, 255, 255, 0.12);
 	}
 }
-
-@media screen and (min-width: 600px) {
-	label[for=menuController] {
-		display: none;
-	}
-
-	#menuMain {
-		float: right;
-	}
-}
 </style>
 </pre>
 		<p>The style sheet you see above is styling the menu.</p>
-		<p>Back to <a href="canvas.html">canvas</a>; on to <a href="footer.html">footer</a>.</p>
+		<p>Back to
+			<a href="canvas.html">canvas</a>; on to
+			<a href="footer.html">footer</a>.</p>
 	</main>
 </body>
 
