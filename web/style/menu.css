@@ -5,7 +5,7 @@ nav {
 	position: -webkit-sticky;
 	top: 0;
 
-	background: rgb(66, 66, 66);
+	background: rgb(198, 40, 40); /* Material design red 800; #C62828 */
 }
 
 #menuMain {
