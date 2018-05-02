@@ -35,6 +35,8 @@ nav {
 	position: -webkit-sticky;
 	top: 0;
 
+	display: flex;
+
 	background: rgb(55, 71, 79); /* Material design Slate Grey 800; #37484F */
 }
 
@@ -45,10 +47,6 @@ nav {
 
 #menuController {
 	display: none;
-}
-
-#menuContainer {
-	display: flex;
 }
 
 .menuItem, label[for=menuController] {
@@ -68,26 +66,28 @@ nav {
 }
 
 @media screen and (min-width: 600px) {
-	label[for=menuController] {
-		display: none;
+	nav {
+		justify-content: space-between;
+		flex-direction: row-reverse;
 	}
 
-	#menuMain {
-		float: right;
+	#menuContainer {
+		display: flex;
+	}
+		
+	label[for=menuController] {
+		display: none;
 	}
 }
 
 @media screen and (max-width: 599px) {
 	#menuContainer {
 		display: none;
+		flex-direction: column;
 	}
 	
-	#menuContainer .menuItem {
-		width: 100%;
-	}
-
 	#menuController:checked ~ #menuContainer {
-		display: block;
+		display: flex;
 		position: absolute;
 
 	background: rgb(55, 71, 79); /* Material design Slate Grey 800; #37484F */
@@ -96,8 +96,7 @@ nav {
 	#menuController:checked ~ label[for=menuController] {
 		background: rgba(255, 255, 255, 0.12);
 	}
-}
-</style>
+}</style>
 </pre>
 		<p>The style sheet you see above is styling the menu.</p>
 		<p>Back to
