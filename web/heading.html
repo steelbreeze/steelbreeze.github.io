@@ -27,29 +27,32 @@
 		<a class="menuItem" href="#top">Steelbreeze</a>
 	</nav>
 	<header>
-		<blockquote>"Good architecture is sympathetic to it's environment; great architecture enhances the environment."</blockquote>
+		<blockquote>"Good architecture is sympathetic to it's environment;<br/>great architecture enhances the environment."</blockquote>
 	</header>
 	<main>
-		<p>Adding a large header:</p>
+		<p>Adding a large header with image:</p>
 		<pre style="white-space: pre-wrap; color: rgba(0, 0, 0, 0.87)">
 <style style="display: block; tab-size: 4;">
-header {
-	background: rgb(69, 90, 100); /* Material design Slate Grey 700; #455A64 */
-	padding: 1.5em;
+header {	
+	background-image: url("images/bm.jpg");
+	background-size: 100% auto;
+	height: 17.5em;
+	position: relative;
 }
 
 blockquote {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 1em 0;
+
+	background: rgb(69, 90, 100); /* Material design Slate Grey 700; #455A64 */
 	color: rgba(255, 255, 255, 0.87);
 
 	text-align: center;
 
 	font-style: italic;
 	font-size: 1.5em;
-
-	max-width: 24em;
-
-	margin: 0 auto;
-	padding: 1.5em 0;
 }
 </style>
 		</pre>
