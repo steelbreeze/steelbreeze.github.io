@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Steelbreeze | Architecture</title>
+	<link rel="stylesheet" type="text/css" href="style/reset.css">
+	<link rel="stylesheet" type="text/css" href="style/canvas.css">
+	<link rel="stylesheet" type="text/css" href="style/menu.css">
+	<link rel="stylesheet" type="text/css" href="style/footer.css">
+	<link rel="stylesheet" type="text/css" href="style/header.css">
+	<style>
+		main,
+		article,
+		main>p {
+			padding: 0.75em;
+		}
+
+		#services {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		#services article {
+			flex-basis: 400px;
+			flex-grow: 2;
+		}
+
+		main h1 {
+			padding: 0.75em 0.75em 0em 0.75em;
+			font-size: 100%;
+			font-weight: 600;
+			color: rgba(69, 125, 139, 0.87);
+			text-transform: uppercase;
+		}
+
+		main h2 {
+			font-size: 100%;
+			font-weight: 600;
+			color: rgba(255, 152, 0, 0.87);
+		}
+	</style>
+</head>
+
+<body id="top">
+	<nav>
+		<div id="menuMain">
+			<input type="checkbox" id="menuController">
+			<label for="menuController">&#9776;</label>
+			<div id="menuContainer">
+				<a class="menuItem" href="#services">Services</a>
+				<a class="menuItem" href="#about">About</a>
+				<a class="menuItem" href="#blog">Blog</a>
+				<a class="menuItem" href="#contact">Contact</a>
+			</div>
+		</div>
+		<a class="menuItem" href="#top">Steelbreeze</a>
+	</nav>
+	<header>
+		<blockquote>"Good architecture is sympathetic to it's environment;
+			<br/>great architecture enhances the environment."</blockquote>
+	</header>
+	<main>
+		<p>Steelbreeze is an independent consultancy providing IT Architecture services, with a deep domain knowledge of corporate
+			and investment banking. We can offer you a wide variety of architectural services, from technology strategy to architectural
+			governance.</p>
+		<h1>Services</h1>
+		<section id="services">
+			<article>
+				<h2>Enterprise architecture</h2>
+				<p>Blah</p>
+			</article>
+			<article>
+				<h2>Data architecture</h2>
+				<p>The value of an enterprise’s data assets is finally being acknowledged thanks to advances in analytics technology.</p>
+				<p>However, analytics will always be constrained by the quality of data available and data scientists need a strong
+					underlying semantic model and quality data to fully exploit this rich business resource.</p>
+				<p>We have in-depth knowledge of banking data, associated lifecycles and interactions. We can assist you in building enterprise
+					data models as a pre-cursor to analytical activities and other development and reengineering projects.</p>
+			</article>
+			<article>
+				<h2>Application architecture</h2>
+				<p>Blah</p>
+			</article>
+			<article>
+				<h2>Technology architecture</h2>
+				<p>Blah</p>
+			</article>
+		</section>
+	</main>
+	<footer>
+		<section>
+			<h1>Architecture resources</h1>
+			<a href="http://www.opengroup.org/subjectareas/enterprise/togaf">TOGAF</a>
+			<a href="https://www.enterprise-architecture.org">Essential Project</a>
+		</section>
+		<section>
+			<h1>Open source</h1>
+			<a href="https://github.com/steelbreeze/state.js">state.js</a>
+		</section>
+		<section>
+			<h1>Cookies</h1>
+			<p>This website does not place cookies on your computer.</p>
+		</section>
+		<section>
+			<h1>Thanks</h1>
+			<a href="https://pages.github.com">GitHub Pages</a>
+			<a href="https://www.cloudflare.com">Cloudflare</a>
+		</section>
+	</footer>
+	<footer>
+		<section>
+			<h1>Steelbreeze</h1>
+			<p>Steelbreeze Limited is [soon to be] a private limited company registered in England and Wales.</p>
+			<p>Copyright © 2018 Steelbreeze Limited.</p>
+		</section>
+	</footer>
+</body>
+
+</html>
