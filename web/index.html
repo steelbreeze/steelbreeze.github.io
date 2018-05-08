@@ -14,19 +14,20 @@
 	<link rel="stylesheet" type="text/css" href="style/footer.css">
 	<link rel="stylesheet" type="text/css" href="style/header.css">
 	<style>
-		main > section > h1 {
+		main>section>h1 {
 			padding: 0.75em 0.75em 0em 0.75em;
 		}
 
-		main > section > p {
+		main>section>p {
 			padding: 0 0.75em 0.75em 0.75em;
 		}
 
-		article p + p {
+		article p+p {
 			padding: 0.5em 0 0 0;
 		}
 
-		#services, #about {
+		#services,
+		#about {
 			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;
@@ -35,24 +36,28 @@
 		#services article {
 			flex-basis: 400px;
 			flex-grow: 2;
+/*
+			margin: 0.75em;
+			box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.137255) 0px 2px 2px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 5px 0px;
+			box-sizing: border-box;
+*/
 		}
 
 		#about {
-			background: rgba(255, 152, 0, 0.12);
-
+			background: rgb(255, 217, 91);
 		}
 
 		main h1 {
 			font-size: 100%;
 			font-weight: 600;
-			color: rgba(69, 125, 139, 0.87);
+			color: rgba(0, 0, 0, 0.54);
 			text-transform: uppercase;
 		}
 
 		main h2 {
 			font-size: 100%;
 			font-weight: 600;
-			color: rgba(255, 152, 0, 0.87);
+			color: rgba(251, 140, 0, 0.87);
 		}
 	</style>
 </head>
@@ -83,8 +88,8 @@
 			<article>
 				<h2>Enterprise architecture</h2>
 				<p>At Steelbreeze, we think of enterprise architecture as linking the domains of business, information systems (application
-					and data) and technology architecture coherently. By providing this traceability, you can ensure IT decision making is
-					driven by your enterprise strategy. We bring an architectural model that can be tailored to your needs.</p>
+					and data) and technology architecture coherently. By providing this traceability, you can ensure IT decision making
+					is driven by your enterprise strategy. We bring an architectural model that can be tailored to your needs.</p>
 				<p>Architecture lives or dies by the quality of its communication and engagement; we can assist you in developing effective
 					architecture communications.</p>
 				<p>We also ensure that robust governance processes are in place within your organisation to ensure compliance to architectural
@@ -100,13 +105,16 @@
 			</article>
 			<article>
 				<h2>Application architecture</h2>
-				<p>Complex enterprises have an increasing demand for application support; from your core line of business, where you may have intellectual property to protect, to the applications that any organisation needs, such as finance and people management.</p>
-				<p>We can help you catalogue your application, building capability models that will help you: determine the opportunities for sharing and reuse; understand total cost of ownership; make investment decisions.</p>
+				<p>Complex enterprises have an increasing demand for application support; from your core line of business, where you may
+					have intellectual property to protect, to the applications that any organisation needs, such as finance and people management.</p>
+				<p>We can help you catalogue your application, building capability models that will help you: determine the opportunities
+					for sharing and reuse; understand total cost of ownership; make investment decisions.</p>
 			</article>
 			<article>
 				<h2>Technology architecture</h2>
 				<p>A modern enterprise relies on a wide variety of underlying tools and technologies. Left unchecked the diversity of these
-					can lead to a large support burden; resulting in large numbers of small contracts with suppliers, a skills burden and interoperability issues.</p>
+					can lead to a large support burden; resulting in large numbers of small contracts with suppliers, a skills burden and
+					interoperability issues.</p>
 				<p>However, standards can stifle innovation and cause a gradual slide into legacy.</p>
 				<p>The portfolio of technologies within your enterprise needs careful proactive management to ensure balance between these
 					conflicting forces.</p>
@@ -114,6 +122,28 @@
 		</section>
 		<section id="about">
 			<h1>About</h1>
+			<p>David Mesquita-Morris is the founder of Steelbreeze, he specialises in the engineering of robust software solutions and
+				the pragmatic application of enterprise architecture principles and practices.</p>
+			<p>David has been working in the field of software engineering for over 25 years. In that time, he has held a variety of
+				development, architect and senior management positions at institutions including
+				<a href="https://www.fidelity.co.uk/">Fidelity&nbsp;International</a>,
+				<a href="https://www.jpmorgan.com/">JP&nbsp;Morgan</a>,
+				<a href="https://www.ubs.com/">UBS</a> and
+				<a href="https://www.standardbank.com">Standard Bank</a>; recently holding the position of Head of IT Architecture at the
+				<a href="https://www.ebrd.com">European Bank for Reconstruction and Development</a>, where he mobilised their architecture capability.</p>
+			<p>Through these engagements, David has amassed a deep working knowledge of investment banking processes and associated data,
+				from market making through to risk management.</p>
+			<p>In addition, David is a strong advocate of Open Source software and actively maintains projects in the field of executable
+				finite state machines.</p>
+
+		</section>
+		<section id="blog">
+			<h1>Blog</h1>
+			<p>Read the our latest thoughts on architecture and IT leadership matters:</p>
+		</section>
+		<section id="contact">
+			<h1>Contact</h1>
+			<p>We'd love to hear from you...</p>
 		</section>
 	</main>
 	<footer>
