@@ -1,0 +1,8 @@
+html {
+  background: #EEEEEE; }
+
+nav, footer {
+  background: #424242;
+  color: rgba(255, 255, 255, 0.87); }
+  nav a, footer a {
+    color: rgba(255, 255, 255, 0.87); }

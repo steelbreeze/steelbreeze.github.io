@@ -1,0 +1,52 @@
+// material design colors
+$material-orange-50: #FFF3E0;
+$material-orange-100: #FFE0B2;
+$material-orange-200: #FFCC80;
+$material-orange-300: #FFB74D;
+$material-orange-400: #FFA726;
+$material-orange-500: #FF9800;
+$material-orange-600: #FB8C00;
+$material-orange-700: #F57C00;
+$material-orange-800: #F57C00;
+$material-orange-900: #E65100;
+$material-orange-A100: #FFD180;
+$material-orange-A200: #FFAB40;
+$material-orange-A400: #FF9100;
+$material-orange-A700: #FF6D00;
+$material-gray-50: #FAFAFA;
+$material-gray-100: #F5F5F5;
+$material-gray-200: #EEEEEE;
+$material-gray-300: #E0E0E0;
+$material-gray-400: #BDBDBD;
+$material-gray-500: #9E9E9E;
+$material-gray-600: #757575;
+$material-gray-700: #616161;
+$material-gray-800: #424242;
+$material-gray-900: #212121;
+$material-black: #000000;
+$material-white: #FFFFFF;
+
+// set our color theme
+$primary: $material-gray-600;
+$primary-variant: $material-gray-800;
+$primary-variant-2: $material-gray-400;
+
+$secondary: $material-orange-600;
+$secondary-variant: $material-orange-800;
+
+$on-primary: $material-white;
+$on-secondary: $material-black;
+
+
+html {
+	background: $material-gray-200;
+}
+
+nav, footer {
+	background: $primary-variant;
+	color: rgba($on-primary, 0.87);
+
+	a {
+		color: rgba($on-primary, 0.87);
+	}
+}
