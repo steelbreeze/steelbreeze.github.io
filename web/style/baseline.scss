@@ -1,0 +1,19 @@
+@import 'material-colors';
+
+// set our color theme
+$primary: #6200EE;
+$primary-variant: #3700B3;
+$primary-variant-2: #BB86FC;
+
+$secondary: #03DAC6;
+$secondary-variant: #018786;
+
+$background: $material-white;
+$surface: $material-white;
+$error: #B00020;
+
+$on-primary: $material-white;
+$on-secondary: $material-black;
+$on-background: $material-black;
+$on-surface: $material-black;
+$on-error: $material-white;
