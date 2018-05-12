@@ -29,11 +29,11 @@ $material-black: #000000;
 $material-white: #FFFFFF;
 
 // set our color theme
-$primary: $material-gray-600;
+$primary: $material-gray-700;
 $primary-variant: $material-gray-800;
 $primary-variant-2: $material-gray-400;
 
-$secondary: $material-orange-600;
+$secondary: $material-orange-700;
 $secondary-variant: $material-orange-800;
 
 $background: $material-gray-50;
@@ -78,4 +78,9 @@ nav, footer, #menuContainer {
 	a:hover  {
 		background: rgba(255, 255, 255, 0.12);
 	}
+}
+
+blockquote {
+	background: $primary;
+	color: rgba($on-primary, 0.87);
 }

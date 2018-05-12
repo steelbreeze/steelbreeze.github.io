@@ -1,15 +1,66 @@
-html {
-	background: rgb(238, 238, 238);
-}
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+* {
+  margin: 0;
+  border: 0;
+  padding: 0; }
+
+table {
+  border-collapse: collapse;
+  border-width: 0; }
 
 body {
-	max-width: 1200px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 100%;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
 
-	margin: 0 auto;
+main h1 {
+  font-weight: 600;
+  font-size: 100%;
+  text-transform: uppercase; }
+main h2 {
+  font-weight: 600;
+  font-size: 100%;
+  margin-top: 0.5em; }
 
-	box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
-}
+footer h1 {
+  font-weight: 600;
+  font-size: 85%; }
+footer p {
+  font-size: 85%; }
+footer a {
+  font-size: 85%;
+  text-decoration: none; }
+
+html {
+  background: #EEEEEE; }
+
+main {
+  background: #FAFAFA; }
+  main h1 {
+    color: rgba(66, 66, 66, 0.87); }
+  main h2 {
+    color: rgba(245, 124, 0, 0.87); }
+  main p, main a {
+    color: rgba(0, 0, 0, 0.87); }
+
+nav, footer, #menuContainer {
+  background: #424242;
+  color: rgba(255, 255, 255, 0.87); }
+  nav h1, nav p, nav a, footer h1, footer p, footer a, #menuContainer h1, #menuContainer p, #menuContainer a {
+    color: rgba(255, 255, 255, 0.87); }
+  nav a:hover, footer a:hover, #menuContainer a:hover {
+    background: rgba(255, 255, 255, 0.12); }
+
+blockquote {
+  background: #616161;
+  color: rgba(255, 255, 255, 0.87); }
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
 
 section, article {
-	padding: 0.75em;
-}
+  padding: 0.75em; }
