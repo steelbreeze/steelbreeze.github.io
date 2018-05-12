@@ -11,12 +11,30 @@
 
 main {
 	h1 {
+		font-weight: 600;
 		font-size: 100%;
 		text-transform: uppercase;
 	}
 
 	h2 {
+		font-weight: 600;
 		font-size: 100%;
 		margin-top: 0.5em;
+	}
+}
+
+footer {
+	h1 {
+		font-weight: 600;
+		font-size: 85%;
+	}
+
+	p {
+		font-size: 85%;
+	}
+
+	a {
+		font-size: 85%;
+		text-decoration: none;
 	}
 }

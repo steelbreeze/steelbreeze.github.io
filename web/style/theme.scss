@@ -1,3 +1,5 @@
+@import 'fonts';
+
 // material design colors
 $material-orange-50: #FFF3E0;
 $material-orange-100: #FFE0B2;
@@ -34,19 +36,46 @@ $primary-variant-2: $material-gray-400;
 $secondary: $material-orange-600;
 $secondary-variant: $material-orange-800;
 
+$background: $material-gray-50;
+$surface: $material-white;
+$error: #B00020;
+
 $on-primary: $material-white;
 $on-secondary: $material-black;
+$on-background: $material-black;
+$on-surface: $material-black;
+$on-error: $material-white;
 
-
+// apply the color theme to the elements
 html {
 	background: $material-gray-200;
 }
 
-nav, footer {
+main {
+	background: $background;
+
+	h1 {
+		color: rgba($primary-variant, 0.87);
+	}
+
+	h2 {
+		color: rgba($secondary, 0.87);
+	}
+
+	p, a {
+		color: rgba($on-background, 0.87);
+	}
+}
+
+nav, footer, #menuContainer {
 	background: $primary-variant;
 	color: rgba($on-primary, 0.87);
 
-	a {
+	h1, p, a {
 		color: rgba($on-primary, 0.87);
+	}
+
+	a:hover  {
+		background: rgba(255, 255, 255, 0.12);
 	}
 }

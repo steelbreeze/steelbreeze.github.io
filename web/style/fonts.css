@@ -16,8 +16,19 @@ body {
   -webkit-text-size-adjust: 100%; }
 
 main h1 {
+  font-weight: 600;
   font-size: 100%;
   text-transform: uppercase; }
 main h2 {
+  font-weight: 600;
   font-size: 100%;
   margin-top: 0.5em; }
+
+footer h1 {
+  font-weight: 600;
+  font-size: 85%; }
+footer p {
+  font-size: 85%; }
+footer a {
+  font-size: 85%;
+  text-decoration: none; }

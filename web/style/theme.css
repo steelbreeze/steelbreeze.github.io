@@ -1,8 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+* {
+  margin: 0;
+  border: 0;
+  padding: 0; }
+
+table {
+  border-collapse: collapse;
+  border-width: 0; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 100%;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+main h1 {
+  font-weight: 600;
+  font-size: 100%;
+  text-transform: uppercase; }
+main h2 {
+  font-weight: 600;
+  font-size: 100%;
+  margin-top: 0.5em; }
+
+footer h1 {
+  font-weight: 600;
+  font-size: 85%; }
+footer p {
+  font-size: 85%; }
+footer a {
+  font-size: 85%;
+  text-decoration: none; }
+
 html {
   background: #EEEEEE; }
 
-nav, footer {
+main {
+  background: #FAFAFA; }
+  main h1 {
+    color: rgba(66, 66, 66, 0.87); }
+  main h2 {
+    color: rgba(251, 140, 0, 0.87); }
+  main p, main a {
+    color: rgba(0, 0, 0, 0.87); }
+
+nav, footer, #menuContainer {
   background: #424242;
   color: rgba(255, 255, 255, 0.87); }
-  nav a, footer a {
+  nav h1, nav p, nav a, footer h1, footer p, footer a, #menuContainer h1, #menuContainer p, #menuContainer a {
     color: rgba(255, 255, 255, 0.87); }
+  nav a:hover, footer a:hover, #menuContainer a:hover {
+    background: rgba(255, 255, 255, 0.12); }

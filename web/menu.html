@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Responsive menu</title>
-	<link rel="stylesheet" type="text/css" href="style/fonts.css">
+	<link rel="stylesheet" type="text/css" href="style/theme.css">
 	<link rel="stylesheet" type="text/css" href="style/canvas.css">
 </head>
 
@@ -41,8 +41,6 @@ nav {
 	top: 0;
 
 	display: flex;
-
-	background: rgb(55, 71, 79); /* Material design Slate Grey 800; #37484F */
 }
 
 #menuMain {
@@ -62,12 +60,6 @@ nav {
 	text-decoration: none;
 
 	white-space: nowrap;
-
-	color: rgba(255, 255, 255, 0.87);
-}
-
-.menuItem:hover  {
-	background: rgba(255, 255, 255, 0.12);
 }
 
 @media screen and (min-width: 600px) {
@@ -94,8 +86,6 @@ nav {
 	
 	#menuController:checked ~ #menuContainer {
 		display: flex;
-
-		background: rgb(41, 67, 78);
 	}
 
 	#menuController:checked ~ label[for=menuController] {
