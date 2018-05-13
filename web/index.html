@@ -40,11 +40,34 @@
 		#about {
 			background-image: url("images/sw.jpg");
 			background-size: cover;
-			color: rgba(255, 255, 255, 0.87);
-			font-weight: 400;
+			padding: 0;
 		}
 
-		#about p, #about h1, #contact p, #contact h1 {
+		#about article {
+			position: relative;
+			background: rgba(245, 124, 0, 0.87);
+			;
+			/*			background: rgba(198, 157, 117, 0.87);;
+*/
+			padding: 1.5em;
+			margin-top: 10em;
+		}
+
+		#about article .avatar {
+			max-width: 5em;
+			border-radius: 50%;
+
+			position: absolute;
+			top: -2.7em;
+			left: 46%;
+
+			border: solid 0.3em rgba(245, 124, 0, 0.87);
+		}
+		
+		#about p,
+		#about h1,
+		#contact p,
+		#contact h1 {
 			color: rgba(255, 255, 255, 0.87);
 		}
 
@@ -120,16 +143,17 @@
 			</article>
 		</section>
 		<section id="about">
-			<h1>About</h1>
-			<p>David, the founder of Steelbreeze, has been working in the field of software engineering for over 25 years. In that time, he has held a variety of
-				development, architect and senior management positions at institutions including
-				<a href="https://www.fidelity.co.uk/">Fidelity&nbsp;International</a>,
-				<a href="https://www.jpmorgan.com/">JP&nbsp;Morgan</a>,
-				<a href="https://www.ubs.com/">UBS</a> and
-				<a href="https://www.standardbank.com">Standard Bank</a>; recently holding the position of Head of IT Architecture at the
-				<a href="https://www.ebrd.com">European Bank for Reconstruction and Development</a>, where he mobilised their architecture capability.</p>
-			<p>Through these engagements, David has amassed a deep working knowledge of investment banking processes and associated data,
-				from market making through to risk management.</p>
+			<article>
+				<img class="avatar" src="images/david.jpg" alt="David's profile picture">
+				<h1>About</h1>
+				<p>David, the founder of Steelbreeze, has been working in the field of software engineering for over 25 years. In that time,
+					he has held a variety of development, architect and senior management positions at institutions including
+					<a href="https://www.fidelity.co.uk/">Fidelity&nbsp;International</a>,
+					<a href="https://www.jpmorgan.com/">JP&nbsp;Morgan</a>,
+					<a href="https://www.ubs.com/">UBS</a> and
+					<a href="https://www.standardbank.com">Standard Bank</a>; recently holding the position of Head of IT Architecture at the
+					<a href="https://www.ebrd.com">European Bank for Reconstruction and Development</a>, where he mobilised their architecture capability.</p>
+			</article>
 		</section>
 		<section id="blog">
 			<h1>Blog</h1>
@@ -138,8 +162,9 @@
 				<a href="/blog/2017/12/03/information-management-in-application-design.html">
 					<h2>Information management in application design</h2>
 				</a>
-				<p>When designing and building applications solution architects need to consider many different viewpoints; one of which is the information viewpoint. This post discusses the different types of information
-					managed within an application, what they have in common and how they differ.</p>
+				<p>When designing and building applications solution architects need to consider many different viewpoints; one of which
+					is the information viewpoint. This post discusses the different types of information managed within an application,
+					what they have in common and how they differ.</p>
 			</article>
 		</section>
 	</main>
