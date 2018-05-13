@@ -21,8 +21,11 @@ main h1 {
   text-transform: uppercase; }
 main h2 {
   font-weight: 600;
-  font-size: 100%;
+  font-size: 100%; }
+main p + h2 {
   margin-top: 0.5em; }
+main p + p {
+  margin-top: 0.25em; }
 
 footer h1 {
   font-weight: 600;
