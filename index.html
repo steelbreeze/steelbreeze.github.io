@@ -6,99 +6,189 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Steelbreeze | Architecture</title>
-	<meta name="description" content="Steelbreeze is an independent consultancy providing architecture services, with specialism in the corporate
-	and investment banking sector.">
-	<meta name="keywords" content="Consulting,Enterprise,Architecture,Digital,Transformation,Technology,Leadership">
-	<meta name="author" content="steelbreeze">
-	<link rel="canonical" href="https://steelbreeze.net/">
-	<link rel="icon" type="image/png" href="favicon.png">
-	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="style/new.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style/theme.css">
+	<link rel="stylesheet" type="text/css" href="style/menu.css">
+	<link rel="stylesheet" type="text/css" href="style/footer.css">
+	<link rel="stylesheet" type="text/css" href="style/header.css">
+	<style>
+		main>section>h1 {
+			padding: 0.75em 0.75em 0em 0.75em;
+		}
+
+		main>section>p {
+			padding: 0 0.75em 0.75em 0.75em;
+		}
+
+		article p+p {
+			padding: 0.5em 0 0 0;
+		}
+
+		#services {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		#services article {
+			flex-basis: 400px;
+			flex-grow: 2;
+		}
+
+		#about {
+			background-image: url("images/sw.jpg");
+			background-size: cover;
+			background-repeat: no-repeat;
+
+			display: flex;
+			align-items: flex-end;
+			padding:0;
+		}
+
+		#about article {
+			margin-top: 9em;
+			position: relative;
+			background: #FAFAFA;
+			padding: 1.5em;
+		}
+
+		#about article .avatar {
+			max-width: 5em;
+			border-radius: 50%;
+
+			position: absolute;
+			top: -2.7em;
+			left: 0;
+			right: 0;
+			margin: auto;
+
+			border: solid 0.25em #FAFAFA;
+		}
+		
+		#contact {
+			background: rgb(84, 110, 122);
+			color: rgba(255, 255, 255, 0.87);
+		}
+
+	</style>
 </head>
 
 <body id="top">
-	<nav><div class="dropdown"><a id="menuController" href="/">&#9776;</a><div class="menuContainer"><a href="/#services">Services</a><a href="/ea">Enterprise architecture</a><a href="/da">Data architecture</a><a href="/blog">Blog</a><a href="/#contact">Contact</a></div></div><a href="/#top">Steelbreeze</a></nav>
+	<nav>
+		<div id="menuMain">
+			<input type="checkbox" id="menuController">
+			<label for="menuController">&#9776;</label>
+			<div id="menuContainer">
+				<a class="menuItem" href="#services">Services</a>
+				<a class="menuItem" href="#about">About</a>
+				<a class="menuItem" href="#blog">Blog</a>
+				<a class="menuItem" href="mailto:contact@steelbreeze.net">Contact</a>
+			</div>
+		</div>
+		<a class="menuItem" href="#top">Steelbreeze</a>
+	</nav>
 	<header>
-		<blockquote>"Good architecture is sympathetic to it's environment; great architecture enhances the environment."</blockquote>
-		<p>Steelbreeze is an independent consultancy providing IT Architecture services, with a deep domain knowledge of corporate
-			and investment banking.</p>
+		<blockquote>"Good architecture is sympathetic to it's environment;
+			<br/>great architecture enhances the environment."</blockquote>
 	</header>
-	<main id="services">
-		<section>
+	<main>
+		<section id="services">
+			<h1>Services</h1>
+			<p>Steelbreeze is an independent consultancy providing IT Architecture services, with a deep domain knowledge of corporate
+				and investment banking. We can offer you a wide variety of architectural services, with a grounded pragmatism.</p>
 			<article>
-				<h3><a href="/ea">Enterprise architecture</a></h3>
-				<p>We think of enterprise architecture as:
-					<i>knowing what you have; knowing what you need; having a transition plan</i>. This applies to your business, information
-					systems and technology architectures.</p>
-				<p>Creating and operating a sustainable enterprise architecture capability within your organisation is a multi-faceted task,
-					requiring strong stakeholder management and defining and implementing governance processes.</p>
-				<p>A mature enterprise architecture practice is essential to a healthy information technology organisation and is an essential
-					component of other transformational activities such as exploiting digital channels.</p>
-				<p>We have extensive experience mobilising and running successful enterprise architecture teams within financial services.</p>
+				<h2>Enterprise architecture</h2>
+				<p>At Steelbreeze, we think of enterprise architecture as linking the domains of business, information systems (application
+					and data) and technology architecture coherently. By providing this traceability, you can ensure IT decision making
+					is driven by your enterprise strategy. We bring an architectural model that can be tailored to your needs.</p>
+				<p>Architecture lives or dies by the quality of its communication and engagement; we can assist you in developing effective
+					architecture communications.</p>
+				<p>We also ensure that robust governance processes are in place within your organisation to ensure compliance to architectural
+					direction and standards.</p>
 			</article>
 			<article>
-				<h3><a href="/da">Data architecture</a></h3>
-				<p>The value of an enterprise’s data assets is finally being understood thanks to advances in analytics technology. However,
-					analytics tools will always be constrained by the quality of data available and data scientists need a strong underlying
-					semantic model to fully exploit this rich data resource.</p>
+				<h2>Data architecture</h2>
+				<p>The value of an enterprise’s data assets is finally being acknowledged thanks to advances in analytics technology.</p>
+				<p>However, analytics will always be constrained by the quality of data available; data scientists need a strong underlying
+					semantic model and quality data to truly exploit this rich business resource.</p>
 				<p>We have in-depth knowledge of banking data, associated lifecycles and interactions. We can assist you in building enterprise
 					data models as a pre-cursor to analytical activities and other development and reengineering projects.</p>
 			</article>
+			<article>
+				<h2>Application architecture</h2>
+				<p>Complex enterprises have an increasing demand for application support; from your core line of business, where you may
+					have intellectual property to protect, to the applications that any organisation needs, such as finance and people management.</p>
+				<p>We can help you catalogue your application, building capability models that will help you: determine the opportunities
+					for sharing and reuse; understand total cost of ownership; make investment decisions.</p>
+			</article>
+			<article>
+				<h2>Technology architecture</h2>
+				<p>A modern enterprise relies on a wide variety of underlying tools and technologies. Left unchecked the diversity of these
+					can lead to a large support burden; resulting in large numbers of small contracts with suppliers, a skills burden and
+					interoperability issues.</p>
+				<p>However, standards can stifle innovation and cause a gradual slide into legacy.</p>
+				<p>The portfolio of technologies within your enterprise needs careful proactive management to ensure balance between these
+					conflicting forces.</p>
+			</article>
 		</section>
-		<aside>
-			<h3>About David</h3>
-			<img class="avatar" src="images/david.jpg" alt="David's profile picture">
-			<p>David Mesquita-Morris is the founder of Steelbreeze, he specialises in the engineering of robust transaction processing
-				software solutions and the pragmatic application of enterprise architecture principles and practices.</p>
-			<p>David has been working in the field of software engineering for over 25 years. In that time, he has held a variety of
-				development, architect and senior management positions at institutions including
-				<a href="https://www.fidelity.co.uk/">Fidelity&nbsp;International</a>,
-				<a href="https://www.jpmorgan.com/">JP&nbsp;Morgan</a>,
-				<a href="https://www.ubs.com/">UBS</a> and
-				<a href="https://www.standardbank.com">Standard Bank</a>; recently holding the position of Head of IT Architecture at the
-				<a href="https://www.ebrd.com">European Bank for Reconstruction and Development</a>, where he mobilised their architecture capability.</p>
-			<p>Through these engagements, David has amassed a deep working knowledge of investment banking processes and associated data,
-				from market making through to risk management.</p>
-			<p>In addition, David is a strong advocate of Open Source software and actively maintains projects in the field of executable
-				finite state machines.</p>
-			<a class="fab fa-twitter fa-2x" aria-hidden="true" href="https://twitter.com/mesquimo"></a>
-			<a class="fab fa-linkedin fa-2x" aria-hidden="true" href="https://www.linkedin.com/in/mesmo"></a>
-		</aside>
+		<section id="about">
+			<article>
+				<img class="avatar" src="images/david.jpg" alt="David's profile picture">
+				<h1>About</h1>
+				<p>David, the founder of Steelbreeze, has been working in the field of software engineering for over 25 years. In that time,
+					he has held a variety of development, architect and senior management positions at institutions including
+					<a href="https://www.fidelity.co.uk/">Fidelity&nbsp;International</a>,
+					<a href="https://www.jpmorgan.com/">JP&nbsp;Morgan</a>,
+					<a href="https://www.ubs.com/">UBS</a> and
+					<a href="https://www.standardbank.com">Standard Bank</a>; recently holding the position of Head of IT Architecture at the
+					<a href="https://www.ebrd.com">European Bank for Reconstruction and Development</a>, where he mobilised their architecture capability.</p>
+			</article>
+		</section>
+		<section id="blog">
+			<h1>Blog</h1>
+			<p>Read the our latest thoughts on architecture, development and technology in general.</p>
+			<article>
+				<a href="/blog/2017/12/03/information-management-in-application-design.html">
+					<h2>Information management in application design</h2>
+				</a>
+				<p>When designing and building applications solution architects need to consider many different viewpoints; one of which
+					is the information viewpoint. This post discusses the different types of information managed within an application,
+					what they have in common and how they differ.</p>
+			</article>
+		</section>
 	</main>
-	<section id="contact">
-		<blockquote>We'd love to hear from you</blockquote>
-		<p>Please get in touch by e-mailing us with your architectural needs.</p>
-			<p><a href="mailto:contact@steelbreeze.net"><button><i class="fa fa-envelope"></i> Contact</button></a></p>
-	</section>
 	<footer>
 		<section>
-			<h4>Architecture resources</h4>
-			<a href="http://www.opengroup.org/subjectareas/enterprise/togaf">TOGAF</a>
-			<a href="https://www.enterprise-architecture.org">Essential Project</a>
+			<h1>Architecture resources</h1>
+			<a href="https://www.enterprise-architecture.org" target="_blank">Essential Project</a>
+			<a href="https://www.viewpoints-and-perspectives.info/" target="_blank">Software Systems Architecture</a>
+			<a href="http://www.opengroup.org/subjectareas/enterprise/togaf" target="_blank">TOGAF</a>
 		</section>
 		<section>
-			<h4>Open source</h4>
+			<h1>Open source projects</h1>
 			<a href="https://github.com/steelbreeze/state.js">state.js</a>
 		</section>
 		<section>
-			<h4>Legal</h4>
-			<a href="#">Cookies</a>
-			<a href="#">Privacy</a>
+			<h1>Legal</h1>
+			<p>This website does not place cookies on your computer
+				<i class="far fa-smile"></i>.
+			</p>
+			<p>We do not store any data about you or your visit.</p>
 		</section>
 		<section>
-			<h4>Thanks to</h4>
-			<a href="https://pages.github.com">GitHub Pages</a>
+			<h1>Thanks</h1>
 			<a href="https://www.cloudflare.com">Cloudflare</a>
+			<a href="https://pages.github.com">GitHub Pages</a>
 		</section>
 	</footer>
 	<footer>
 		<section>
-			<h4>Steelbreeze</h4>
-			<p>Steelbreeze Limited is [soon to be] a private limited company registered in England and Wales</p>
-			<p>Copyright &copy; 2018 Steelbreeze Limited</p>
+			<h1>Steelbreeze</h1>
+			<p>Steelbreeze Limited is [soon to be] a private limited company registered in England and Wales.</p>
+			<p>Copyright © 2018 Steelbreeze Limited.</p>
 		</section>
 	</footer>
-	<script src="script/cookies.js"></script>
 </body>
 
 </html>
