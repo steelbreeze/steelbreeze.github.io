@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,600,600i");
 * {
   margin: 0;
   border: 0;
@@ -21,7 +21,8 @@ body {
   font-weight: 300;
   font-size: 100%;
   text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%; }
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility; }
 
 main h1 {
   font-weight: 600;
