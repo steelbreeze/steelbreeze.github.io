@@ -37,17 +37,19 @@
 		}
 
 		#about {
-			background-image: url("images/sw.jpg");
-			background-size: cover;
-			background-repeat: no-repeat;
-
 			display: flex;
-			align-items: flex-end;
+			flex-direction: column;
 			padding:0;
 		}
 
+		#about #splash {
+			height: 6em;
+			background-image: url("images/sw.jpg");
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+
 		#about article {
-			margin-top: 9em;
 			position: relative;
 			background: #FAFAFA;
 			padding: 1.5em;
@@ -133,6 +135,7 @@
 			</article>
 		</section>
 		<section id="about">
+			<article id="splash"></article>
 			<article>
 				<img class="avatar" src="images/david.jpg" alt="David's profile picture">
 				<h1>About</h1>
