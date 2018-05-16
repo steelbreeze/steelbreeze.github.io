@@ -1,59 +1,130 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,600,600i");
+* {
+  margin: 0;
+  border: 0;
+  padding: 0; }
+
+table {
+  border-collapse: collapse;
+  border-width: 0; }
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
+
+section, article {
+  padding: 0.75em; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 100%;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility; }
+
+main h1 {
+  font-weight: 600;
+  font-size: 100%;
+  text-transform: uppercase; }
+main h2 {
+  font-weight: 600;
+  font-size: 100%; }
+main p + h1 {
+  margin-top: 0.75em; }
+main ul + h1 {
+  margin-top: 0.75em; }
+main p + h2 {
+  margin-top: 0.5em; }
+main p + p {
+  margin-top: 0.25em; }
+
+a {
+  text-decoration: none; }
+
+footer h1 {
+  font-weight: 600;
+  font-size: 85%; }
+footer p {
+  font-size: 85%; }
+footer a {
+  font-size: 85%;
+  text-decoration: none; }
+
+ul {
+  list-style: none;
+  padding-left: 0.75em; }
+
+ul > li:before {
+  content: "-";
+  display: inline-block;
+  width: 0.75em;
+  margin-left: -0.75em; }
+
+html {
+  background: #EEEEEE; }
+
+main {
+  background: #FAFAFA; }
+  main h1 {
+    color: rgba(66, 66, 66, 0.87); }
+  main h2 {
+    color: rgba(245, 124, 0, 0.87); }
+  main p, main a {
+    color: rgba(0, 0, 0, 0.87); }
+
+nav, footer, #menuContainer {
+  background: #424242;
+  color: rgba(255, 255, 255, 0.87); }
+  nav h1, nav p, nav a, footer h1, footer p, footer a, #menuContainer h1, #menuContainer p, #menuContainer a {
+    color: rgba(255, 255, 255, 0.87); }
+  nav a:hover, footer a:hover, #menuContainer a:hover {
+    background: rgba(255, 255, 255, 0.12); }
+
+blockquote {
+  background: rgba(66, 66, 66, 0.87);
+  color: rgba(255, 255, 255, 0.87); }
+
 nav {
-	padding: 0 0.75em;
-
-	position: sticky;
-	position: -webkit-sticky;
-	top: 0;
-
-	display: flex;
-}
+  padding: 0 0.75em;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  display: flex; }
 
 #menuMain {
-	display: inline-block;
-	position: relative;
-}
+  display: inline-block;
+  position: relative; }
 
 #menuController {
-	display: none;
-}
+  display: none; }
 
 .menuItem, label[for=menuController] {
-	display: inline-block;
-	padding: 0.75em;
-
-	font-weight: 600;
-	text-decoration: none;
-
-	white-space: nowrap;
-}
+  display: inline-block;
+  padding: 0.75em;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap; }
 
 @media screen and (min-width: 600px) {
-	nav {
-		justify-content: space-between;
-		flex-direction: row-reverse;
-	}
+  nav {
+    justify-content: space-between;
+    flex-direction: row-reverse; }
 
-	#menuContainer {
-		display: flex;
-	}
-		
-	label[for=menuController] {
-		display: none;
-	}
-}
+  #menuContainer {
+    display: flex; }
 
+  label[for=menuController] {
+    display: none; } }
 @media screen and (max-width: 599px) {
-	#menuContainer {
-		display: none;
-		flex-direction: column;
-		position: absolute;
-	}
-	
-	#menuController:checked ~ #menuContainer {
-		display: flex;
-	}
+  #menuContainer {
+    display: none;
+    flex-direction: column;
+    position: absolute; }
 
-	#menuController:checked ~ label[for=menuController] {
-		background: rgba(255, 255, 255, 0.12);
-	}
-}
+  #menuController:checked ~ #menuContainer {
+    display: flex; }
+
+  #menuController:checked ~ label[for=menuController] {
+    background: rgba(255, 255, 255, 0.12); } }

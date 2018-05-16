@@ -1,0 +1,61 @@
+@import 'theme';
+
+nav {
+	padding: 0 0.75em;
+
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+
+	display: flex;
+}
+
+#menuMain {
+	display: inline-block;
+	position: relative;
+}
+
+#menuController {
+	display: none;
+}
+
+.menuItem, label[for=menuController] {
+	display: inline-block;
+	padding: 0.75em;
+
+	font-weight: 600;
+	text-decoration: none;
+
+	white-space: nowrap;
+}
+
+@media screen and (min-width: 600px) {
+	nav {
+		justify-content: space-between;
+		flex-direction: row-reverse;
+	}
+
+	#menuContainer {
+		display: flex;
+	}
+		
+	label[for=menuController] {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 599px) {
+	#menuContainer {
+		display: none;
+		flex-direction: column;
+		position: absolute;
+	}
+	
+	#menuController:checked ~ #menuContainer {
+		display: flex;
+	}
+
+	#menuController:checked ~ label[for=menuController] {
+		background: rgba($material-white, 0.12);
+	}
+}
