@@ -199,7 +199,6 @@ article ul + p {
 
 #about article {
   position: relative;
-  background: #FAFAFA;
   padding: 1.5em; }
 
 #about article .avatar {
@@ -211,7 +210,3 @@ article ul + p {
   right: 0;
   margin: auto;
   border: solid 0.25em #FAFAFA; }
-
-#contact {
-  background: #546e7a;
-  color: rgba(255, 255, 255, 0.87); }

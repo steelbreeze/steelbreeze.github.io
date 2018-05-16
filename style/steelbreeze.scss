@@ -8,11 +8,11 @@ main > section > p {
 	padding: 0 0.75em 0.75em 0.75em;
 }
 
-article p+p {
+article p + p {
 	padding: 0.5em 0 0 0;
 }
 
-article ul+p {
+article ul + p {
 	padding: 0.5em 0 0 0;
 }
 
@@ -42,7 +42,6 @@ article ul+p {
 
 #about article {
 	position: relative;
-	background: #FAFAFA;
 	padding: 1.5em;
 }
 
@@ -56,10 +55,5 @@ article ul+p {
 	right: 0;
 	margin: auto;
 
-	border: solid 0.25em #FAFAFA;
-}
-
-#contact {
-	background: rgb(84, 110, 122);
-	color: rgba(255, 255, 255, 0.87);
+	border: solid 0.25em $material-gray-50;
 }
