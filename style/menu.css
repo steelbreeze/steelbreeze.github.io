@@ -43,6 +43,9 @@ main p + p {
 a {
   text-decoration: none; }
 
+strong {
+  font-weight: 600; }
+
 footer h1 {
   font-weight: 600;
   font-size: 85%; }
@@ -67,23 +70,35 @@ html {
 
 main {
   background: #FAFAFA; }
-  main h1 {
+  main h1, main strong {
     color: rgba(66, 66, 66, 0.87); }
   main h2 {
     color: rgba(245, 124, 0, 0.87); }
-  main p, main a {
+  main p {
     color: rgba(0, 0, 0, 0.87); }
+  main a {
+    color: rgba(245, 124, 0, 0.87); }
+  main a:hover {
+    background: rgba(245, 124, 0, 0.12); }
 
-nav, footer, #menuContainer {
+nav, #menuContainer {
   background: #424242;
   color: rgba(255, 255, 255, 0.87); }
-  nav h1, nav p, nav a, footer h1, footer p, footer a, #menuContainer h1, #menuContainer p, #menuContainer a {
+  nav h1, nav p, nav a, #menuContainer h1, #menuContainer p, #menuContainer a {
     color: rgba(255, 255, 255, 0.87); }
-  nav a:hover, footer a:hover, #menuContainer a:hover {
+  nav a:hover, #menuContainer a:hover {
+    background: rgba(255, 255, 255, 0.12); }
+
+footer {
+  background: #424242;
+  color: rgba(255, 255, 255, 0.87); }
+  footer h1, footer p, footer a {
+    color: rgba(255, 255, 255, 0.87); }
+  footer a:hover {
     background: rgba(255, 255, 255, 0.12); }
 
 blockquote {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   color: rgba(255, 255, 255, 0.87); }
 
 nav {

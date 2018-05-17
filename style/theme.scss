@@ -10,7 +10,7 @@ html {
 main {
 	background: $background;
 
-	h1 {
+	h1, strong {
 		color: rgba($primary-variant, 0.87);
 	}
 
@@ -18,8 +18,16 @@ main {
 		color: rgba($secondary, 0.87);
 	}
 
-	p, a {
+	p {
 		color: rgba($on-background, 0.87);
+	}
+
+	a {
+		color: rgba($secondary, 0.87);
+	}
+
+	a:hover {
+		background: rgba($secondary, 0.12);
 	}
 }
 

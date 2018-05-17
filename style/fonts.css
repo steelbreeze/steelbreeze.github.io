@@ -43,6 +43,9 @@ main p + p {
 a {
   text-decoration: none; }
 
+strong {
+  font-weight: 600; }
+
 footer h1 {
   font-weight: 600;
   font-size: 85%; }

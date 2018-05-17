@@ -43,6 +43,9 @@ main p + p {
 a {
   text-decoration: none; }
 
+strong {
+  font-weight: 600; }
+
 footer h1 {
   font-weight: 600;
   font-size: 85%; }
@@ -67,12 +70,16 @@ html {
 
 main {
   background: #FAFAFA; }
-  main h1 {
+  main h1, main strong {
     color: rgba(66, 66, 66, 0.87); }
   main h2 {
     color: rgba(245, 124, 0, 0.87); }
-  main p, main a {
+  main p {
     color: rgba(0, 0, 0, 0.87); }
+  main a {
+    color: rgba(245, 124, 0, 0.87); }
+  main a:hover {
+    background: rgba(245, 124, 0, 0.12); }
 
 nav, #menuContainer {
   background: #424242;

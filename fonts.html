@@ -24,75 +24,73 @@
  */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,600,600i');
  
-/*
- * Apply the web fonts to the elements as needed
- */
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-size: 100%;
-	-webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 	text-rendering: optimizeLegibility;
 }
 
-/*
- * Normalise font characteristics
- */
- main h1 {
+main h1 {
   font-weight: 600;
   font-size: 100%;
-  text-transform: uppercase;
+	text-transform: uppercase;
 }
 
-main h2
-{
+main h2 {
   font-weight: 600;
-  font-size: 100%;
+	font-size: 100%;
 }
 
 main p + h1 {
-  margin-top: 0.75em;
+	margin-top: 0.75em;
 }
 
 main ul + h1 {
-  margin-top: 0.75em;
+	margin-top: 0.75em;
 }
 
 main p + h2 {
-  margin-top: 0.5em;
+	margin-top: 0.5em;
 }
 
 main p + p {
-  margin-top: 0.25em;
+	margin-top: 0.25em;
 }
 
-nav a {
+a {
 	text-decoration: none;
+}
+
+strong {
+	font-weight: 600;
 }
 
 footer h1 {
   font-weight: 600;
-  font-size: 85%;
+	font-size: 85%;
 }
 
 footer p {
-  font-size: 85%;
+	font-size: 85%;
 }
 
 footer a {
   font-size: 85%;
-  text-decoration: none;
+	text-decoration: none;
 }
 
 ul {
-    list-style: none;
-    padding-left: 0.75em;
+  list-style: none;
+	padding-left: 0.75em;
 }
 
 ul > li:before {
-	content: "-";
-	display: inline-block;
-	width: 0.75em;
+  content: "-";
+  display: inline-block;
+  width: 0.75em;
 	margin-left: -0.75em;
 }
 </style>
