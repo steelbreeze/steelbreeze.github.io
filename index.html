@@ -24,9 +24,9 @@
 			background-size: cover;
 
 			font-size: 100%;
-			text-size-adjust: 100%;
-			-webkit-text-size-adjust: 100%;
 			text-rendering: optimizeLegibility;
+
+			color: rgba(255, 255, 255, 0.95);
 		}
 
 		h1 {
@@ -36,59 +36,40 @@
 			font-weight: 400;
 			font-style: italic;
 			font-size: 3em;
-			color: rgba(255, 255, 255, 0.95);
-
 		}
 
-		/* Desktops: 1281px to higher resolution desktops */
-		@media (min-width: 1281px) {
+		h2 {
+			margin: 0;
+			padding: 0 1em;
+			font-family: serif;
+			font-weight: 400;
+			font-size: 1.5em;
+		}
+
+		@media (min-width: 451px) {
 			body {
 				background-image: url('images/large/buskers.jpg');
 			}
 		}
 
-		/* Laptops and Desktops: 1025px to 1280px */
-		@media (min-width: 1025px) and (max-width: 1280px) {
-			body {
-				background-image: url('images/large/buskers.jpg');
-			}
-		}
-
-		/* Tablets (portrait): 768px to 1024px */
-		@media (min-width: 768px) and (max-width: 1024px) {
+		@media (min-width: 401px) and (max-width: 450px) {
 			body {
 				background-image: url('images/medium/buskers.jpg');
+				font-size: 82.5%;
 			}
 		}
 
-		/* Tablets (landscape): 768px to 1024px */
-		@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-			body {
-				background-image: url('images/medium/buskers.jpg');
-				font-size: 80%;
-				text-size-adjust: 80%;
-				-webkit-text-size-adjust: 80%;
-			}
-		}
-
-		/* Mobiles (Landscape): 481px to 767px */
-		@media (min-width: 481px) and (max-width: 767px) {
+		@media (min-width: 351px) and (max-width: 400px) {
 			body {
 				background-image: url('images/small/buskers.jpg');
-				font-size: 80%;
-				text-size-adjust: 80%;
-				-webkit-text-size-adjust: 80%;
+				font-size: 77.5%;
 			}
 		}
 
-		/* Mobiles (Portrait): 320px to 479px */
-		@media (max-width: 480px) {
+		@media (max-width: 350px) {
 			body {
 				background-image: url('images/small/buskers.jpg');
-
-				font-size: 60%;
-				text-size-adjust: 60%;
-				-webkit-text-size-adjust: 60%;
+				font-size: 62.5%;
 			}
 		}
 	</style>
@@ -98,6 +79,9 @@
 	<h1>
 		steelbreeze
 	</h1>
+	<h2>
+		photos by David Mesquita-Morris
+	</h2>
 </body>
 
 </html>
