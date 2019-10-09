@@ -8,77 +8,91 @@
 	<title>steelbreeze</title>
 	<style>
 		html {
-			height: 100%;
-			margin: 0;
-			padding: 0;
+			background: #E0E0E0;
 		}
 
 		body {
-			margin: 0;
-			padding: 0;
-
-			min-height: 100%;
-
-			background-repeat: no-repeat;
-			background-position: center right;
-			background-size: cover;
-
-			font-size: 100%;
-			text-rendering: optimizeLegibility;
-
-			color: rgba(255, 255, 255, 0.95);
+			max-width: 900px;
+			margin: 0 auto;
 		}
 
-		h1 {
+		main {
+			padding: 1.5em 1.5em 0.5em 1.5em;
+			background: #FAFAFA;
+			color: rgba(0, 0, 0, 0.87);
+			font-family: Georgia, 'Times New Roman', Times, serif;
+		}
+
+		footer {
+			padding: 1.5em;
+			background: #424242;
+			color: rgba(255, 255, 255, 0.87);
+			font-family: Tahoma, sans-serif;
+			font-size: 0.85em;
+		}
+
+		footer a {
+			color: rgba(255, 255, 255, 0.87);
+			text-decoration: none;
+		}
+
+		footer a:hover {
+			text-decoration: underline;
+		}
+
+		h1,
+		h4 {
 			margin: 0;
-			padding: 0.25em 0.5em;
-			font-family: serif;
-			font-weight: 400;
+		}
+
+		q,
+		blockquote {
 			font-style: italic;
-			font-size: 3em;
 		}
 
-		h2 {
-			margin: 0;
-			padding: 0 1em;
-			font-family: serif;
-			font-weight: 400;
-			font-size: 1.5em;
+		blockquote::before {
+			content: open-quote;
 		}
 
-		@media (min-width: 451px) {
-			body {
-				background-image: url('images/large/buskers.jpg');
-			}
-		}
-
-		@media (min-width: 401px) and (max-width: 450px) {
-			body {
-				background-image: url('images/medium/buskers.jpg');
-				font-size: 82.5%;
-			}
-		}
-
-		@media (min-width: 351px) and (max-width: 400px) {
-			body {
-				background-image: url('images/small/buskers.jpg');
-				font-size: 77.5%;
-			}
-		}
-
-		@media (max-width: 350px) {
-			body {
-				background-image: url('images/small/buskers.jpg');
-				font-size: 62.5%;
-			}
+		blockquote::after {
+			content: close-quote;
 		}
 	</style>
 </head>
 
 <body>
-	<h1>
-		steelbreeze
-	</h1>
+	<main>
+		<h1>Together we can make a difference</h1>
+		<p>An open letter to software engineers.</p>
+		<p>Climate change is arguably the biggest challenge of our generation and likely will be for generations to
+			come.</p>
+		<p>While politicians debate policy and targets, we should ask ourselves, as software engineers: <q>what can we
+				do?</q></p>
+		<p>When I think about the that question, this quote by Henry Petroski comes to mind:</p>
+		<blockquote>The most amazing achievement of the computer software industry is its continuing cancellation of
+			the steady and staggering gains made by the computer hardware industry.</blockquote>
+		<p>Much of the state of the art in software development practise and tooling surrounds expedience of the
+			development process driven by time to market and cost considerations. This is manifested in heavy runtime
+			software infrastructure, large libraries, or inefficient code; frequently all of these.</p>
+		<p>This leads to increasing demand for compute resources, which in turn drives energy consumption. Data centres
+			currently account for approximately of <a href="https://www.iea.org/tcep/buildings/datacentres/">1%</a> of
+			the global demand for electricity according to <a href="https://www.iea.org/">The International Energy
+				Agency</a>, hovering
+			between 175 and 200TWh annually.</p>
+		<p>If you follow the link above, you will see two trends, energy demand for servers increasing and data centre
+			infrastructure reducing, neatly offsetting each other. While convenient currently, innovation in data
+			centre infrastructure cannot continually cancel the server demand.</p>
+		<p>So how can we, as software engineers, prevent future increases or better still reduce power consumption? When
+			designing the solution architecture of your application, please ask yourself: <q>can I make this more energy
+				efficient?</q></p>
+		<br />
+		<p>David Mesquita-Morris<br />9<sup>th</sup> October 2019</p>
+	</main>
+	<footer>
+		<h4>Projects</h4>
+		<p><a href="https://steelbreeze.net/state">state</a>: an executable hierarchical state machine library</p>
+		<p>Copyright &copy; 2019 David Mesquita-Morris</p>
+	</footer>
 </body>
 
 </html>
