@@ -30,13 +30,13 @@
 			width: 100%;
 
 			margin: 1em 0;
-/*
+			/*
 			border: 2px solid #D0D5DA;
 			border-radius: 1em;
 */
 			border-collapse: separate;
 			border-spacing: 0;
-/*
+			/*
 			padding: 0.9em;
 */
 			font-family: Tahoma, sans-serif;
@@ -103,11 +103,15 @@
 	</table>
 	<p>The heat-map above is auto-generated from a <a href="./demoData.json">JSON file</a> containing information about
 		applications and the context in which they are used. The values on the x and y axis are extracted from the data
-		and an optimal layout is calculated to maximise adjancent cells having the same content. The table is then rendered with adjacent cells with the same content merged.</p>
+		and an optimal layout is calculated to maximise adjacent cells having the same content. The table is then
+		rendered with adjacent cells with the same content merged.</p>
+		<p>The code is written in ECMAScript 2015 (6th Edition, ECMA-262) and therefore does not work with Internet Explorer; all other modern browsers should be compatible.</p>
 	<h3>Outstanding work</h3>
 	<p>Only test applications where there are more than one instance of the application/status combination.</p>
-	<p>Split cells where there is more than one application. Note: at the moment, the cell colour is taken from the first application.</p>
-	<p>Where there are multiple scenarios with the same number of adjacent cells, allow the user to provide hints to select a preferred option.</p>
+	<p>Split cells where there is more than one application. Note: at the moment, the cell colour is taken from the
+		first application.</p>
+	<p>Where there are multiple scenarios with the same number of adjacent cells, allow the user to provide hints to
+		select a preferred option.</p>
 	<p>Refactor the D3 code to layout the HTML table.</p>
 </body>
 
@@ -115,6 +119,7 @@
 <script src="./dist/layout.min.js"></script>
 <script>
 	const applications = layout.getDemoData();
+
 	const scenarios = layout.optimise(applications, "product", "capability", layout.bruteForce);
 	const scenario = scenarios[0]; // TODO: find the most favorable scenario based on preferences
 
