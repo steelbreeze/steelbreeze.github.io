@@ -18,18 +18,27 @@
 			margin: 0;
 		}
 
+		h3 {
+			margin-bottom: 0;
+		}
+
+		p {
+			margin: 0.25em 0 0.75em 0;
+		}
+
 		table.heatmap {
 			width: 100%;
 
-			margin-top: 1em;
-
+			margin: 1em 0;
+/*
 			border: 2px solid #D0D5DA;
 			border-radius: 1em;
-
+*/
 			border-collapse: separate;
 			border-spacing: 0;
+/*
 			padding: 0.9em;
-
+*/
 			font-family: Tahoma, sans-serif;
 			font-size: 0.8em;
 			color: rgb(242, 243, 242);
@@ -98,7 +107,7 @@
 		merged. </p>
 	<h3>Outstanding work</h3>
 	<p>Only test applications where there are more than one instance of the application/status combination.</p>
-	<p>Split cells where there is more than one application.</p>
+	<p>Split cells where there is more than one application. Note: at the moment, the cell colour is taken from the first application.</p>
 	<p>Where there are multiple scenarios with the same number of adjacent cells, allow the user to provide hints to select a preferred option.</p>
 	<p>Refactor the D3 code to layout the HTML table.</p>
 </body>
