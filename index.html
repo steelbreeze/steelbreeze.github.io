@@ -104,7 +104,7 @@
 
 	var header = d3.select("#lineOfBusiness").select("thead").append("tr");
 
-	header.selectAll("th").data(["Line of business", ...scenario.xAxis.values]) // TODO: remove when axis returned by prepare
+	header.selectAll("th").data(["", ...scenario.xAxis.values]) // TODO: remove when axis returned by prepare
 		.enter()
 		.append("th")
 		.classed('axisX', (d, i) => i !== 0)
