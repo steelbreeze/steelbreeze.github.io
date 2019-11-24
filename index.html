@@ -1,99 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>steelbreeze</title>
+	<meta charset="utf-8">
+	<title>Application portfolio</title>
 	<style>
-		html {
-			background: #E0E0E0;
-		}
-
 		body {
-			max-width: 900px;
+			font-family: Arial, Helvetica, sans-serif;
+			color: #27394F;
+			max-width: 1200px;
 			margin: 0 auto;
-		}
-
-		main {
-			padding: 1.5em 1.5em 0.5em 1.5em;
-			background: #FAFAFA;
-			color: rgba(0, 0, 0, 0.87);
-			font-family: Georgia, 'Times New Roman', Times, serif;
-		}
-
-		footer {
-			padding: 1.5em;
-			background: #424242;
-			color: rgba(255, 255, 255, 0.87);
-			font-family: Tahoma, sans-serif;
-			font-size: 0.85em;
-		}
-
-		footer a {
-			color: rgba(255, 255, 255, 0.87);
-			text-decoration: none;
-		}
-
-		footer a:hover {
-			text-decoration: underline;
+			padding: 1em;
 		}
 
 		h1,
-		h4 {
+		h2 {
 			margin: 0;
 		}
 
-		q,
-		blockquote {
-			font-style: italic;
+		table.heatmap {
+			width: 100%;
+
+			margin-top: 1em;
+
+			border: 2px solid #D0D5DA;
+			border-radius: 1em;
+
+			border-collapse: separate;
+			border-spacing: 0;
+			padding: 0.9em;
+
+			font-family: Tahoma, sans-serif;
+			font-size: 0.8em;
+			color: rgb(242, 243, 242);
+
+			table-layout: fixed;
 		}
 
-		blockquote::before {
-			content: open-quote;
+		table.heatmap th {
+			border: 1px solid white;
+			padding: 0.25em 0.75em;
+			font-weight: normal;
 		}
 
-		blockquote::after {
-			content: close-quote;
+		table.heatmap td {
+			border: 1px solid white;
+			padding: 0.75em;
+			font-weight: normal;
+			text-align: center;
+		}
+
+
+		table.heatmap th.tableHeading {
+			color: #D0D5DA;
+		}
+
+		table.heatmap th.axisX {
+			background: #7FD3F7;
+			padding: 0.25em 0.75em;
+		}
+
+		table.heatmap td.axisY {
+			background: #00A7F0;
+		}
+
+		table.heatmap .green {
+			background: #18c73e;
+		}
+
+		table.heatmap .amber {
+			background: orange;
+		}
+
+		table.heatmap .red {
+			background: red;
+		}
+
+		table.heatmap td.application:empty {
+			background: repeating-linear-gradient(135deg, white, white 4px, #D0D5DA 4px, #D0D5DA 6px);
 		}
 	</style>
+
 </head>
 
 <body>
-	<main>
-		<h1>Together we can make a difference</h1>
-		<p>An open letter to software engineers.</p>
-		<p>Climate change is arguably the biggest challenge of our generation and likely will be for generations to
-			come.</p>
-		<p>While politicians debate policy and targets, we should ask ourselves, as software engineers: <q>what can we
-				do?</q></p>
-		<p>When I think about the that question, this quote by Henry Petroski comes to mind:</p>
-		<blockquote>The most amazing achievement of the computer software industry is its continuing cancellation of
-			the steady and staggering gains made by the computer hardware industry.</blockquote>
-		<p>Much of the state of the art in software development practise and tooling surrounds expedience of the
-			development process driven by time to market and cost considerations. This is manifested in heavy runtime
-			software infrastructure, large libraries, or inefficient code; frequently all of these.</p>
-		<p>This leads to increasing demand for compute resources, which in turn drives energy consumption. Data centres
-			currently account for approximately of <a href="https://www.iea.org/tcep/buildings/datacentres/">1%</a> of
-			the global demand for electricity according to <a href="https://www.iea.org/">The International Energy
-				Agency</a>, hovering
-			between 175 and 200TWh annually.</p>
-		<p>If you follow the link above, you will see two trends, energy demand for servers increasing and data centre
-			infrastructure reducing, neatly offsetting each other. While convenient currently, innovation in data
-			centre infrastructure cannot continually cancel the server demand.</p>
-		<p>So how can we, as software engineers, prevent future increases or better still reduce power consumption? When
-			designing the solution architecture of your application, please ask yourself: <q>can I make this more energy
-				efficient?</q></p>
-		<br />
-		<p>David Mesquita-Morris<br />9<sup>th</sup> October 2019</p>
-	</main>
-	<footer>
-		<h4>Projects</h4>
-		<p><a href="https://steelbreeze.net/state">state</a>: an executable hierarchical state machine library</p>
-		<p><a href="https://github.com/steelbreeze/linq">linq</a>: deferred execution library for TypeScript</p>
-		<p>Copyright &copy; 2019 David Mesquita-Morris</p>
-	</footer>
+	<h2>steelbreeze</h2>
+	<h1>Application portfolio</h1>
+	<table class="heatmap" id="lineOfBusiness">
+		<thead></thead>
+		<tbody></tbody>
+	</table>
+
 </body>
+
+<script src="./dist/d3.min.js"></script>
+<script src="./dist/layout.min.js"></script>
+<script>
+	const applications = layout.getDemoData();
+	const scenarios = layout.optimise(applications, "product", "capability", layout.bruteForce);
+	const scenario = scenarios[0]; // TODO: find the most favorable scenario based on preferences
+
+	const table = layout.prepare(applications, scenario); // NOTE: you do not have to use a generated scenario, you can hard-code one
+
+	var header = d3.select("#lineOfBusiness").select("thead").append("tr");
+
+	header.selectAll("th").data(["Line of business", ...scenario.xAxis.values]) // TODO: remove when axis returned by prepare
+		.enter()
+		.append("th")
+		.classed('axisX', (d, i) => i !== 0)
+		.classed('tableHeading', (d, i) => i === 0)
+		.text(d => d);
+
+	var body = d3.select("#lineOfBusiness").select("tbody");
+
+	body.selectAll("tr").data(scenario.yAxis.values)
+		.enter()
+		.append("tr").data(table)
+		.selectAll("td")
+		.data((row, rowIndex) => [[{ name: scenario.yAxis.values[rowIndex], "status": "axisY" }], ...row]) // TODO: remove when axis returned by prepare
+		.enter()
+		.append("td")
+		.attr("class", d => d.length === 0 ? "application" : `application ${d[0].status}`)
+		.attr("colspan", d => d.length === 1 ? d[0].colspan : 1)
+		.attr("rowspan", d => d.length === 1 ? d[0].rowspan : 1)
+		.text(d => d.map(a => a.name).join(", "));
+</script>
 
 </html>
