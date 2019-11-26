@@ -6,7 +6,7 @@
 				"capability": "Market gateway",
 				"product": "MM",
 				"location": "United Kingdom",
-				"status": "green"
+				"status": "red"
 			},
 			{
 				"capability": "Market gateway",
