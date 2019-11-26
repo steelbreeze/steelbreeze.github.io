@@ -86,7 +86,7 @@
 
 		table.heatmap .multiple {
 			background: yellow;
-			color: rgba(0,0,0,0.87);
+			color: rgba(0, 0, 0, 0.87);
 		}
 
 		table.heatmap td:empty {
@@ -106,7 +106,6 @@
 	</header>
 	<h1>Application portfolio heat-maps</h1>
 	<table class="heatmap" id="lineOfBusiness">
-		<thead></thead>
 		<tbody></tbody>
 	</table>
 	<p>The heat-map above is auto-generated from a <a href="./demoData.json">JSON file</a> containing information about
@@ -127,24 +126,39 @@
 <script src="./dist/d3.min.js"></script>
 <script src="./dist/layout.min.js"></script>
 <script>
+	var urlParams = new URLSearchParams(window.location.search);
+	const xAxis = urlParams.get("x") || "product";
+	const yAxis = urlParams.get("y") || "capability";
+	const scenarioIndex = urlParams.get("i") || 0;
+
 	const applications = layout.getDemoData();
-		const scenarios = layout.optimise(applications, "product", "capability", layout.bruteForce);
-		const scenario = scenarios[0];
-		const table = layout.prepare(applications, scenario); // NOTE: you do not have to use a generated scenario, you can hard-code one
+	const scenarios = layout.optimise(applications, xAxis, yAxis, layout.bruteForce);
+	const scenario = scenarios[scenarioIndex];
+	const table = layout.prepare(applications, scenario); // NOTE: you do not have to use a generated scenario, you can hard-code one
 
-		var body = d3.select("#lineOfBusiness").select("tbody");
+	var body = d3.select("#lineOfBusiness").select("tbody");
 
-		body.selectAll("tr").data(table)
-			.enter()
-			.append("tr").data(table)
-			.selectAll("td")
-			.data(row => row)
-			.enter()
-			.append("td")
-			.attr("class", d => d.length === 0 ? "application" : d.length === 1 ? `application ${d[0].status}` : "application multiple")
-			.attr("colspan", d => d.length === 1 ? d[0].colspan : 1)
-			.attr("rowspan", d => d.length === 1 ? d[0].rowspan : 1)
-			.text(d => d.map(a => a.name).join(", "));
+	body.selectAll("tr").data(table)
+		.enter()
+		.append("tr").data(table)
+		.selectAll("td")
+		.data(row => row)
+		.enter()
+		.append("td")
+		.attr("class", d => d.length === 0 ? "application" : d.length === 1 ? `application ${d[0].status}` : "application multiple")
+		.attr("colspan", d => d.length === 1 ? d[0].colspan : 1)
+		.attr("rowspan", d => d.length === 1 ? d[0].rowspan : 1)
+		.text(d => {
+			let seen = [];
+			
+			for(app of d) {
+				if(seen.indexOf(app.name) === -1) {
+					seen.push(app.name);
+				}
+			}
+
+			return seen.join(", ");
+		});
 </script>
 
 </html>
