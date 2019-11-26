@@ -41,7 +41,7 @@
 */
 			font-family: Tahoma, sans-serif;
 			font-size: 0.8em;
-			color: rgba(255, 255, 255, 0.87);
+			color: rgb(242, 243, 242);
 
 			table-layout: fixed;
 		}
@@ -59,34 +59,42 @@
 			text-align: center;
 		}
 
-
 		table.heatmap th.tableHeading {
 			color: #D0D5DA;
 		}
 
-		table.heatmap th.axisX {
-			background: #03A9F4;
+		table.heatmap td.xAxis {
+			background: #7FD3F7;
 			padding: 0.25em 0.75em;
 		}
 
-		table.heatmap td.axisY {
-			background: #2196F3;
+		table.heatmap td.yAxis {
+			background: #00A7F0;
 		}
 
 		table.heatmap .green {
-			background: #4CAF50;
+			background: #18c73e;
 		}
 
 		table.heatmap .amber {
-			background: #FFC107;
+			background: orange;
 		}
 
 		table.heatmap .red {
-			background: #f44336;
+			background: red;
 		}
 
-		table.heatmap td.application:empty {
+		table.heatmap .multiple {
+			background: yellow;
+			color: rgba(0,0,0,0.87);
+		}
+
+		table.heatmap td:empty {
 			background: repeating-linear-gradient(135deg, white, white 4px, #D0D5DA 4px, #D0D5DA 6px);
+		}
+
+		table.heatmap td.xAxis:empty {
+			background: none;
 		}
 	</style>
 
@@ -94,7 +102,7 @@
 
 <body>
 	<header>
-		<h2>Steelbreeze</h2>
+		<h2>Mythical bank</h2>
 	</header>
 	<h1>Application portfolio heat-maps</h1>
 	<table class="heatmap" id="lineOfBusiness">
@@ -105,7 +113,8 @@
 		applications and the context in which they are used. The values on the x and y axis are extracted from the data
 		and an optimal layout is calculated to maximise adjacent cells having the same content. The table is then
 		rendered with adjacent cells with the same content merged.</p>
-		<p>The code is written in ECMAScript 2015 (6th Edition, ECMA-262) and therefore does not work with Internet Explorer; all other modern browsers should be compatible.</p>
+	<p>The code is written in ECMAScript 2015 (6th Edition, ECMA-262) and therefore does not work with Internet
+		Explorer; all other modern browsers should be compatible.</p>
 	<h3>Outstanding work</h3>
 	<p>Only test applications where there are more than one instance of the application/status combination.</p>
 	<p>Split cells where there is more than one application. Note: at the moment, the cell colour is taken from the
@@ -119,34 +128,23 @@
 <script src="./dist/layout.min.js"></script>
 <script>
 	const applications = layout.getDemoData();
+		const scenarios = layout.optimise(applications, "product", "capability", layout.bruteForce);
+		const scenario = scenarios[0];
+		const table = layout.prepare(applications, scenario); // NOTE: you do not have to use a generated scenario, you can hard-code one
 
-	const scenarios = layout.optimise(applications, "product", "capability", layout.bruteForce);
-	const scenario = scenarios[0]; // TODO: find the most favorable scenario based on preferences
+		var body = d3.select("#lineOfBusiness").select("tbody");
 
-	const table = layout.prepare(applications, scenario); // NOTE: you do not have to use a generated scenario, you can hard-code one
-
-	var header = d3.select("#lineOfBusiness").select("thead").append("tr");
-
-	header.selectAll("th").data(["", ...scenario.xAxis.values]) // TODO: remove when axis returned by prepare
-		.enter()
-		.append("th")
-		.classed('axisX', (d, i) => i !== 0)
-		.classed('tableHeading', (d, i) => i === 0)
-		.text(d => d);
-
-	var body = d3.select("#lineOfBusiness").select("tbody");
-
-	body.selectAll("tr").data(scenario.yAxis.values)
-		.enter()
-		.append("tr").data(table)
-		.selectAll("td")
-		.data((row, rowIndex) => [[{ name: scenario.yAxis.values[rowIndex], "status": "axisY" }], ...row]) // TODO: remove when axis returned by prepare
-		.enter()
-		.append("td")
-		.attr("class", d => d.length === 0 ? "application" : `application ${d[0].status}`)
-		.attr("colspan", d => d.length === 1 ? d[0].colspan : 1)
-		.attr("rowspan", d => d.length === 1 ? d[0].rowspan : 1)
-		.text(d => d.map(a => a.name).join(", "));
+		body.selectAll("tr").data(table)
+			.enter()
+			.append("tr").data(table)
+			.selectAll("td")
+			.data(row => row)
+			.enter()
+			.append("td")
+			.attr("class", d => d.length === 0 ? "application" : d.length === 1 ? `application ${d[0].status}` : "application multiple")
+			.attr("colspan", d => d.length === 1 ? d[0].colspan : 1)
+			.attr("rowspan", d => d.length === 1 ? d[0].rowspan : 1)
+			.text(d => d.map(a => a.name).join(", "));
 </script>
 
 </html>
