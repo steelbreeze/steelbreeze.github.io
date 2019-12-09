@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Application portfolio</title>
+	<link rel="stylesheet" href="./style.css" media="all">
+</head>
+
+<body>
+	<header>
+		<h2>Mythical bank</h2>
+	</header>
+	<h1>Application portfolio heat-maps</h1>
+	<table class="heatmap">
+		<tbody id="lineOfBusiness">
+		</tbody>
+	</table>
+	<p>The heat-map above is auto-generated from a <a href="./src/data/mythicalBank.json">JSON file</a> containing
+		information about
+		applications and the context in which they are used. The values on the x and y axis are extracted from the data
+		and an optimal layout is calculated to maximise adjacent cells having the same content. The table is then
+		rendered with adjacent cells with the same context merged.</p>
+	<h3>Browser support</h3>
+	<p>The layout engine is writtin in TypeScript and transpiled into JavaScript ES3; it should therefore work in any
+		browser. Safari table rendering takes a litte artistic license
+		with table cell heights where they span rows.</p>
+	<h3>Outstanding work</h3>
+	<p>Add a function to help select a preferred scenario.</p>
+	<p>Split cells with multiple application horizontally in addition to vertically if preferable.</p>
+	<p>Smarter ordering of split cells to expliot affinity with neighbouring cells.</p>
+
+	<script src="./dist/d3.min.js"></script>
+	<script src="./dist/layout.min.js"></script>
+	<script src="./dist/demoData.js"></script>
+	<!-- NOTE: replace this way of loading data with an AJAX call when serving via a webserver -->
+	<script>
+		// extract any URL parameters to define dimensions
+		const urlParams = new URLSearchParams(window.location.search);
+		const x = urlParams.get("x") || "product";
+		const y = urlParams.get("y") || "capability";
+
+		// load the applications data (AJAX call rather than the above script)
+
+		// extract the axes from the application data
+		const axes = layout.getAxes(applications, x, y);
+
+		// find the optimum layout scenarios
+		const scenarios = layout.getOptimalAxes(applications, axes/*, forceY*/); // NOTE: you can override the functions used to iterate a dimension
+
+		// select the preferred scenario
+		if (scenarios.length !== 0) {
+			const scenario = scenarios[0];
+
+			// get the formatted data according to the scenario
+			const table = layout.getTable(applications, scenario);
+
+			// render the appropriate table element
+			renderTable("#lineOfBusiness", table);
+		}
+
+		// render a table with formatted data
+		function renderTable(id, table) {
+			d3.select(id)												// find the target table
+				.selectAll("tr").data(table).enter().append("tr")		// add the table rows
+				.selectAll("td").data(row => row).enter().append("td")	// add cells to the rows
+				.text(cell => cell.name)								// add the text into the cell
+				.attr("class", cell => `${cell.style} height${Math.round(cell.height / 10)}`)	// add the CSS classes for styling
+				.attr("colspan", cell => cell.colspan).attr("rowspan", cell => cell.rowspan);	// set the required row and column spans
+		}
+
+		// alternative function to considering all permutations of the y axis; to pass into layout.getOptimalAxes
+		function forceY() {
+			return [["Market gateway", "Order execution", "Confirmations", "Settlement"]];
+		}
+	</script>
+</body>
+
+</html>
