@@ -23,8 +23,7 @@
 				<td colspan="3">View as of: <span id="dateOfInterest"></span></td>
 			</tr>
 			<tr>
-				<td colspan="3"><input type="range" min="-1095" max="1096" value="0" class="slider" id="myRange"
-						oninput="showVal(this.value)" /></td>
+				<td colspan="3"><input type="range" min="-1095" max="1096" value="0" class="slider" id="myRange" oninput="showVal(this.value)" /></td>
 			</tr>
 			<tr>
 				<td id="earliestDate">Earliest</td>
@@ -33,7 +32,7 @@
 			</tr>
 		</tbody>
 	</table>
-	<p>The heat map above is auto-generated from a <a href="./data/mythicalBank.json">JSON file</a> containing
+				<p>The heat map above is auto-generated from a <a href="./data/mythicalBank.json">JSON file</a> containing
 		information about applications and the context in which they are used. Heat maps with merged and split cells
 		convey a great deal of information in a compact form.</p>
 	<p>The process from raw data to the table above is as follows:</p>
@@ -48,8 +47,7 @@
 		can skip the first two steps alltogether, or substitute your own methods.</p>
 	<h3>Browser support</h3>
 	<p>The layout engine is writtin in TypeScript and transpiled into JavaScript ES3; it should therefore work in any
-		browser. Apple Safari and Microsoft Edge both have table rendering issues where there are complex split cell
-		scenarios; Google Chrome and Mozilla Firefox both work well.</p>
+		browser. Apple Safari and Microsoft Edge both have table rendering issues where there are complex split cell scenarios; Google Chrome and Mozilla Firefox both render well.</p>
 	<h3>Outstanding work</h3>
 	<p>Add a function to help select a preferred scenario.</p>
 	<p>Split cells with multiple application horizontally in addition to vertically if preferable.</p>
@@ -58,13 +56,13 @@
 	<script src="./dist/d3.min.js"></script>
 	<script src="./dist/layout.min.js"></script>
 	<script>
-		const x = "product";
-		const y = "capability";
+		// extract any URL parameters to define dimensions
+		const urlParams = new URLSearchParams(window.location.search);
+		const x = urlParams.get("x") || "product";
+		const y = urlParams.get("y") || "capability";
 		const today = new Date();
 		let data = undefined;
 		let scenario = undefined;
-
-		// TODO: put dimensions into drop-down's
 
 		// update the slider labels
 		d3.select("#earliestDate").text(addDays(today, -1095).toLocaleDateString());
@@ -72,7 +70,7 @@
 		d3.select("#latestDate").text(addDays(today, 1096).toLocaleDateString());
 
 		// load the applications data
-		d3.json("./data/mythicalBank.json").then(function (json) {
+		d3.json("./data/mythicalBank.json").then(json => {
 			// update the returned data to make dates Date objects
 			data = json.map(mapApp);
 
@@ -117,11 +115,10 @@
 			// create the new table
 			d3.select(id)
 				.selectAll("tr").data(table).enter().append("tr")
-				.selectAll("td").data(function (row) { return row; }).enter().append("td")
-				.text(function (cell) { return cell.name; })
-				.attr("class", function (cell) { return cell.style + " height" + Math.round(cell.height / 10); })
-				.attr("colspan", function (cell) { return cell.colspan; })
-				.attr("rowspan", function (cell) { return cell.rowspan; });
+				.selectAll("td").data(row => row).enter().append("td")
+				.text(cell => cell.name)
+				.attr("class", cell => `${cell.style} height${Math.round(cell.height / 10)}`)
+				.attr("colspan", cell => cell.colspan).attr("rowspan", cell => cell.rowspan);
 		}
 
 		// alternative function to considering all permutations of the y axis; to pass into layout.getOptimalAxes
@@ -147,13 +144,13 @@
 		}
 
 
-		function between(date, start, end) {
-			return (start === undefined || date >= start) && (end === undefined || date <= end);
-		}
+function between(date, start, end) {
+    return (start === undefined || date >= start) && (end === undefined || date <= end);
+}
 
-		function filterByDate(applications, date) {
-			return applications.map(function (app) { return { name: app.name, uses: app.uses.filter(function (use) { return between(date, use.commissioned, use.decommissioned); }) } }).filter(function (app) { return app.uses.length > 0; });
-		}
+function filterByDate(applications, date) {
+    return applications.map(app => { return { name: app.name, uses: app.uses.filter(use => between(date, use.commissioned, use.decommissioned)) } }).filter(app => app.uses.length > 0);
+}
 	</script>
 </body>
 
