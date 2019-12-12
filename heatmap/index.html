@@ -99,7 +99,7 @@
 
 		function showVal(val) {
 			day = addDays(today, val);
-			applications = layout.filterByDate(data, day);
+			applications = filterByDate(data, day);
 
 			table2 = layout.getTable(applications, scenario);
 
@@ -143,15 +143,15 @@
 
 			return result;
 		}
-/*
-				function between(date, start, end) {
-					return (start === undefined || date >= start) && (end === undefined || date <= end);
-				}
-		
-				function dateOfInterest(applications, date) {
-					return applications.map(app => { return { name: app.name, uses: app.uses.filter(use => between(date, use.commissioned, use.decommissioned)) } }).filter(app => app.uses.length !== 0);
-				}
-				*/
+
+
+function between(date, start, end) {
+    return (start === undefined || date >= start) && (end === undefined || date <= end);
+}
+
+function filterByDate(applications, date) {
+    return applications.map(app => { return { name: app.name, uses: app.uses.filter(use => between(date, use.commissioned, use.decommissioned)) } }).filter(app => app.uses.length > 0);
+}
 	</script>
 </body>
 
