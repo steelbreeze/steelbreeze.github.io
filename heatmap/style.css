@@ -150,6 +150,10 @@ table.timeline {
     text-align: center;
 }
 
+table.timeline td {
+    padding: 0.25em 0;
+}
+
 table.timeline td:first-child{
     text-align: left;
 }
