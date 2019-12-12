@@ -11,17 +11,29 @@
 <body>
 	<header>
 		<h2>Mythical bank</h2>
+		<h1>Application portfolio heat-maps</h1>
 	</header>
-	<h1>Application portfolio heat-maps</h1>
 	<table class="heatmap">
 		<tbody id="lineOfBusiness">
 		</tbody>
 	</table>
-	<p>The heat-map above is auto-generated from a <a href="./dist/demoData.js">JSON file</a> containing
-		information about
-		applications and the context in which they are used. The values on the x and y axis are extracted from the data
-		and an optimal layout is calculated to maximise adjacent cells having the same content. The table is then
-		rendered with adjacent cells with the same context merged.</p>
+	<div class="slidecontainer">
+		<input type="range" min="0" max="1825" value="0" class="slider" id="myRange" oninput="showVal(this.value)"
+			 />
+	</div>
+	<p>The heat map above is auto-generated from a <a href="./data/mythicalBank.json">JSON file</a> containing
+		information about applications and the context in which they are used. Heat maps with merged and split cells
+		convey a great deal of information in a compact form.</p>
+	<p>The process from raw data to the table above is as follows:</p>
+	<ol>
+		<li>Extract the unique values for the x and y axis;</li>
+		<li>Determine the optimal sequences of x and y axis values to position the same applications of the same status
+			together;</li>
+		<li>Produce a table using the optimal x and y axis where cells containing multiple applications are split and
+			applications of the same status in neighbouring cells merged.</li>
+	</ol>
+	<p>These operations are performed in seperate calls to the library, therefore if you want a preset x and y axis, you
+		can skip the first two steps alltogether, or substitute your own methods.</p>
 	<h3>Browser support</h3>
 	<p>The layout engine is writtin in TypeScript and transpiled into JavaScript ES3; it should therefore work in any
 		browser. Safari table rendering takes a litte artistic license
@@ -33,46 +45,81 @@
 
 	<script src="./dist/d3.min.js"></script>
 	<script src="./dist/layout.min.js"></script>
-	<script src="./dist/demoData.js"></script>
-	<!-- NOTE: replace this way of loading data with an AJAX call when serving via a webserver -->
 	<script>
 		// extract any URL parameters to define dimensions
 		const urlParams = new URLSearchParams(window.location.search);
 		const x = urlParams.get("x") || "product";
 		const y = urlParams.get("y") || "capability";
+		const today = new Date();
+		let data = undefined;
+		let scenario = undefined;
 
-		// load the applications data (AJAX call rather than the above script)
+		// load the applications data
+		d3.json("./data/mythicalBank.json").then(d => {
+			data = d;
 
-		// extract the axes from the application data
-		const axes = layout.getAxes(applications, x, y);
+			// filter data as needed
+			applications = layout.at(data, new Date());
 
-		// find the optimum layout scenarios
-		const scenarios = layout.getOptimalAxes(applications, axes/*, forceY*/); // NOTE: you can override the functions used to iterate a dimension
+			// extract the axes from the application data
+			const axes = layout.getAxes(applications, x, y);
 
-		// select the preferred scenario
-		if (scenarios.length !== 0) {
-			const scenario = scenarios[0];
+			// find the optimum layout scenarios
+			const scenarios = layout.getOptimalAxes(applications, axes/*, forceY*/); // NOTE: you can override the functions used to iterate a dimension
 
-			// get the formatted data according to the scenario
-			const table = layout.getTable(applications, scenario);
+			// select the preferred scenario
+			if (scenarios.length !== 0) {
+				scenario = scenarios[0];
 
-			// render the appropriate table element
-			renderTable("#lineOfBusiness", table);
-		}
+				// get the formatted data according to the scenario
+				table = layout.getTable(applications, scenario);
+
+				// render the appropriate table element
+				renderTable("#lineOfBusiness", table);
+			}
+
+			function selectDate(date) {
+				applications = layout.at(data, new Date(Date.parse(date)));
+
+				table2 = layout.getTable(applications, scenario);
+
+				console.log(table2);
+
+				renderTable("#lineOfBusiness", table2);
+			}
+
+		});
 
 		// render a table with formatted data
 		function renderTable(id, table) {
-			d3.select(id)												// find the target table
-				.selectAll("tr").data(table).enter().append("tr")		// add the table rows
-				.selectAll("td").data(row => row).enter().append("td")	// add cells to the rows
-				.text(cell => cell.name)								// add the text into the cell
-				.attr("class", cell => `${cell.style} height${Math.round(cell.height / 10)}`)	// add the CSS classes for styling
-				.attr("colspan", cell => cell.colspan).attr("rowspan", cell => cell.rowspan);	// set the required row and column spans
+			// clear all rows from the table
+			d3.select(id).selectAll("tr").remove();
+
+			// create the new table
+			d3.select(id)
+				.selectAll("tr").data(table).enter().append("tr")
+				.selectAll("td").data(row => row).enter().append("td")
+				.text(cell => cell.name)
+				.attr("class", cell => `${cell.style} height${Math.round(cell.height / 10)}`)
+				.attr("colspan", cell => cell.colspan).attr("rowspan", cell => cell.rowspan);
 		}
 
 		// alternative function to considering all permutations of the y axis; to pass into layout.getOptimalAxes
 		function forceY() {
 			return [["Market gateway", "Order execution", "Confirmations", "Settlement"]];
+		}
+
+		function showVal(val) {
+			var result = new Date(today);
+			result.setMilliseconds(result.getMilliseconds() + (val * 1000 * 60 * 60 * 24));
+
+
+			applications = layout.at(data, result);
+
+table2 = layout.getTable(applications, scenario);
+
+renderTable("#lineOfBusiness", table2);
+
 		}
 	</script>
 </body>
