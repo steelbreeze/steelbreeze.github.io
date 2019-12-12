@@ -17,11 +17,22 @@
 		<tbody id="lineOfBusiness">
 		</tbody>
 	</table>
-	<div class="slidecontainer">
-		<input type="range" min="0" max="1825" value="0" class="slider" id="myRange" oninput="showVal(this.value)"
-			 />
-	</div>
-	<p>The heat map above is auto-generated from a <a href="./data/mythicalBank.json">JSON file</a> containing
+	<table class="timeline">
+		<tbody>
+			<tr>
+				<td colspan="3">View as of: <span id="dateOfInterest"></span></td>
+			</tr>
+			<tr>
+				<td colspan="3"><input type="range" min="-1095" max="1096" value="0" class="slider" id="myRange" oninput="showVal(this.value)" /></td>
+			</tr>
+			<tr>
+				<td id="earliestDate">Earliest</td>
+				<td id="todaysDate">Today</td>
+				<td id="latestDate">Latest</td>
+			</tr>
+		</tbody>
+	</table>
+				<p>The heat map above is auto-generated from a <a href="./data/mythicalBank.json">JSON file</a> containing
 		information about applications and the context in which they are used. Heat maps with merged and split cells
 		convey a great deal of information in a compact form.</p>
 	<p>The process from raw data to the table above is as follows:</p>
@@ -54,41 +65,48 @@
 		let data = undefined;
 		let scenario = undefined;
 
-		// load the applications data
-		d3.json("./data/mythicalBank.json").then(d => {
-			data = d;
+		// update the slider labels
+		d3.select("#earliestDate").text(addDays(today, -1095).toLocaleDateString());
+		d3.select("#todaysDate").text(today.toLocaleDateString());
+		d3.select("#latestDate").text(addDays(today, 1096).toLocaleDateString());
 
-			// filter data as needed
-			applications = layout.at(data, new Date());
+		// load the applications data
+		d3.json("./data/mythicalBank.json").then(json => {
+			// update the returned data to make dates Date objects
+			data = json.map(mapApp);
 
 			// extract the axes from the application data
-			const axes = layout.getAxes(applications, x, y);
+			const axes = layout.getAxes(data, x, y);
 
 			// find the optimum layout scenarios
-			const scenarios = layout.getOptimalAxes(applications, axes/*, forceY*/); // NOTE: you can override the functions used to iterate a dimension
+			const scenarios = layout.getOptimalAxes(data, axes/*, forceY*/); // NOTE: you can override the functions used to iterate a dimension
 
 			// select the preferred scenario
 			if (scenarios.length !== 0) {
 				scenario = scenarios[0];
 
-				// get the formatted data according to the scenario
-				table = layout.getTable(applications, scenario);
-
-				// render the appropriate table element
-				renderTable("#lineOfBusiness", table);
+				showVal(0);
 			}
-
-			function selectDate(date) {
-				applications = layout.at(data, new Date(Date.parse(date)));
-
-				table2 = layout.getTable(applications, scenario);
-
-				console.log(table2);
-
-				renderTable("#lineOfBusiness", table2);
-			}
-
 		});
+
+		function addDays(date, days) {
+			var result = new Date(date);
+
+			result.setMilliseconds(result.getMilliseconds() + (days * 1000 * 60 * 60 * 24));
+
+			return result;
+		}
+
+		function showVal(val) {
+			day = addDays(today, val);
+			applications = layout.filterByDate(data, day);
+
+			table2 = layout.getTable(applications, scenario);
+
+			d3.select("#dateOfInterest").text(day.toLocaleDateString());
+
+			renderTable("#lineOfBusiness", table2);
+		}
 
 		// render a table with formatted data
 		function renderTable(id, table) {
@@ -109,18 +127,31 @@
 			return [["Market gateway", "Order execution", "Confirmations", "Settlement"]];
 		}
 
-		function showVal(val) {
-			var result = new Date(today);
-			result.setMilliseconds(result.getMilliseconds() + (val * 1000 * 60 * 60 * 24));
-
-
-			applications = layout.at(data, result);
-
-table2 = layout.getTable(applications, scenario);
-
-renderTable("#lineOfBusiness", table2);
-
+		// map raw JSON data to format required in layout engine (transform date strings into dates)
+		function mapApp(app) {
+			return { name: app.name, uses: app.uses.map(mapUse) };
 		}
+		function mapUse(use) {
+			const result = {
+				product: use.product, capability: use.capability, location: use.location,
+				commissioned: use.commissioned ? new Date(use.commissioned) : undefined,
+				decommissioned: use.decommissioned ? new Date(use.decommissioned) : undefined,
+				status: use.status
+			};
+
+
+
+			return result;
+		}
+/*
+				function between(date, start, end) {
+					return (start === undefined || date >= start) && (end === undefined || date <= end);
+				}
+		
+				function dateOfInterest(applications, date) {
+					return applications.map(app => { return { name: app.name, uses: app.uses.filter(use => between(date, use.commissioned, use.decommissioned)) } }).filter(app => app.uses.length !== 0);
+				}
+				*/
 	</script>
 </body>
 

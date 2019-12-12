@@ -1,5 +1,24 @@
 [
 	{
+		"name": "Azure Active Gateway",
+		"uses": [
+			{
+				"capability": "Market gateway",
+				"product": "MM",
+				"location": "Italy",
+				"status": "green",
+				"commissioned": "2020-01-01"
+			},
+			{
+				"capability": "Market gateway",
+				"product": "Credit",
+				"location": "Italy",
+				"status": "green",
+				"commissioned": "2020-05-01"
+			}
+		]
+	},
+	{
 		"name": "ION",
 		"uses": [
 			{
@@ -13,7 +32,8 @@
 				"capability": "Market gateway",
 				"product": "Credit",
 				"location": "United Kingdom",
-				"status": "red"
+				"status": "red",
+				"decommissioned": "2020-05-01"
 			}
 		]
 	},
@@ -24,7 +44,8 @@
 				"capability": "Market gateway",
 				"product": "MM",
 				"location": "United Kingdom",
-				"status": "green"
+				"status": "green",
+				"decommissioned": "2020-10-01"
 			},
 			{
 				"capability": "Order management",
@@ -118,7 +139,8 @@
 				"capability": "Confirmations",
 				"product": "Equities",
 				"location": "Germany",
-				"status": "red"
+				"status": "red",
+				"decommissioned": "2022-09-09"
 			},
 			{
 				"capability": "Order execution",
@@ -168,7 +190,15 @@
 				"capability": "Market gateway",
 				"product": "Credit",
 				"location": "United Kingdom",
-				"status": "red"
+				"status": "red",
+				"decommissioned": "2020-10-01"
+			},
+			{
+				"capability": "Confirmations",
+				"product": "Equities",
+				"location": "United Kingdom",
+				"status": "green",
+				"commissioned": "2022-06-06"
 			}
 		]
 	}]
