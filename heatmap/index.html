@@ -58,13 +58,13 @@
 	<script src="./dist/d3.min.js"></script>
 	<script src="./dist/layout.min.js"></script>
 	<script>
-		// extract any URL parameters to define dimensions
-		const urlParams = new URLSearchParams(window.location.search);
-		const x = urlParams.get("x") || "product";
-		const y = urlParams.get("y") || "capability";
+		const x = "product";
+		const y = "capability";
 		const today = new Date();
 		let data = undefined;
 		let scenario = undefined;
+
+		// TODO: put dimensions into drop-down's
 
 		// update the slider labels
 		d3.select("#earliestDate").text(addDays(today, -1095).toLocaleDateString());
