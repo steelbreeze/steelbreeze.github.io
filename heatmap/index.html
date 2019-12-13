@@ -23,7 +23,9 @@
 				<td colspan="3">View as of: <span id="dateOfInterest"></span></td>
 			</tr>
 			<tr>
-				<td colspan="3"><input type="range" min="-1095" max="1096" value="0" class="slider" id="myRange" oninput="showVal(this.value)" /></td>
+				<td colspan="3">
+					<input type="range" min="-1095" max="1096" value="0" class="slider" id="slider"
+						oninput="displayAtDate(today, this.value)" /></td>
 			</tr>
 			<tr>
 				<td id="earliestDate">Earliest</td>
@@ -32,7 +34,7 @@
 			</tr>
 		</tbody>
 	</table>
-				<p>The heat map above is auto-generated from a <a href="./data/mythicalBank.json">JSON file</a> containing
+	<p>The heat map above is auto-generated from a <a href="./data/mythicalBank.json">JSON file</a> containing
 		information about applications and the context in which they are used. Heat maps with merged and split cells
 		convey a great deal of information in a compact form.</p>
 	<p>The process from raw data to the table above is as follows:</p>
@@ -47,7 +49,9 @@
 		can skip the first two steps alltogether, or substitute your own methods.</p>
 	<h3>Browser support</h3>
 	<p>The layout engine is writtin in TypeScript and transpiled into JavaScript ES3; it should therefore work in any
-		browser. Apple Safari and Microsoft Edge both have rowspan table rendering issues where there are complex split cell scenarios; Google Chrome and Mozilla Firefox both render well.</p>
+		browser. The heat map is rendered using D3 into an HTML table. Microsoft Internet Explorer does not seem to
+		support the latest versions of D3; Apple Safari and Microsoft Edge both have rowspan table rendering issues
+		where there are complex split cell scenarios; Google Chrome and Mozilla Firefox both render well.</p>
 	<h3>Outstanding work</h3>
 	<p>Add a function to help select a preferred scenario.</p>
 	<p>Split cells with multiple application horizontally in addition to vertically if preferable.</p>
@@ -64,15 +68,14 @@
 		let data = undefined;
 		let scenario = undefined;
 
-		// update the slider labels
-		d3.select("#earliestDate").text(addDays(today, -1095).toLocaleDateString());
-		d3.select("#todaysDate").text(today.toLocaleDateString());
-		d3.select("#latestDate").text(addDays(today, 1096).toLocaleDateString());
-
 		// load the applications data
 		d3.json("./data/mythicalBank.json").then(json => {
-			// update the returned data to make dates Date objects
-			data = json.map(mapApp);
+			data = convertRawJson(json);
+
+			// update the slider labels
+			d3.select("#earliestDate").text(addDays(today, -1095).toLocaleDateString());
+			d3.select("#todaysDate").text(today.toLocaleDateString());
+			d3.select("#latestDate").text(addDays(today, 1096).toLocaleDateString());
 
 			// extract the axes from the application data
 			const axes = layout.getAxes(data, x, y);
@@ -84,37 +87,23 @@
 			if (scenarios.length !== 0) {
 				scenario = scenarios[0];
 
-				showVal(0);
+				displayAtDate(today);
 			}
 		});
 
-		function addDays(date, days) {
-			var result = new Date(date);
+		function displayAtDate(date, offset) {
+			day = addDays(date, offset || 0);
+			applications = layout.filterByDate(data, day);
 
-			result.setMilliseconds(result.getMilliseconds() + (days * 1000 * 60 * 60 * 24));
+			table = layout.getTable(applications, scenario);
 
-			return result;
-		}
-
-		function showVal(val) {
-			day = addDays(today, val);
-			applications = filterByDate(data, day);
-
-			table2 = layout.getTable(applications, scenario);
-
+			// update data of interest field
 			d3.select("#dateOfInterest").text(day.toLocaleDateString());
 
-			renderTable("#lineOfBusiness", table2);
-		}
-
-		// render a table with formatted data
-		function renderTable(id, table) {
-			// clear all rows from the table
-			d3.select(id).selectAll("tr").remove();
-
-			// create the new table
-			d3.select(id)
-				.selectAll("tr").data(table).enter().append("tr")
+			// update the table
+			tbody = d3.select("#lineOfBusiness");
+			tbody.selectAll("tr").remove();
+			tbody.selectAll("tr").data(table).enter().append("tr")
 				.selectAll("td").data(row => row).enter().append("td")
 				.text(cell => cell.name)
 				.attr("class", cell => `${cell.style} height${Math.round(cell.height / 10)}`)
@@ -127,30 +116,31 @@
 		}
 
 		// map raw JSON data to format required in layout engine (transform date strings into dates)
-		function mapApp(app) {
-			return { name: app.name, uses: app.uses.map(mapUse) };
+		function convertRawJson(json) {
+			return json.map(app => {
+				return {
+					name: app.name,
+					usage: app.usage.map(use => {
+						return {
+							product: use.product,
+							capability: use.capability,
+							location: use.location,
+							commissioned: use.commissioned ? new Date(use.commissioned) : undefined,
+							decommissioned: use.decommissioned ? new Date(use.decommissioned) : undefined,
+							status: use.status
+						};
+					})
+				};
+			});
 		}
-		function mapUse(use) {
-			const result = {
-				product: use.product, capability: use.capability, location: use.location,
-				commissioned: use.commissioned ? new Date(use.commissioned) : undefined,
-				decommissioned: use.decommissioned ? new Date(use.decommissioned) : undefined,
-				status: use.status
-			};
 
+		function addDays(date, days) {
+			var result = new Date(date);
 
+			result.setMilliseconds(result.getMilliseconds() + (days * 1000 * 60 * 60 * 24));
 
 			return result;
 		}
-
-
-function between(date, start, end) {
-    return (start === undefined || date >= start) && (end === undefined || date <= end);
-}
-
-function filterByDate(applications, date) {
-    return applications.map(app => { return { name: app.name, uses: app.uses.filter(use => between(date, use.commissioned, use.decommissioned)) } }).filter(app => app.uses.length > 0);
-}
 	</script>
 </body>
 

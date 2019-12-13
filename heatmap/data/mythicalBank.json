@@ -1,7 +1,7 @@
 [
 	{
 		"name": "Azure Active Gateway",
-		"uses": [
+		"usage": [
 			{
 				"capability": "Market gateway",
 				"product": "MM",
@@ -20,7 +20,7 @@
 	},
 	{
 		"name": "ION",
-		"uses": [
+		"usage": [
 			{
 				"capability": "Market gateway",
 				"product": "MM",
@@ -39,7 +39,7 @@
 	},
 	{
 		"name": "Wall St",
-		"uses": [
+		"usage": [
 			{
 				"capability": "Market gateway",
 				"product": "MM",
@@ -69,7 +69,7 @@
 	},
 	{
 		"name": "Misys",
-		"uses": [
+		"usage": [
 			{
 				"capability": "Order execution",
 				"product": "Credit",
@@ -93,7 +93,7 @@
 	},
 	{
 		"name": "Summit",
-		"uses": [
+		"usage": [
 			{
 				"capability": "Market gateway",
 				"product": "FX",
@@ -122,7 +122,7 @@
 	},
 	{
 		"name": "Kdb",
-		"uses": [
+		"usage": [
 			{
 				"capability": "Order management",
 				"product": "Equities",
@@ -146,22 +146,21 @@
 				"capability": "Order execution",
 				"product": "Equities",
 				"location": "Germany",
-				"status": "amber",
-				"decommissioned": "2020-06-01"
-			}
-			,
+				"status": "green",
+				"commissioned": "2020-06-01"
+			},
 			{
 				"capability": "Order execution",
 				"product": "Equities",
 				"location": "Germany",
-				"status": "green",
-				"commissioned": "2020-06-01"
+				"status": "amber",
+				"decommissioned": "2020-07-01"
 			}
 		]
 	},
 	{
 		"name": "Thunderhead",
-		"uses": [
+		"usage": [
 			{
 				"capability": "Confirmations",
 				"product": "FX",

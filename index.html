@@ -25,6 +25,27 @@
             padding: 1em;
         }
 
+        #mainMenu {
+            float: right;
+        }
+
+        #mainMenu ul {
+            list-style-type: none;
+            margin:0;
+            padding: 0;
+        }
+        #mainMenu li {
+            display: inline-block;
+            margin: 0.75em 0em 0.75em 0.75em;
+        }
+
+        #mainMenu a {
+            text-decoration: none;
+            color: #37474F;
+        }
+
+        #mainMenu a:hover,
+
         section.reversed {
             color: #FFFFFF;
             background-color: #37474F;
@@ -39,6 +60,16 @@
 
 <body>
     <header>
+        <div id="mainMenu">
+            <ul>
+                <li>
+                    <a href="./heatmap/">heatmap</a>
+                </li>
+                <li>
+                    <a href="./state/">state</a>
+                </li>
+            </ul>
+        </div>
         <h2>steelbreeze</h2>
     </header>
     <main>
