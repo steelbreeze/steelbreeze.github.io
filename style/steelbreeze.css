@@ -1,0 +1,89 @@
+/* reset all elements */
+* {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	position: relative;
+}
+
+/* reset tables */
+table {
+	border-collapse: collapse;
+	border-width: 0;
+}
+
+body,
+a {
+	background-color: #FFFFFF;
+	color: rgba(0, 0, 0, 0.87);
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	text-rendering: optimizeLegibility;
+}
+
+header,
+header a,
+footer,
+footer a,
+.menuItem:hover {
+	background-color: #37474F;
+	color: rgba(255, 255, 255, 0.95);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.content {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0.75em;
+}
+
+nav .content {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: baseline;
+	padding: 0 0.75em;
+}
+
+#logo {
+	display: inline-block;
+	font-weight: 600;
+}
+
+#mainMenu {
+	display: inline-block;
+}
+
+.menuItem {
+	padding: 0.75em;
+	display: inline-block;
+	white-space: nowrap;
+}
+
+article {
+	padding: 0.75em;
+}
+
+a {
+	text-decoration: none;
+}
+
+h2+p {
+	padding-top: 0.25em;
+}
+
+p+p {
+	padding-top: 0.5em;
+}
+
+nav #hamburger,
+nav #menuController {
+	display: none;
+}
