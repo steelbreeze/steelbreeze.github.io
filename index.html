@@ -15,18 +15,17 @@
 			border-collapse: separate;
 			border-spacing: 0;
 			color: rgba(255, 255, 255, 0.87);
-			table-layout: fixed;
 		}
 
 		td {
 			border: 1px solid #37474F;
 			overflow: auto;
-			width: 7.65em;
+			width: 25%;
 		}
 
-		td + td {
-			width: auto;
-			text-overflow: ellipsis;
+		tr td:first-child {
+			width: 1%;
+				white-space: nowrap;
 		}
 
 		.xAxis {
