@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>steelbreeze</title>
+	<script src="https://kit.fontawesome.com/0f236a5154.js" crossorigin="anonymous"></script>
 	<style>
 		/* reset all elements */
 		* {
@@ -17,7 +22,8 @@
 			border-width: 0;
 		}
 
-		body, a {
+		body,
+		a {
 			background-color: #FFFFFF;
 			color: rgba(0, 0, 0, 0.87);
 
@@ -28,14 +34,17 @@
 			text-rendering: optimizeLegibility;
 		}
 
-		header, header a,
-		footer, footer a,
+		header,
+		header a,
+		footer,
+		footer a,
 		.menuItem:hover {
 			background-color: #37474F;
 			color: rgba(255, 255, 255, 0.95);
+			text-decoration: none;
 		}
 
-		header a:hover {
+		a:hover {
 			text-decoration: underline;
 		}
 
@@ -76,12 +85,17 @@
 			text-decoration: none;
 		}
 
-		h2 + p {
+		h2+p {
 			padding-top: 0.25em;
 		}
 
-		p + p {
+		p+p {
 			padding-top: 0.5em;
+		}
+
+		nav #hamburger,
+		nav #menuController {
+			display: none;
 		}
 	</style>
 
@@ -91,8 +105,10 @@
 	<nav>
 		<div class="content">
 			<div id="logo">
+				<label id="hamburger" for="menuController" class="menuItem">&#9776;</label>
 				<a class="menuItem" href="/">steelbreeze</a>
 			</div>
+			<input type="checkbox" id="menuController">
 			<div id="mainMenu">
 				<a class="menuItem" href="/landscape">landscape</a>
 				<a class="menuItem" href="/state">state</a>
@@ -102,22 +118,24 @@
 	<header>
 		<div class="content">
 			<article>
-				<h2>Landscape maps</h2>
+				<h2><a href="/landscape">Landscape maps</a></h2>
 				<p>For many years as an Enterprise Architect I have been drawing landscape maps in Visio to communicate
 					the health of a domain's application portfolio. These diagrams are time-consuming, complex to
 					draw and ever-changing. The <a href="/landscape">landscape project</a> provides a library that at
 					its simplest renders a table, splitting and joining table cells, but also goes further to optimise
 					the axes for maximum joined cells.</p>
-					<p><a href = "/landscape">More...</a></p>
+				<p><a href="https://github.com/steelbreeze/landscape"><i class="fab fa-github"></i>&nbsp;GitHub
+						repository.</a></p>
 			</article>
 		</div>
 	</header>
 	<main>
 		<div class="content">
 			<article>
-				<h2>Finite state machines</h2>
+				<h2><a href="/state">Finite state machines</a></h2>
 				<p>Executable finite state machines.</p>
-				<p><a href = "/state">More...</a></p>
+				<p><a href="https://github.com/steelbreeze/state"><i class="fab fa-github"></i>&nbsp;GitHub
+						repository.</a></p>
 			</article>
 		</div>
 	</main>
