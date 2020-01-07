@@ -15,39 +15,44 @@
 			border-collapse: separate;
 			border-spacing: 0;
 			color: rgba(255, 255, 255, 0.87);
-
 			table-layout: fixed;
 		}
 
+		td {
+			border: 1px solid #37474F;
+			overflow: auto;
+			width: 7.65em;
+		}
+
+		td + td {
+			width: auto;
+			text-overflow: ellipsis;
+		}
+
 		.xAxis {
-			padding: 0.25em 0.75em;
+			padding-bottom: 0.25em;
 			text-align: center;
 			font-weight: 600;
 		}
 
 		.yAxis {
-			padding: 0.75em;
+			padding-right: 0.5em;
+			height: 2.5em;
 			text-align: right;
 			font-weight: 600;
 		}
 
 		.green {
-			border: 1px solid #37474F;
-			padding: 0.75em;
 			text-align: center;
 			background-color: rgba(0, 255, 0, 0.25);
 		}
 
 		.amber {
-			border: 1px solid #37474F;
-			padding: 0.75em;
 			text-align: center;
-			background-color: rgba(255, 192, 0, 0.25);
+			background-color: rgba(255, 228, 0, 0.25);
 		}
 
 		.red {
-			border: 1px solid #37474F;
-			padding: 0.75em;
 			text-align: center;
 			background-color: rgba(255, 0, 0, 0.25);
 		}
@@ -77,9 +82,7 @@
 					draw and ever-changing. The <a href="/landscape">landscape project</a> provides a library that at
 					its simplest renders a table, splitting and joining table cells, but also goes further to optimise
 					the axes for maximum joined cells.</p>
-				<table>
-					<tbody id="landscapeTable">
-					</tbody>
+				<table id="landscapeTable">
 				</table>
 				<p><a href="https://github.com/steelbreeze/landscape"><i class="fab fa-github"></i>&nbsp;GitHub
 						repository.</a></p>
@@ -150,29 +153,6 @@
 			},
 			{
 				detail: {
-					id: 8,
-					name: "Proprietary rates"
-				},
-				usage: [{
-					"capability": "Market making",
-					"product": "Rates",
-					"location": "United Kingdom",
-					"status": "amber"
-				}, {
-					"capability": "Trading",
-					"product": "Rates",
-					"location": "United Kingdom",
-					"status": "amber"
-
-				}, {
-					"capability": "Confirmations",
-					"product": "Rates",
-					"location": "United Kingdom",
-					"status": "red"
-				}]
-			},
-			{
-				detail: {
 					id: 1,
 					name: "Wall St."
 				},
@@ -223,11 +203,44 @@
 					"location": "United Kingdom",
 					"status": "red"
 				}]
-			}];
+			}, {
+				detail: {
+					id: 20,
+					name: "Pricer"
+				},
+				usage: [{
+					"capability": "Market making",
+					"product": "Rates",
+					"location": "United Kingdom",
+					"status": "red"
+				}]
+				}, {
+					detail: {
+						id: 8,
+						name: "MyRates"
+					},
+					usage: [{
+						"capability": "Market making",
+						"product": "Rates",
+						"location": "United Kingdom",
+						"status": "amber"
+					}, {
+						"capability": "Trading",
+						"product": "Rates",
+						"location": "United Kingdom",
+						"status": "amber"
 
-		const table = landscape.getTable(data, xAxis, yAxis);
+					}, {
+						"capability": "Confirmations",
+						"product": "Rates",
+						"location": "United Kingdom",
+						"status": "amber"
+					}]
+				}];
 
-		document.getElementById("landscapeTable").innerHTML = landscape.getHTML(table);
+				const table = landscape.getTable(data, xAxis, yAxis);
+
+				document.getElementById("landscapeTable").innerHTML = landscape.getHTML(table);
 	</script>
 </body>
 
