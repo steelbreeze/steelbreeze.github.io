@@ -23,37 +23,68 @@
 			width: 25%;
 		}
 
-		tr td:first-child {
+		table tr td:first-child {
 			width: 1%;
-				white-space: nowrap;
+			white-space: nowrap;
 		}
+
 
 		.xAxis {
 			padding-bottom: 0.25em;
 			text-align: center;
-			font-weight: 600;
+
+			color: rgba(255, 255, 255, 0.87);
+			border-left: 1px solid rgba(255, 255, 255, 0.6);
+			border-right: 1px solid rgba(255, 255, 255, 0.6);
 		}
 
 		.yAxis {
 			padding-right: 0.5em;
-			height: 2.5em;
+			height: 3em;
 			text-align: right;
-			font-weight: 600;
+
+			color: rgba(255, 255, 255, 0.87);
+			border-top: 1px solid rgba(255, 255, 255, 0.6);
+			border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+		}
+
+		table tr:first-child td:first-child {
+			border: 1px solid #37474F;
+		}
+
+		table tr:first-child td:nth-child(2) {
+			border-left: 1px solid #37474F;
+		}
+		table tr:first-child td:last-child {
+			border-right: 1px solid #37474F;
+		}
+
+		table tr:nth-child(2) .yAxis {
+			border-top: 1px solid #37474F;
+		}
+
+		table tr:last-child .yAxis {
+			border-bottom: 1px solid #37474F;
 		}
 
 		.green {
 			text-align: center;
-			background-color: rgba(0, 255, 0, 0.25);
+			background-color: #388E3C;
 		}
 
 		.amber {
 			text-align: center;
-			background-color: rgba(255, 228, 0, 0.25);
+			background-color: #F57F17;
 		}
 
 		.red {
 			text-align: center;
-			background-color: rgba(255, 0, 0, 0.25);
+			background-color: #D32F2F;
+		}
+
+		.height5 {
+			height: 2em;
+			font-size: 0.75em;
 		}
 	</style>
 </head>
@@ -77,14 +108,16 @@
 			<article>
 				<h2><a href="/landscape">Landscape maps</a></h2>
 				<p>For many years as an Enterprise Architect I have been drawing landscape maps in Visio to communicate
-					the health of a domain's application portfolio. These diagrams are time-consuming, complex to
-					draw and ever-changing. The <a href="/landscape">landscape project</a> provides a library that at
-					its simplest renders a table, splitting and joining table cells, but also goes further to optimise
-					the axes for maximum joined cells.</p>
+					the health of a domain's application portfolio. While they are a valuable communication tool, these
+					diagrams are time-consuming, complex to draw and ever-changing. The <a href="/landscape">landscape library</a> at
+					its simplest renders a table, splitting and joining table cells as needed, but also provides functionallity to optimise
+					the axes ordering for maximum joined cells.</p>
 				<table id="landscapeTable">
 				</table>
-				<p>For a more in-depth example, including a time-dimension, see the <a href="/landscape">project page</a>.</p>
-				<p>For the source code, see the <a href="https://github.com/steelbreeze/landscape"><i class="fab fa-github"></i>&nbsp;GitHub
+				<p>For a more in-depth example, including a time-dimension, see the <a href="/landscape">project
+						page</a>.</p>
+				<p>For the source code, see the <a href="https://github.com/steelbreeze/landscape"><i
+							class="fab fa-github"></i>&nbsp;GitHub
 						repository.</a></p>
 			</article>
 		</div>
@@ -110,7 +143,7 @@
 	<script src="./dist/landscape.min.js"></script>
 	<script>
 		const xAxis = { name: "product", values: ["FX", "MM", "Credit", "Rates"] };
-		const yAxis = { name: "capability", values: ["Market making", "Trading", "Confirmations", "Settlement"] };
+		const yAxis = { name: "capability", values: ["Market making", "Trading", "Confirmations", "Risk", "Settlement"] };
 		const data = [
 			{
 				detail: {
@@ -136,15 +169,49 @@
 			},
 			{
 				detail: {
-					id: 3,
-					name: "Misys"
+					id: 20,
+					name: "Pricer"
+				},
+				usage: [{
+					"capability": "Market making",
+					"product": "Rates",
+					"location": "United Kingdom",
+					"status": "green"
+				},{
+					"capability": "Market making",
+					"product": "FX",
+					"location": "United Kingdom",
+					"status": "green"
+				},{
+					"capability": "Market making",
+					"product": "MM",
+					"location": "United Kingdom",
+					"status": "green"
+				},{
+					"capability": "Market making",
+					"product": "Credit",
+					"location": "United Kingdom",
+					"status": "green"
+				}]
+			}, 
+			{
+				detail: {
+					id: 30,
+					name: "Credit pricer"
 				},
 				usage: [{
 					"capability": "Market making",
 					"product": "Credit",
 					"location": "United Kingdom",
-					"status": "green"
-				}, {
+					"status": "red"
+				}]
+			},
+			{
+				detail: {
+					id: 3,
+					name: "Fusion"
+				},
+				usage: [{
 					"capability": "Trading",
 					"product": "Credit",
 					"location": "United Kingdom",
@@ -154,7 +221,7 @@
 			{
 				detail: {
 					id: 1,
-					name: "Wall St."
+					name: "Wallstreet"
 				},
 				usage: [{
 					"capability": "Settlement",
@@ -205,42 +272,104 @@
 				}]
 			}, {
 				detail: {
-					id: 20,
-					name: "Pricer"
+					id: 8,
+					name: "MyRates"
 				},
 				usage: [{
 					"capability": "Market making",
 					"product": "Rates",
 					"location": "United Kingdom",
-					"status": "red"
-				}]
+					"status": "amber"
 				}, {
-					detail: {
-						id: 8,
-						name: "MyRates"
-					},
-					usage: [{
-						"capability": "Market making",
-						"product": "Rates",
-						"location": "United Kingdom",
-						"status": "amber"
-					}, {
-						"capability": "Trading",
-						"product": "Rates",
-						"location": "United Kingdom",
-						"status": "amber"
+					"capability": "Trading",
+					"product": "Rates",
+					"location": "United Kingdom",
+					"status": "amber"
 
-					}, {
-						"capability": "Confirmations",
-						"product": "Rates",
-						"location": "United Kingdom",
-						"status": "amber"
-					}]
-				}];
+				}, {
+					"capability": "Confirmations",
+					"product": "Rates",
+					"location": "United Kingdom",
+					"status": "amber"
+				}]
+			}, {
+				detail: {
+					id: 0,
+					name: "Financial risk analytics"
+				},
+				usage: [{
+					"capability": "Risk",
+					"product": "FX",
+					"location": "United Kingdom",
+					"status": "green"
+				}, {
+					"capability": "Risk",
+					"product": "MM",
+					"location": "United Kingdom",
+					"status": "green"
+				}, {
+					"capability": "Risk",
+					"product": "Rates",
+					"location": "United Kingdom",
+					"status": "green"
+				}, {
+					"capability": "Risk",
+					"product": "Credit",
+					"location": "United Kingdom",
+					"status": "green"
+				}]
+			}, {
+				detail: {
+					id: 0,
+					name: "ActivePivot"
+				},
+				usage: [{
+					"capability": "Risk",
+					"product": "FX",
+					"location": "United Kingdom",
+					"status": "green"
+				}, {
+					"capability": "Risk",
+					"product": "MM",
+					"location": "United Kingdom",
+					"status": "green"
+				}, {
+					"capability": "Risk",
+					"product": "Rates",
+					"location": "United Kingdom",
+					"status": "green"
+				}, {
+					"capability": "Risk",
+					"product": "Credit",
+					"location": "United Kingdom",
+					"status": "green"
+				}]
+			}, {
+				detail: {
+					id: 0,
+					name: "Thunderhead"
+				},
+				usage: [{
+					"capability": "Confirmations",
+					"product": "FX",
+					"location": "United Kingdom",
+					"status": "green"
+				}, {
+					"capability": "Confirmations",
+					"product": "MM",
+					"location": "United Kingdom",
+					"status": "green"
+				}, {
+					"capability": "Confirmations",
+					"product": "Credit",
+					"location": "United Kingdom",
+					"status": "green"
+				}]
+			}];
 
-				const table = landscape.getTable(data, xAxis, yAxis);
+		const table = landscape.getTable(data, xAxis, yAxis);
 
-				document.getElementById("landscapeTable").innerHTML = landscape.getHTML(table);
+		document.getElementById("landscapeTable").innerHTML = landscape.getHTML(table);
 	</script>
 </body>
 
