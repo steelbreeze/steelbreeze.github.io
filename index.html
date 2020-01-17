@@ -55,6 +55,7 @@
 		table tr:first-child td:nth-child(2) {
 			border-left: 1px solid #37474F;
 		}
+
 		table tr:first-child td:last-child {
 			border-right: 1px solid #37474F;
 		}
@@ -89,7 +90,7 @@
 	</style>
 </head>
 
-<body>
+<body onload="pageLoaded()">
 	<nav>
 		<div class="content">
 			<div id="logo">
@@ -109,8 +110,10 @@
 				<h2><a href="/landscape">Landscape maps</a></h2>
 				<p>For many years as an Enterprise Architect I have been drawing landscape maps in Visio to communicate
 					the health of a domain's application portfolio. While they are a valuable communication tool, these
-					diagrams are time-consuming, complex to draw and ever-changing. The <a href="/landscape">landscape library</a> at
-					its simplest renders a table, splitting and joining table cells as needed, but also provides functionallity to optimise
+					diagrams are time-consuming, complex to draw and ever-changing. The <a href="/landscape">landscape
+						library</a> at
+					its simplest renders a table, splitting and joining table cells as needed, but also provides
+					functionallity to optimise
 					the axes ordering for maximum joined cells.</p>
 				<table id="landscapeTable">
 				</table>
@@ -139,237 +142,17 @@
 			</article>
 		</div>
 	</footer>
-
-	<script src="./dist/landscape.min.js"></script>
+	<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2Cfetch"></script>
+	<script src="./dist/landscape.min.js"></script> <!-- landscape map library -->
 	<script>
-		const xAxis = { name: "product", values: ["FX", "MM", "Credit", "Rates"] };
-		const yAxis = { name: "capability", values: ["Market making", "Trading", "Confirmations", "Risk", "Settlement"] };
-		const data = [
-			{
-				detail: {
-					id: 0,
-					name: "Thunderhead"
-				},
-				usage: [{
-					"capability": "Confirmations",
-					"product": "FX",
-					"location": "United Kingdom",
-					"status": "green"
-				}, {
-					"capability": "Confirmations",
-					"product": "MM",
-					"location": "United Kingdom",
-					"status": "green"
-				}, {
-					"capability": "Confirmations",
-					"product": "Credit",
-					"location": "United Kingdom",
-					"status": "green"
-				}]
-			},
-			{
-				detail: {
-					id: 20,
-					name: "Pricer"
-				},
-				usage: [{
-					"capability": "Market making",
-					"product": "Rates",
-					"location": "United Kingdom",
-					"status": "green"
-				},{
-					"capability": "Market making",
-					"product": "FX",
-					"location": "United Kingdom",
-					"status": "green"
-				},{
-					"capability": "Market making",
-					"product": "MM",
-					"location": "United Kingdom",
-					"status": "green"
-				},{
-					"capability": "Market making",
-					"product": "Credit",
-					"location": "United Kingdom",
-					"status": "green"
-				}]
-			}, 
-			{
-				detail: {
-					id: 30,
-					name: "Credit pricer"
-				},
-				usage: [{
-					"capability": "Market making",
-					"product": "Credit",
-					"location": "United Kingdom",
-					"status": "red"
-				}]
-			},
-			{
-				detail: {
-					id: 3,
-					name: "Fusion"
-				},
-				usage: [{
-					"capability": "Trading",
-					"product": "Credit",
-					"location": "United Kingdom",
-					"status": "green"
-				}]
-			},
-			{
-				detail: {
-					id: 1,
-					name: "Wallstreet"
-				},
-				usage: [{
-					"capability": "Settlement",
-					"product": "FX",
-					"location": "United Kingdom",
-					"status": "amber"
-				}, {
-					"capability": "Settlement",
-					"product": "MM",
-					"location": "United Kingdom",
-					"status": "amber"
-				}, {
-					"capability": "Market making",
-					"product": "FX",
-					"location": "United Kingdom",
-					"status": "green"
-				}, {
-					"capability": "Market making",
-					"product": "MM",
-					"location": "United Kingdom",
-					"status": "green"
-				}, {
-					"capability": "Trading",
-					"product": "FX",
-					"location": "United Kingdom",
-					"status": "green"
-				}, {
-					"capability": "Trading",
-					"product": "MM",
-					"location": "United Kingdom",
-					"status": "green"
-				}]
-			}, {
-				detail: {
-					id: 2,
-					name: "Calypso"
-				},
-				usage: [{
-					"capability": "Settlement",
-					"product": "Rates",
-					"location": "United Kingdom",
-					"status": "red"
-				}, {
-					"capability": "Settlement",
-					"product": "Credit",
-					"location": "United Kingdom",
-					"status": "red"
-				}]
-			}, {
-				detail: {
-					id: 8,
-					name: "MyRates"
-				},
-				usage: [{
-					"capability": "Market making",
-					"product": "Rates",
-					"location": "United Kingdom",
-					"status": "amber"
-				}, {
-					"capability": "Trading",
-					"product": "Rates",
-					"location": "United Kingdom",
-					"status": "amber"
+		function pageLoaded() {
+			window.fetch("./data/landscape.json").then(function (response) { return response.json(); }).then(function (data) {
+				const xAxis = { name: "product", values: ["FX", "MM", "Credit", "Rates"] };
+				const yAxis = { name: "capability", values: ["Market making", "Trading", "Confirmations", "Risk", "Settlement"] };
 
-				}, {
-					"capability": "Confirmations",
-					"product": "Rates",
-					"location": "United Kingdom",
-					"status": "amber"
-				}]
-			}, {
-				detail: {
-					id: 0,
-					name: "Financial risk analytics"
-				},
-				usage: [{
-					"capability": "Risk",
-					"product": "FX",
-					"location": "United Kingdom",
-					"status": "green"
-				}, {
-					"capability": "Risk",
-					"product": "MM",
-					"location": "United Kingdom",
-					"status": "green"
-				}, {
-					"capability": "Risk",
-					"product": "Rates",
-					"location": "United Kingdom",
-					"status": "green"
-				}, {
-					"capability": "Risk",
-					"product": "Credit",
-					"location": "United Kingdom",
-					"status": "green"
-				}]
-			}, {
-				detail: {
-					id: 0,
-					name: "ActivePivot"
-				},
-				usage: [{
-					"capability": "Risk",
-					"product": "FX",
-					"location": "United Kingdom",
-					"status": "green"
-				}, {
-					"capability": "Risk",
-					"product": "MM",
-					"location": "United Kingdom",
-					"status": "green"
-				}, {
-					"capability": "Risk",
-					"product": "Rates",
-					"location": "United Kingdom",
-					"status": "green"
-				}, {
-					"capability": "Risk",
-					"product": "Credit",
-					"location": "United Kingdom",
-					"status": "green"
-				}]
-			}, {
-				detail: {
-					id: 0,
-					name: "Thunderhead"
-				},
-				usage: [{
-					"capability": "Confirmations",
-					"product": "FX",
-					"location": "United Kingdom",
-					"status": "green"
-				}, {
-					"capability": "Confirmations",
-					"product": "MM",
-					"location": "United Kingdom",
-					"status": "green"
-				}, {
-					"capability": "Confirmations",
-					"product": "Credit",
-					"location": "United Kingdom",
-					"status": "green"
-				}]
-			}];
-
-		const table = landscape.getTable(data, xAxis, yAxis);
-
-		document.getElementById("landscapeTable").innerHTML = landscape.getHTML(table);
+				document.getElementById("landscapeTable").innerHTML = landscape.getHTML(landscape.getTable(data, xAxis, yAxis));
+			});
+		}
 	</script>
 </body>
 

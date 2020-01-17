@@ -1,0 +1,268 @@
+[
+	{
+		"detail": {
+			"id": 0,
+			"name": "Thunderhead"
+		},
+		"usage": [
+			{
+				"capability": "Confirmations",
+				"product": "FX",
+				"location": "United Kingdom",
+				"status": "green"
+			},
+			{
+				"capability": "Confirmations",
+				"product": "MM",
+				"location": "United Kingdom",
+				"status": "green"
+			},
+			{
+				"capability": "Confirmations",
+				"product": "Credit",
+				"location": "United Kingdom",
+				"status": "green"
+			}
+		]
+	},
+	{
+		"detail": {
+			"id": 20,
+			"name": "Pricer"
+		},
+		"usage": [
+			{
+				"capability": "Market making",
+				"product": "Rates",
+				"location": "United Kingdom",
+				"status": "green"
+			},
+			{
+				"capability": "Market making",
+				"product": "FX",
+				"location": "United Kingdom",
+				"status": "green"
+			},
+			{
+				"capability": "Market making",
+				"product": "MM",
+				"location": "United Kingdom",
+				"status": "green"
+			},
+			{
+				"capability": "Market making",
+				"product": "Credit",
+				"location": "United Kingdom",
+				"status": "green"
+			}
+		]
+	},
+	{
+		"detail": {
+			"id": 30,
+			"name": "Credit pricer"
+		},
+		"usage": [
+			{
+				"capability": "Market making",
+				"product": "Credit",
+				"location": "United Kingdom",
+				"status": "red"
+			}
+		]
+	},
+	{
+		"detail": {
+			"id": 3,
+			"name": "Fusion"
+		},
+		"usage": [
+			{
+				"capability": "Trading",
+				"product": "Credit",
+				"location": "United Kingdom",
+				"status": "green"
+			}
+		]
+	},
+	{
+		"detail": {
+			"id": 1,
+			"name": "Wallstreet"
+		},
+		"usage": [
+			{
+				"capability": "Settlement",
+				"product": "FX",
+				"location": "United Kingdom",
+				"status": "amber"
+			},
+			{
+				"capability": "Settlement",
+				"product": "MM",
+				"location": "United Kingdom",
+				"status": "amber"
+			},
+			{
+				"capability": "Market making",
+				"product": "FX",
+				"location": "United Kingdom",
+				"status": "green"
+			},
+			{
+				"capability": "Market making",
+				"product": "MM",
+				"location": "United Kingdom",
+				"status": "green"
+			},
+			{
+				"capability": "Trading",
+				"product": "FX",
+				"location": "United Kingdom",
+				"status": "green"
+			},
+			{
+				"capability": "Trading",
+				"product": "MM",
+				"location": "United Kingdom",
+				"status": "green"
+			}
+		]
+	},
+	{
+		"detail": {
+			"id": 2,
+			"name": "Calypso"
+		},
+		"usage": [
+			{
+				"capability": "Settlement",
+				"product": "Rates",
+				"location": "United Kingdom",
+				"status": "red"
+			},
+			{
+				"capability": "Settlement",
+				"product": "Credit",
+				"location": "United Kingdom",
+				"status": "red"
+			}
+		]
+	},
+	{
+		"detail": {
+			"id": 8,
+			"name": "MyRates"
+		},
+		"usage": [
+			{
+				"capability": "Market making",
+				"product": "Rates",
+				"location": "United Kingdom",
+				"status": "amber"
+			},
+			{
+				"capability": "Trading",
+				"product": "Rates",
+				"location": "United Kingdom",
+				"status": "amber"
+			},
+			{
+				"capability": "Confirmations",
+				"product": "Rates",
+				"location": "United Kingdom",
+				"status": "amber"
+			}
+		]
+	},
+	{
+		"detail": {
+			"id": 0,
+			"name": "Financial risk analytics"
+		},
+		"usage": [
+			{
+				"capability": "Risk",
+				"product": "FX",
+				"location": "United Kingdom",
+				"status": "green"
+			},
+			{
+				"capability": "Risk",
+				"product": "MM",
+				"location": "United Kingdom",
+				"status": "green"
+			},
+			{
+				"capability": "Risk",
+				"product": "Rates",
+				"location": "United Kingdom",
+				"status": "green"
+			},
+			{
+				"capability": "Risk",
+				"product": "Credit",
+				"location": "United Kingdom",
+				"status": "green"
+			}
+		]
+	},
+	{
+		"detail": {
+			"id": 0,
+			"name": "ActivePivot"
+		},
+		"usage": [
+			{
+				"capability": "Risk",
+				"product": "FX",
+				"location": "United Kingdom",
+				"status": "green"
+			},
+			{
+				"capability": "Risk",
+				"product": "MM",
+				"location": "United Kingdom",
+				"status": "green"
+			},
+			{
+				"capability": "Risk",
+				"product": "Rates",
+				"location": "United Kingdom",
+				"status": "green"
+			},
+			{
+				"capability": "Risk",
+				"product": "Credit",
+				"location": "United Kingdom",
+				"status": "green"
+			}
+		]
+	},
+	{
+		"detail": {
+			"id": 0,
+			"name": "Thunderhead"
+		},
+		"usage": [
+			{
+				"capability": "Confirmations",
+				"product": "FX",
+				"location": "United Kingdom",
+				"status": "green"
+			},
+			{
+				"capability": "Confirmations",
+				"product": "MM",
+				"location": "United Kingdom",
+				"status": "green"
+			},
+			{
+				"capability": "Confirmations",
+				"product": "Credit",
+				"location": "United Kingdom",
+				"status": "green"
+			}
+		]
+	}
+]
