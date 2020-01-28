@@ -82,11 +82,7 @@ a {
 	text-decoration: none;
 }
 
-h2+p {
-	padding-top: 0.25em;
-}
-
-p+p {
+p {
 	padding-top: 0.5em;
 }
 
