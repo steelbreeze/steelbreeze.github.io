@@ -9,4 +9,10 @@
 	  <image:caption>Example of a landscape map viewpoint</image:caption>
     </image:image>
   </url> 
+  <url>
+    <loc>http://steelbreeze.net/landscape</loc>
+  </url> 
+  <url>
+    <loc>http://steelbreeze.net/state</loc>
+  </url> 
 </urlset>
