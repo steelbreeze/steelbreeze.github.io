@@ -116,17 +116,27 @@
 				<h2><a href="/landscape">Landscape map visualisation</a></h2>
 				<p>For many years as an Enterprise Architect I have been drawing landscape maps in Visio to communicate
 					the health of a domain's application portfolio. While they are a valuable communication tool, these
-					diagrams are time-consuming, complex to draw and ever-changing. The <a href="/landscape">landscape map visualisation</a> tool at its simplest renders a table, splitting and joining table cells as needed, but
-					also provides functionallity to optimise the axes ordering for maximum joined cells. These diagrams conform to the <a href="https://pubs.opengroup.org/architecture/archimate2-doc/chap08.html#_Toc371945248">Archimate Landscape Map Viewpoint</a>.</p>
+					diagrams are time-consuming, complex to draw and ever-changing. The <a href="/landscape">landscape
+						map visualisation</a> tool at its simplest renders a table, splitting and joining table cells as
+					needed, but
+					also provides functionallity to optimise the axes ordering for maximum joined cells. These diagrams
+					conform to the <a
+						href="https://pubs.opengroup.org/architecture/archimate2-doc/chap08.html#_Toc371945248">Archimate
+						Landscape Map Viewpoint</a>.</p>
 				<table id="landscapeTable">
 					<tr>
 						<td>
-							<img src="images/landscape-map.png" title="Landscape map viewpoint" alt="landscape map viewpoint" />
+							<img src="images/landscape-map.png" title="Landscape map viewpoint"
+								alt="landscape map viewpoint" />
 						</td>
 					</tr>
 				</table>
-				<p>Landscape maps are a technique for visualizing enterprise architectures. They present architectural elements in the form of an easy to understand 2D map. A landscape map view on architectures provides non-technical stakeholders with a high-level overview, without burdening them with technicalities of architectural drawings.</p>
-				<p>For a more in-depth example, including a time-dimension, see the <a href="/landscape">landscape map visualisation</a> page.</p>
+				<p>Landscape maps are a technique for visualizing enterprise architectures. They present architectural
+					elements in the form of an easy to understand 2D map. A landscape map view on architectures provides
+					non-technical stakeholders with a high-level overview, without burdening them with technicalities of
+					architectural drawings.</p>
+				<p>For a more in-depth example, including a time-dimension, see the <a href="/landscape">landscape map
+						visualisation</a> page.</p>
 				<p><a href="https://github.com/steelbreeze/landscape"><i class="fab fa-github"></i>&nbsp;GitHub
 						repository.</a></p>
 			</article>
@@ -154,15 +164,13 @@
 		</div>
 	</footer>
 	<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2Cfetch"></script>
-	<script src="./dist/render.min.js"></script> <!-- landscape map library - renderer only -->
+	<script src="./dist/landscape.min.js"></script> <!-- landscape map library - renderer only -->
 	<script>
-		window.onload( () => {
-			window.fetch("./data/landscape.json").then(function (response) { return response.json(); }).then(function (data) {
-				const xAxis = { name: "product", values: ["FX", "MM", "Credit", "Rates"] };
-				const yAxis = { name: "capability", values: ["Market making", "Trading", "Confirmations", "Risk", "Settlement"] };
+		window.fetch("./data/landscape.json").then(function (response) { return response.json(); }).then(function (data) {
+			const xAxis = { name: "product", values: ["FX", "MM", "Credit", "Rates"] };
+			const yAxis = { name: "capability", values: ["Market making", "Trading", "Confirmations", "Risk", "Settlement"] };
 
-				document.getElementById("landscapeTable").innerHTML = landscape.getHTML(landscape.getTable(data, xAxis, yAxis));
-			});
+			document.getElementById("landscapeTable").innerHTML = landscape.getHTML(landscape.getTable(data, xAxis, yAxis));
 		});
 	</script>
 </body>
