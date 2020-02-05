@@ -164,13 +164,13 @@
 		</div>
 	</footer>
 	<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2Cfetch"></script>
-	<script src="./dist/landscape.min.js"></script> <!-- landscape map library - renderer only -->
+	<script src="./dist/render.min.js"></script> <!-- landscape map library - renderer only -->
 	<script>
 		window.fetch("./data/landscape.json").then(function (response) { return response.json(); }).then(function (data) {
 			const xAxis = { name: "product", values: ["FX", "MM", "Credit", "Rates"] };
 			const yAxis = { name: "capability", values: ["Market making", "Trading", "Confirmations", "Risk", "Settlement"] };
 
-			document.getElementById("landscapeTable").innerHTML = landscape.getHTML(landscape.getTable(data, xAxis, yAxis));
+			document.getElementById("landscapeTable").innerHTML = render.getHTML(render.getTable(data, xAxis, yAxis));
 		});
 	</script>
 </body>
