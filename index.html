@@ -163,7 +163,7 @@
 			const xAxis = { name: "product", values: ["FX", "MM", "Credit", "Rates"] };
 			const yAxis = { name: "capability", values: ["Market making", "Trading", "Confirmations", "Risk", "Settlement"] };
 
-			document.getElementById("landscapeTable").innerHTML = render.getHTML(render.getTable(data, xAxis, yAxis));
+			document.getElementById("landscapeTable").innerHTML = render.getHTML(render.getTable(render.prepareData(data, xAxis, yAxis), xAxis, yAxis));
 		});
 	</script>
 </body>
