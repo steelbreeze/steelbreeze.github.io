@@ -6,21 +6,27 @@
 		},
 		"usage": [
 			{
-				"dimensions": {"capability": "Confirmations",
-				"product": "FX",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Confirmations",
+					"product": "FX",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			},
 			{
-				"dimensions": {"capability": "Confirmations",
-				"product": "MM",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Confirmations",
+					"product": "MM",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			},
 			{
-				"dimensions": {"capability": "Confirmations",
-				"product": "Credit",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Confirmations",
+					"product": "Credit",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			}
 		]
@@ -32,27 +38,35 @@
 		},
 		"usage": [
 			{
-				"dimensions": {"capability": "Market making",
-				"product": "Rates",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Market making",
+					"product": "Rates",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			},
 			{
-				"dimensions": {"capability": "Market making",
-				"product": "FX",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Market making",
+					"product": "FX",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			},
 			{
-				"dimensions": {"capability": "Market making",
-				"product": "MM",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Market making",
+					"product": "MM",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			},
 			{
-				"dimensions": {"capability": "Market making",
-				"product": "Credit",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Market making",
+					"product": "Credit",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			}
 		]
@@ -64,9 +78,11 @@
 		},
 		"usage": [
 			{
-				"dimensions": {"capability": "Market making",
-				"product": "Credit",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Market making",
+					"product": "Credit",
+					"location": "United Kingdom"
+				},
 				"status": "red"
 			}
 		]
@@ -78,9 +94,11 @@
 		},
 		"usage": [
 			{
-				"dimensions": {"capability": "Trading",
-				"product": "Credit",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Trading",
+					"product": "Credit",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			}
 		]
@@ -92,39 +110,51 @@
 		},
 		"usage": [
 			{
-				"dimensions": {"capability": "Settlement",
-				"product": "FX",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Settlement",
+					"product": "FX",
+					"location": "United Kingdom"
+				},
 				"status": "amber"
 			},
 			{
-				"dimensions": {"capability": "Settlement",
-				"product": "MM",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Settlement",
+					"product": "MM",
+					"location": "United Kingdom"
+				},
 				"status": "amber"
 			},
 			{
-				"dimensions": {"capability": "Market making",
-				"product": "FX",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Market making",
+					"product": "FX",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			},
 			{
-				"dimensions": {"capability": "Market making",
-				"product": "MM",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Market making",
+					"product": "MM",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			},
 			{
-				"dimensions": {"capability": "Trading",
-				"product": "FX",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Trading",
+					"product": "FX",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			},
 			{
-				"dimensions": {"capability": "Trading",
-				"product": "MM",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Trading",
+					"product": "MM",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			}
 		]
@@ -136,15 +166,19 @@
 		},
 		"usage": [
 			{
-				"dimensions": {"capability": "Settlement",
-				"product": "Rates",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Settlement",
+					"product": "Rates",
+					"location": "United Kingdom"
+				},
 				"status": "red"
 			},
 			{
-				"dimensions": {"capability": "Settlement",
-				"product": "Credit",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Settlement",
+					"product": "Credit",
+					"location": "United Kingdom"
+				},
 				"status": "red"
 			}
 		]
@@ -156,21 +190,27 @@
 		},
 		"usage": [
 			{
-				"dimensions": {"capability": "Market making",
-				"product": "Rates",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Market making",
+					"product": "Rates",
+					"location": "United Kingdom"
+				},
 				"status": "amber"
 			},
 			{
-				"dimensions": {"capability": "Trading",
-				"product": "Rates",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Trading",
+					"product": "Rates",
+					"location": "United Kingdom"
+				},
 				"status": "amber"
 			},
 			{
-				"dimensions": {"capability": "Confirmations",
-				"product": "Rates",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Confirmations",
+					"product": "Rates",
+					"location": "United Kingdom"
+				},
 				"status": "amber"
 			}
 		]
@@ -182,27 +222,35 @@
 		},
 		"usage": [
 			{
-				"dimensions": {"capability": "Risk",
-				"product": "FX",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Risk",
+					"product": "FX",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			},
 			{
-				"dimensions": {"capability": "Risk",
-				"product": "MM",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Risk",
+					"product": "MM",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			},
 			{
-				"dimensions": {"capability": "Risk",
-				"product": "Rates",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Risk",
+					"product": "Rates",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			},
 			{
-				"dimensions": {"capability": "Risk",
-				"product": "Credit",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Risk",
+					"product": "Credit",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			}
 		]
@@ -214,27 +262,35 @@
 		},
 		"usage": [
 			{
-				"dimensions": {"capability": "Risk",
-				"product": "FX",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Risk",
+					"product": "FX",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			},
 			{
-				"dimensions": {"capability": "Risk",
-				"product": "MM",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Risk",
+					"product": "MM",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			},
 			{
-				"dimensions": {"capability": "Risk",
-				"product": "Rates",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Risk",
+					"product": "Rates",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			},
 			{
-				"dimensions": {"capability": "Risk",
-				"product": "Credit",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Risk",
+					"product": "Credit",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			}
 		]
@@ -246,21 +302,27 @@
 		},
 		"usage": [
 			{
-				"dimensions": {"capability": "Confirmations",
-				"product": "FX",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Confirmations",
+					"product": "FX",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			},
 			{
-				"dimensions": {"capability": "Confirmations",
-				"product": "MM",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Confirmations",
+					"product": "MM",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			},
 			{
-				"dimensions": {"capability": "Confirmations",
-				"product": "Credit",
-				"location": "United Kingdom"},
+				"dimensions": {
+					"capability": "Confirmations",
+					"product": "Credit",
+					"location": "United Kingdom"
+				},
 				"status": "green"
 			}
 		]
