@@ -33,46 +33,6 @@
 	},
 	{
 		"detail": {
-			"id": 20,
-			"name": "Pricer"
-		},
-		"usage": [
-			{
-				"dimensions": {
-					"capability": "Market making",
-					"product": "Rates",
-					"location": "United Kingdom"
-				},
-				"status": "green"
-			},
-			{
-				"dimensions": {
-					"capability": "Market making",
-					"product": "FX",
-					"location": "United Kingdom"
-				},
-				"status": "green"
-			},
-			{
-				"dimensions": {
-					"capability": "Market making",
-					"product": "MM",
-					"location": "United Kingdom"
-				},
-				"status": "green"
-			},
-			{
-				"dimensions": {
-					"capability": "Market making",
-					"product": "Credit",
-					"location": "United Kingdom"
-				},
-				"status": "green"
-			}
-		]
-	},
-	{
-		"detail": {
 			"id": 30,
 			"name": "Credit pricer"
 		},
@@ -320,6 +280,46 @@
 			{
 				"dimensions": {
 					"capability": "Confirmations",
+					"product": "Credit",
+					"location": "United Kingdom"
+				},
+				"status": "green"
+			}
+		]
+	}, 
+	{
+		"detail": {
+			"id": 20,
+			"name": "Pricer"
+		},
+		"usage": [
+			{
+				"dimensions": {
+					"capability": "Market making",
+					"product": "Rates",
+					"location": "United Kingdom"
+				},
+				"status": "green"
+			},
+			{
+				"dimensions": {
+					"capability": "Market making",
+					"product": "FX",
+					"location": "United Kingdom"
+				},
+				"status": "green"
+			},
+			{
+				"dimensions": {
+					"capability": "Market making",
+					"product": "MM",
+					"location": "United Kingdom"
+				},
+				"status": "green"
+			},
+			{
+				"dimensions": {
+					"capability": "Market making",
 					"product": "Credit",
 					"location": "United Kingdom"
 				},
