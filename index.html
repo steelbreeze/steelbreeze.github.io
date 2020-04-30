@@ -164,8 +164,24 @@
 			const yAxis = { name: "capability", values: ["Market making", "Trading", "Confirmations", "Risk", "Settlement"] };
 			const axes = {x: xAxis, y: yAxis};
 
-			document.getElementById("landscapeTable").innerHTML = render.getHTML(render.getTable(render.prepareData(data, axes), axes));
+			document.getElementById("landscapeTable").innerHTML = renderTable(render.getTable(render.prepareData(data, axes), axes));
 		});
+
+		function renderTable(table) {
+				let html = '';
+
+				for (const row of table) {
+					html += '<tr>';
+
+					for (const cell of row) {
+						html += '<td class="' + cell.style + ' height' + Math.round(cell.height * 10) + '" colspan="' + cell.cols + '" rowspan="' + cell.rows + '">' + cell.detail.name + '</td>';
+					}
+
+					html += '</tr>';
+				}
+
+				return html;
+			}
 	</script>
 </body>
 
