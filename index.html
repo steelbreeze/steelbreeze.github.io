@@ -2,159 +2,173 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="description" content="Landscape map viewpoint visualisation and executable finite state machines." />
 	<meta name="robots" content="index, follow" />
 	<title>Landscape maps and executable state machines</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="./style/steelbreeze.css">
 	<style>
-			table {
-				width: 100%;
-				margin: 1em 0;
-				border-collapse: separate;
-				border-spacing: 0;
-				color: rgba(255, 255, 255, 0.87);
-			}
-	
-			td {
-				border: 1px solid #4A6572;
-				overflow: auto;
-				width: 25%;
-			}
-	
-			table tr td:first-child {
-				width: 1%;
-				white-space: nowrap;
-			}
-	
-	
-			.xAxis {
-				padding-bottom: 0.25em;
-				text-align: center;
-	
-				color: rgba(255, 255, 255, 0.87);
-				border-left: 1px solid rgba(255, 255, 255, 0.6);
-				border-right: 1px solid rgba(255, 255, 255, 0.6);
-			}
-	
-			.yAxis {
-				padding-right: 0.5em;
-				height: 3em;
-				text-align: right;
-	
-				color: rgba(255, 255, 255, 0.87);
-				border-top: 1px solid rgba(255, 255, 255, 0.6);
-				border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-			}
-	
-			tr:first-child td:first-child {
-				border: 1px solid #4A6572;
-			}
-	
-			tr:first-child td:nth-child(2) {
-				border-left: 1px solid #4A6572;
-			}
-	
-			tr:first-child td:last-child {
-				border-right: 1px solid #4A6572;
-			}
-	
-			tr:nth-child(2) .yAxis {
-				border-top: 1px solid #4A6572;
-			}
-	
-			tr:last-child .yAxis {
-				border-bottom: 1px solid #4A6572;
-			}
-	
-			.green {
-				text-align: center;
-				background-color: #388E3C;
-			}
-	
-			.amber {
-				text-align: center;
-				background-color: #F57F17;
-			}
-	
-			.red {
-				text-align: center;
-				background-color: #D32F2F;
-			}
-	
-			.height5 {
-				height: 2em;
-				font-size: 0.75em;
-			}
-		</style>	
+		table {
+			width: 100%;
+			margin: 1em 0;
+			border-collapse: separate;
+			border-spacing: 0;
+			color: rgba(255, 255, 255, 0.87);
+		}
+
+		td {
+			border: 1px solid #4A6572;
+			overflow: auto;
+			width: 25%;
+		}
+
+		table tr td:first-child {
+			width: 1%;
+			white-space: nowrap;
+		}
+
+
+		.xAxis {
+			padding-bottom: 0.25em;
+			text-align: center;
+
+			color: rgba(255, 255, 255, 0.87);
+			border-left: 1px solid rgba(255, 255, 255, 0.6);
+			border-right: 1px solid rgba(255, 255, 255, 0.6);
+		}
+
+		.yAxis {
+			padding-right: 0.5em;
+			height: 3em;
+			text-align: right;
+
+			color: rgba(255, 255, 255, 0.87);
+			border-top: 1px solid rgba(255, 255, 255, 0.6);
+			border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+		}
+
+		tr:first-child td:first-child {
+			border: 1px solid #4A6572;
+		}
+
+		tr:first-child td:nth-child(2) {
+			border-left: 1px solid #4A6572;
+		}
+
+		tr:first-child td:last-child {
+			border-right: 1px solid #4A6572;
+		}
+
+		tr:nth-child(2) .yAxis {
+			border-top: 1px solid #4A6572;
+		}
+
+		tr:last-child .yAxis {
+			border-bottom: 1px solid #4A6572;
+		}
+
+		.green {
+			text-align: center;
+			background-color: #388E3C;
+		}
+
+		.amber {
+			text-align: center;
+			background-color: #F57F17;
+		}
+
+		.red {
+			text-align: center;
+			background-color: #D32F2F;
+		}
+
+		.height5 {
+			height: 2em;
+			font-size: 0.75em;
+		}
+	</style>
 </head>
 
 <body>
-    <header>
-        <div class="fixedWidth">
-            <nav>
-                <a href="." class="selected"><h1>steelbreeze</h1></a>
-            </nav>
-            <nav>
-                <a href="./landscape">landscape</a>
-                <a href="./state">state</a>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <div class="mainSection">
-            <div class="fixedWidth">
-                <article>
-                    <h1>Landscape maps</h1>
-					<p>For many years as an Enterprise Architect I have been drawing landscape maps in Visio to communicate
-						the health of a domain's application portfolio. While they are a valuable communication tool, these
+	<header>
+		<div class="fixedWidth">
+			<nav>
+				<a href="." class="selected">
+					<h1>steelbreeze</h1>
+				</a>
+			</nav>
+			<nav>
+				<a href="./landscape">landscape</a>
+				<a href="./state">state</a>
+			</nav>
+		</div>
+	</header>
+	<main>
+		<div class="mainSection">
+			<div class="fixedWidth">
+				<article>
+					<h1>Landscape maps</h1>
+					<p>For many years as an Enterprise Architect I have been drawing landscape maps in Visio to
+						communicate
+						the health of a domain's application portfolio. While they are a valuable communication tool,
+						these
 						diagrams are time-consuming, complex to draw and ever-changing. The landscape
-							map visualisation tool at its simplest renders a table, splitting and joining table cells as
+						map visualisation tool at its simplest renders a table, splitting and joining table cells as
 						needed, but also provides functionality to optimise the axes ordering for maximum joined cells.
 						These diagrams conform to the Archimate landscape map viewpoint.</p>
 					<table id="landscapeTable">
 					</table>
-					<p>Landscape maps are a technique for visualizing enterprise architectures. They present architectural
-						elements in the form of an easy to understand 2D map. A landscape map view on architectures provides
-						non-technical stakeholders with a high-level overview, without burdening them with technicalities of
+					<p>Landscape maps are a technique for visualizing enterprise architectures. They present
+						architectural
+						elements in the form of an easy to understand 2D map. A landscape map view on architectures
+						provides
+						non-technical stakeholders with a high-level overview, without burdening them with
+						technicalities of
 						architectural drawings.</p>
 					<p>For a more in-depth example, including a time-dimension, see the projet page.</p>
-					<p>Links: <a href="/landscape">Project</a>; <a href="https://github.com/steelbreeze/landscape">GitHub</a>; <a
-						href="https://pubs.opengroup.org/architecture/archimate2-doc/chap08.html#_Toc371945248">Archimate</a>.</p>
-					</article>
-            </div>
-        </div>
-        <div class="mainSection">
-            <div class="fixedWidth">
-                <article>
-                    <h1>Executable state machines</h1>
-					<p>Finite state machines are a staple of computer science theory, yet this rigorous analysis discipline
+					<p>Links: <a href="/landscape">Project</a>; <a
+							href="https://github.com/steelbreeze/landscape">GitHub</a>; <a
+							href="https://pubs.opengroup.org/architecture/archimate2-doc/chap08.html#_Toc371945248">Archimate</a>.
+					</p>
+				</article>
+			</div>
+		</div>
+		<div class="mainSection">
+			<div class="fixedWidth">
+				<article>
+					<h1>Executable state machines</h1>
+					<p>Finite state machines are a staple of computer science theory, yet this rigorous analysis
+						discipline
 						rarely finds its way into application code. The last project I ran used executable finite state
-						machines in order to manage its business process as it had a wider variety of external event sources
+						machines in order to manage its business process as it had a wider variety of external event
+						sources
 						with non-deterministic sequencing of events.</p>
-						<p>Links: <a href="/state">Project</a>; <a href="https://github.com/steelbreeze/state">GitHub</a>.</p>
-						</article>
-                <article>
-                    <h1>The business architecture of enterprise architecture</h1>
-                    <p>Something of a work in progress, <i>the business architecture of enterprise architecture</i> describes an approach to
-                        tailoring your enterprise architecture capability to the needs of your organisation by treating it as any other part of the business and applying a business architecture process to it.</p>
-                </article>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <div class="fixedWidth">
-            <article>
-                <a href="https://www.linkedin.com/in/mesmo/" class="fa fa-linkedin"></a>
-                <a href="https://twitter.com/David13276770" class="fa fa-twitter"></a>
-            </article>
-            <article>
-                Copyright &copy; 2020 David Mesquita-Morris.
-            </article>
-        </div>
+					<p>Links: <a href="/state">Project</a>; <a href="https://github.com/steelbreeze/state">GitHub</a>.
+					</p>
+				</article>
+				<article>
+					<h1>The business architecture of enterprise architecture</h1>
+					<p>Something of a work in progress, <i>the business architecture of enterprise architecture</i>
+						describes an approach to
+						tailoring your enterprise architecture capability to the needs of your organisation by treating
+						it as any other part of the business and applying a business architecture process to it.</p>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="fixedWidth">
+			<article>
+				<a href="https://www.linkedin.com/in/mesmo/" class="fa fa-linkedin"></a>
+				<a href="https://twitter.com/David13276770" class="fa fa-twitter"></a>
+			</article>
+			<article>
+				Copyright &copy; 2020 David Mesquita-Morris.
+			</article>
+		</div>
 	</footer>
 	<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2Cfetch"></script>
 	<script src="./dist/render.min.js"></script> <!-- landscape map library - renderer only -->
@@ -162,26 +176,26 @@
 		window.fetch("./data/landscape.json").then(function (response) { return response.json(); }).then(function (data) {
 			const xAxis = { name: "product", values: ["FX", "MM", "Credit", "Rates"] };
 			const yAxis = { name: "capability", values: ["Market making", "Trading", "Confirmations", "Risk", "Settlement"] };
-			const axes = {x: xAxis, y: yAxis};
+			const axes = { x: xAxis, y: yAxis };
 
 			document.getElementById("landscapeTable").innerHTML = renderTable(render.getTable(render.prepareData(data, axes), axes));
 		});
 
 		function renderTable(table) {
-				let html = '';
+			let html = '';
 
-				for (const row of table) {
-					html += '<tr>';
+			for (const row of table) {
+				html += '<tr>';
 
-					for (const cell of row) {
-						html += '<td class="' + cell.style + ' height' + Math.round(cell.height * 10) + '" colspan="' + cell.cols + '" rowspan="' + cell.rows + '">' + cell.detail.name + '</td>';
-					}
-
-					html += '</tr>';
+				for (const cell of row) {
+					html += '<td class="' + cell.style + ' height' + Math.round(cell.height * 10) + '" colspan="' + cell.cols + '" rowspan="' + cell.rows + '">' + cell.detail.name + '</td>';
 				}
 
-				return html;
+				html += '</tr>';
 			}
+
+			return html;
+		}
 	</script>
 </body>
 
