@@ -1,0 +1,122 @@
+@import 'reset';
+@import 'theme';
+
+        /**
+         * Typography
+         */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 300;
+
+            font-size: 12pt;
+            text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+            text-rendering: optimizeLegibility;
+        }
+
+        h1 {
+            font-size: 1em;
+        }
+
+        main p {
+            line-height: 1.25;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /**
+         * Colour scheme
+         */
+        body {
+            color: $primary800;
+        }
+
+        header {
+            background-color: $primary700;
+            color: rgba($white, 0.87);
+        }
+
+        a {
+            color: rgba($secondary500, 0.87);
+        }
+
+        header nav a {
+            color: rgba($white, 0.87);
+        }
+
+        header nav a:hover {
+            background-color: $primary600;
+            border-bottom: 0.25em solid $primary600;
+        }
+
+        header nav a.selected {
+            border-bottom: 0.25em solid $secondary500;
+        }
+
+
+        footer a.fa {
+            font-size: 1.25em;
+            padding: 0.5em;
+            border-radius: 50%;
+            background-color: rgba($white, 0.87);
+            color: $primary800;
+        }
+
+        footer a.fa + a.fa {
+            margin-left: 0.25em;
+        }
+
+        .mainSection:first-child {
+            background-color: $primary600;
+            color: rgba($white, 0.87);
+        }
+
+        footer {
+            background-color: $primary800;
+            color: rgba($white, 0.87);
+        }
+
+        /**
+         * Layout
+         */
+        body {
+            height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex-grow: 1;
+        }
+
+        .fixedWidth {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        article {
+            padding: 1em;
+        }
+
+        article + article {
+            padding-top: 0;
+        }
+
+        header .fixedWidth {
+            display: flex;
+        }
+
+        header nav {
+            display: flex;
+        }
+
+        header nav:first-child {
+            flex-grow: 1;
+        }
+
+        header nav a {
+            padding: 1em 1em 0.75em 1em;
+        }

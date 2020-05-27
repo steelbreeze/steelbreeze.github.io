@@ -1,0 +1,17 @@
+/**
+ * reset elements for a consistent experiance across browsers
+ */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    position: relative;
+}
+
+/**
+ * reset tables
+ */
+table {
+    border-collapse: collapse;
+    border-width: 0;
+}

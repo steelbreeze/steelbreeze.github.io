@@ -8,143 +8,8 @@
 	<meta name="description" content="Landscape map viewpoint visualisation and executable finite state machines." />
 	<meta name="robots" content="index, follow" />
 	<title>Landscape maps and executable state machines</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        /**
-         * reset elements for a consistent experiance across browsers
-         */
-        * {
-            margin: 0;
-            padding: 0;
-            border: none;
-            position: relative;
-        }
-
-        table {
-            border-collapse: collapse;
-            border-width: 0;
-        }
-
-        /**
-         * Typography
-         */
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: 300;
-
-            font-size: 12pt;
-            text-size-adjust: 100%;
-            -webkit-text-size-adjust: 100%;
-            text-rendering: optimizeLegibility;
-        }
-
-        h1 {
-            font-size: 1em;
-        }
-
-        main p, main h1 {
-            line-height: 1.5;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        /**
-         * Colour scheme
-         */
-        body {
-            color: #232F34;
-        }
-
-        header {
-            background-color: #344955;
-            color: rgba(255, 255, 255, 0.87);
-        }
-
-        a {
-            color: rgba(249, 170, 51, 0.93);
-        }
-
-        header nav a {
-            color: rgba(255, 255, 255, 0.87);
-        }
-
-        header nav a:hover {
-            background-color: #4A6572;
-            border-bottom: 0.25em solid #4A6572;
-        }
-
-        header nav a.selected {
-            border-bottom: 0.25em solid #F9AA33;
-        }
-
-
-        footer a.fa {
-            font-size: 1.25em;
-            padding: 0.5em;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.87);
-            color: rgba(0, 0, 0, 0.87);
-        }
-
-        footer a.fa + a.fa {
-            margin-left: 0.25em;
-        }
-
-        .mainSection:first-child {
-            background-color: #4A6572;
-            color: rgba(255, 255, 255, 0.87);
-        }
-
-        footer {
-            background-color: #232F34;
-            color: rgba(255, 255, 255, 0.87);
-        }
-
-        /**
-         * Layout
-         */
-        body {
-            height: 100vh;
-
-            display: flex;
-            flex-direction: column;
-        }
-
-        main {
-            flex-grow: 1;
-        }
-
-        .fixedWidth {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        article {
-            padding: 1em;
-        }
-
-        article + article {
-            padding-top: 0;
-        }
-
-        header .fixedWidth {
-            display: flex;
-        }
-
-        header nav {
-            display: flex;
-        }
-
-        header nav:first-child {
-            flex-grow: 1;
-        }
-
-        header nav a {
-            padding: 1em 1em 0.75em 1em;
-        }
-	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./style/steelbreeze.css">
 	<style>
 			table {
 				width: 100%;
@@ -231,7 +96,7 @@
     <header>
         <div class="fixedWidth">
             <nav>
-                <a href="." class="selected">steelbreeze</a>
+                <a href="." class="selected"><h1>steelbreeze</h1></a>
             </nav>
             <nav>
                 <a href="./landscape">landscape</a>
@@ -249,7 +114,7 @@
 						diagrams are time-consuming, complex to draw and ever-changing. The landscape
 							map visualisation tool at its simplest renders a table, splitting and joining table cells as
 						needed, but also provides functionality to optimise the axes ordering for maximum joined cells.
-						These diagrams conform to the Landscape Map Viewpoint.</p>
+						These diagrams conform to the Archimate landscape map viewpoint.</p>
 					<table id="landscapeTable">
 					</table>
 					<p>Landscape maps are a technique for visualizing enterprise architectures. They present architectural
@@ -257,8 +122,8 @@
 						non-technical stakeholders with a high-level overview, without burdening them with technicalities of
 						architectural drawings.</p>
 					<p>For a more in-depth example, including a time-dimension, see the projet page.</p>
-					<p>Links: <a href="/landscape">Project page</a>; <a href="https://github.com/steelbreeze/landscape">GitHub repository</a>; <a
-						href="https://pubs.opengroup.org/architecture/archimate2-doc/chap08.html#_Toc371945248">Archimate reference</a>.</p>
+					<p>Links: <a href="/landscape">Project</a>; <a href="https://github.com/steelbreeze/landscape">GitHub</a>; <a
+						href="https://pubs.opengroup.org/architecture/archimate2-doc/chap08.html#_Toc371945248">Archimate</a>.</p>
 					</article>
             </div>
         </div>
@@ -270,7 +135,7 @@
 						rarely finds its way into application code. The last project I ran used executable finite state
 						machines in order to manage its business process as it had a wider variety of external event sources
 						with non-deterministic sequencing of events.</p>
-						<p>Links: <a href="/state">Project page</a>; <a href="https://github.com/steelbreeze/state">GitHub repository</a>.</p>
+						<p>Links: <a href="/state">Project</a>; <a href="https://github.com/steelbreeze/state">GitHub</a>.</p>
 						</article>
                 <article>
                     <h1>Just enough enterprise architecture</h1>

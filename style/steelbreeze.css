@@ -1,92 +1,136 @@
-/* reset all elements */
+/**
+ * reset elements for a consistent experiance across browsers
+ */
 * {
-	margin: 0;
-	border: 0;
-	padding: 0;
-	position: relative;
+  margin: 0;
+  padding: 0;
+  border: none;
+  position: relative;
 }
 
-/* reset tables */
+/**
+ * reset tables
+ */
 table {
-	border-collapse: collapse;
-	border-width: 0;
+  border-collapse: collapse;
+  border-width: 0;
 }
 
-body,
+/**
+ * Typography
+ */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 12pt;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-size: 1em;
+}
+
+main p {
+  line-height: 1.25;
+}
+
 a {
-	background-color: #FFFFFF;
-	color: rgba(0, 0, 0, 0.87);
-
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 100%;
-	text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-	text-rendering: optimizeLegibility;
+  text-decoration: none;
 }
 
-header,
-header a,
-footer,
-footer a,
-.menuItem:hover {
-	background-color: #37474F;
-	color: rgba(255, 255, 255, 0.95);
-	text-decoration: none;
+/**
+ * Colour scheme
+ */
+body {
+  color: #232F34;
 }
 
-a:hover {
-	text-decoration: underline;
+header {
+  background-color: #344955;
+  color: rgba(255, 255, 255, 0.87);
 }
 
-.content {
-	max-width: 1000px;
-	margin: 0 auto;
-	padding: 0.75em;
+a {
+  color: rgba(249, 170, 51, 0.87);
 }
 
-nav {
-	z-index: 1000;
-	position:-webkit-sticky;
-	position:sticky;
-	top:0;
-		background-color: #FFFFFF;
-}
-nav .content {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: baseline;
-	padding: 0 0.75em;
+header nav a {
+  color: rgba(255, 255, 255, 0.87);
 }
 
-#logo {
-	display: inline-block;
-	font-weight: 600;
+header nav a:hover {
+  background-color: #4A6572;
+  border-bottom: 0.25em solid #4A6572;
 }
 
-#mainMenu {
-	display: inline-block;
+header nav a.selected {
+  border-bottom: 0.25em solid #F9AA33;
 }
 
-.menuItem {
-	padding: 0.75em;
-	display: inline-block;
-	white-space: nowrap;
+footer a.fa {
+  font-size: 1.25em;
+  padding: 0.5em;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.87);
+  color: #232F34;
+}
+
+footer a.fa + a.fa {
+  margin-left: 0.25em;
+}
+
+.mainSection:first-child {
+  background-color: #4A6572;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+footer {
+  background-color: #232F34;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+/**
+ * Layout
+ */
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.fixedWidth {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 article {
-	padding: 0.75em;
+  padding: 1em;
 }
 
-a {
-	text-decoration: none;
+article + article {
+  padding-top: 0;
 }
 
-p {
-	padding-top: 0.5em;
+header .fixedWidth {
+  display: flex;
 }
 
-nav #hamburger,
-nav #menuController {
-	display: none;
+header nav {
+  display: flex;
 }
+
+header nav:first-child {
+  flex-grow: 1;
+}
+
+header nav a {
+  padding: 1em 1em 0.75em 1em;
+}
+
+/*# sourceMappingURL=steelbreeze.css.map */
