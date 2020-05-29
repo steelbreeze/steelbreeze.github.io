@@ -44,6 +44,10 @@ a {
   text-decoration: none;
 }
 
+main a:hover {
+  text-decoration: underline;
+}
+
 /**
  * Colour scheme
  */
@@ -65,12 +69,12 @@ header nav a {
 }
 
 header nav a:hover {
-  background-color: #4A6572;
-  border-bottom: 0.25em solid #4A6572;
+  border-bottom: 0.25em solid #F9AA33;
 }
 
 header nav a.selected {
-  border-bottom: 0.25em solid #F9AA33;
+  background-color: #4A6572;
+  border-bottom: 0.25em solid #4A6572;
 }
 
 footer a.fa {
@@ -79,6 +83,10 @@ footer a.fa {
   border-radius: 50%;
   background-color: rgba(250, 250, 250, 0.87);
   color: #232F34;
+}
+
+footer a.fa:hover {
+  background-color: rgba(249, 170, 51, 0.87);
 }
 
 footer a.fa + a.fa {
