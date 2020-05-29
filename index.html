@@ -92,7 +92,7 @@
 		</div>
 	</footer>
 	<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2Cfetch"></script>
-	<script src="./dist/render.min.js"></script> <!-- landscape map library - renderer only -->
+	<script src="https://steelbreeze.net/landscape/dist/render.min.js"></script> <!-- landscape map library - renderer only -->
 	<script>
 		window.fetch("./data/landscape.json").then(function (response) { return response.json(); }).then(function (data) {
 			const xAxis = { name: "product", values: ["FX", "MM", "Credit", "Rates"] };
@@ -109,7 +109,7 @@
 				html += '<tr>';
 
 				for (const cell of row) {
-					html += '<td class="' + cell.style + ' height' + Math.round(cell.height * 10) + '" colspan="' + cell.cols + '" rowspan="' + cell.rows + '">' + cell.detail.name + '</td>';
+					html += '<td class="' + cell.style + ' height' + Math.round(cell.height * 10) + ' width' + Math.round(cell.width * 10) + '" colspan="' + cell.cols + '" rowspan="' + cell.rows + '">' + cell.detail.name + '</td>';
 				}
 
 				html += '</tr>';
