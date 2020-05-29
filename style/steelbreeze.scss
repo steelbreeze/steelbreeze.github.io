@@ -23,12 +23,12 @@ header nav a {
 }
 
 header nav a:hover {
-    border-bottom: 0.25em solid $secondary500;
+    background-color: $primary600;
+    border-bottom: 0.25em solid $primary600;
 }
 
 header nav a.selected {
-    background-color: $primary600;
-    border-bottom: 0.25em solid $primary600;
+    border-bottom: 0.25em solid $secondary500;
 }
 
 

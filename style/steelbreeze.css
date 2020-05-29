@@ -69,12 +69,12 @@ header nav a {
 }
 
 header nav a:hover {
-  border-bottom: 0.25em solid #F9AA33;
+  background-color: #4A6572;
+  border-bottom: 0.25em solid #4A6572;
 }
 
 header nav a.selected {
-  background-color: #4A6572;
-  border-bottom: 0.25em solid #4A6572;
+  border-bottom: 0.25em solid #F9AA33;
 }
 
 footer a.fa {
