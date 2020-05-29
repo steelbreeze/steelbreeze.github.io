@@ -10,86 +10,7 @@
 	<title>Landscape maps and executable state machines</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="./style/steelbreeze.css">
-	<style>
-		table {
-			width: 100%;
-			margin: 1em 0;
-			border-collapse: separate;
-			border-spacing: 0;
-			color: rgba(255, 255, 255, 0.87);
-		}
-
-		td {
-			border: 1px solid #4A6572;
-			overflow: auto;
-			width: 25%;
-		}
-
-		table tr td:first-child {
-			width: 1%;
-			white-space: nowrap;
-		}
-
-
-		.xAxis {
-			padding-bottom: 0.25em;
-			text-align: center;
-
-			color: rgba(255, 255, 255, 0.87);
-			border-left: 1px solid rgba(255, 255, 255, 0.6);
-			border-right: 1px solid rgba(255, 255, 255, 0.6);
-		}
-
-		.yAxis {
-			padding-right: 0.5em;
-			height: 3em;
-			text-align: right;
-
-			color: rgba(255, 255, 255, 0.87);
-			border-top: 1px solid rgba(255, 255, 255, 0.6);
-			border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-		}
-
-		tr:first-child td:first-child {
-			border: 1px solid #4A6572;
-		}
-
-		tr:first-child td:nth-child(2) {
-			border-left: 1px solid #4A6572;
-		}
-
-		tr:first-child td:last-child {
-			border-right: 1px solid #4A6572;
-		}
-
-		tr:nth-child(2) .yAxis {
-			border-top: 1px solid #4A6572;
-		}
-
-		tr:last-child .yAxis {
-			border-bottom: 1px solid #4A6572;
-		}
-
-		.green {
-			text-align: center;
-			background-color: #388E3C;
-		}
-
-		.amber {
-			text-align: center;
-			background-color: #F57F17;
-		}
-
-		.red {
-			text-align: center;
-			background-color: #D32F2F;
-		}
-
-		.height5 {
-			height: 2em;
-			font-size: 0.75em;
-		}
-	</style>
+	<link rel="stylesheet" href="https://steelbreeze.net/landscape/landscape.css">
 </head>
 
 <body>
@@ -119,7 +40,7 @@
 						map visualisation tool at its simplest renders a table, splitting and joining table cells as
 						needed, but also provides functionality to optimise the axes ordering for maximum joined cells.
 						These diagrams conform to the Archimate landscape map viewpoint.</p>
-					<table id="landscapeTable">
+					<table class="landscape" id="landscapeTable">
 					</table>
 					<p>Landscape maps are a technique for visualizing enterprise architectures. They present
 						architectural
