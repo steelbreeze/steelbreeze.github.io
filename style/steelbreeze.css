@@ -103,6 +103,10 @@ footer {
   color: rgba(250, 250, 250, 0.87);
 }
 
+.widget {
+  background-color: #344955;
+}
+
 /**
  * Layout
  */
@@ -121,14 +125,6 @@ main {
   margin: 0 auto;
 }
 
-article {
-  padding: 1em;
-}
-
-article + article {
-  padding-top: 0;
-}
-
 header .fixedWidth {
   display: flex;
 }
@@ -143,6 +139,10 @@ header nav:first-child {
 
 header nav a {
   padding: 1em 1em 0.75em 1em;
+}
+
+article {
+  padding: 1em;
 }
 
 /*# sourceMappingURL=steelbreeze.css.map */
