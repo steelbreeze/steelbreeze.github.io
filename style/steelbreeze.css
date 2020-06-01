@@ -105,10 +105,7 @@ footer {
 
 .widget {
   background-color: #344955;
-}
-
-.widget + .widget {
-  margin-top: 1px;
+  margin: 1px;
 }
 
 /**
