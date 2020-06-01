@@ -62,6 +62,10 @@ footer {
     background-color: $primary700;
 }
 
+.widget + .widget {
+    margin-top: 1px;
+}
+
 /**
  * Layout
  */
