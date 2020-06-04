@@ -108,17 +108,22 @@
 		});
 
 		function renderTable(table) {
-			let html = '';
+			let html = '<thead>';
 
-			for (const row of table) {
+			table.forEach(function (row, rowIndex) {
 				html += '<tr>';
-
-				for (const cell of row) {
-					html += '<td class="' + cell.style + ' height' + Math.round(cell.height * 10) + ' width' + Math.round(cell.width * 10) + '" colspan="' + cell.cols + '" rowspan="' + cell.rows + '"><div>' + cell.detail.name + '</div></td>';
-				}
+				row.forEach(function (cell) {
+					html += '<' + (rowIndex ?'td':'th') + ' class="' + cell.style + ' height' + Math.round(cell.height * 10) + ' width' + Math.round(cell.width * 10) + '" colspan="' + cell.cols + '" rowspan="' + cell.rows + '"><div>' + cell.detail.name + '</div></' + (rowIndex?'td':'th') + '>';
+				});
 
 				html += '</tr>';
-			}
+
+				if(rowIndex === 0) {
+					html += '</thead><tbody>';
+				}
+			});
+
+			html += '</tbody>'
 
 			return html;
 		}
