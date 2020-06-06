@@ -51,7 +51,7 @@ main a:hover {
 /**
  * Colour scheme
  */
-body {
+html, body {
   color: #232F34;
 }
 
