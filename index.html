@@ -41,9 +41,7 @@
 						needed, but also provides functionality to optimise the axes ordering for maximum joined cells.
 						These diagrams conform to the Archimate landscape map viewpoint.</p>
 				</article>
-				<article class="widget">
-					<table class="landscape" id="landscapeTable">
-					</table>
+				<article class="widget" id="landscapeTarget">
 				</article>
 				<article>
 					<p>Landscape maps are a technique for visualizing enterprise architectures. They present
@@ -104,26 +102,33 @@
 			const yAxis = { name: "capability", values: ["Market making", "Trading", "Confirmations", "Risk", "Settlement"] };
 			const axes = { x: xAxis, y: yAxis };
 
-			document.getElementById("landscapeTable").innerHTML = renderTable(render.getTable(render.prepareData(data, axes), axes));
+			document.getElementById("landscapeTarget").innerHTML = renderTable(render.getTable(render.prepareData(data, axes), axes));
 		});
 
+		/**
+		 * Generate the HTML for the final table, for injection into the DOM.
+		 * This is not done in the library as you may wish to use D3 or other tools.
+		 */
 		function renderTable(table) {
-			let html = '<thead>';
+			let html = '<table class="landscape"><thead>';
 
 			table.forEach(function (row, rowIndex) {
 				html += '<tr>';
+
 				row.forEach(function (cell) {
-					html += '<' + (rowIndex ?'td':'th') + ' class="' + cell.style + ' height' + Math.round(cell.height * 10) + ' width' + Math.round(cell.width * 10) + '" colspan="' + cell.cols + '" rowspan="' + cell.rows + '"><div>' + cell.detail.name + '</div></' + (rowIndex?'td':'th') + '>';
+					let cellElement = rowIndex ? 'td' : 'th';
+
+					html += '<' + cellElement + ' class="' + cell.style + ' height' + Math.round(cell.height * 10) + ' width' + Math.round(cell.width * 10) + '" colspan="' + cell.cols + '" rowspan="' + cell.rows + '"><div>' + cell.detail.name + '</div></' + cellElement + '>';
 				});
 
 				html += '</tr>';
 
-				if(rowIndex === 0) {
+				if (rowIndex === 0) {
 					html += '</thead><tbody>';
 				}
 			});
 
-			html += '</tbody>'
+			html += '</tbody></table>'
 
 			return html;
 		}
