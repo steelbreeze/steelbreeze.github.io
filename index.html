@@ -97,12 +97,12 @@
 	<script src="https://steelbreeze.net/landscape/dist/render.min.js"></script>
 	<!-- landscape map library - renderer only -->
 	<script>
-		window.fetch("./data/landscape.json", { cache: "no-cache" }).then(function (response) { return response.json(); }).then(function (data) {
-			const xAxis = { name: "product", values: ["FX", "MM", "Credit", "Rates"] };
-			const yAxis = { name: "capability", values: ["Market making", "Trading", "Confirmations", "Risk", "Settlement"] };
+		window.fetch("./data/mythicalBank.json", { cache: "no-cache" }).then(function (response) { return response.json(); }).then(function (data) {
+			const xAxis = { name: "product", values: ["Rates", "FX", "MM", "Credit", "Equities"] };
+			const yAxis = { name: "capability", values: ["Market gateway", "Order execution", "Order management", "Confirmations"] };
 			const axes = { x: xAxis, y: yAxis };
 
-			document.getElementById("landscapeTarget").innerHTML = renderTable(render.getTable(render.prepareData(data, axes), axes));
+			document.getElementById("landscapeTarget").innerHTML = renderTable(render.getTable(render.prepareData(data, axes), axes, false));
 		});
 
 		/**
