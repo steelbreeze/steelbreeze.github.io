@@ -103,7 +103,7 @@
 			const yAxis = { name: "capability", values: ["Market gateway", "Order execution", "Order management", "Confirmations"] };
 			const axes = { x: xAxis, y: yAxis };
 
-			document.getElementById("landscapeTarget").innerHTML = renderTable(render.getTable(render.prepareData(data, axes), axes, false));
+			document.getElementById("landscapeTarget").innerHTML = renderTable(render.getTable(render.prepareData(data, axes), xAxis, yAxis, false));
 		});
 
 		/**
