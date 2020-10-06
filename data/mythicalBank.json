@@ -1,8 +1,8 @@
 [
 	{
 		"detail": {
-			"id": 6,
-			"name": "Thunderhead"
+			"name": "Thunderhead ONE",
+			"supplier": "Thunderhead"
 		},
 		"usage": [
 			{
@@ -50,8 +50,8 @@
 	},
 	{
 		"detail": {
-			"id": 0,
-			"name": "Azure API GW"
+			"name": "Azure API GW",
+			"supplier": "Microsoft"
 		},
 		"usage": [
 			{
@@ -76,8 +76,8 @@
 	},
 	{
 		"detail": {
-			"id": 4,
-			"name": "Summit"
+			"name": "Fusion Summit",
+			"supplier": "Finastra"
 		},
 		"usage": [
 			{
@@ -119,8 +119,8 @@
 	},
 	{
 		"detail": {
-			"id": 2,
-			"name": "Wall St"
+			"name": "Wall St",
+			"supplier": "Wall Street Systems"
 		},
 		"usage": [
 			{
@@ -161,8 +161,8 @@
 	},
 	{
 		"detail": {
-			"id": 3,
-			"name": "MX II"
+			"name": "MX II",
+			"supplier": "Murex"
 		},
 		"usage": [
 			{
@@ -186,8 +186,8 @@
 	},
 	{
 		"detail": {
-			"id": 5,
-			"name": "Kdb"
+			"name": "Kdb+",
+			"supplier": "Kx Systems"
 		},
 		"usage": [
 			{
