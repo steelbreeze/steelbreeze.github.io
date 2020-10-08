@@ -102,11 +102,11 @@
 			const xAxis = { name: "product", values: ["Rates", "FX", "MM", "Credit", "Equities"] };
 			const yAxis = { name: "capability", values: ["Market gateway", "Order execution", "Order management", "Confirmations"] };
 
-			document.getElementById("landscapeTarget").innerHTML = renderTable(render.getTable(render.prepareData(data, xAxis, yAxis, nameAndStatus), xAxis, yAxis, false));
+			document.getElementById("landscapeTarget").innerHTML = renderTable(render.getTable(render.prepareData(data, xAxis, yAxis, key), xAxis, yAxis, false));
 		});
 
-		function nameAndStatus(detail, use) {
-			return { name: detail.name, status: use.status };
+		function key(detail, use) {
+			return { major: detail.name, minor: use.status };
 		}
 
 		/**
