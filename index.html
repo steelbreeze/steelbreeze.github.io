@@ -122,7 +122,7 @@
 				row.forEach(function (cell) {
 					let cellElement = rowIndex ? 'td' : 'th';
 
-					html += '<' + cellElement + ' class="' + cell.style + ' height' + Math.round(cell.height * 10) + ' width' + Math.round(cell.width * 10) + '" colspan="' + cell.cols + '" rowspan="' + cell.rows + '"><div>' + cell.detail.name + '</div></' + cellElement + '>';
+					html += '<' + cellElement + ' class="' + cell.style + ' height' + Math.round(cell.height * 10) + ' width' + Math.round(cell.width * 10) + '" colspan="' + cell.cols + '" rowspan="' + cell.rows + '"><div>' + cell.text + '</div></' + cellElement + '>';
 				});
 
 				html += '</tr>';
