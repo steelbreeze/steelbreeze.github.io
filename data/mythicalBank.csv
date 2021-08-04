@@ -1,4 +1,4 @@
-name,supplier,capability,product,status
+Name,Supplier,Capability,Product,Status
 Thunderhead ONE,Thunderhead,Confirmations,FX,green
 Thunderhead ONE,Thunderhead,Confirmations,MM,green
 Thunderhead ONE,Thunderhead,Confirmations,Rates,green

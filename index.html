@@ -42,7 +42,8 @@
 						needed, but also provides functionality to optimise the axes ordering for maximum joined cells.
 						These diagrams conform to the Archimate landscape map viewpoint.</p>
 				</article>
-				<article class="widget" id="landscapeTarget">
+				<article class="widget">
+				<table id="landscapeTarget"></table>
 				</article>
 				<article>
 					<p>Landscape maps are a technique for visualizing enterprise architectures. They present
@@ -95,22 +96,61 @@
 		</div>
 	</footer>
 	<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2Cfetch"></script>
-	<script src="./dist/d3-dsv.min.js"></script>
-	<script src="https://steelbreeze.net/landscape/dist/render.min.js"></script>
+	<script src="https://steelbreeze.net/landscape/dist/d3-dsv.min.js"></script>
+	<script src="https://steelbreeze.net/landscape/dist/pivot.min.js"></script>
+	<script src="https://steelbreeze.net/landscape/dist/landscape.min.js"></script>
 	<!-- landscape map library - renderer only -->
 	<script>
 		window.fetch("./data/mythicalBank.csv", { cache: "no-cache" }).then(function (response) { return response.text(); }).then(function (csv) {
-			const xAxis = { name: "product", values: ["Rates", "FX", "MM", "Credit", "Equities"] };
-			const yAxis = { name: "capability", values: ["Market gateway", "Order execution", "Order management", "Confirmations"] };
-
 			const data = d3.csvParse(csv);
 
-			document.getElementById("landscapeTarget").innerHTML = renderTable(render.getTable(render.prepareData(data, xAxis, yAxis, key), xAxis, yAxis, false));
+			const yAxis = pivot.valuesAxis(["Market gateway", "Order execution", "Order management", "Confirmations"], "Capability" );
+			const xAxis = pivot.valuesAxis(["Rates", "FX", "MM", "Credit", "Equities"], "Product" );
+
+			const cube = pivot.cube(data, yAxis, xAxis);
+
+			const table = landscape.splitX(cube, yAxis, xAxis, key);
+
+			landscape.merge(table, true, true);
+
+			renderTable2( table, 'landscapeTarget');
+
+			console.log(table);
+
+//			document.getElementById("landscapeTarget").innerHTML = renderTable(render.getTable(render.prepareData(data, xAxis, yAxis, key), xAxis, yAxis, false));
 		});
 
 		function key(detail) {
-			return { text: detail.name, style: detail.status };
+			return { text: detail.Name, className: detail.Status };
 		}
+
+		function renderTable2(table, elementId) {
+			const tableElement = document.createElement('table');
+			tableElement.id = elementId;
+			tableElement.classList = 'landscape';
+
+			table.forEach((row, rowIndex) => {
+				const rowElement = document.createElement('tr');
+
+				for (const cell of row) {
+					const cellElement = document.createElement(cell.className.includes('axis') ? 'th' : 'td');
+					cellElement.colSpan = cell.colSpan;
+					cellElement.rowSpan = cell.rowSpan;
+					cellElement.className = cell.className;
+
+					const divElement = document.createElement('div');
+					divElement.appendChild(document.createTextNode(cell.text));
+
+					cellElement.appendChild(divElement);
+					rowElement.appendChild(cellElement);
+				}
+
+				tableElement.appendChild(rowElement);
+			});
+
+			document.getElementById(elementId).replaceWith(tableElement);
+		}
+
 
 		/**
 		 * Generate the HTML for the final table, for injection into the DOM.
