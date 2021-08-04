@@ -114,10 +114,6 @@
 			landscape.merge(table, true, true);
 
 			renderTable2( table, 'landscapeTarget');
-
-			console.log(table);
-
-//			document.getElementById("landscapeTarget").innerHTML = renderTable(render.getTable(render.prepareData(data, xAxis, yAxis, key), xAxis, yAxis, false));
 		});
 
 		function key(detail) {
@@ -149,35 +145,6 @@
 			});
 
 			document.getElementById(elementId).replaceWith(tableElement);
-		}
-
-
-		/**
-		 * Generate the HTML for the final table, for injection into the DOM.
-		 * This is not done in the library as you may wish to use D3 or other tools.
-		 */
-		function renderTable(table) {
-			let html = '<table class="landscape"><thead>';
-
-			table.forEach(function (row, rowIndex) {
-				html += '<tr>';
-
-				row.forEach(function (cell) {
-					let cellElement = rowIndex ? 'td' : 'th';
-
-					html += '<' + cellElement + ' class="' + cell.style + ' height' + Math.round(cell.height * 10) + ' width' + Math.round(cell.width * 10) + '" colspan="' + cell.cols + '" rowspan="' + cell.rows + '"><div>' + cell.text + '</div></' + cellElement + '>';
-				});
-
-				html += '</tr>';
-
-				if (rowIndex === 0) {
-					html += '</thead><tbody>';
-				}
-			});
-
-			html += '</tbody></table>'
-
-			return html;
 		}
 	</script>
 </body>
