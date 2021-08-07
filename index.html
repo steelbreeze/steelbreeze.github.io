@@ -43,7 +43,7 @@
 						These diagrams conform to the Archimate landscape map viewpoint.</p>
 				</article>
 				<article class="widget">
-				<table id="landscapeTarget"></table>
+					<table id="landscapeTarget"></table>
 				</article>
 				<article>
 					<p>Landscape maps are a technique for visualizing enterprise architectures. They present
@@ -64,6 +64,12 @@
 		<div class="mainSection">
 			<div class="fixedWidth">
 				<article>
+					<h1>Pivot tables</h1>
+					<p>The pivot table library is a spin-off project from the landscape library. It provides a minimalist pivot table capability, slicing data into cells defined by two dimensions. The resultant data can be aggregated with some basic numerical aggregates, or other queries applied such as those used in the landscape library to present subsets of the source data.</p>
+					<p>Links: <a href="/pivot">Project</a>; <a href="https://github.com/steelbreeze/pivot">GitHub</a>.
+					</p>
+				</article>
+				<article>
 					<h1>Executable state machines</h1>
 					<p>Finite state machines are a staple of computer science theory, yet this rigorous analysis
 						discipline
@@ -73,13 +79,6 @@
 						with non-deterministic sequencing of events.</p>
 					<p>Links: <a href="/state">Project</a>; <a href="https://github.com/steelbreeze/state">GitHub</a>.
 					</p>
-				</article>
-				<article>
-					<h1>The business architecture of enterprise architecture</h1>
-					<p>Something of a work in progress, <i>the business architecture of enterprise architecture</i>
-						describes an approach to
-						tailoring your enterprise architecture capability to the needs of your organisation by treating
-						it as any other part of the business and applying a business architecture process to it.</p>
 				</article>
 			</div>
 		</div>
@@ -99,13 +98,12 @@
 	<script src="https://steelbreeze.net/landscape/dist/d3-dsv.min.js"></script>
 	<script src="https://steelbreeze.net/pivot/dist/pivot.min.js"></script>
 	<script src="https://steelbreeze.net/landscape/dist/landscape.min.js"></script>
-	<!-- landscape map library - renderer only -->
 	<script>
-		window.fetch("./data/mythicalBank.csv", { cache: "no-cache" }).then(function (response) { return response.text(); }).then(function (csv) {
+		window.fetch("./data/example.csv", { cache: "no-cache" }).then(response => response.text()).then(csv => {
 			const data = d3.csvParse(csv);
 
-			const yAxis = pivot.dimension(["Market gateway", "Order execution", "Order management", "Confirmations"], "Capability" );
-			const xAxis = pivot.dimension(["Rates", "FX", "MM", "Credit", "Equities"], "Product" );
+			const yAxis = pivot.dimension(["Market gateway", "Order execution", "Order management", "Confirmations"], "Capability");
+			const xAxis = pivot.dimension(["Rates", "FX", "MM", "Credit", "Equities"], "Product");
 
 			const cube = pivot.cube(data, yAxis, xAxis);
 
@@ -113,7 +111,7 @@
 
 			landscape.merge(table, true, true);
 
-			renderTable2( table, 'landscapeTarget');
+			renderTable2(table, 'landscapeTarget');
 		});
 
 		function key(detail) {
