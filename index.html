@@ -97,15 +97,15 @@
 	</footer>
 	<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2Cfetch"></script>
 	<script src="https://steelbreeze.net/landscape/dist/d3-dsv.min.js"></script>
-	<script src="https://steelbreeze.net/landscape/dist/pivot.min.js"></script>
+	<script src="https://steelbreeze.net/pivot/dist/pivot.min.js"></script>
 	<script src="https://steelbreeze.net/landscape/dist/landscape.min.js"></script>
 	<!-- landscape map library - renderer only -->
 	<script>
 		window.fetch("./data/mythicalBank.csv", { cache: "no-cache" }).then(function (response) { return response.text(); }).then(function (csv) {
 			const data = d3.csvParse(csv);
 
-			const yAxis = pivot.valuesAxis(["Market gateway", "Order execution", "Order management", "Confirmations"], "Capability" );
-			const xAxis = pivot.valuesAxis(["Rates", "FX", "MM", "Credit", "Equities"], "Product" );
+			const yAxis = pivot.dimension(["Market gateway", "Order execution", "Order management", "Confirmations"], "Capability" );
+			const xAxis = pivot.dimension(["Rates", "FX", "MM", "Credit", "Equities"], "Product" );
 
 			const cube = pivot.cube(data, yAxis, xAxis);
 
