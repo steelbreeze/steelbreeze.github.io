@@ -105,7 +105,7 @@
 			const yAxis = pivot.dimension(["Market gateway", "Order execution", "Order management", "Confirmations"], "Capability");
 			const xAxis = pivot.dimension(["Rates", "FX", "MM", "Credit", "Equities"], "Product");
 
-			const cube = pivot.cube(data, yAxis, xAxis);
+			const cube = pivot.cube(data, xAxis, yAxis);
 
 			const table = landscape.splitX(cube, yAxis, xAxis, key);
 
