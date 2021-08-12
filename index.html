@@ -100,14 +100,14 @@
 	<script src="https://steelbreeze.net/landscape/dist/landscape.min.js"></script>
 	<script>
 		window.fetch("./data/example.csv", { cache: "no-cache" }).then(response => response.text()).then(csv => {
-			const data = d3.csvParse(csv);
+			const applications = d3.csvParse(csv);
 
-			const yAxis = pivot.dimension(["Market gateway", "Order execution", "Order management", "Confirmations"], "Capability");
-			const xAxis = pivot.dimension(["Rates", "FX", "MM", "Credit", "Equities"], "Product");
+			const capability = pivot.dimension(["Market gateway", "Order execution", "Order management", "Confirmations"], "Capability");
+			const product = pivot.dimension(["Rates", "FX", "MM", "Credit", "Equities"], "Product");
 
-			const cube = pivot.cube(data, xAxis, yAxis);
+			const cube = pivot.cube(applications, product, capability);
 
-			const table = landscape.splitX(cube, yAxis, xAxis, key);
+			const table = landscape.splitX(cube, capability, product, key);
 
 			landscape.merge(table, true, true);
 
