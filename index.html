@@ -107,9 +107,9 @@
 
 			const cube = pivot.cube(applications, product, capability);
 
-			const table = landscape.splitX(cube, capability, product, key);
+			const table = landscape.splitX(cube, product, capability, key);
 
-			landscape.merge(table, true, true);
+			landscape.merge(table);
 
 			renderTable2(table, 'landscapeTarget');
 		});
