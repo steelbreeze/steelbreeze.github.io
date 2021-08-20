@@ -15,7 +15,7 @@ Wall St,Wall Street Systems,Order execution,FX,green
 Wall St,Wall Street Systems,Order execution,MM,green
 Wall St,Wall Street Systems,Order management,FX,green
 MX II,Murex,Order execution,Credit,amber,,
-MX II,Murex,Order execution,MM,amber,2021-01-15,
+MX II,Murex,Order execution,MM,amber,
 Kdb+,Kx Systems,Order management,Equities,green
 Kdb+,Kx Systems,Market gateway,Equities,green
 Kdb+,Kx Systems,Confirmations,Equities,red
