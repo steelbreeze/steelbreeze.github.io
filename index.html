@@ -167,6 +167,7 @@
 		}
 
 		function renderPivot(table, xAxis, yAxis, elementId) {
+			const columnTotals = [];
 			const tableElement = document.createElement('table');
 			tableElement.id = elementId;
 			tableElement.classList = 'pivot';
@@ -174,9 +175,11 @@
 			const headerElement = document.createElement('tr');
 			headerElement.appendChild(header('', ''));
 
-			for (const point of xAxis) {
+			xAxis.forEach((point, index) => {
 				headerElement.appendChild(header(point.data[0].value, 'xaxis'));
-			}
+
+				columnTotals[index] = table.map(row => row[index]).reduce((a, b) => a + b);
+			});
 
 			headerElement.appendChild(header('Grand Total', 'xaxis'));
 
@@ -200,7 +203,7 @@
 				const cellElement = document.createElement('td');
 
 				const divElement = document.createElement('div');
-				divElement.appendChild(document.createTextNode(row.reduce((a,b) => a+b)));
+				divElement.appendChild(document.createTextNode(row.reduce((a, b) => a + b)));
 
 				cellElement.appendChild(divElement);
 				rowElement.appendChild(cellElement);
@@ -208,7 +211,33 @@
 
 				tableElement.appendChild(rowElement);
 
+
 			});
+
+			const footerElement = document.createElement('tr');
+			footerElement.appendChild(header('Grand Total', ''));
+
+			for (const total of columnTotals) {
+				const cellElement = document.createElement('td');
+
+				const divElement = document.createElement('div');
+				divElement.appendChild(document.createTextNode(total));
+
+				cellElement.appendChild(divElement);
+				footerElement.appendChild(cellElement);
+			}
+
+
+			const cellElement = document.createElement('td');
+
+const divElement = document.createElement('div');
+divElement.appendChild(document.createTextNode(columnTotals.reduce((a,b)=>a+b)));
+
+cellElement.appendChild(divElement);
+footerElement.appendChild(cellElement);
+
+			tableElement.appendChild(footerElement);
+
 
 			document.getElementById(elementId).replaceWith(tableElement);
 		}
