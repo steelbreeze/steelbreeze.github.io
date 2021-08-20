@@ -65,7 +65,17 @@
 			<div class="fixedWidth">
 				<article>
 					<h1>Pivot tables</h1>
-					<p>The pivot table library is a spin-off project from the landscape library. It provides a minimalist pivot table capability, slicing data into cells defined by two dimensions. The resultant data can be aggregated with some basic numerical aggregates, or other queries applied such as those used in the landscape library to present subsets of the source data.</p>
+					<p>The pivot table library is a spin-off project from the landscape library. It provides a
+						minimalist pivot table capability, slicing data into cells defined by two dimensions. The
+						resultant data can be aggregated with some basic numerical aggregates, or other queries applied
+						such as those used in the landscape library to present subsets of the source data.</p>
+				</article>
+				<article>
+					<table id="pivotTarget"></table>
+				</article>
+				<article>
+					<p>The table above uses the same pivot cube as the landscape map view above, but shows the counts of
+						applications in each cell.</p>
 					<p>Links: <a href="/pivot">Project</a>; <a href="https://github.com/steelbreeze/pivot">GitHub</a>.
 					</p>
 				</article>
@@ -100,30 +110,41 @@
 	<script src="https://steelbreeze.net/landscape/dist/landscape.min.js"></script>
 	<script>
 		window.fetch("./data/example.csv", { cache: "no-cache" }).then(response => response.text()).then(csv => {
-			const applications = d3.csvParse(csv);
+			// parse the CSV data
+			const data = d3.csvParse(csv);
 
-			const capability = pivot.dimension(["Market gateway", "Order execution", "Order management", "Confirmations"], "Capability");
+			// create pre-defined dimensions
 			const product = pivot.dimension(["Rates", "FX", "MM", "Credit", "Equities"], "Product");
+			const capability = pivot.dimension(["Market gateway", "Order execution", "Order management", "Confirmations"], "Capability");
 
-			const cube = pivot.cube(applications, product, capability);
+			// pivot the data using the product and capability dimensions as the x and y axes respectively
+			const cube = pivot.cube(data, product, capability);
 
+			// create a table of data from the pivot cube
 			const table = landscape.table(cube, product, capability, key, true);
 
+			// merge cells on both axes where possible
 			landscape.merge(table);
 
-			renderTable2(table, 'landscapeTarget');
+			// render the table in a designated element
+			renderTable(table, 'landscapeTarget');
+
+			// query the cube for counts
+			const totals = pivot.map(cube, pivot.count);
+
+			renderPivot(totals, product, capability, 'pivotTarget');
 		});
 
 		function key(detail) {
 			return { text: detail.Name, className: detail.Status };
 		}
 
-		function renderTable2(table, elementId) {
+		function renderTable(table, elementId) {
 			const tableElement = document.createElement('table');
 			tableElement.id = elementId;
 			tableElement.classList = 'landscape';
 
-			table.forEach((row, rowIndex) => {
+			for (const row of table) {
 				const rowElement = document.createElement('tr');
 
 				for (const cell of row) {
@@ -140,9 +161,69 @@
 				}
 
 				tableElement.appendChild(rowElement);
+			}
+
+			document.getElementById(elementId).replaceWith(tableElement);
+		}
+
+		function renderPivot(table, xAxis, yAxis, elementId) {
+			const tableElement = document.createElement('table');
+			tableElement.id = elementId;
+			tableElement.classList = 'pivot';
+
+			const headerElement = document.createElement('tr');
+			headerElement.appendChild(header('', ''));
+
+			for (const point of xAxis) {
+				headerElement.appendChild(header(point.data[0].value, 'xaxis'));
+			}
+
+			headerElement.appendChild(header('Total', 'xaxis'));
+
+			tableElement.appendChild(headerElement);
+
+			table.forEach((row, rowIndex) => {
+				const rowElement = document.createElement('tr');
+
+				rowElement.appendChild(header(yAxis[rowIndex].data[0].value, 'yaxis'));
+
+				for (const cell of row) {
+					const cellElement = document.createElement('td');
+
+					const divElement = document.createElement('div');
+					divElement.appendChild(document.createTextNode(cell || ''));
+
+					cellElement.appendChild(divElement);
+					rowElement.appendChild(cellElement);
+				}
+
+				const cellElement = document.createElement('td');
+
+				const divElement = document.createElement('div');
+				divElement.appendChild(document.createTextNode(row.reduce((a,b) => a+b)));
+
+				cellElement.appendChild(divElement);
+				rowElement.appendChild(cellElement);
+
+
+				tableElement.appendChild(rowElement);
+
 			});
 
 			document.getElementById(elementId).replaceWith(tableElement);
+		}
+
+		function header(text, style) {
+			const th = document.createElement('th');
+			th.className = style;
+
+			const div = document.createElement('div');
+
+			div.appendChild(document.createTextNode(text));
+
+			th.appendChild(div);
+
+			return th;
 		}
 	</script>
 </body>

@@ -150,4 +150,23 @@ ol {
   margin: 1.1em;
 }
 
+.pivot th {
+  padding: 0.25em 0.5em;
+  text-align: right;
+
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.pivot td {
+  border: 0.75pt solid #999999;
+  padding: 0.25em 0.5em;
+
+  min-width: 5em;
+
+  text-align: right;
+
+  color: rgba(0, 0, 0, 0.55);
+}
+
 /*# sourceMappingURL=steelbreeze.css.map */
