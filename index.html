@@ -108,6 +108,7 @@
 	<script src="https://steelbreeze.net/landscape/dist/d3-dsv.min.js"></script>
 	<script src="https://steelbreeze.net/pivot/dist/pivot.min.js"></script>
 	<script src="https://steelbreeze.net/landscape/dist/landscape.min.js"></script>
+	<script src="https://steelbreeze.net/landscape/dist/render.min.js"></script>
 	<script>
 		window.fetch("./data/example.csv", { cache: "no-cache" }).then(response => response.text()).then(csv => {
 			// parse the CSV data
@@ -127,7 +128,9 @@
 			landscape.merge(table, true, true);
 
 			// render the table in a designated element
-			renderTable(table, 'landscapeTarget');
+//			renderTable(table, 'landscapeTarget');
+			document.getElementById('landscapeTarget').replaceWith(render.table(table, 'landscapeTarget', 'landscape'));
+
 
 			// query the cube for counts
 			const totals = pivot.map(cube, pivot.count);
@@ -136,34 +139,7 @@
 		});
 
 		function key(detail) {
-			return { text: detail.Name, className: detail.Status };
-		}
-
-		function renderTable(table, elementId) {
-			const tableElement = document.createElement('table');
-			tableElement.id = elementId;
-			tableElement.classList = 'landscape';
-
-			for (const row of table) {
-				const rowElement = document.createElement('tr');
-
-				for (const cell of row) {
-					const cellElement = document.createElement(cell.className.includes('axis') ? 'th' : 'td');
-					cellElement.colSpan = cell.colSpan;
-					cellElement.rowSpan = cell.rowSpan;
-					cellElement.className = cell.className;
-
-					const divElement = document.createElement('div');
-					divElement.appendChild(document.createTextNode(cell.text));
-
-					cellElement.appendChild(divElement);
-					rowElement.appendChild(cellElement);
-				}
-
-				tableElement.appendChild(rowElement);
-			}
-
-			document.getElementById(elementId).replaceWith(tableElement);
+			return { text: detail.Name, style: detail.Status };
 		}
 
 		function renderPivot(table, xAxis, yAxis, elementId) {
