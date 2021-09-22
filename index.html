@@ -138,8 +138,8 @@
 			renderPivot(totals, product, capability, 'pivotTarget');
 		});
 
-		function key(detail) {
-			return { text: detail.Name, style: detail.Status };
+		function key(record) {
+			return { text: record.Name, style: record.Status };
 		}
 
 		function renderPivot(table, xAxis, yAxis, elementId) {
