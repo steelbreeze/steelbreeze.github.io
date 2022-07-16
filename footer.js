@@ -12,7 +12,7 @@ export function init(url) {
 		// update the copyright banner
 		document.getElementById('created_at').innerText = created_at.getFullYear();
 		document.getElementById('pushed_at').innerText = pushed_at.getFullYear();
-		document.getElementById('created_by').innerText = "David Mesquita-Morris";
+		document.getElementById('created_by').innerText = repo.owner.login;
 	});
 
 }
