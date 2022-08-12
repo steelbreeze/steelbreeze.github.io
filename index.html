@@ -100,8 +100,8 @@
 	<script src="https://steelbreeze.net/landscape/dist/render.min.js"></script>
 	<script type="module">
 		import * as footer from '/footer.js';
-		import * as pivot from 'https://cdn.skypack.dev/pin/@steelbreeze/pivot@v2.9.2-TooC2ZWZUqmSpDi0mEON/mode=imports,min/optimized/@steelbreeze/pivot.js';
-		import * as landscape from 'https://cdn.skypack.dev/pin/@steelbreeze/landscape@v3.8.1-MGS9opTPXhiyFUdUTGe2/mode=imports,min/optimized/@steelbreeze/landscape.js';
+		import * as pivot from 'https://cdn.skypack.dev/pin/@steelbreeze/pivot@v3.0.0-Qe4oRmwNHOIQyjXdX7Kz/mode=imports,min/optimized/@steelbreeze/pivot.js';
+		import * as landscape from 'https://cdn.skypack.dev/pin/@steelbreeze/landscape@v3.8.9-70pbCywiTQ9w2uDdWc8A/mode=imports,min/optimized/@steelbreeze/landscape.js';
 
 		// initialise the page footer
 		footer.init('https://api.github.com/repos/steelbreeze/steelbreeze.github.io');
@@ -116,7 +116,7 @@
 		};
 
 		// pivot the data using the product and capability dimensions as the x and y axes respectively
-		const cube = pivot.cube(data, axes);
+		const cube = pivot.cube(data, axes.y, axes.x);
 
 		// create a table of data from the pivot cube
 		const table = landscape.table(cube, axes, key, true);
