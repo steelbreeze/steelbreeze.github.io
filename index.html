@@ -100,8 +100,8 @@
 	<script src="https://steelbreeze.net/landscape/dist/render.min.js"></script>
 	<script type="module">
 		import * as footer from '/footer.js';
-		import * as pivot from 'https://cdn.skypack.dev/pin/@steelbreeze/pivot@v3.4.3-40V6BryzZaXM7k31OScb/mode=imports,min/optimized/@steelbreeze/pivot.js';
-		import * as landscape from 'https://cdn.skypack.dev/pin/@steelbreeze/landscape@v3.8.11-KOS6BuEpMWfREhVoDPPo/mode=imports,min/optimized/@steelbreeze/landscape.js';
+		import * as pivot from 'https://cdn.skypack.dev/pin/@steelbreeze/pivot@v3.5.0-beta-2-x1evgLRsd3iKSYyVL2Jm/mode=imports,min/optimized/@steelbreeze/pivot.js';
+		import * as landscape from 'https://cdn.skypack.dev/pin/@steelbreeze/landscape@v3.9.0-alpha-tYD2OmdxWA9iD1JZVGBl/mode=imports,min/optimized/@steelbreeze/landscape.js';
 
 		// initialise the page footer
 		footer.init('https://api.github.com/repos/steelbreeze/steelbreeze.github.io');
@@ -111,8 +111,8 @@
 
 		// create pre-defined dimensions
 		const axes = {
-			x: pivot.dimension("Product", ["Rates", "FX", "MM", "Credit", "Equities"]),
-			y: pivot.dimension("Capability", ["Market gateway", "Order execution", "Order management", "Confirmations"])
+			x: ["Rates", "FX", "MM", "Credit", "Equities"].map(landscape.criteria("Product")),
+			y: ["Market gateway", "Order execution", "Order management", "Confirmations"].map(landscape.criteria("Capability"))
 		};
 
 		// pivot the data using the product and capability dimensions as the x and y axes respectively
