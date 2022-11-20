@@ -86,26 +86,12 @@
 			</div>
 		</div>
 	</main>
-	<footer>
-		<div class="fixedWidth">
-			<article>
-				<a href="https://www.linkedin.com/in/mesmo/" class="fa fa-linkedin"></a>
-				<a href="https://twitter.com/David13276770" class="fa fa-twitter"></a>
-			</article>
-			<article>
-				Copyright &copy; <span id="created_at"></span>-<span id="pushed_at"></span> <span
-					id="created_by"></span>, all rights reserved.
-			</article>
-		</div>
-	</footer>
+	<html-include href="/components/footer.html"></html-include>
+	<script src = "/components/html-include.js"></script>
 	<script src="https://steelbreeze.net/landscape/dist/render.min.js"></script>
 	<script type="module">
-		import * as footer from '/footer.js';
 		import * as pivot from 'https://cdn.skypack.dev/pin/@steelbreeze/pivot@v3.6.3-D04GGSQbzKtNHx5jWAmW/mode=imports,min/optimized/@steelbreeze/pivot.js';
 		import * as landscape from 'https://cdn.skypack.dev/pin/@steelbreeze/landscape@v3.9.0-5cfkfxLve0xom8GaBpTH/mode=imports,min/optimized/@steelbreeze/landscape.js';
-
-		// initialise the page footer
-		footer.init('https://api.github.com/repos/steelbreeze/steelbreeze.github.io');
 
 		// source data
 		const data = [{ "Name": "Thunderhead ONE", "Supplier": "Thunderhead", "Capability": "Confirmations", "Product": "FX", "Status": "green" }, { "Name": "Thunderhead ONE", "Supplier": "Thunderhead", "Capability": "Confirmations", "Product": "MM", "Status": "green" }, { "Name": "Thunderhead ONE", "Supplier": "Thunderhead", "Capability": "Confirmations", "Product": "Rates", "Status": "green" }, { "Name": "Thunderhead ONE", "Supplier": "Thunderhead", "Capability": "Confirmations", "Product": "Credit", "Status": "green" }, { "Name": "Thunderhead ONE", "Supplier": "Thunderhead", "Capability": "Confirmations", "Product": "Equities", "Status": "green" }, { "Name": "Azure API GW", "Supplier": "Microsoft", "Capability": "Market gateway", "Product": "MM", "Status": "green" }, { "Name": "Azure API GW", "Supplier": "Microsoft", "Capability": "Market gateway", "Product": "Credit", "Status": "green" }, { "Name": "Fusion Summit", "Supplier": "Finastra", "Capability": "Market gateway", "Product": "FX", "Status": "green" }, { "Name": "Fusion Summit", "Supplier": "Finastra", "Capability": "Order execution", "Product": "FX", "Status": "green" }, { "Name": "Fusion Summit", "Supplier": "Finastra", "Capability": "Market gateway", "Product": "Rates", "Status": "green" }, { "Name": "Fusion Summit", "Supplier": "Finastra", "Capability": "Order execution", "Product": "Rates", "Status": "green" }, { "Name": "Wall St", "Supplier": "Wall Street Systems", "Capability": "Order management", "Product": "MM", "Status": "green" }, { "Name": "Wall St", "Supplier": "Wall Street Systems", "Capability": "Order execution", "Product": "FX", "Status": "green" }, { "Name": "Wall St", "Supplier": "Wall Street Systems", "Capability": "Order execution", "Product": "MM", "Status": "green" }, { "Name": "Wall St", "Supplier": "Wall Street Systems", "Capability": "Order management", "Product": "FX", "Status": "green" }, { "Name": "MX II", "Supplier": "Murex", "Capability": "Order execution", "Product": "Credit", "Status": "amber" }, { "Name": "MX II", "Supplier": "Murex", "Capability": "Order execution", "Product": "MM", "Status": "amber" }, { "Name": "Kdb+", "Supplier": "Kx Systems", "Capability": "Order management", "Product": "Equities", "Status": "green" }, { "Name": "Kdb+", "Supplier": "Kx Systems", "Capability": "Market gateway", "Product": "Equities", "Status": "green" }, { "Name": "Kdb+", "Supplier": "Kx Systems", "Capability": "Confirmations", "Product": "Equities", "Status": "red" }, { "Name": "Kdb+", "Supplier": "Kx Systems", "Capability": "Order execution", "Product": "Equities", "Status": "green" }];
