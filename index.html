@@ -90,7 +90,7 @@
 	<script src = "/components/html-include.js"></script>
 	<script src="https://steelbreeze.net/landscape/dist/render.min.js"></script>
 	<script type="module">
-		import * as pivot from 'https://cdn.skypack.dev/pin/@steelbreeze/pivot@v3.7.1-nejNC1Sxrs2qVsLjXECW/mode=imports,min/optimized/@steelbreeze/pivot.js';
+		import * as pivot from 'https://cdn.skypack.dev/pin/@steelbreeze/pivot@v4.0.0-V2jTpjIfQu27xQ0bXDqL/mode=imports,min/optimized/@steelbreeze/pivot.js';
 		import * as landscape from 'https://cdn.skypack.dev/pin/@steelbreeze/landscape@v3.9.0-5cfkfxLve0xom8GaBpTH/mode=imports,min/optimized/@steelbreeze/landscape.js';
 
 		// source data
@@ -101,7 +101,7 @@
 		const capabilities = ["Market gateway", "Order execution", "Order management", "Confirmations"].map(landscape.criteria("Capability"));
 
 		// pivot the data using the product and capability dimensions as the x and y axes respectively
-		const cube = pivot.cube(data, capabilities, products);
+		const cube = pivot.pivot(data, capabilities, products);
 
 		// create a table of data from the pivot cube
 		const table = landscape.table(cube, { y: capabilities, x: products }, key, true);
