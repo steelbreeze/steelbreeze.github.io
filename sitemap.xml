@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 	<url>
 		<loc>http://steelbreeze.net</loc>
-		<lastmod>2023-03-29</lastmod>
+		<lastmod>2023-04-03</lastmod>
 		<image:image>
 			<image:loc>http://steelbreeze.net/images/landscape-map.png</image:loc>
 			<image:title>Landscape map viewpoint visualisation</image:title>
@@ -11,11 +11,11 @@
 	</url> 
 	<url>
 		<loc>http://steelbreeze.net/pivot</loc>
-		<lastmod>2023-03-29</lastmod>
+		<lastmod>2023-03-31</lastmod>
 	</url>
 	<url>
 		<loc>http://steelbreeze.net/landscape</loc>
-		<lastmod>2023-03-29</lastmod>
+		<lastmod>2023-04-03</lastmod>
 	</url>
 	<url>
 		<loc>http://steelbreeze.net/state</loc>
