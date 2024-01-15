@@ -4,7 +4,21 @@
 <footer>
 	<div class="fixedWidth">
 		<article>
-			Copyright &copy; 2023-24 David Mesquita-Morris, all rights reserved.
+			Copyright &copy; <span id="copyrightYear">2023</span> David Mesquita-Morris, all rights reserved.
 		</article>
 	</div>
+	<script>
+		const pageYear = Number(copyrightYear.innerText);
+		const currentYear = Number(today().substring(0, 4));
+	
+		if (currentYear === pageYear) {
+			copyrightYear.innerText = `${currentYear}`;
+		} else if ((pageYear - (pageYear % 10)) === (currentYear - (currentYear % 10))) {
+			copyrightYear.innerText = `${pageYear}-${String(currentYear).substring(3, 4)}`;
+		} else if ((pageYear - (pageYear % 100)) === (currentYear - (currentYear % 100))) {
+			copyrightYear.innerText = `${pageYear}-${String(currentYear).substring(2, 4)}`;
+		} else {
+			copyrightYear.innerText = `${pageYear}-${currentYear}`;
+		}
+	</script>
 </footer>
